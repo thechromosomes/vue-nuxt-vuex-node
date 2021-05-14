@@ -43,84 +43,84 @@
 
                         <div class="item_name">
                           <a href="#" class="">
-                            <strong>{{ product.name }}</strong> <br />
+                            <strong class="proxima_regular">{{ product.name }}</strong> <br />
                             <span
-                              class="product_options-cart"
+                              class="product_options-cart proxima_regular"
                               v-if="JSON.parse(product.size).color"
                               >Color :
                               {{ JSON.parse(product.size).color }}</span
                             >
                             <span
-                              class="product_options-cart"
+                              class="product_options-cart proxima_regular"
                               v-if="JSON.parse(product.size).size"
                               >Size : {{ JSON.parse(product.size).size }}</span
                             >
                             <span
-                              class="product_options-cart Loyalty_LineItem hide_permanent"
+                              class="product_options-cart Loyalty_LineItem hide_permanent proxima_regular"
                             ></span>
                             <span
-                              class="product_options-cart Loyalty_LineItem hide_permanent"
+                              class="product_options-cart Loyalty_LineItem hide_permanent proxima_regular"
                             ></span>
                             <span
-                              class="product_options-cart Loyalty_LineItem hide_permanent"
+                              class="product_options-cart Loyalty_LineItem hide_permanent proxima_regular"
                             ></span>
                             Pre-ordered items: {{ product.qty }}
                             <br />
-                            <span
+                            <span class="proxima_regular"
                               ><div
-                                class="cart__meta-text pre-order-message"
+                                class="cart__meta-text pre-order-message proxima_regular"
                                 data-product-id="5172417462405"
                               ></div>
                             </span>
                           </a>
                         </div>
-                        <div class="qty_info">
-                          <div class="">
+                        <div class="qty_info proxima_regular">
+                          <div class="proxima_regular">
                             <a
-                              class="minus-symbol"
+                              class="minus-symbol proxima_regular"
                               @click.prevent="addCartVal('minus', product)"
                               >-</a
                             >
                             <input
                               name="updates[]"
-                              class="cart__product-qty tc item-quantity"
+                              class="cart__product-qty tc item-quantity proxima_regular"
                               :value="product.qty"
                               type="text"
                               disabled
                             />
                             <a
-                              class="plus-symbol"
+                              class="plus-symbol proxima_regular"
                               @click.prevent="addCartVal('add', product)"
                               >+</a
                             >
                           </div>
                         </div>
 
-                        <div class="remove  desktopOnly">
+                        <div class="remove desktopOnly proxima_regular">
                           <a
                             @click.prevent="removeCartItem(product)"
-                            class="cart"
+                            class="cart proxima_regular"
                             ><img src="~assets/images/remove.webp" alt="Remove"
                           /></a>
                         </div>
-                        <div class="price_info">
-                          <span class="price">₹{{ product.price }}</span>
+                        <div class="price_info proxima_regular">
+                          <span class="price proxima_regular">₹{{ product.price }}</span>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-12 col-lg-4 col-12">
                     <div class="cartItemSidebar">
-                      <h4 class="total">
+                      <h4 class="total proxima_regular">
                         Total:
                         <strong>
-                          <span class="price"
+                          <span class="price proxima_regular"
                             >₹{{ $store.state.cartAjax.cart_total }}</span
                           >
                         </strong>
                       </h4>
                       <h4
-                        class="total"
+                        class="total proxima_regular"
                         v-if="
                           $store.state.cartAjax.discount_amount != '' &&
                             $store.state.cartAjax.discount_amount != null
@@ -128,14 +128,14 @@
                       >
                         Dsicount:
                         <strong>
-                          <span class="price "
+                          <span class="price proxima_regular"
                             >₹{{ $store.state.cartAjax.discount_amount }}</span
                           >
                         </strong>
                       </h4>
 
                       <div
-                        class="tooltiptext"
+                        class="tooltiptext proxima_regular"
                         id="preOrderDate"
                         v-if="
                           $store.state.cartAjax.discount_code == '' ||
@@ -151,11 +151,11 @@
                           v-model="applied_coupon"
                           autocomplete="off"
                         />
-                        <button @click.prevent="addRemoveCoupon('add')" class="black-button">
+                        <button @click.prevent="addRemoveCoupon('add')" class="black-button proxima_regular">
                           Apply
                         </button>
                       </div>
-                      <div class="tooltiptext red" id="preOrderDate" v-else>
+                      <div class="tooltiptext red proxima_regular" id="preOrderDate" v-else>
                         <input
                           type="text"
                           placeholder="remove coupon"
@@ -166,12 +166,12 @@
                           disabled
                           autocomplete="off"
                         />
-                        <button @click.prevent="addRemoveCoupon('remove')">
+                        <button @click.prevent="addRemoveCoupon('remove')" class="proxima_regular">
                           Remove
                         </button>
                       </div>
 
-                      <div class="buttons-checkout">
+                      <div class="buttons-checkout proxima_regular">
                         <input
                           type="submit"
                           class="btn black-button"
@@ -486,4 +486,10 @@ export default {
     width: 100%;
 }
 #preOrderDate{ display: flex;}
+@media screen {
+  .cartItemProducts .productItem .image-info {
+    width: 20%;
+    margin-bottom: 10px;
+}
+}
 </style>

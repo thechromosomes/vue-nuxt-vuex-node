@@ -95,7 +95,7 @@
                   </div>
                 </div>
                 <div
-                  class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 order-1"
+                  class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 order-1"
                 >
                   <div class="footer-box">
                     <h5 class="proxima_bold">
@@ -274,7 +274,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-5">
-            <div class="copy-logo"><img src="images/logo.png" alt="" /></div>
+            <div class="copy-logo"><img src="~assets/images/logo.png" alt="" /></div>
           </div>
           <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
             <p class="proxima_semi-bold">

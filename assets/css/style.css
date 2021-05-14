@@ -1385,6 +1385,7 @@ label.cvform-lbl-checkbox:before {
     padding: 11px 0px !important;
     text-transform: uppercase;
     font-size: 12px;
+    cursor: pointer;
 }
 
 .form-login-div {
@@ -2047,6 +2048,7 @@ label.cvform-lbl-checkbox:before {
     text-transform: uppercase;
     letter-spacing: 0.04em;
     border-radius: 0px;
+    cursor: pointer;
 }
 
 .nav-links li.mob-item-res:hover {
@@ -3046,6 +3048,7 @@ label.cvform-lbl-checkbox:before {
 .custon-select-list li {
     padding: 5px 0px;
     border-bottom: 1px solid #ccc;
+    cursor: pointer;
 }
 
 .custon-select-list li span {
@@ -3121,6 +3124,7 @@ label.cvform-lbl-checkbox:before {
     font-weight: 700;
     color: #666;
     font-size: 13px;
+    cursor: pointer;
 }
 
 .select-view:hover {
@@ -3139,6 +3143,13 @@ label.cvform-lbl-checkbox:before {
     border-left: 1px solid #ccc;
     height: 100%;
     padding-top: 9px;
+}
+
+.select-icon-btn .icon-openarrow-right:before,
+.select-icon-btn .tumi-icon-ft-arrow_right_3:before {
+    content: "\e818";
+    transform: rotate( 92deg);
+    font-size: 10px;
 }
 
 .pieces-view {
@@ -3199,13 +3210,13 @@ label.cvform-lbl-checkbox:before {
 }
 
 .filter-pd-listing li .checkbox-wrap {
-    display: block;
+    display: inline-block;
     z-index: 99;
     top: 0px;
+    padding-left: 25px;
 }
 
 .filter-pd-listing li>a {
-    padding-left: 35px;
     display: inline-block;
     font-size: 14px;
 }
@@ -4727,7 +4738,7 @@ label.cvform-lbl-checkbox:before {
 /* =================================cart page css ============== */
 
 #cart {
-    padding-top: 10%;
+    padding-top: 2%;
 }
 
 #cart h1.title {

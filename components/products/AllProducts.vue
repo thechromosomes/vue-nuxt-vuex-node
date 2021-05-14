@@ -167,7 +167,7 @@
                         {{ sorting.code }}
                       </div>
                       <div class="select-icon-btn">
-                        <i class="tumi-select-arrow" aria-hidden="true"></i>
+                        <i class="icon-openarrow-right" aria-hidden="true"></i>
                       </div>
                     </div>
                   </div>
@@ -186,7 +186,7 @@
                     <div class="select-view pieces-view">
                       <div class="select-custom proxima_regular">30 pieces</div>
                       <div class="select-icon-btn">
-                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        <i class="icon-openarrow-right" aria-hidden="true"></i>
                       </div>
                     </div>
                   </div>
@@ -264,7 +264,7 @@
                             @click.prevent="
                               $store.commit('updateFilterArray', { item })
                             "
-                            :href="item.value_key"
+                            :href="item.value_key" class="proxima_regular"
                           >
                             <label class="checkbox-wrap">
                               <input
