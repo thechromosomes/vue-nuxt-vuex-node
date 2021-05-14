@@ -1,0 +1,129 @@
+.mainTitle p {
+    padding: 10px 20px 0 20px;
+    font-size: 14px;
+  }
+  .mainTitle h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+  }
+  .mainSections .mainTitle {
+    padding:10px 0;
+    background-color: #ebebeb;
+  }
+  .details.rte {
+    padding-bottom:40px;
+  }
+  .details.rte p {
+    text-align: justify;
+    line-height: 24px;
+  }
+  .details.rte h3 {
+    text-transform: uppercase;
+    padding: 10px 0 10px;
+    margin-bottom: 0px; 
+  } 
+  .spacing {
+    font-weight: bold;
+    float: left;
+  }
+  .head-links {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    flex-wrap:wrap;
+  }
+  .spacingContainer {
+  }
+  .selected {
+    background-color: #000;
+    color: #fff;
+  }
+  .spacing a{   
+    padding: 8px 15px;
+    display:block;
+  }
+  .wrappingGlossary {
+    margin-bottom: 100px;
+  }
+  .leftHolder {
+    margin: 21px 0px 0px 0px;
+    position: relative;
+    border-bottom: 1px solid #000000;
+    padding-left: 20px;
+  }
+  .leftSquare span {
+    font-size: 45px;
+    color: #64ccc6;
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+  }
+  .leftSquare {
+    display: flex;
+    justify-content: space-between;
+  }
+  .articlesHolder {
+    margin-top: 21px;
+    margin-bottom: 67px;
+  }
+  .leftSquare span.back-to-top a {
+    color: #000000;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .articlesHolder .article {
+    margin: 0 20px 30px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 30px;
+    display:flex;
+    justify-content:space-between;
+  }
+  .articlesHolder .article .title {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 7px;
+  }
+  .articlesHolder .article p {
+    font-size: 14px;
+  }
+  .articlesHolder .article .image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .spacing a.inactive-link, .spacing a:link.inactive-link{    color: #bbbbbb;
+    cursor: default;
+    text-decoration: none;
+    background: none;
+  }
+  .left-side p a {
+    text-decoration: underline;
+  }
+  @media(max-width:900px){
+    .left-side {
+      padding-right: 40px;
+    }
+    .articlesHolder .article .image {
+      width: 100px;
+      height: 85px;
+    }
+  }
+  @media(max-width:676px){
+    .articlesHolder .article .image {
+      width: 150PX;
+      height: 150PX;
+      margin: 0 auto;
+    }
+    .articlesHolder .article{
+      display:block;
+    }
+    .spacing a {
+      padding: 8px 11px;
+      display: block;
+      font-size: 15px;
+    }
+  }
+   
