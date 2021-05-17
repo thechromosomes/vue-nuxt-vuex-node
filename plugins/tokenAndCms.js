@@ -18,10 +18,10 @@ export default async (context) => {
     context.store.commit("setCmsData", cmsData);
 
     // get instagram data
-    context.store.dispatch("getInstaPost", {
-      token:
-        "IGQVJWWjVjRUJWbTl2cGtySDFxSmJyTV9jYTZANYmp6ZAlJUN3lCeTJac2VtTDB2SG1Makl1SFBrQmlSRE52SG5GcWMwX2lGNnpHU3NBRVoyamIwRlRBbkNQZAE44aEtEaUNWN3NYUTZAUVFFTVVg1OG1xRgZDZD",
-    });
+    // context.store.dispatch("getInstaPost", {
+    //   token:
+    //     "IGQVJWWjVjRUJWbTl2cGtySDFxSmJyTV9jYTZANYmp6ZAlJUN3lCeTJac2VtTDB2SG1Makl1SFBrQmlSRE52SG5GcWMwX2lGNnpHU3NBRVoyamIwRlRBbkNQZAE44aEtEaUNWN3NYUTZAUVFFTVVg1OG1xRgZDZD",
+    // });
 
     // get best seller data for the home page
     // let bestSellerForm = {};
