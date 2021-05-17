@@ -29,7 +29,7 @@ export const mutations = {
     );
 
     // staging
-    state.pimApi = "https://tmpim.hostx1.de/pim/";
+    state.pimApi = "https://tmpim.hostx1.de/pim";
     // live
     // state.pimApi = "https://smpim.stevemadden.in/pim/";
 
