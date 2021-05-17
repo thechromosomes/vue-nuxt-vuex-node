@@ -1403,9 +1403,7 @@ top: 14px;
         display: none;
     }
     .quantity {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row-reverse;
+        display: block;
     }
     .color {
         display: flex;
@@ -1454,7 +1452,7 @@ top: 14px;
     }
     .promotional-msg {
         top: 15px;
-        left: -16px;
+        left: -5px;
         padding: 0.8px 3px;
         font-size: 8px;
         line-height: 1.25;
@@ -1464,7 +1462,7 @@ top: 14px;
         border-right: 6px solid transparent;
         border-bottom: 6px solid #777;
         top: 25px;
-        left: -15px;
+        left: -5px;
         -webkit-transform: rotate(45deg);
     }
     .for-news-latter {
@@ -1828,6 +1826,42 @@ top: 14px;
     }
     .copy-right-sec p {
         padding-top: 0px;
+    }
+    /* ================ mobile slider  on peoduct detail pge======================== */
+    .slider-thumnil {
+        display: none;
+    }
+    .mobile-single-pd-crousal {
+        display: block;
+    }
+    .mobile-single-pd-crousal .slick-dots {
+        bottom: 0px;
+    }
+    .mobile-single-pd-crousal .slick-dots li.slick-active button:before {
+        color: #c41e3a;
+    }
+    .mobile-single-pd-crousal .slick-dots li button:before {
+        font-size: 12px;
+    }
+    .quantity {
+        flex-wrap: wrap;
+    }
+    .select-color-div {
+        display: block;
+        width: 100%;
+    }
+    .qtyAdjustBox {
+        width: 100%;
+    }
+    .qtyAdjustBox a {
+        height: 33px;
+        width: 33px;
+        line-height: 33px;
+    }
+    .qtyAdjustBox input {
+        width: 42px;
+        padding: 9px;
+        height: 35px;
     }
 }
 

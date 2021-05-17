@@ -325,6 +325,10 @@
                           <input type="checkbox" class="check-box active" />
                           <span class="checkmark"></span>
                         </label>
+                        <div class="wish-list-all-pd">
+                          <span class="all-wish-text proxima_regular">Wishlist</span>
+                          <span class="all-wish-img"><img src="~assets/images/heart.png" alt="logo"></span>
+                        </div>
                       </li>
                     </ul>
                   </div>

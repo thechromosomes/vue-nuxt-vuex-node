@@ -49,7 +49,7 @@
                 <div class="slider-thumnil">
                   <div class="thumbnil-div-width">
                     <div class="slider-nav">
-                      <div
+                      <div class="slider-nav-itms"
                         :class="[
                           mainThumbImage == thumbItem.image
                             ? 'active-thumbnail'
@@ -80,6 +80,23 @@
                     <span class="icon-zoomplus"></span>
                   </div>
                 </div>
+
+                <!-- ============================mobile slider====================== -->
+                <div class="mobile-single-pd-crousal">
+                <VueSlickCarousel v-bind="mobileSingleslider">
+                  <div  v-for="(itemSingle, indexSingle) in 3" :key="indexSingle">
+                  <div class="one-item-crosal-mob" >
+                  <div class="slider-for-mob">
+                      <div>
+                        <img src="~assets/images/recomded.png">
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </VueSlickCarousel>
+                </div>
+
+                <!-- ============================= end ================== -->
               </div>
             </div>
             <div class="col-sm-5">
@@ -111,14 +128,23 @@
                 </div>
                 <div class="quantity-color">
                   <div class="quantity">
-                    <strong class="proxima_bold">Quantity:</strong
-                    >{{ addToCartVal }}
+                    <strong class="proxima_bold">Quantity: </strong
+                    ><strong class="proxima_light" style="color: #555;">{{ addToCartVal }}</strong>
                     <strong class="proxima_bold"
                       >color:
                       <span class="proxima_light">{{
                         singleProductList.single_prod_data.color
                       }}</span></strong
                     >
+                    <div class="select-color-div">
+                      <ul class="color-mode-slct">
+                        <li class="active colo-select-bg">
+                          <img srcset="~assets/images/color-mode-1.jpg" alt="">
+                        </li>
+                         <li class=" colo-select-bg"> <img srcset="~assets/images/black-mode.jpg" alt=""></li>
+                          <li class="colo-select-bg"> <img srcset="~assets/images/black-mode.jpg" alt=""></li>
+                      </ul>
+                    </div>
                     <div class="qtyAdjustBox">
                       <a class="minus" @click.prevent="addCartVal('minus')"
                         >-</a
@@ -154,7 +180,7 @@
                   >add to cart</a
                 >
                 <div class="info-tab-single">
-                  <div class="info-txt">
+                  <div class="info-txt" :class="showProductDetail ? 'open-detail' : ' '">
                     <h3
                       class="proxima_regular"
                       @click="showProductDetail = !showProductDetail"
@@ -162,7 +188,7 @@
                       basic information
                     </h3>
                     <div class="info-colpse" v-if="showProductDetail">
-                      <div class="para-con-boder">
+                      <div class="para-con-boder proxima_regular">
                         <ul>
                           <li
                             v-for="(desc, descKey) in renderDescription"
@@ -400,7 +426,28 @@ export default {
           },
         ],
       },
-
+ mobileSingleslider: {
+        focusOnSelect: true,
+        infinite:false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 3,
+        autoscroll: true,
+        autoplay: true,
+        arrows: false,
+        centerMode: true,
+        dots:true,
+         responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              centerMode: false,
+            },
+          }]
+          
+      },
       settings2: {
         focusOnSelect: true,
         centerMode: true,
@@ -465,6 +512,7 @@ export default {
       showRecent: false,
       mainThumbImage: "",
     };
+
   },
 
   head() {

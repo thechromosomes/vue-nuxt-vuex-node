@@ -384,6 +384,7 @@ export default {
   }
 };
 </script>
+
 <style scoped>
 .empty-head {
   margin-top: -46px;
@@ -431,7 +432,7 @@ export default {
 .cartItemProducts .productItem .qty_info a {
     background-color: #000;
     color: #fff;
-    padding: 15px 20px;
+    padding: 6px 20px;
     cursor: pointer;
 }
 .cartItemProducts .productItem .qty_info input {
@@ -486,10 +487,40 @@ export default {
     width: 100%;
 }
 #preOrderDate{ display: flex;}
-@media screen {
-  .cartItemProducts .productItem .image-info {
+@media only screen and (max-width: 991px) {
+.cartItemProducts .productItem {
+    flex-wrap: wrap;
+}
+.cartItemProducts .productItem {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+.cartItemProducts .productItem .image-info {
     width: 20%;
     margin-bottom: 10px;
+}
+.cartItemProducts .productItem .item_name {
+    width: 80%;
+}
+.cartItemProducts .productItem .qty_info {
+    width: 30%;
+    text-align: left;
+}
+.cartItemProducts .productItem .price_info, .cartItemProducts .productItem .remove {
+    width: 30%;
+}
+
+}
+@media only screen and (max-width: 767px) {
+.cartItemProducts .productItem .qty_info a {
+    background-color: #000;
+    color: #fff;
+    padding: 6px 15px;
+    cursor: pointer;
 }
 }
 </style>

@@ -2266,6 +2266,7 @@ label.cvform-lbl-checkbox:before {
     font-size: 16px;
     margin-top: 5px;
     font-weight: 400;
+    cursor: pointer;
 }
 
 .innovative-sec {
@@ -2822,6 +2823,7 @@ label.cvform-lbl-checkbox:before {
     border: 1px solid #ccc;
     margin-left: 13px;
     position: relative;
+    cursor: pointer;
 }
 
 .compare-div strong {
@@ -3387,6 +3389,7 @@ label.cvform-lbl-checkbox:before {
     padding: 3px 0px 2px 0px;
     font-weight: 400;
     letter-spacing: 0.025em;
+    cursor: pointer;
 }
 
 .option-con-wrap {
@@ -3461,6 +3464,10 @@ label.cvform-lbl-checkbox:before {
     text-transform: uppercase;
     line-height: 24px;
     padding: 0 10px;
+}
+
+.cm-list li {
+    cursor: pointer;
 }
 
 .cm-list li label {
@@ -3695,6 +3702,7 @@ label.cvform-lbl-checkbox:before {
     letter-spacing: 0.06em;
     font-size: 12px;
     line-height: 1.25;
+    cursor: pointer;
 }
 
 .label-arrow-up {
@@ -3803,6 +3811,7 @@ label.cvform-lbl-checkbox:before {
     font-size: 12px;
     letter-spacing: 0.04em;
     color: #555;
+    cursor: pointer;
 }
 
 .hurry {
@@ -4243,6 +4252,7 @@ label.cvform-lbl-checkbox:before {
     text-align: center;
     padding: 20px 0px;
     border-bottom: 2px solid #ccc;
+    border-top: 2px solid #ccc;
     margin-bottom: 30px;
 }
 
@@ -4267,6 +4277,7 @@ label.cvform-lbl-checkbox:before {
 
 .size-comprison a {
     font-size: 12px;
+    cursor: pointer;
 }
 
 .info-txt h3 {
@@ -4285,16 +4296,22 @@ label.cvform-lbl-checkbox:before {
     position: absolute;
     left: 3px;
     top: 0;
-    content: "\e81a";
+    content: "\e819";
     font-family: tumi-icon-ft!important;
-    font-size: 12px;
+    font-size: 8px;
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
-.info-txt:hover h3:before {
-    content: "\f068";
+.info-txt.open-detail h3:before {
+    content: "\e81a";
+    font-family: tumi-icon-ft!important;
 }
+
+
+/* .info-txt:hover h3:before {
+    content: "\f068";
+} */
 
 .info-tab-single {
     margin: 32px 0px;
@@ -4302,6 +4319,7 @@ label.cvform-lbl-checkbox:before {
 
 .info-txt {
     border-top: 2px solid #ccc;
+    cursor: pointer;
 }
 
 
@@ -4501,6 +4519,7 @@ label.cvform-lbl-checkbox:before {
 .tumi-bags-fature-list li {
     display: inline-block;
     padding-right: 20px;
+    cursor: pointer;
 }
 
 .tumi-bags-fature-list li i {
@@ -4684,7 +4703,7 @@ label.cvform-lbl-checkbox:before {
     right: -10px;
     background-color: #000;
     line-height: 16px;
-    font-size: 18px;
+    font-size: 13px;
     text-align: center;
 }
 
@@ -4802,5 +4821,109 @@ label.cvform-lbl-checkbox:before {
 }
 
 .mobile-short-by {
+    display: none;
+}
+
+.no_products.text-center img {
+    width: 500px;
+}
+
+.all-wish-text.proxima_regular {
+    padding-top: 0px;
+    display: inline-block;
+    font-size: 12px;
+    color: #555
+}
+
+.wish-list-all-pd {
+    text-align: right;
+}
+
+.all-wish-img {
+    display: inline-block!important;
+    padding-top: 0px!important;
+}
+
+.all-wish-img img {
+    width: 20px;
+    opacity: .5;
+}
+
+.cm-list .checkbox-wrap {
+    margin-bottom: 5px;
+}
+
+.qtyAdjustBox {
+    margin: 15px 0px;
+    display: block;
+}
+
+.qtyAdjustBox a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: #000;
+    color: #fff!important;
+    line-height: 35px;
+    font-size: 22px;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+}
+
+.qtyAdjustBox input {
+    width: 50px;
+    padding: 9px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.qtyAdjustBox a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: #000;
+    color: #fff;
+    line-height: 35px;
+    font-size: 22px;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.color-mode-slct {
+    display: block;
+    margin: 10px 0px;
+}
+
+.color-mode-slct>li {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.color-mode-slct>li.active {
+    padding: 2px;
+    border: 2px solid #000;
+}
+
+.red-button.add-cart-button {
+    color: #fff!important;
+    cursor: pointer;
+}
+
+.slider-nav-itms {
+    cursor: pointer;
+}
+
+.mobile-single-pd-crousal {
     display: none;
 }

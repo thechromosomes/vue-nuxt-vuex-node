@@ -572,7 +572,7 @@
               <input type="checkbox" id="showMega" />
               <label
                 for="showMega"
-                class="mobile-item proxima_semi-bold active"
+                class="mobile-item proxima_semi-bold"  @click="() => (activeMobmenu = !activeMobmenu)"
                 >{{ item.name }}</label
               >
               <div class="mega-box">
@@ -1383,6 +1383,7 @@ export default {
       scrollPosition: null,
       showMenu: false,
       close: false,
+      openMobilemenu:false,
     };
   },
   async mounted() {
