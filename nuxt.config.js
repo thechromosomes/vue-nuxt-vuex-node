@@ -93,11 +93,11 @@ export default {
     manifest: {
         name: "Tumi",
         lang: "en",
-        title: "Steve Madden",
-        description: "Steve Madden",
+        title: "TUMI",
+        description: "TUMI",
         theme_color: "#FFFFFF",
         background_color: "#FFFFFF",
-        short_name: "SM",
+        short_name: "TUMI",
         ogImage: `icon.png`,
         icons: [{
                 src: `/icon.png`,
