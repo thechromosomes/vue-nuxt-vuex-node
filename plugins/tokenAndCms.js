@@ -12,7 +12,7 @@ export default async (context) => {
 
     let cmsData = await context.store.dispatch("pimAjax", {
       method: "get",
-      url: `pimresponse.php`,
+      url: `/pimresponse.php`,
       params: form,
     });
     context.store.commit("setCmsData", cmsData);
@@ -36,7 +36,7 @@ export default async (context) => {
     // banner slider data for the home page
     let bannerData = await context.store.dispatch("pimAjax", {
       method: "get",
-      url: `pimresponse.php`,
+      url: `/pimresponse.php`,
       params: {
         service: "banner_slider",
         store: 1,
@@ -52,7 +52,7 @@ export default async (context) => {
     header.store = 1;
     let headerData = await context.store.dispatch("pimAjax", {
       method: "get",
-      url: `pimresponse.php`,
+      url: `/pimresponse.php`,
       params: header,
     });
 
