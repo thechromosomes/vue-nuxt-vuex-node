@@ -2,7 +2,7 @@ import { CreateLog } from "./server-middleware/globalErrorMiddleware";
 
 export default {
     server: {
-        port: 7000, // default: 3000
+        port: 12000, // default: 3000
 
         // configure local area network
         //host: "0",

@@ -40,9 +40,8 @@ export const state = () => ({
   header: [],
   pageLoader: false,
   // base URL is using in og tags and log generator API >>> all product
-  // BASE_URL: "https://sm.hostx1.de",
-  BASE_URL: "http://localhost:7000",
-  // BASE_URL: "https://shop.stevemadden.in",
+  BASE_URL: "http://tm.hostx1.de",
+  //BASE_URL: "http://localhost:12000",
   isMobile: false,
   instaPost: [],
   bestSellerWomen: [],
