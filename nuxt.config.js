@@ -29,14 +29,12 @@ export default {
     },
 
     css: [
-        "element-ui/lib/theme-chalk/index.css",
         "~/assets/css/bootstrap.min.css",
         "~/assets/css/slick.css",
         "~/assets/css/slick-theme.css",
         "~/assets/css/style.css",
-        // "~/assets/css/changes.css",
-        // "~/assets/css/cms-page.css",
         "~/assets/css/responsive.css",
+        "element-ui/lib/theme-chalk/index.css"
     ],
 
     plugins: [
@@ -95,11 +93,11 @@ export default {
     manifest: {
         name: "Tumi",
         lang: "en",
-        title: "Steve Madden",
-        description: "Steve Madden",
+        title: "TUMI",
+        description: "TUMI",
         theme_color: "#FFFFFF",
         background_color: "#FFFFFF",
-        short_name: "SM",
+        short_name: "TUMI",
         ogImage: `icon.png`,
         icons: [{
                 src: `/icon.png`,
@@ -137,9 +135,9 @@ export default {
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
         transpile: [/^element-ui/],
-        // extractCSS: {
-        //   allChunks: true,
-        // },
+        extractCSS: {
+          allChunks: true,
+        },
     },
 
     // google tag manger

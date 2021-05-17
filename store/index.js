@@ -29,6 +29,7 @@ export const state = () => ({
     service: "product",
     single_prod_data: [],
     product_loader: false,
+    
     total_review: 0,
     average_rating: 0,
     reviews_list: [],
@@ -40,7 +41,7 @@ export const state = () => ({
   header: [],
   pageLoader: false,
   // base URL is using in og tags and log generator API >>> all product
-  BASE_URL: "http://tm.hostx1.de",
+  BASE_URL: "https://tm.hostx1.de",
   //BASE_URL: "http://localhost:12000",
   isMobile: false,
   instaPost: [],
