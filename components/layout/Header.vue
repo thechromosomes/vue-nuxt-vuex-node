@@ -564,15 +564,15 @@
         <div :class="showMenu ? 'overly-bg.show' : 'overly-bg'">
           <ul class="nav-links">
             <li
-              class="mob-item-res"
+              class="mob-item-res" 
               v-for="(item, index) in header"
-              :key="index"
+              :key="index" 
             >
-              <a class="desktop-item proxima_semi-bold">{{ item.name }}</a>
+              <a class="desktop-item proxima_semi-bold" >{{ item.name }}</a>
               <input type="checkbox" id="showMega" />
               <label
                 for="showMega"
-                class="mobile-item proxima_semi-bold"  @click="() => (activeMobmenu = !activeMobmenu)"
+                class="mobile-item proxima_semi-bold" @click="() => (isActive = !isActive)" :class=" isActive ? 'isActive' : ''"   
                 >{{ item.name }}</label
               >
               <div class="mega-box">
@@ -1383,7 +1383,7 @@ export default {
       scrollPosition: null,
       showMenu: false,
       close: false,
-      openMobilemenu:false,
+      isActive:false,
     };
   },
   async mounted() {

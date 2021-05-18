@@ -16,9 +16,9 @@
               <div class="address">
                 <a
                   href="#"
-                  class="add-new-address button button-black proxima_bold"
+                  class="add-new-address button button-black proxima_Regular"
                   @click.prevent="showAddressform"
-                  ><b> + Add a new address</b></a
+                  ><b class="proxima_regular"> + Add a new address</b></a
                 >
               </div>
 

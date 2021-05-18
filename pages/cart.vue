@@ -430,7 +430,7 @@ export default {
     text-align: center;
 }
 .cartItemProducts .productItem .qty_info a {
-    background-color: #000;
+    background-color: #555;
     color: #fff;
     padding: 6px 20px;
     cursor: pointer;
@@ -443,7 +443,7 @@ export default {
     border: none;
 }
 .cartItemProducts .productItem .qty_info a {
-    background-color: #000;
+    background-color: #555;
     color: #fff;
     padding: 15px 20px;
     cursor: pointer;
@@ -517,7 +517,7 @@ export default {
 }
 @media only screen and (max-width: 767px) {
 .cartItemProducts .productItem .qty_info a {
-    background-color: #000;
+    background-color: #555;
     color: #fff;
     padding: 6px 15px;
     cursor: pointer;

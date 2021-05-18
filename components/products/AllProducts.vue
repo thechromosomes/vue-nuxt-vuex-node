@@ -426,8 +426,8 @@
                   $store.state.pageLoader == false
                 "
               >
-                <h1>Sorry !</h1>
-                <p>{{ list.page_error }}</p>
+                <h1 class="proxima_bold">Sorry !</h1>
+                <p class="proxima_regular">{{ list.page_error }}</p>
                 <img src="@/assets/images/no_product.png" alt="no-product" />
               </div>
             </div>
