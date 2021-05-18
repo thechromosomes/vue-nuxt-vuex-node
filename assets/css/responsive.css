@@ -1746,7 +1746,7 @@ top: 14px;
         width: 49%;
         display: inline-block;
         background-color: #555;
-        color: #fff;
+        color: #fff!important;
         text-align: center;
         padding: 10px;
         text-transform: capitalize;
