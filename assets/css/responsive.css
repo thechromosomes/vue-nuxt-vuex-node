@@ -1875,4 +1875,7 @@ top: 14px;
     .no_products.text-center img {
         width: 240px;
     }
+    .product-tab-dtail {
+        width: 100%;
+    }
 }
