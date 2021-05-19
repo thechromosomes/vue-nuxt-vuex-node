@@ -216,13 +216,23 @@
                 </ul>
               </div>
               <div class="mobile-short-by">
-                <select class="proxima_regular">
+                <strong class="Proxima_regular">Sort By</strong>
+                <ul class="custon-select-list proxima_regular">
+                    <li
+                      v-for="(sort, sortIndex) in list.sort"
+                      @click="sortProduct(sort)"
+                      :key="sortIndex"
+                    >
+                      <span class="proxima_regular">{{ sort.label }}</span>
+                    </li>
+                  </ul>
+                <!-- <select class="proxima_regular">
                   <option class="Proxima_regular">Default</option>
                   <option class="Proxima_regular">Hot Item</option>
                   <option class="Proxima_regular">New Arrival</option>
                   <option class="Proxima_regular">Price from Low Heigh</option>
                   <option class="Proxima_regular">Price from Low Heigh</option>
-                </select>
+                </select> -->
                 <!-- <ul class="custon-select-list">
                     <li
                       v-for="(sort, sortIndex) in list.sort"
@@ -332,16 +342,26 @@
                       <li>
                         <label class="checkbox-wrap proxima_regular"
                           >Comapre
-                          <input type="checkbox" class="check-box active" />
+                          &nbsp;<input type="checkbox" class="check-box active" />
                           <span class="checkmark"></span>
                         </label>
                         <div class="wish-list-all-pd">
                           <span class="all-wish-text proxima_regular"
                             >Wishlist</span
                           >
-                          <span class="all-wish-img"
+                          <span class="all-wish-img wishlist_blank"
+                                :id="$store.state.cartAjax.wishlist.group"
+                                :class="renderWishList(singleProd)"
+                                @click.prevent="
+                                addRemoveWishList(
+                                singleProd,
+                                renderWishList(singleProd),
+                                prodIndex
+                                )
+                                "
                             ><img src="~assets/images/heart.png" alt="logo"
                           /></span>
+                          
                         </div>
                       </li>
                     </ul>

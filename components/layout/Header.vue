@@ -1377,7 +1377,7 @@
 <script>
 import { mapState } from "vuex";
 
-export default {
+  export default {
   data() {
     return {
       scrollPosition: null,
