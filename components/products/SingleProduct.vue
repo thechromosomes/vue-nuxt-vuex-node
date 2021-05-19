@@ -49,7 +49,8 @@
                 <div class="slider-thumnil">
                   <div class="thumbnil-div-width">
                     <div class="slider-nav">
-                      <div class="slider-nav-itms"
+                      <div
+                        class="slider-nav-itms"
                         :class="[
                           mainThumbImage == thumbItem.image
                             ? 'active-thumbnail'
@@ -83,17 +84,20 @@
 
                 <!-- ============================mobile slider====================== -->
                 <div class="mobile-single-pd-crousal">
-                <VueSlickCarousel v-bind="mobileSingleslider">
-                  <div  v-for="(itemSingle, indexSingle) in 3" :key="indexSingle">
-                  <div class="one-item-crosal-mob" >
-                  <div class="slider-for-mob">
-                      <div>
-                        <img src="~assets/images/recomded.png">
+                  <VueSlickCarousel v-bind="mobileSingleslider">
+                    <div
+                      v-for="(itemSingle, indexSingle) in 3"
+                      :key="indexSingle"
+                    >
+                      <div class="one-item-crosal-mob">
+                        <div class="slider-for-mob">
+                          <div>
+                            <img src="~assets/images/recomded.png" />
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  </div>
-                </VueSlickCarousel>
+                  </VueSlickCarousel>
                 </div>
 
                 <!-- ============================= end ================== -->
@@ -129,7 +133,9 @@
                 <div class="quantity-color">
                   <div class="quantity">
                     <strong class="proxima_bold">Quantity: </strong
-                    ><strong class="proxima_light" style="color: #555;">{{ addToCartVal }}</strong>
+                    ><strong class="proxima_light" style="color: #555">{{
+                      addToCartVal
+                    }}</strong>
                     <strong class="proxima_bold"
                       >color:
                       <span class="proxima_light">{{
@@ -138,11 +144,20 @@
                     >
                     <div class="select-color-div">
                       <ul class="color-mode-slct">
-                        <li class="active colo-select-bg">
-                          <img srcset="~assets/images/color-mode-1.jpg" alt="">
+                        <li
+                          :class="[
+                            $route.params.productDetail == color.url_key
+                              ? 'active colo-select-bg'
+                              : '',
+                          ]"
+                          v-for="(color, index) in singleProductList
+                            .single_prod_data.color_variation"
+                          :key="index"
+                        >
+                          <NuxtLink :to="color.url_key">
+                            <img :src="color.image" :alt="color.image" />
+                          </NuxtLink>
                         </li>
-                         <li class=" colo-select-bg"> <img srcset="~assets/images/black-mode.jpg" alt=""></li>
-                          <li class="colo-select-bg"> <img srcset="~assets/images/black-mode.jpg" alt=""></li>
                       </ul>
                     </div>
                     <div class="qtyAdjustBox">
@@ -180,7 +195,10 @@
                   >add to cart</a
                 >
                 <div class="info-tab-single">
-                  <div class="info-txt" :class="showProductDetail ? 'open-detail' : ' '">
+                  <div
+                    class="info-txt"
+                    :class="showProductDetail ? 'open-detail' : ' '"
+                  >
                     <h3
                       class="proxima_regular"
                       @click="showProductDetail = !showProductDetail"
@@ -426,9 +444,9 @@ export default {
           },
         ],
       },
- mobileSingleslider: {
+      mobileSingleslider: {
         focusOnSelect: true,
-        infinite:false,
+        infinite: false,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 3,
@@ -436,8 +454,8 @@ export default {
         autoplay: true,
         arrows: false,
         centerMode: true,
-        dots:true,
-         responsive: [
+        dots: true,
+        responsive: [
           {
             breakpoint: 1024,
             settings: {
@@ -445,8 +463,8 @@ export default {
               slidesToScroll: 1,
               centerMode: false,
             },
-          }]
-          
+          },
+        ],
       },
       settings2: {
         focusOnSelect: true,
@@ -512,7 +530,6 @@ export default {
       showRecent: false,
       mainThumbImage: "",
     };
-
   },
 
   head() {
