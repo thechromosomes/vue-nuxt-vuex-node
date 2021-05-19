@@ -223,6 +223,15 @@
                   <option class="Proxima_regular">Price from Low Heigh</option>
                   <option class="Proxima_regular">Price from Low Heigh</option>
                 </select>
+                <!-- <ul class="custon-select-list">
+                    <li
+                      v-for="(sort, sortIndex) in list.sort"
+                      @click="sortProduct(sort)"
+                      :key="sortIndex"
+                    >
+                      <span class="proxima_regular">{{ sort.label }}</span>
+                    </li>
+                  </ul> -->
               </div>
             </div>
           </div>
@@ -264,7 +273,8 @@
                             @click.prevent="
                               $store.commit('updateFilterArray', { item })
                             "
-                            :href="item.value_key" class="proxima_regular"
+                            :href="item.value_key"
+                            class="proxima_regular"
                           >
                             <label class="checkbox-wrap">
                               <input
@@ -326,8 +336,12 @@
                           <span class="checkmark"></span>
                         </label>
                         <div class="wish-list-all-pd">
-                          <span class="all-wish-text proxima_regular">Wishlist</span>
-                          <span class="all-wish-img"><img src="~assets/images/heart.png" alt="logo"></span>
+                          <span class="all-wish-text proxima_regular"
+                            >Wishlist</span
+                          >
+                          <span class="all-wish-img"
+                            ><img src="~assets/images/heart.png" alt="logo"
+                          /></span>
                         </div>
                       </li>
                     </ul>
@@ -374,16 +388,33 @@
                   <div class="option-con-wrap">
                     <div class="color-option">
                       <ul class="selct-color">
-                        <li>
-                          <img src="~/assets/images/all-pdp/color-1.jpg" />
+                        <li
+                          v-for="(
+                            color, colorIndex
+                          ) in singleProd.color_variation"
+                          :key="colorIndex"
+                          :class="[
+                            color.color == singleProd.color
+                              ? 'border-color-dyn'
+                              : '',
+                          ]"
+                        >
+                          <!-- <img src="~/assets/images/all-pdp/color-1.jpg" /> -->
+                          <span
+                            style="cursor: pointer"
+                            :style="
+                              getHexColor(
+                                color.color,
+                                prodIndex,
+                                singleProd.color
+                              )
+                            "
+                            @click="
+                              updateViaColor(color, colorIndex, prodIndex)
+                            "
+                            ></span
+                          >
                         </li>
-                        <li>
-                          <img src="~/assets/images/all-pdp/color-2.jpg" />
-                        </li>
-                        <li>
-                          <img src="~/assets/images/all-pdp/color-3.jpg" />
-                        </li>
-                        <li><a href="#">+1</a></li>
                       </ul>
                     </div>
                     <p class="proxima_regular">
@@ -894,6 +925,9 @@ export default {
 .border-color {
   border: solid;
   border-radius: 50%;
+}
+.border-color-dyn {
+  border: solid;
 }
 .no_products {
   width: 100%;
