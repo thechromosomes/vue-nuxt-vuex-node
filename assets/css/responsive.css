@@ -1894,7 +1894,16 @@ top: 14px;
     .mobile-short-by .custon-select-list {
         display: block;
         position: absolute;
-        bottom: 0;
+        top: calc(100% - 264px);
         padding-left: 10px;
+        transition: all .8s ease;
+    }
+    .mobile-short-by .custon-select-list {
+        display: none;
+        transition: all .8s ease;
+    }
+    .mobile-short-by.showSort .custon-select-list {
+        display: block;
+        transition: all .8s ease;
     }
 }

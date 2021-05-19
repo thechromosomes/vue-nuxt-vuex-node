@@ -215,7 +215,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="mobile-short-by">
+              <div class="mobile-short-by"  @click="() => (showSort = !showSort)" :class=" showSort ? 'showSort' : ''">
                 <strong class="Proxima_regular">Sort By</strong>
                 <ul class="custon-select-list proxima_regular">
                     <li
@@ -226,22 +226,7 @@
                       <span class="proxima_regular">{{ sort.label }}</span>
                     </li>
                   </ul>
-                <!-- <select class="proxima_regular">
-                  <option class="Proxima_regular">Default</option>
-                  <option class="Proxima_regular">Hot Item</option>
-                  <option class="Proxima_regular">New Arrival</option>
-                  <option class="Proxima_regular">Price from Low Heigh</option>
-                  <option class="Proxima_regular">Price from Low Heigh</option>
-                </select> -->
-                <!-- <ul class="custon-select-list">
-                    <li
-                      v-for="(sort, sortIndex) in list.sort"
-                      @click="sortProduct(sort)"
-                      :key="sortIndex"
-                    >
-                      <span class="proxima_regular">{{ sort.label }}</span>
-                    </li>
-                  </ul> -->
+               
               </div>
             </div>
           </div>
@@ -505,6 +490,7 @@ export default {
       activeColor: [],
       scrollPosition: "",
       gtm_product_impressions: [],
+      showSort:false,
       authenticity: {
         focusOnSelect: true,
         infinite: false,
