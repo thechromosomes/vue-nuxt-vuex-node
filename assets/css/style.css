@@ -3267,7 +3267,7 @@
     
     .product-div-col {
         text-align: center;
-        min-height: 520px;
+        min-height: 490px;
     }
     
     .selct-color {
@@ -3350,6 +3350,7 @@
     .product-div-col .quick-button {
         display: inline-block;
         margin-top: 10px;
+        display: none;
     }
     
     .dark-overlay {
@@ -4723,6 +4724,10 @@
     .all-wish-img img {
         width: 20px;
         opacity: .5;
+    }
+    
+    .all-wish-img img:hover {
+        opacity: 1;
     }
     
     .cm-list .checkbox-wrap {

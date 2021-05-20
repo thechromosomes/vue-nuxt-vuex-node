@@ -331,10 +331,8 @@
                           <span class="checkmark"></span>
                         </label>
                         <div class="wish-list-all-pd">
-                          <span class="all-wish-text proxima_regular"
-                            >Wishlist</span
-                          >
-                          <span class="all-wish-img wishlist_blank"
+                          
+                          <span class="all-wish-img wishlist_blank" 
                                 :id="$store.state.cartAjax.wishlist.group"
                                 :class="renderWishList(singleProd)"
                                 @click.prevent="
@@ -344,8 +342,14 @@
                                 prodIndex
                                 )
                                 "
-                            ><img src="~assets/images/heart.png" alt="logo"
-                          /></span>
+                            >
+                            <span class="all-wish-text proxima_regular"
+                            >Wishlist</span
+                          >
+                          
+                         <img src="~assets/images/heart.png"/>
+                            
+                            </span>
                           
                         </div>
                       </li>

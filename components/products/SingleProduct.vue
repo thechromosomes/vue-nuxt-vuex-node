@@ -323,7 +323,12 @@
               </a>
             </div>
             <div class="alfa-img-box">
+              <VueSlickCarousel v-bind="recomenDed">
+                <div v-for="(itemSingle, indexSingle) in 3"
+                      :key="indexSingle">
               <img src="~/assets/images/alfa-1.jpg" alt="" />
+              </div>
+              </VueSlickCarousel>
             </div>
           </li>
           <li>
@@ -337,7 +342,13 @@
               </a>
             </div>
             <div class="alfa-img-box">
-              <img src="~/assets/images/alfa-2.jpg" alt="" />
+               <VueSlickCarousel v-bind="recentlyViewd">
+                <div v-for="(itemSingle, indexSingle) in 3"
+                      :key="indexSingle">
+             <img src="~/assets/images/alfa-2.jpg" alt="" />
+              </div>
+              </VueSlickCarousel>
+              
             </div>
           </li>
         </ul>
@@ -438,6 +449,82 @@ export default {
             breakpoint: 480,
             settings: {
               slidesToShow: 2,
+              slidesToScroll: 2,
+              arrows: false,
+            },
+          },
+        ],
+      },
+       recomenDed: {
+        focusOnSelect: true,
+        centerMode: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 4,
+        touchThreshold: 4,
+        autoscroll: true,
+        autoplay: true,
+        arrows: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 4,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 2,
+              initialSlide: 2,
+              arrows: false,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 2,
+              arrows: false,
+            },
+          },
+        ],
+      },
+      recentlyViewd: {
+        focusOnSelect: true,
+        centerMode: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 4,
+        touchThreshold: 4,
+        autoscroll: true,
+        autoplay: true,
+        arrows: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 4,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 2,
+              initialSlide: 2,
+              arrows: false,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
               slidesToScroll: 2,
               arrows: false,
             },
