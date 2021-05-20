@@ -330,7 +330,7 @@
                           &nbsp;<input type="checkbox" class="check-box active" />
                           <span class="checkmark"></span>
                         </label>
-                        <div class="wish-list-all-pd">
+                        <div class="wish-list-all-pd" >
                           
                           <span class="all-wish-img wishlist_blank" 
                                 :id="$store.state.cartAjax.wishlist.group"
@@ -347,7 +347,8 @@
                             >Wishlist</span
                           >
                           
-                         <img src="~assets/images/heart.png"/>
+                         <img src="~assets/images/heart.1b640f1.png" class="empty-wish"/>
+                          <img src="~assets/images/heart2.png" class="fill-wish"/>
                             
                             </span>
                           
@@ -355,41 +356,40 @@
                       </li>
                     </ul>
                   </div>
+                  <NuxtLink
+                      :to="`/product/${singleProd.url_key}`"
+                      class=" proxima_bold"
+                      @click.native="updateRecentView(singleProd, prodIndex)"
+                      >
                   <div class="dark-overlay"></div>
+                  </NuxtLink>
                   <div class="pd-img-box">
+                    <NuxtLink
+                      :to="`/product/${singleProd.url_key}`"
+                      class=" proxima_bold"
+                      @click.native="updateRecentView(singleProd, prodIndex)"
+                      >
                     <img
                       :src="singleProd.image"
                       :alt="singleProd.name"
                       class="single-img"
                     />
+                    </NuxtLink>
                     <div class="pd-slider">
                       <div class="pd-slider-itm">
                         <VueSlickCarousel v-bind="authenticity">
-                          <div>
+                           
+                          <div v-for="(image,imageIndex) in 5" :key="imageIndex" >
+                            
                             <img
                               src="~/assets/images/all-pdp/itm-slider-1.jpg"
                             />
+                           
                           </div>
-                          <div>
-                            <img
-                              src="~/assets/images/all-pdp/itm-slider-2.jpg"
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src="~/assets/images/all-pdp/itm-slider-3.jpg"
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src="~/assets/images/all-pdp/itm-slider-4.jpg"
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src="~/assets/images/all-pdp/itm-slider-5.jpg"
-                            />
-                          </div>
+                         
+                         
+                          
+  
                         </VueSlickCarousel>
                       </div>
                     </div>
@@ -426,6 +426,11 @@
                         </li>
                       </ul>
                     </div>
+                     <NuxtLink
+                      :to="`/product/${singleProd.url_key}`"
+                      class=" proxima_bold"
+                      @click.native="updateRecentView(singleProd, prodIndex)"
+                      >
                     <p class="proxima_regular">
                       {{ singleProd.name }}
                     </p>
@@ -441,12 +446,13 @@
                     <span class="proxima_regular" v-else
                       >₹ {{ singleProd.price }}</span
                     >
-                    <NuxtLink
+                    </NuxtLink>
+                     <!-- <NuxtLink
                       :to="`/product/${singleProd.url_key}`"
-                      class="quick-button proxima_bold"
+                      class=" proxima_bold"
                       @click.native="updateRecentView(singleProd, prodIndex)"
                       >Quick Buy</NuxtLink
-                    >
+                    >  -->
                   </div>
                 </div>
 
@@ -490,11 +496,13 @@ export default {
     return {
       activeDropdown: null,
       showFilter: true,
+      
       sorting: { code: "default", dir: "desc" },
       activeColor: [],
       scrollPosition: "",
       gtm_product_impressions: [],
       showSort:false,
+     
       authenticity: {
         focusOnSelect: true,
         infinite: false,

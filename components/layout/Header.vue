@@ -50,7 +50,7 @@
                   </li>
                   <li class="wish-list-icon">
                     <NuxtLink to="/wishlist">
-                      <img src="~assets/images/heart.png" alt="logo" />
+                      <img src="~assets/images/heart.1b640f1.png" alt="logo" />
                       <span
                         class="count"
                         v-if="
@@ -1346,7 +1346,7 @@
             </li>
             <li class="wish-list-icon">
               <NuxtLink to="/wishlist">
-                <img src="~assets/images/heart.png" alt="logo" />
+                <img src="~assets/images/heart.1b640f1.png" alt="logo" />
                 <span
                   class="count"
                   v-if="Object.keys($store.state.cartAjax.wishlist).length != 0"
