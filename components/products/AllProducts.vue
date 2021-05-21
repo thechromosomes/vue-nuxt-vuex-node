@@ -215,18 +215,21 @@
                   </li>
                 </ul>
               </div>
-              <div class="mobile-short-by"  @click="() => (showSort = !showSort)" :class=" showSort ? 'showSort' : ''">
+              <div
+                class="mobile-short-by"
+                @click="() => (showSort = !showSort)"
+                :class="showSort ? 'showSort' : ''"
+              >
                 <strong class="Proxima_regular">Sort By</strong>
                 <ul class="custon-select-list proxima_regular">
-                    <li
-                      v-for="(sort, sortIndex) in list.sort"
-                      @click="sortProduct(sort)"
-                      :key="sortIndex"
-                    >
-                      <span class="proxima_regular">{{ sort.label }}</span>
-                    </li>
-                  </ul>
-               
+                  <li
+                    v-for="(sort, sortIndex) in list.sort"
+                    @click="sortProduct(sort)"
+                    :key="sortIndex"
+                  >
+                    <span class="proxima_regular">{{ sort.label }}</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -326,70 +329,72 @@
                       </li>
                       <li>
                         <label class="checkbox-wrap proxima_regular"
-                          >Comapre
-                          &nbsp;<input type="checkbox" class="check-box active" />
+                          >Comapre &nbsp;<input
+                            type="checkbox"
+                            class="check-box active"
+                          />
                           <span class="checkmark"></span>
                         </label>
-                        <div class="wish-list-all-pd" >
-                          
-                          <span class="all-wish-img wishlist_blank" 
-                                :id="$store.state.cartAjax.wishlist.group"
-                                :class="renderWishList(singleProd)"
-                                @click.prevent="
-                                addRemoveWishList(
+                        <div class="wish-list-all-pd">
+                          <span
+                            class="all-wish-img wishlist_blank"
+                            :id="$store.state.cartAjax.wishlist.group"
+                            :class="renderWishList(singleProd)"
+                            @click.prevent="
+                              addRemoveWishList(
                                 singleProd,
                                 renderWishList(singleProd),
                                 prodIndex
-                                )
-                                "
-                            >
-                            <span class="all-wish-text proxima_regular"
-                            >Wishlist</span
+                              )
+                            "
                           >
-                          
-                         <img src="~assets/images/heart.1b640f1.png" class="empty-wish"/>
-                          <img src="~assets/images/heart2.png" class="fill-wish"/>
-                            
-                            </span>
-                          
+                            <span class="all-wish-text proxima_regular"
+                              >Wishlist</span
+                            >
+
+                            <img
+                              src="~assets/images/heart.1b640f1.png"
+                              class="empty-wish"
+                            />
+                            <img
+                              src="~assets/images/heart2.png"
+                              class="fill-wish"
+                            />
+                          </span>
                         </div>
                       </li>
                     </ul>
                   </div>
                   <NuxtLink
-                      :to="`/product/${singleProd.url_key}`"
-                      class=" proxima_bold"
-                      @click.native="updateRecentView(singleProd, prodIndex)"
-                      >
-                  <div class="dark-overlay"></div>
+                    :to="`/product/${singleProd.url_key}`"
+                    class="proxima_bold"
+                    @click.native="updateRecentView(singleProd, prodIndex)"
+                  >
+                    <div class="dark-overlay"></div>
                   </NuxtLink>
                   <div class="pd-img-box">
                     <NuxtLink
                       :to="`/product/${singleProd.url_key}`"
-                      class=" proxima_bold"
+                      class="proxima_bold"
                       @click.native="updateRecentView(singleProd, prodIndex)"
-                      >
-                    <img
-                      :src="singleProd.image"
-                      :alt="singleProd.name"
-                      class="single-img"
-                    />
+                    >
+                      <img
+                        :src="singleProd.image"
+                        :alt="singleProd.name"
+                        class="single-img"
+                      />
                     </NuxtLink>
                     <div class="pd-slider">
                       <div class="pd-slider-itm">
                         <VueSlickCarousel v-bind="authenticity">
-                           
-                          <div v-for="(image,imageIndex) in 5" :key="imageIndex" >
-                            
+                          <div
+                            v-for="(image, imageIndex) in 5"
+                            :key="imageIndex"
+                          >
                             <img
                               src="~/assets/images/all-pdp/itm-slider-1.jpg"
                             />
-                           
                           </div>
-                         
-                         
-                          
-  
                         </VueSlickCarousel>
                       </div>
                     </div>
@@ -421,33 +426,32 @@
                             @click="
                               updateViaColor(color, colorIndex, prodIndex)
                             "
-                            ></span
-                          >
+                          ></span>
                         </li>
                       </ul>
                     </div>
-                     <NuxtLink
+                    <NuxtLink
                       :to="`/product/${singleProd.url_key}`"
-                      class=" proxima_bold"
+                      class="proxima_bold"
                       @click.native="updateRecentView(singleProd, prodIndex)"
-                      >
-                    <p class="proxima_regular">
-                      {{ singleProd.name }}
-                    </p>
-                    <!-- <small class="proxima_regular">TUMI MAX</small> -->
-                    <span
-                      class="proxima_regular"
-                      v-if="
-                        singleProd.discount != '' && singleProd.discount > 0
-                      "
-                      >₹ {{ singleProd.selling_price }}
-                      <s style="opacity: 0.5">₹ {{ singleProd.price }}</s>
-                    </span>
-                    <span class="proxima_regular" v-else
-                      >₹ {{ singleProd.price }}</span
                     >
+                      <p class="proxima_regular">
+                        {{ singleProd.name }}
+                      </p>
+                      <!-- <small class="proxima_regular">TUMI MAX</small> -->
+                      <span
+                        class="proxima_regular"
+                        v-if="
+                          singleProd.discount != '' && singleProd.discount > 0
+                        "
+                        >₹ {{ singleProd.selling_price }}
+                        <s style="opacity: 0.5">₹ {{ singleProd.price }}</s>
+                      </span>
+                      <span class="proxima_regular" v-else
+                        >₹ {{ singleProd.price }}</span
+                      >
                     </NuxtLink>
-                     <!-- <NuxtLink
+                    <!-- <NuxtLink
                       :to="`/product/${singleProd.url_key}`"
                       class=" proxima_bold"
                       @click.native="updateRecentView(singleProd, prodIndex)"
@@ -496,13 +500,13 @@ export default {
     return {
       activeDropdown: null,
       showFilter: true,
-      
+
       sorting: { code: "default", dir: "desc" },
       activeColor: [],
       scrollPosition: "",
       gtm_product_impressions: [],
-      showSort:false,
-     
+      showSort: false,
+
       authenticity: {
         focusOnSelect: true,
         infinite: false,
@@ -945,7 +949,7 @@ export default {
   border-radius: 50%;
 }
 .border-color-dyn {
-  border: solid;
+  border: 2px solid #000 !important;
 }
 .no_products {
   width: 100%;
