@@ -86,13 +86,14 @@
                 <div class="mobile-single-pd-crousal">
                   <VueSlickCarousel v-bind="mobileSingleslider">
                     <div
-                      v-for="(itemSingle, indexSingle) in 3"
+                      v-for="(itemSingle, indexSingle) in singleProductList
+                        .single_prod_data.gallery"
                       :key="indexSingle"
                     >
                       <div class="one-item-crosal-mob">
                         <div class="slider-for-mob">
                           <div>
-                            <img src="~assets/images/recomded.png" />
+                            <img :src="itemSingle.image" :alt="itemSingle.image" />
                           </div>
                         </div>
                       </div>
@@ -324,10 +325,9 @@
             </div>
             <div class="alfa-img-box">
               <VueSlickCarousel v-bind="recomenDed">
-                <div v-for="(itemSingle, indexSingle) in 3"
-                      :key="indexSingle">
-              <img src="~/assets/images/alfa-1.jpg" alt="" />
-              </div>
+                <div v-for="(itemSingle, indexSingle) in 3" :key="indexSingle">
+                  <img src="~/assets/images/alfa-1.jpg" alt="" />
+                </div>
               </VueSlickCarousel>
             </div>
           </li>
@@ -342,13 +342,11 @@
               </a>
             </div>
             <div class="alfa-img-box">
-               <VueSlickCarousel v-bind="recentlyViewd">
-                <div v-for="(itemSingle, indexSingle) in 3"
-                      :key="indexSingle">
-             <img src="~/assets/images/alfa-2.jpg" alt="" />
-              </div>
+              <VueSlickCarousel v-bind="recentlyViewd">
+                <div v-for="(itemSingle, indexSingle) in 3" :key="indexSingle">
+                  <img src="~/assets/images/alfa-2.jpg" alt="" />
+                </div>
               </VueSlickCarousel>
-              
             </div>
           </li>
         </ul>
@@ -455,7 +453,7 @@ export default {
           },
         ],
       },
-       recomenDed: {
+      recomenDed: {
         focusOnSelect: true,
         centerMode: false,
         infinite: true,
