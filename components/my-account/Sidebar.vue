@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="cus-address cus-ore customer_profile">
-      <div class="accountMenu proxima-regular">
+      <div class="accountMenu proxima-regular sidebar">
         <ul>
           <li class="proxima_regular">
             <nuxt-link

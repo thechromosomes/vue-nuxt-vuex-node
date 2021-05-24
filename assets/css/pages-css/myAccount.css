@@ -115,7 +115,25 @@
     margin-top: 15px;
     ;
 }
+/* =======================add ========================== */
+.sidebar {
+    width: 100%;
+}
 
+.sidebar ul{
+    margin: 10px 0;
+    width: 100%;
+}
+.sidebar ul li a {
+    text-transform: uppercase;
+    padding: 12px 15px;
+    color: #252525;
+    border: 1px solid #eee;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: .5px;
+}
 
 /* address-page */
 
@@ -289,4 +307,5 @@
     .address-page {
         margin: 30px 0px;
     }
+    .address{ margin-top: 20px;}
 }

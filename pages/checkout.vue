@@ -237,7 +237,7 @@
                                 class="field field--required"
                                 data-address-field="first_name"
                               >
-                                <div class="field__input-wrapper">
+                                <!-- <div class="field__input-wrapper">
                                   <input
                                     placeholder="Apartment, suite, etc. (optional)"
                                     autocomplete="off"
@@ -245,10 +245,10 @@
                                     type="text"
                                     v-model="user.address2"
                                   />
-                                </div>
+                                </div> -->
                               </div>
 
-                              <div class="field field--required field--third">
+                              <div class="field field--required field--half">
                                 <div class="field__input-wrapper">
                                   <label
                                     class=""
@@ -288,25 +288,25 @@
                                   </template>
                                 </div>
                               </div>
-                              <div
-                                class="field field--required field--third field--show-floating-label"
-                              >
-                                <label
-                                  class=""
-                                  for="checkout_shipping_address_zip"
-                                  >Country/Region
-                                  <input
-                                    placeholder=""
-                                    autocomplete="off"
-                                    disabled
-                                    class="field__input field__input--zip shipping-label-pb-input-st"
-                                    :value="user.country"
-                                  />
-                                </label>
-                              </div>
+                                <!-- <div
+                                  class="field field--required field--third field--show-floating-label"
+                                >
+                                  <label
+                                    class=""
+                                    for="checkout_shipping_address_zip"
+                                    >Country/Region
+                                    <input
+                                      placeholder=""
+                                      autocomplete="off"
+                                      disabled
+                                      class="field__input field__input--zip shipping-label-pb-input-st"
+                                      :value="user.country"
+                                    />
+                                  </label>
+                                </div> -->
 
                               <div
-                                class="field field--required field--show-floating-label field--third"
+                                class="field field--required field--show-floating-label field--half"
                               >
                                 <label
                                   class=""
@@ -468,12 +468,12 @@
                         </div>
                       </div>
                       <div style="clear: both"></div>
-                      <div class="step__footer">
+                      <div class="step__footer" style="display:block">
                         <button
                           name="button"
                           type="submit"
                           id="continue_button"
-                          class="step__footer__continue-btn btn black-button"
+                          class="step__footer__continue-btn btn black-button proxima_regular"
                           aria-busy="false"
                         >
                           <span
@@ -484,13 +484,13 @@
                           >
                         </button>
                         <a
-                          style="cursor: pointer"
-                          @click.prevent="() => (addNewAddress = false)"
+                          style="cursor: pointer; display:block"
+                          @click.prevent="() => (addNewAddress = false)" 
                         >
-                          <span class="step__footer__previous-link-content"
+                          <span class="step__footer__previous-link-content" style="cursor: pointer; display:block"
                             ><font-awesome-icon
                               icon="angle-left"
-                              class="icon-svg"
+                              class="icon-svg proxima_regular"
                             />
                             Back
                           </span>
@@ -1433,5 +1433,6 @@ export default {
 <style scoped>
 @import url("~/assets/css/pages-css/shipping.css");
 @import url("~/assets/css/pages-css/loader.css");
+.address-fields label{ display: block;}
 </style>
 

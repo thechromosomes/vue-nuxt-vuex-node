@@ -148,7 +148,7 @@
 
                   <div class="action_bottom text-center">
                     <input
-                      class="btn new-btn"
+                      class="btn new-btn proxima_regular"
                       type="submit"
                       value="Add Address"
                       onfocus="jQuery(this).css({'opacity':'0.6'})"

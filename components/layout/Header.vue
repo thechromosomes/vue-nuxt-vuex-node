@@ -576,10 +576,10 @@
                 for="showMega"
                 class="mobile-item proxima_semi-bold"
                 @click="updateActive(index)"
-                :class="isActive == index ? 'isActive' : ''"
+                
                 >{{ item.name }}</label
               >
-              <div class="mega-box">
+              <div class="mega-box" :class="isActive == index ? 'isActive' : ''">
                 <div class="content">
                   <div class="row mega-mt first-row">
                     <h3 class="proxima_semi-bold hide-mob">{{ item.name }}</h3>
