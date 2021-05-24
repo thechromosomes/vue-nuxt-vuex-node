@@ -46,7 +46,9 @@
                     id="navbarSideButton"
                     type="button"
                   >
-                    <NuxtLink to="login" class="proxima_semi-bold">Login / Register</NuxtLink>
+                    <NuxtLink to="login" class="proxima_semi-bold"
+                      >Login / Register</NuxtLink
+                    >
                   </li>
                   <li class="wish-list-icon">
                     <NuxtLink to="/wishlist">
@@ -564,15 +566,17 @@
         <div :class="showMenu ? 'overly-bg.show' : 'overly-bg'">
           <ul class="nav-links">
             <li
-              class="mob-item-res" 
+              class="mob-item-res"
               v-for="(item, index) in header"
-              :key="index" 
+              :key="index"
             >
-              <a class="desktop-item proxima_semi-bold" >{{ item.name }}</a>
+              <a class="desktop-item proxima_semi-bold">{{ item.name }}</a>
               <input type="checkbox" id="showMega" />
               <label
                 for="showMega"
-                class="mobile-item proxima_semi-bold" @click="() => (isActive = !isActive)" :class=" isActive ? 'isActive' : ''"   
+                class="mobile-item proxima_semi-bold"
+                @click="updateActive(index)"
+                :class="isActive == index ? 'isActive' : ''"
                 >{{ item.name }}</label
               >
               <div class="mega-box">
@@ -634,7 +638,9 @@
             <div class="show-mob">
               <ul class="other-nav-links">
                 <li>
-                  <NuxtLink to="login" class="proxima_regular">Login / Register</NuxtLink>
+                  <NuxtLink to="login" class="proxima_regular"
+                    >Login / Register</NuxtLink
+                  >
 
                   <div
                     class="right-login-menu navbar-side login-process"
@@ -1110,7 +1116,9 @@
               id="navbarSideButton"
               type="button"
             >
-              <NuxtLink to="login" class="proxima_semi-bold">Login / Register</NuxtLink>
+              <NuxtLink to="login" class="proxima_semi-bold"
+                >Login / Register</NuxtLink
+              >
               <div
                 class="right-login-menu navbar-side login-process"
                 id="navbarSide"
@@ -1377,13 +1385,13 @@
 <script>
 import { mapState } from "vuex";
 
-  export default {
+export default {
   data() {
     return {
       scrollPosition: null,
       showMenu: false,
       close: false,
-      isActive:false,
+      isActive: "",
     };
   },
   async mounted() {
@@ -1395,6 +1403,9 @@ import { mapState } from "vuex";
     updateScroll() {
       this.scrollPosition = window.scrollY;
     },
+    updateActive(index){
+      this.isActive = index
+    }
   },
 
   computed: {

@@ -86,13 +86,17 @@
                 <div class="mobile-single-pd-crousal">
                   <VueSlickCarousel v-bind="mobileSingleslider">
                     <div
-                      v-for="(itemSingle, indexSingle) in 3"
+                      v-for="(itemSingle, indexSingle) in singleProductList
+                        .single_prod_data.gallery"
                       :key="indexSingle"
                     >
                       <div class="one-item-crosal-mob">
                         <div class="slider-for-mob">
                           <div>
-                            <img src="~assets/images/recomded.png" />
+                            <img
+                              :src="itemSingle.image"
+                              :alt="itemSingle.image"
+                            />
                           </div>
                         </div>
                       </div>
@@ -312,52 +316,61 @@
     <section class="alfa-sec alfa-on-pd">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-sm-6 col-6">
-            <VueSlickCarousel v-bind="recomenDed">
-            <div class="recom-pd" v-for="(itemSingle, indexSingle) in 3"
-                      :key="indexSingle">
-            <div class="alfa-content-pdp" >
-              <a href="" class="anchor-width-pdp">
-                <h3 class="tm-h3 proxima_regular">
-                  Explore<br />
-                  Alpha 3
-                </h3>
-                <a href="#" class="button-link proxima_bold">Shop Now</a>
-              </a>
-              <div class="alfa-img-box-pdp">
-            <div >
-              <img src="~/assets/images/alfa-1.jpg" alt="" />
+          <div class="col-lg-6 col-sm-6 col-6"  v-if="recent_products && recent_products.length">
+            <VueSlickCarousel v-bind="recentlyViewd">
+              <div
+                class="recom-pd"
+                v-for="(singleProdR, prodIndexr) in recent_products"
+                :key="prodIndexr"
+              >
+                <div class="alfa-content-pdp">
+                  <a class="anchor-width-pdp">
+                    <h3 class="tm-h3 proxima_regular">
+                      {{singleProdR.name}}
+                    </h3>
+                     <Nuxt-link :to="singleProdR.url_key" class="button-link proxima_bold">Shop Now</Nuxt-link>
+                  </a>
+                  <div class="alfa-img-box-pdp">
+                    <div>
+                      <img :src="singleProdR.image" :alt="singleProdR.image" />
+                    </div>
+                  </div>
+                </div>
               </div>
-             </div>
-            </div>
-           
-            </div>
-             </VueSlickCarousel>
-           </div>
-             <div class="col-lg-6 col-sm-6 col-6">
-            <VueSlickCarousel v-bind="recomenDed">
-            <div class="recom-pd" v-for="(itemSingle, indexSingle) in 3"
-                      :key="indexSingle">
-            <div class="alfa-content-pdp" >
-              <a href="" class="anchor-width-pdp">
-                <h3 class="tm-h3 proxima_regular">
-                  Explore<br />
-                  Alpha 3
-                </h3>
-                <a href="#" class="button-link proxima_bold">Shop Now</a>
-              </a>
-              <div class="alfa-img-box-pdp">
-            <div >
-              <img src="~/assets/images/alfa-1.jpg" alt="" />
-              </div>
-             </div>
-            </div>
-           
-            </div>
-             </VueSlickCarousel>
-           </div>
-      </div>
+            </VueSlickCarousel>
           </div>
+          <div class="col-lg-6 col-sm-6 col-6">
+            <VueSlickCarousel
+              v-bind="recomenDed"
+              v-if="
+                Object.keys(singleProductList.single_prod_data).length > 0 &&
+                singleProductList.single_prod_data.recommended.length
+              "
+            >
+              <div
+                class="recom-pd"
+                v-for="(itemSingle, indexSingle) in singleProductList
+                  .single_prod_data.recommended"
+                :key="indexSingle"
+              >
+                <div class="alfa-content-pdp">
+                  <a href="" class="anchor-width-pdp">
+                    <h3 class="tm-h3 proxima_regular">
+                      {{ itemSingle.name }}
+                    </h3>
+                    <Nuxt-link :to="itemSingle.url_key" class="button-link proxima_bold">Shop Now</Nuxt-link>
+                  </a>
+                  <div class="alfa-img-box-pdp">
+                    <div>
+                      <img :src="itemSingle.image" :alt="itemSingle.image" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </VueSlickCarousel>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
