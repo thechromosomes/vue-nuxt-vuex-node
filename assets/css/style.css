@@ -2481,7 +2481,14 @@ label.cvform-lbl-checkbox:before {
   font-family: "icomoon" !important;
 }
 /* =================================== alpha section css =========== */
-
+.alfa-sec.alfa-on-pd{ margin: 0px;padding: 40px 0px;}
+.recom-pd{ display: flex; align-items: center;}
+.alfa-content-pdp{ display: flex; align-items: center;justify-content: center;}
+.alfa-sec.alfa-on-pd .slick-slide img{   text-align: right;}
+.anchor-width-pdp{     margin-right: 30px;
+ 
+  text-align: right;}
+  .alfa-img-box-pdp{ width: 70%;}
 .alfa-sec {
   margin: 40px 0px 40px 60px;
 }
