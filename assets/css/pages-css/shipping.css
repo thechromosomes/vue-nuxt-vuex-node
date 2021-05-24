@@ -1100,7 +1100,7 @@ table {
 }
 
 .shipping-payment-method>h2 {
-    padding: 20px 0px;
+    padding: 20px 0px; font-size: 20px;
 }
 
 .shipping-method-inner {
@@ -1110,7 +1110,8 @@ table {
     margin-bottom: 40px;
     cursor: pointer;
 }
-
+.ship-adress-area .black-button{ display: inline-block; width: auto;padding: 6px 24px;}
+.shipping-method-inner .black-button{ display: inline-block; width: auto; background-color: #000; padding: 10px 20px;}
 .shipping-method-inner>a {
     display: inline-block;
     overflow: hidden;

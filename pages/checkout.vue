@@ -473,7 +473,7 @@
                           name="button"
                           type="submit"
                           id="continue_button"
-                          class="step__footer__continue-btn btn"
+                          class="step__footer__continue-btn btn black-button"
                           aria-busy="false"
                         >
                           <span
@@ -537,7 +537,7 @@
                         <p class="proxima_regular">{{ `Address Type: ${item.address_type}` }}</p>
                         <button
                           v-if="selectedAddressiId != item.id"
-                          @click="() => (selectedAddressiId = item.id)"
+                          @click="() => (selectedAddressiId = item.id)" class="black-button"
                         >
                           Ship here
                         </button>
@@ -588,7 +588,7 @@
                   <div class="shipping-method-inner">
                     <a
                       @click.prevent="switchPayment('razorpay')"
-                      class="paying-div"
+                      class="paying-div proxima_regular "
                       :class="[
                         selectedPaymentMethods === 'razorpay'
                           ? ''
@@ -600,7 +600,7 @@
                     >
                     <button
                       v-if="selectedPaymentMethods === 'razorpay'"
-                      @click="placeOrder('razorpay')" class="proxima_regular"
+                      @click="placeOrder('razorpay')" class="proxima_regular  black-button"
                     >
                       Continue checkout
                     </button>
@@ -621,7 +621,7 @@
                     </a>
                     <button
                       @click="placeOrder('cod')"
-                      v-if="selectedPaymentMethods === 'cod'"
+                      v-if="selectedPaymentMethods === 'cod'"  class="black-button"
                     >
                       Place order
                     </button>

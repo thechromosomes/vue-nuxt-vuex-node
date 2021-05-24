@@ -21,7 +21,7 @@
   display: flex;
 }
 .all-item-heading {
-  padding-bottom: 20px;
+  padding-bottom: 20px; font-size: 20px; padding-top: 35px;
 }
 .wish-list-item-img {
   width: 20%;
@@ -34,12 +34,14 @@
   display: flex;
   justify-content: space-between;
 }
+.heading-with-close-btn h2{ font-size: 22px;}
 .wish-list-item-content h3 {
   line-height: 40px;
   font-size: 18px;
 }
+.wish-list-item-content h4{ font-size: 16px;}
 .wish-list-item-content select {
-  margin: 15px 0px;
+  margin: 15px 0px; padding: 4px 0px;
 }
 .heading-with-close-btn img[data-v-7764b8be] {
   width: 24px;

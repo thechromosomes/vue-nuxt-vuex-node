@@ -26,17 +26,17 @@
             </div>
             <div class="wish-list-item-content">
               <div class="heading-with-close-btn" style="cursor: pointer">
-                <h2>{{ item.name }}</h2>
+                <h2 class="proxima_semi-bold">{{ item.name }}</h2>
                 <img
                   src="@/assets/images/close.png"
                   alt="close button"
                   @click="reomoveFromCart(item, mainIndex)"
                 />
               </div>
-              <h3><strong>Item Code:</strong> {{ item.group_id }}</h3>
-              <h4><strong>Color:</strong> {{ item.color }}</h4>
-              <select v-model="selectedSize[mainIndex]">
-                <option value="" disabled>Select Size</option>
+              <h3><strong class="proxima_regular">Item Code:</strong> {{ item.group_id }}</h3>
+              <h4 class="proxima_regular "><strong class="proxima_regular">Color:</strong> {{ item.color }}</h4>
+              <select v-model="selectedSize[mainIndex]" class="proxima_regular ">
+                <option value="" disabled class="proxima_regular">Select Size</option>
                 <option
                   v-for="(size, index) in item.variation"
                   :key="index"
@@ -49,15 +49,15 @@
                 v-if="sizeAlert && sizeAlertIndes == mainIndex"
                 style="clear: both"
               >
-                <p class="promotion-text">please select the size</p>
+                <p class="promotion-text proxima_regular" style="color:red">please select the size</p>
               </div>
               <div class="move-bag-btn-div">
-                <a @click.prevent="addToCart(item, mainIndex)" class="button"
+                <a @click.prevent="addToCart(item, mainIndex)" class="button proxima_regular"
                   >MOVE TO BAG</a
                 >
                 <a @click.prevent>
                   <span class="price price_icon">₹</span
-                  ><span class="price"> {{ item.price }}</span></a
+                  ><span class="price proxima_regular"> {{ item.price }}</span></a
                 >
               </div>
             </div>
