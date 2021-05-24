@@ -574,6 +574,7 @@
         border-top: 1px solid #ccc;
         padding: 4px 0px 4px 20px;
     }
+    .row .mega-links li:first-child{ border-top: 0px;}
     .mega-box .content .row {
         margin-bottom: 0px !important;
     }
@@ -847,8 +848,9 @@
         max-height: auto;
         overflow: hidden;
         transition: all 0.3s ease;
-        display: none;
+       
     }
+
     .mob-item-res:hover .mega-box {
         display: block;
     }
@@ -1703,7 +1705,7 @@ top: 14px;
         order: 1;
     }
     .anchor-width {
-        text-align: left;
+        text-align: center;
     }
     .watch-world-mobile {
         overflow: hidden;
@@ -1906,4 +1908,17 @@ top: 14px;
         display: block;
         transition: all .8s ease;
     }
+    .alfa-content-pdp {
+        
+        flex-direction: column-reverse;
+    }
+    .alfa-img-box-pdp{ width: 100%;}
+    .anchor-width-pdp {
+       
+        display: block;
+        text-align: center;
+        padding-top: 16px;
+    }
+    .anchor-width-pdp h3{ font-size: 20px;}
+    .inovative-content .button-link{ font-size: 12px;}
 }

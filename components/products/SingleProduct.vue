@@ -309,50 +309,55 @@
       </div>
     </div>
     <!-- ----------------------------TUMI design innovation end ------------ -->
-    <section class="alfa-sec">
+    <section class="alfa-sec alfa-on-pd">
       <div class="container">
-        <ul>
-          <li>
-            <div class="alfa-content">
-              <a href="" class="anchor-width">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-6">
+            <VueSlickCarousel v-bind="recomenDed">
+            <div class="recom-pd" v-for="(itemSingle, indexSingle) in 3"
+                      :key="indexSingle">
+            <div class="alfa-content-pdp" >
+              <a href="" class="anchor-width-pdp">
                 <h3 class="tm-h3 proxima_regular">
                   Explore<br />
                   Alpha 3
                 </h3>
                 <a href="#" class="button-link proxima_bold">Shop Now</a>
               </a>
-            </div>
-            <div class="alfa-img-box">
-              <VueSlickCarousel v-bind="recomenDed">
-                <div v-for="(itemSingle, indexSingle) in 3"
-                      :key="indexSingle">
+              <div class="alfa-img-box-pdp">
+            <div >
               <img src="~/assets/images/alfa-1.jpg" alt="" />
               </div>
-              </VueSlickCarousel>
+             </div>
             </div>
-          </li>
-          <li>
-            <div class="alfa-content">
-              <a href="" class="anchor-width">
+           
+            </div>
+             </VueSlickCarousel>
+           </div>
+             <div class="col-lg-6 col-sm-6 col-6">
+            <VueSlickCarousel v-bind="recomenDed">
+            <div class="recom-pd" v-for="(itemSingle, indexSingle) in 3"
+                      :key="indexSingle">
+            <div class="alfa-content-pdp" >
+              <a href="" class="anchor-width-pdp">
                 <h3 class="tm-h3 proxima_regular">
-                  The TUMI<br />
-                  Difference
+                  Explore<br />
+                  Alpha 3
                 </h3>
                 <a href="#" class="button-link proxima_bold">Shop Now</a>
               </a>
-            </div>
-            <div class="alfa-img-box">
-               <VueSlickCarousel v-bind="recentlyViewd">
-                <div v-for="(itemSingle, indexSingle) in 3"
-                      :key="indexSingle">
-             <img src="~/assets/images/alfa-2.jpg" alt="" />
+              <div class="alfa-img-box-pdp">
+            <div >
+              <img src="~/assets/images/alfa-1.jpg" alt="" />
               </div>
-              </VueSlickCarousel>
-              
+             </div>
             </div>
-          </li>
-        </ul>
+           
+            </div>
+             </VueSlickCarousel>
+           </div>
       </div>
+          </div>
     </section>
   </div>
 </template>
@@ -455,7 +460,7 @@ export default {
           },
         ],
       },
-       recomenDed: {
+      recomenDed: {
         focusOnSelect: true,
         centerMode: false,
         infinite: true,
