@@ -29,7 +29,7 @@
                 </ol>
               </nav>
               <div class="carry-on-lagauge">
-                <div class="on-mob-toggle">
+                <div class="on-mob-toggle" @click="() => (carryMenu = !carryMenu)" :class="{carryMenu: carryMenu}">
                   <h4 class="proxima_regular">
                     Carry On Luggage - Travel Rolling Luggage
                   </h4>
@@ -500,6 +500,7 @@ export default {
     return {
       activeDropdown: null,
       showFilter: true,
+      carryMenu:false,
 
       sorting: { code: "default", dir: "desc" },
       activeColor: [],

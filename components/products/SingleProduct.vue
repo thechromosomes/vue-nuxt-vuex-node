@@ -473,51 +473,13 @@ export default {
           },
         ],
       },
-      recomenDed: {
-        focusOnSelect: true,
-        centerMode: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 4,
-        touchThreshold: 4,
-        autoscroll: true,
-        autoplay: true,
-        arrows: true,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 4,
-            },
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 2,
-              initialSlide: 2,
-              arrows: false,
-            },
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 2,
-              arrows: false,
-            },
-          },
-        ],
-      },
       recentlyViewd: {
         focusOnSelect: true,
         centerMode: false,
         infinite: true,
-        speed: 500,
+        speed: 900,
         slidesToShow: 1,
-        slidesToScroll: 4,
+        slidesToScroll: 1,
         touchThreshold: 4,
         autoscroll: true,
         autoplay: true,
@@ -527,14 +489,14 @@ export default {
             breakpoint: 1024,
             settings: {
               slidesToShow: 1,
-              slidesToScroll: 4,
+              slidesToScroll: 1,
             },
           },
           {
             breakpoint: 600,
             settings: {
               slidesToShow: 1,
-              slidesToScroll: 2,
+              slidesToScroll: 1,
               initialSlide: 2,
               arrows: false,
             },
@@ -543,12 +505,51 @@ export default {
             breakpoint: 480,
             settings: {
               slidesToShow: 1,
-              slidesToScroll: 2,
+              slidesToScroll: 1,
               arrows: false,
             },
           },
         ],
       },
+      recomenDed: {
+        focusOnSelect: true,
+        centerMode: false,
+        infinite: true,
+        speed: 900,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        touchThreshold: 4,
+        autoscroll: true,
+        autoplay: true,
+        arrows: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              initialSlide: 2,
+              arrows: false,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              arrows: false,
+            },
+          },
+        ],
+      },
+      
       mobileSingleslider: {
         focusOnSelect: true,
         infinite: false,

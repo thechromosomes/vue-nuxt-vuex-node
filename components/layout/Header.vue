@@ -575,7 +575,7 @@
               <label
                 for="showMega"
                 class="mobile-item proxima_semi-bold"
-                @click="updateActive(index)"
+                @click="updateActive(index)" 
                 
                 >{{ item.name }}</label
               >
@@ -598,7 +598,7 @@
                           v-if="
                             childItem.landing_page == '' ||
                             childItem.landing_page == null
-                          "
+                          " @click.native="() => (showMenu = false)"
                           >{{ childItem.name }}</Nuxt-link
                         >
                         <Nuxt-link
@@ -1391,7 +1391,7 @@ export default {
       scrollPosition: null,
       showMenu: false,
       close: false,
-      isActive: "",
+      isActive: -1,
     };
   },
   async mounted() {
@@ -1404,7 +1404,12 @@ export default {
       this.scrollPosition = window.scrollY;
     },
     updateActive(index){
-      this.isActive = index
+      if (this.isActive == index)
+      {this.isActive = -1}
+      else{
+        this.isActive = index
+      }
+      
     }
   },
 
