@@ -84,6 +84,7 @@
 
                 <!-- ============================mobile slider====================== -->
                 <div class="mobile-single-pd-crousal">
+                  <div>
                   <VueSlickCarousel v-bind="mobileSingleslider">
                     <div
                       v-for="(itemSingle, indexSingle) in singleProductList
@@ -102,6 +103,7 @@
                       </div>
                     </div>
                   </VueSlickCarousel>
+                  </div>
                 </div>
 
                 <!-- ============================= end ================== -->
@@ -135,12 +137,8 @@
                   <span class="hurry proxima_regular">Hurry, only 2 left!</span>
                 </div>
                 <div class="quantity-color">
-                  <div class="quantity">
-                    <strong class="proxima_bold">Quantity: </strong
-                    ><strong class="proxima_light" style="color: #555">{{
-                      addToCartVal
-                    }}</strong>
-                    <strong class="proxima_bold"
+                  <div class="color-s-wrap">
+                  <strong class="proxima_bold"
                       >color:
                       <span class="proxima_light">{{
                         singleProductList.single_prod_data.color
@@ -164,6 +162,14 @@
                         </li>
                       </ul>
                     </div>
+                </div>
+                  <div class="quantity">
+                    <strong class="proxima_bold">Quantity: <strong class="proxima_light" style="color: #555">{{
+                      addToCartVal
+                    }}</strong></strong
+                    >
+                    
+                    
                     <div class="qtyAdjustBox">
                       <a class="minus" @click.prevent="addCartVal('minus')"
                         >-</a

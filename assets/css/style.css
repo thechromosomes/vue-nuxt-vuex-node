@@ -675,7 +675,9 @@ input::placeholder {
 .icon-embed:before {
   content: "\e928";
 }
-
+.icon-arrow-go-sm:before, .icon-go:before, .tumi-icon-ft-arrow_right_2:before {
+  content: '\e804';
+}
 .icon-info:before {
   content: "\e92a";
 }
@@ -3722,7 +3724,7 @@ label.cvform-lbl-checkbox:before {
   padding: 15px 0px;
   line-height: 24px;
 }
-
+.quantity-color strong > span{font-size: 13px;}
 .stock-status .in-stok {
   font-size: 12px;
   letter-spacing: 0.04em;
@@ -3740,7 +3742,8 @@ label.cvform-lbl-checkbox:before {
   color: #555;
   font-size: 12px;
   text-transform: uppercase;
-  padding-bottom: 10px;
+  
+   margin-left: 30px;
 }
 
 .color {
@@ -4789,10 +4792,10 @@ label.cvform-lbl-checkbox:before {
 .cm-list .checkbox-wrap {
   margin-bottom: 5px;
 }
-
+.quantity-color{ display: flex; align-items: center;}
 .qtyAdjustBox {
-  margin: 15px 0px;
-  display: block;
+ 
+  display: block; margin: 10px 0px;
 }
 
 .qtyAdjustBox a {

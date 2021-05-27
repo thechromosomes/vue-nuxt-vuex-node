@@ -275,6 +275,7 @@
       </div>
     </section>
     <div class="full-page-border"></div>
+    <!-- ===================== Explore section strat=========== -->
     <section class="alfa-sec">
       <div class="container">
         <ul>

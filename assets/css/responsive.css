@@ -1011,7 +1011,7 @@ width: 10%;
         font-size: 21px;
     }
     .crousal-text img {
-        width: 352px !important;
+        width: 270px !important;
         margin: 0 auto;
     }
     .btn-fill {
@@ -1416,9 +1416,9 @@ top: 14px;
     .tum-max {
         display: none;
     }
-    .quantity {
+    /* .quantity {
         display: block;
-    }
+    } */
     .color {
         display: flex;
         justify-content: space-between;
@@ -1444,7 +1444,7 @@ top: 14px;
         width: 50%;
         margin: 0 ;
     }
-    .alfa-sec.alfa-on-pd{ padding-bottom: 0px;}
+    .alfa-sec.alfa-on-pd{ padding-bottom: 0px;overflow: hidden;}
     .short-desc img {
        
         width: 220px;
@@ -1749,7 +1749,7 @@ top: 14px;
         padding: 30px 0px;
     }
     .recomnded-section h2 {
-        padding: 0px 0px 40px 15px;
+        padding: 0px 15px 40px 15px;
     }
     .explore-sec {
         margin-top: 20px;
@@ -1879,12 +1879,15 @@ top: 14px;
         font-size: 12px;
     }
     .quantity {
-        flex-wrap: wrap;
+        flex-wrap: wrap; margin-left: 15px;
     }
     .select-color-div {
         display: block;
         width: 100%;
     }
+    .quantity-color{
+       
+        justify-content: space-between;}
     .qtyAdjustBox {
         width: 100%;
     }
@@ -1947,3 +1950,25 @@ top: 14px;
       .para-con-boder > ul li:before{ left: -16px;}
       .para-con-boder > ul{ padding-left: 25px;}
 }
+
+
+/* ========================= clp pages responsive css ================ */
+
+@media only screen and (max-width: 1190px) {
+    .clp-page-two-banner .baneer-content{top: 68px;}
+  }
+  
+  
+     @media only screen and(max-width: 1024px) {
+  
+      .clp-page-two-banner .baneer-content h2{ font-size: 28px;}
+      .travel-div-bg {top: calc(50% - 184px);}
+      .clp-page-two-banner .baneer-content h2 {font-size: 31px;}
+       .travel-div-bg{position: absolute;top: calc(50% - 189px);}
+      
+      }
+  
+  
+     @media only screen and (max-width: 991px) {
+  
+     }
