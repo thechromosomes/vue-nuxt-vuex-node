@@ -122,7 +122,7 @@
                     ></span
                   >
                 </div>
-                <h3 class="proxima_regular">
+                <h3 class="proxima_regular price-heading">
                   ₹ {{ singleProductList.single_prod_data.selling_price }}
                 </h3>
                 <div class="stock-status">

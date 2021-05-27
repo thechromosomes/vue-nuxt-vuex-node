@@ -575,7 +575,7 @@
               <label
                 for="showMega"
                 class="mobile-item proxima_semi-bold"
-                @click="updateActive(index)" 
+                @click="updateActive(index)" :class="isActive == index ? 'isActive' : ''"
                 
                 >{{ item.name }}</label
               >

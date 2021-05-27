@@ -64,7 +64,9 @@
                             <span
                               class="product_options-cart Loyalty_LineItem hide_permanent proxima_regular"
                             ></span>
+                            <span class="proxima_regular">
                             Pre-ordered items: {{ product.qty }}
+                            </span>
                             <br />
                             <span class="proxima_regular"
                               ><div

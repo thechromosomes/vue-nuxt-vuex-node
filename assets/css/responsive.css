@@ -807,7 +807,7 @@
         margin: 0px;
         position: relative;
     }
-    .nav-links .mobile-item:hover {
+    .mobile-item.proxima_semi-bold.isActive {
         color: #c41e3a;
         padding-left: 45px;
         transition: all .8s ease;
@@ -824,7 +824,7 @@
     .nav-links .mobile-item.active:after {
         transform: rotate(180deg);
     }
-    .nav-links .mobile-item:hover:after {
+    .mobile-item.proxima_semi-bold.isActive:after{
         position: absolute;
         content: "\e81b";
         top: 0%;
@@ -1112,7 +1112,7 @@ width: 10%;
         bottom: 0;
         width: 100%;
         left: 0;
-        right: 0;
+        right: 0; align-items: center;
     }
     .hero-area .slick-prev {
         transform: initial;
@@ -1401,12 +1401,13 @@ top: 14px;
         padding: 0 0px;
         overflow: hidden;
     }
-    .all-detail-div h3 {
+    .all-detail-div>h3 {
         font-size: 17px;
         padding: 13px 0px;
         line-height: 24px;
         padding-left: 20px;
     }
+    
     .dark-overlay {
         display: none;
     }
@@ -1924,6 +1925,7 @@ top: 14px;
     .mobile-short-by.showSort .custon-select-list {
         display: block;
         transition: all .8s ease;
+        text-transform: capitalize;
     }
     .alfa-content-pdp {
         
@@ -1934,7 +1936,7 @@ top: 14px;
        
         display: block;
         text-align: center;
-        padding-top: 16px;
+        padding-top: 16px; margin: 0px;
     }
     .anchor-width-pdp h3{ font-size: 15px;}
     .inovative-content .button-link{ font-size: 12px;}
@@ -1949,12 +1951,17 @@ top: 14px;
       .content .row .mega-links{ padding-bottom: 3px;}
       .para-con-boder > ul li:before{ left: -16px;}
       .para-con-boder > ul{ padding-left: 25px;}
+      .all-detail-div .price-heading{ padding-left: 0px;padding-bottom: 0px;}
+      .stock-status{ padding-bottom: 0px;}
+      .cartItemProducts .productItem .item_name strong{ font-size: 16px!important;}
+      .cartItemProducts .productItem .price_info span{ font-size: 16px!important;}
+      .cart.proxima_regular img{width: 20px!important;}
 }
 
 
 /* ========================= clp pages responsive css ================ */
 
-@media only screen and (max-width: 1190px) {
+/* @media only screen and (max-width: 1190px) {
     .clp-page-two-banner .baneer-content{top: 68px;}
   }
   
@@ -1966,9 +1973,9 @@ top: 14px;
       .clp-page-two-banner .baneer-content h2 {font-size: 31px;}
        .travel-div-bg{position: absolute;top: calc(50% - 189px);}
       
-      }
+      } */
   
   
-     @media only screen and (max-width: 991px) {
+     /* @media only screen and (max-width: 991px) {
   
-     }
+     } */
