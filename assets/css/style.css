@@ -4932,7 +4932,37 @@ label.cvform-lbl-checkbox:before {
   .static-breadcrum{ padding-left: 0px; }
 /* =========================== payment method css ================= */
   .static-breadcrum{ padding-left: 0px; }
-    /* ================== return pagr css =========== */
+   /* ================== tumi lock  pagr css =========== */
+   .lock-item-wrap {
+    display: flex;
+    margin-top: 40px;
+    align-items: baseline;
+    justify-content: space-between; flex-wrap: wrap;
+}
+  .tumi-lock-inner{ text-align: center; }
+  .tumi-lock-inner small {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-size: 11px;
+    line-height: 1.3333;
+    padding-bottom: 7px;
+}
+.tumi-lock-inner img{ height: 247px; width: 247px;object-fit: cover ;border-radius: 100%;}
+    .tumi-lock-inner h6{font-weight: 700;
+      text-align: center;
+      margin-bottom: 15px;
+      color: #000;
+      font-size: 16px;
+      line-height: 1.3333;}
+      .tumi-lock-btn{text-decoration: none!important;
+        color: #000!important;
+        display: inline-block;
+        border: 3px solid #222;
+        padding: 8px 20px;
+        font-size: 12px;
+        font-weight: 700;}
     
        
         
