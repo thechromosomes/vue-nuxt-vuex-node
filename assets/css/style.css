@@ -4897,3 +4897,50 @@ label.cvform-lbl-checkbox:before {
 .no_products.text-center img {
   width: 370px;
 }
+
+/* ======================= ststic pages css start=================== */
+.black-banner {
+  width: 100%;
+  background-color: #222;
+  padding: 20px 0 8px 70px;
+}
+
+.black-banner-heading{color: #FFF;
+  letter-spacing: .095em;
+  font-size: 36px;
+ 
+  padding-bottom: 20px;}
+  .static-breadcrum li{ display: inline-block; }
+  .static-breadcrum li > a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    display: block;
+    padding-bottom: 18px;
+}
+  .static-breadcrum{ padding-left: 0px; }
+  .static-back-btn{align-items: center;
+  color: #c42239; font-size: 18px;}
+  .static-back-btn:hover{color: #c42239; text-decoration: underline;}
+  .main-content-static-div{max-width: 1200px;
+  margin: 3em auto;
+  padding: 0 40px;}
+  .static-heading{ font-size: 18px; color: #555; }
+  .statics-pages-wraper P{line-height: 1.8em;margin-bottom: 1.6em;
+  margin-top: 8px; font-size: 15px;}
+  .static-back-btn img{margin-left: 10px;transform: scaleY(-1);vertical-align: middle;}
+  .static-breadcrum{ padding-left: 0px; }
+/* =========================== payment method css ================= */
+  .static-breadcrum{ padding-left: 0px; }
+    /* ================== return pagr css =========== */
+    
+       
+        
+        
+        
+     
+        
+       
+        
+        
+        
