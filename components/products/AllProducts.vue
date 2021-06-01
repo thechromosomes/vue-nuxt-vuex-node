@@ -451,12 +451,6 @@
                         >₹ {{ singleProd.price }}</span
                       >
                     </NuxtLink>
-                    <!-- <NuxtLink
-                      :to="`/product/${singleProd.url_key}`"
-                      class=" proxima_bold"
-                      @click.native="updateRecentView(singleProd, prodIndex)"
-                      >Quick Buy</NuxtLink
-                    >  -->
                   </div>
                 </div>
 
