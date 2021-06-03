@@ -123,7 +123,11 @@
                   >
                 </div>
                 <h3 class="proxima_regular price-heading">
-                  ₹ {{ singleProductList.single_prod_data.selling_price | numberWithCommas}}
+                  ₹
+                  {{
+                    singleProductList.single_prod_data.selling_price
+                      | numberWithCommas
+                  }}
                 </h3>
                 <div class="stock-status">
                   <span class="in-stok proxima_bold">
@@ -134,7 +138,11 @@
                       ></i> </span
                     >IN STOCK</span
                   >
-                  <span class="hurry proxima_regular">Hurry, only 2 left!</span>
+                  <span class="hurry proxima_regular"
+                    >Hurry, only
+                    {{ singleProductList.single_prod_data.quantity }}
+                    left!</span
+                  >
                 </div>
                 <div class="quantity-color">
                   <div class="color-s-wrap">
@@ -248,8 +256,16 @@
                   </div>
 
                   <!-- features and specs -->
-                  <div class="info-txt"  :class="showFetSpec ? 'open-detail' : ' '">
-                    <h3 class="proxima_regular"    @click="showFetSpec = !showFetSpec">Features and specifications</h3>
+                  <div
+                    class="info-txt"
+                    :class="showFetSpec ? 'open-detail' : ' '"
+                  >
+                    <h3
+                      class="proxima_regular"
+                      @click="showFetSpec = !showFetSpec"
+                    >
+                      Features and specifications
+                    </h3>
                     <div class="info-colpse" v-if="showFetSpec">
                       <div class="para-con-boder">
                         <div class="weight-capcity">
@@ -425,7 +441,8 @@
               v-bind="recomenDed"
               v-if="
                 Object.keys(singleProductList.single_prod_data).length > 0 &&
-                singleProductList.single_prod_data.recommended.length
+                singleProductList.single_prod_data.recommended &&
+                singleProductList.single_prod_data.recommended.length > 0
               "
             >
               <div
@@ -1235,6 +1252,7 @@ export default {
     // render from single variation
     if (
       this.singleProductList.single_prod_data &&
+      this.singleProductList.single_prod_data.variation &&
       Object.keys(this.singleProductList.single_prod_data.variation).length == 1
     ) {
       var obj = this.singleProductList.single_prod_data.variation;
@@ -1244,6 +1262,7 @@ export default {
     // update image
     if (
       this.singleProductList.single_prod_data &&
+      this.singleProductList.single_prod_data.gallery &&
       this.singleProductList.single_prod_data.gallery.length > 0
     )
       this.mainThumbImage = this.singleProductList.single_prod_data.gallery[0].image;
@@ -1308,7 +1327,7 @@ export default {
       let groupId = this.singleProductList.single_prod_data.group_id;
       let wishList = this.$store.state.cartAjax.wishlist;
 
-      if (Object.keys(wishList).length != 0) {
+      if (wishList && Object.keys(wishList).length != 0) {
         const groupResult = wishList.group
           .split(",")
           .filter((word) => word == groupId);
@@ -1316,7 +1335,12 @@ export default {
           .split(",")
           .filter((word) => word == ProductId);
 
-        if (groupResult.length > 0 && productResult.length > 0) {
+        if (
+          groupResult &&
+          groupResult.length > 0 &&
+          productResult &&
+          productResult.length > 0
+        ) {
           return "wishlist-active";
         } else {
           return "add";
