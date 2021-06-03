@@ -85,24 +85,24 @@
                 <!-- ============================mobile slider====================== -->
                 <div class="mobile-single-pd-crousal">
                   <div>
-                  <VueSlickCarousel v-bind="mobileSingleslider">
-                    <div
-                      v-for="(itemSingle, indexSingle) in singleProductList
-                        .single_prod_data.gallery"
-                      :key="indexSingle"
-                    >
-                      <div class="one-item-crosal-mob">
-                        <div class="slider-for-mob">
-                          <div>
-                            <img
-                              :src="itemSingle.image"
-                              :alt="itemSingle.image"
-                            />
+                    <VueSlickCarousel v-bind="mobileSingleslider">
+                      <div
+                        v-for="(itemSingle, indexSingle) in singleProductList
+                          .single_prod_data.gallery"
+                        :key="indexSingle"
+                      >
+                        <div class="one-item-crosal-mob">
+                          <div class="slider-for-mob">
+                            <div>
+                              <img
+                                :src="itemSingle.image"
+                                :alt="itemSingle.image"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </VueSlickCarousel>
+                    </VueSlickCarousel>
                   </div>
                 </div>
 
@@ -138,7 +138,7 @@
                 </div>
                 <div class="quantity-color">
                   <div class="color-s-wrap">
-                  <strong class="proxima_bold"
+                    <strong class="proxima_bold"
                       >color:
                       <span class="proxima_light">{{
                         singleProductList.single_prod_data.color
@@ -162,14 +162,15 @@
                         </li>
                       </ul>
                     </div>
-                </div>
+                  </div>
                   <div class="quantity">
-                    <strong class="proxima_bold">Quantity: <strong class="proxima_light" style="color: #555">{{
-                      addToCartVal
-                    }}</strong></strong
+                    <strong class="proxima_bold"
+                      >Quantity:
+                      <strong class="proxima_light" style="color: #555">{{
+                        addToCartVal
+                      }}</strong></strong
                     >
-                    
-                    
+
                     <div class="qtyAdjustBox">
                       <a class="minus" @click.prevent="addCartVal('minus')"
                         >-</a
@@ -222,15 +223,7 @@
                             v-for="(desc, descKey) in renderDescription"
                             :key="descKey"
                           >
-                            {{ descKey.toUpperCase() }} : {{ desc }}
-                          </li>
-                          <li
-                            v-for="(details, i) in singleProductList
-                              .single_prod_data.visible_attributes"
-                            :key="i"
-                          >
-                            <span>{{ details.label }}: </span
-                            >{{ details.value }}
+                            <span v-html="desc"></span>
                           </li>
                         </ul>
                       </div>
@@ -250,6 +243,81 @@
                           data-target="#exampleModalLong"
                           >Free returns</a
                         >
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- features and specs -->
+                  <div class="info-txt"  :class="showFetSpec ? 'open-detail' : ' '">
+                    <h3 class="proxima_regular"    @click="showFetSpec = !showFetSpec">Features and specifications</h3>
+                    <div class="info-colpse" v-if="showFetSpec">
+                      <div class="para-con-boder">
+                        <div class="weight-capcity">
+                          <div
+                            class="w-cap"
+                            v-for="(desc2, descKey2) in renderDescription2"
+                            :key="descKey2"
+                          >
+                            <h4 class="proxima_bold feature-heding">
+                              {{ descKey2 }}
+                            </h4>
+                            <p class="proxima_regular">{{ desc2 }}</p>
+                          </div>
+                          <div
+                            class="w-cap"
+                            v-for="(details, i) in singleProductList
+                              .single_prod_data.visible_attributes"
+                            :key="i"
+                          >
+                            <h4 class="proxima_bold feature-heding">
+                              {{ details.label }}
+                            </h4>
+                            <p class="proxima_regular">{{ details.value }}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- prodduct advisory -->
+                  <div
+                    class="info-txt"
+                    :class="showContactDetail ? 'open-detail' : ' '"
+                  >
+                    <h3
+                      class="proxima_regular"
+                      @click="showContactDetail = !showContactDetail"
+                    >
+                      Product Advisory
+                    </h3>
+                    <div class="info-colpse" v-if="showContactDetail">
+                      <div class="para-con-boder">
+                        <ul class="advisor-list">
+                          <li>
+                            <div>
+                              <span
+                                class="msg-icon icon-maywehelp-email"
+                                aria-hidden="true"
+                              >
+                              </span>
+                            </div>
+                            <span class="proxima_regular">Email us</span>
+                            <a
+                              href="mailto:service.hk.tumi@tumi.com"
+                              class="proxima_regular"
+                              >service.hk.tumi@tumi.com</a
+                            >
+                          </li>
+                          <li>
+                            <div>
+                              <span class="msg-icon icon-maywehelp-call"></span>
+                            </div>
+                            <span class="proxima_regular">Contact us</span>
+                            <a href="tel:800-961-974" class="proxima_regular"
+                              >800-961-974</a
+                            >
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -322,7 +390,10 @@
     <section class="alfa-sec alfa-on-pd">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-sm-6 col-6"  v-if="recent_products && recent_products.length">
+          <div
+            class="col-lg-6 col-sm-6 col-6"
+            v-if="recent_products && recent_products.length"
+          >
             <VueSlickCarousel v-bind="recentlyViewd">
               <div
                 class="recom-pd"
@@ -332,9 +403,13 @@
                 <div class="alfa-content-pdp">
                   <a class="anchor-width-pdp">
                     <h3 class="tm-h3 proxima_regular">
-                      {{singleProdR.name}}
+                      {{ singleProdR.name }}
                     </h3>
-                     <Nuxt-link :to="singleProdR.url_key" class="button-link proxima_bold">Shop Now</Nuxt-link>
+                    <Nuxt-link
+                      :to="singleProdR.url_key"
+                      class="button-link proxima_bold"
+                      >Shop Now</Nuxt-link
+                    >
                   </a>
                   <div class="alfa-img-box-pdp">
                     <div>
@@ -364,7 +439,11 @@
                     <h3 class="tm-h3 proxima_regular">
                       {{ itemSingle.name }}
                     </h3>
-                    <Nuxt-link :to="itemSingle.url_key" class="button-link proxima_bold">Shop Now</Nuxt-link>
+                    <Nuxt-link
+                      :to="itemSingle.url_key"
+                      class="button-link proxima_bold"
+                      >Shop Now</Nuxt-link
+                    >
                   </a>
                   <div class="alfa-img-box-pdp">
                     <div>
@@ -399,6 +478,8 @@ export default {
   data() {
     return {
       showPersonlization: false,
+      showFetSpec: false,
+      showContactDetail: false,
       showFotter: true,
       selectedComboSize: "",
       sizechartOpen: false,
@@ -555,7 +636,7 @@ export default {
           },
         ],
       },
-      
+
       mobileSingleslider: {
         focusOnSelect: true,
         infinite: false,
@@ -1179,15 +1260,27 @@ export default {
   computed: {
     ...mapState(["singleProductList"]),
     renderDescription() {
-      let {
+      let { description } = this.singleProductList.single_prod_data;
+
+      let obj = {
         description,
+      };
+
+      let finaObj = Object.entries(obj).reduce(
+        (a, [k, v]) => (v == null ? a : ((a[k] = v), a)),
+        {}
+      );
+      return finaObj;
+    },
+
+    renderDescription2() {
+      let {
         material,
         color,
         warranty,
       } = this.singleProductList.single_prod_data;
 
       let obj = {
-        description,
         material,
         color,
         warranty,
