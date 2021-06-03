@@ -29,7 +29,7 @@ export const state = () => ({
     service: "product",
     single_prod_data: [],
     product_loader: false,
-    
+
     total_review: 0,
     average_rating: 0,
     reviews_list: [],
@@ -162,14 +162,26 @@ export const mutations = {
     state.list.product_loader = true;
     state.list.page = pageNo;
     state.list.Product_count = "";
+    // state.list.sort = [
+    //   { code: "default", dir: "desc", label: "default" },
+    //   { code: "selling_price", dir: "asc", label: "Price (Low to High)" },
+    //   { code: "selling_price", dir: "desc", label: "Price (High to Low)" },
+    //   { code: "product_position", dir: "asc", label: "Oldest to newest" },
+    //   { code: "product_position", dir: "desc", label: "Newest to oldest" },
+    //   { code: "discount", dir: "asc", label: "Discount" },
+    // ];
+
     state.list.sort = [
       { code: "default", dir: "desc", label: "default" },
-      { code: "selling_price", dir: "asc", label: "Price (Low to High)" },
-      { code: "selling_price", dir: "desc", label: "Price (High to Low)" },
-      { code: "product_position", dir: "asc", label: "Oldest to newest" },
-      { code: "product_position", dir: "desc", label: "Newest to oldest" },
-      { code: "discount", dir: "asc", label: "Discount" },
+      { code: "hot_items", dir: "asc", label: "Hot Items" },
+      { code: "new_arrival", dir: "asc", label: "New Arrival" },
+      { code: "selling_price", dir: "asc", label: "Price Low to High" },
+      { code: "selling_price", dir: "desc", label: "Price High to Low" },
+      { code: "best_seller", dir: "asc", label: "Best Seller" },
+
+
     ];
+
     if (pageNo == 1) {
       state.list.Product_list = [];
     }
@@ -241,7 +253,7 @@ export const mutations = {
             "No product found, please try by removing last applied filter.";
         }
         state.singleProductList.single_prod_data = data.result;
-        if (state.singleProductList.breadcrumb.length> 0) {
+        if (state.singleProductList.breadcrumb.length > 0) {
           state.singleProductList.breadcrumb = JSON.parse(
             data.result.breadcrumb
           );

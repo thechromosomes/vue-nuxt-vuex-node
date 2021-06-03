@@ -35,10 +35,9 @@
                   <div class="quick-cart-details">
                     <div class="drawerTitleOuter">
                       <p class="ptitle">
-                        <Nuxt-link
-                          :to="`/product/${product.url_key}`"
-                          >{{ product.name }}</Nuxt-link
-                        >
+                        <Nuxt-link :to="`/product/${product.url_key}`">{{
+                          product.name
+                        }}</Nuxt-link>
                       </p>
                       <p v-if="JSON.parse(product.size).color">
                         <span class="font-medium">Color : </span
@@ -78,7 +77,9 @@
                       <div class="pprice">
                         <!-- <font-awesome-icon :icon="['fas', 'rupee-sign']" /> -->
                         <span class="price_icon">₹</span
-                        ><span class="price">{{ product.price }}</span>
+                        ><span class="price">{{
+                          product.price | numberWithCommas
+                        }}</span>
                       </div>
                     </div>
                     <a
@@ -154,7 +155,7 @@
 
                       <span class="price_icon">₹</span
                       ><span class="price">{{
-                        $store.state.cartAjax.cart_total
+                        $store.state.cartAjax.cart_total | numberWithCommas
                       }}</span>
                     </strong>
                   </span>

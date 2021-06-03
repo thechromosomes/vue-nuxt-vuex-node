@@ -123,7 +123,7 @@
                   >
                 </div>
                 <h3 class="proxima_regular price-heading">
-                  ₹ {{ singleProductList.single_prod_data.selling_price }}
+                  ₹ {{ singleProductList.single_prod_data.selling_price | numberWithCommas}}
                 </h3>
                 <div class="stock-status">
                   <span class="in-stok proxima_bold">

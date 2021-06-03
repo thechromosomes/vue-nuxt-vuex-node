@@ -48,7 +48,7 @@
                 <span class="total-recap__final-price">
                   <span class="price_icon">₹</span
                   ><span class="price">{{
-                    $store.state.cartAjax.cart_total
+                    $store.state.cartAjax.cart_total | numberWithCommas
                   }}</span>
                 </span>
               </span>
@@ -288,7 +288,7 @@
                                   </template>
                                 </div>
                               </div>
-                                <!-- <div
+                              <!-- <div
                                   class="field field--required field--third field--show-floating-label"
                                 >
                                   <label
@@ -468,7 +468,7 @@
                         </div>
                       </div>
                       <div style="clear: both"></div>
-                      <div class="step__footer" style="display:block">
+                      <div class="step__footer" style="display: block">
                         <button
                           name="button"
                           type="submit"
@@ -484,10 +484,12 @@
                           >
                         </button>
                         <a
-                          style="cursor: pointer; display:block"
-                          @click.prevent="() => (addNewAddress = false)" 
+                          style="cursor: pointer; display: block"
+                          @click.prevent="() => (addNewAddress = false)"
                         >
-                          <span class="step__footer__previous-link-content" style="cursor: pointer; display:block"
+                          <span
+                            class="step__footer__previous-link-content"
+                            style="cursor: pointer; display: block"
                             ><font-awesome-icon
                               icon="angle-left"
                               class="icon-svg proxima_regular"
@@ -528,16 +530,21 @@
                   >
                     <div>
                       <div>
-                        <p class="proxima_regular">{{ `${item.full_name}, ${item.phone}` }}</p>
+                        <p class="proxima_regular">
+                          {{ `${item.full_name}, ${item.phone}` }}
+                        </p>
                         <p class="proxima_regular">
                           {{
                             `${item.street_address}, ${item.state}, ${item.city},  ${item.pin_code}`
                           }}
                         </p>
-                        <p class="proxima_regular">{{ `Address Type: ${item.address_type}` }}</p>
+                        <p class="proxima_regular">
+                          {{ `Address Type: ${item.address_type}` }}
+                        </p>
                         <button
                           v-if="selectedAddressiId != item.id"
-                          @click="() => (selectedAddressiId = item.id)" class="black-button"
+                          @click="() => (selectedAddressiId = item.id)"
+                          class="black-button"
                         >
                           Ship here
                         </button>
@@ -557,7 +564,8 @@
                           (showMoreAddress =
                             $store.state.cartAjax.address.length)
                       "
-                    class="proxima_regular">
+                      class="proxima_regular"
+                    >
                       Show more
                     </a>
                   </div>
@@ -568,7 +576,12 @@
                       showMoreAddress == $store.state.cartAjax.address.length
                     "
                   >
-                    <a @click.prevent="() => (showMoreAddress = 3)" class="proxima_regular"> Hide </a>
+                    <a
+                      @click.prevent="() => (showMoreAddress = 3)"
+                      class="proxima_regular"
+                    >
+                      Hide
+                    </a>
                   </div>
                   <div
                     class="ship-add-new-add"
@@ -577,7 +590,9 @@
                     <a class="proxima_regular">+ Add new address</a>
                   </div>
                   <div class="next-button">
-                    <button @click="assignAddress()" class="black-button">Next</button>
+                    <button @click="assignAddress()" class="black-button">
+                      Next
+                    </button>
                   </div>
                 </div>
                 <!-- end add new address -->
@@ -588,7 +603,7 @@
                   <div class="shipping-method-inner">
                     <a
                       @click.prevent="switchPayment('razorpay')"
-                      class="paying-div proxima_regular "
+                      class="paying-div proxima_regular"
                       :class="[
                         selectedPaymentMethods === 'razorpay'
                           ? ''
@@ -596,11 +611,14 @@
                       ]"
                     >
                       <img src="~assets/images/prepaid.png" />
-                      <span class="proxima_regular">Pay Online With Razorpay</span></a
+                      <span class="proxima_regular"
+                        >Pay Online With Razorpay</span
+                      ></a
                     >
                     <button
                       v-if="selectedPaymentMethods === 'razorpay'"
-                      @click="placeOrder('razorpay')" class="proxima_regular  black-button"
+                      @click="placeOrder('razorpay')"
+                      class="proxima_regular black-button"
                     >
                       Continue checkout
                     </button>
@@ -621,7 +639,8 @@
                     </a>
                     <button
                       @click="placeOrder('cod')"
-                      v-if="selectedPaymentMethods === 'cod'"  class="black-button"
+                      v-if="selectedPaymentMethods === 'cod'"
+                      class="black-button"
                     >
                       Place order
                     </button>
@@ -701,7 +720,9 @@
                                 <td class="product__price small_price">
                                   <span class="order-summary__emphasis"> </span>
                                   <span class="price price_icon">₹</span
-                                  ><span class="price">{{ item.price }}</span>
+                                  ><span class="price">{{
+                                    item.price | numberWithCommas
+                                  }}</span>
                                 </td>
                               </tr>
                             </tbody>
@@ -798,6 +819,7 @@
                                   <span class="price price_icon">₹</span
                                   ><span class="price">{{
                                     $store.state.cartAjax.cart_total
+                                      | numberWithCommas
                                   }}</span>
                                 </span>
                               </td>
@@ -817,6 +839,7 @@
                                   <span class="price price_icon">₹</span
                                   ><span class="price">{{
                                     $store.state.cartAjax.shipping_charge
+                                      | numberWithCommas
                                   }}</span>
                                 </span>
                               </td>
@@ -835,7 +858,10 @@
                                 <span class="order-summary__small-text">
                                   <span class="price price_icon">₹</span
                                   ><span class="price">
-                                    {{ $store.state.cartAjax.cod_charge }}</span
+                                    {{
+                                      $store.state.cartAjax.cod_charge
+                                        | numberWithCommas
+                                    }}</span
                                   >
                                 </span>
                               </td>
@@ -855,6 +881,7 @@
                                   <span class="price price_icon">₹</span
                                   ><span class="price">{{
                                     $store.state.cartAjax.discount_amount
+                                      | numberWithCommas
                                   }}</span>
                                 </span>
                               </td>
@@ -878,6 +905,7 @@
                                   <span class="price price_icon">₹</span
                                   ><span class="price">{{
                                     $store.state.cartAjax.cart_total
+                                      | numberWithCommas
                                   }}</span>
                                 </span>
                               </td>
@@ -1232,7 +1260,6 @@ export default {
           params: form,
         });
         if (response.success) {
-
           //  this.$gtm.push({
           //     event: "checkout",
           //     category: "Ecommerce",
@@ -1247,7 +1274,7 @@ export default {
           //   });
 
           if (value == "cod") {
-             this.$router.push("thankyou");
+            this.$router.push("thankyou");
             return;
           }
           if (value == "razorpay") {
@@ -1433,6 +1460,8 @@ export default {
 <style scoped>
 @import url("~/assets/css/pages-css/shipping.css");
 @import url("~/assets/css/pages-css/loader.css");
-.address-fields label{ display: block;}
+.address-fields label {
+  display: block;
+}
 </style>
 

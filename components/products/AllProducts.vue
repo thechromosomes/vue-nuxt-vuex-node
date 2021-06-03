@@ -29,7 +29,11 @@
                 </ol>
               </nav>
               <div class="carry-on-lagauge">
-                <div class="on-mob-toggle" @click="() => (carryMenu = !carryMenu)" :class="{carryMenu: carryMenu}">
+                <div
+                  class="on-mob-toggle"
+                  @click="() => (carryMenu = !carryMenu)"
+                  :class="{ carryMenu: carryMenu }"
+                >
                   <h4 class="proxima_regular">
                     Carry On Luggage - Travel Rolling Luggage
                   </h4>
@@ -388,11 +392,12 @@
                       <div class="pd-slider-itm">
                         <VueSlickCarousel v-bind="authenticity">
                           <div
-                            v-for="(image, imageIndex) in 5"
+                            v-for="(image, imageIndex) in singleProd.gallery"
                             :key="imageIndex"
                           >
                             <img
-                              src="~/assets/images/all-pdp/itm-slider-1.jpg"
+                              :src="image.image"
+                              :to="`/product/${singleProd.url_key}`"
                             />
                           </div>
                         </VueSlickCarousel>
@@ -444,11 +449,13 @@
                         v-if="
                           singleProd.discount != '' && singleProd.discount > 0
                         "
-                        >₹ {{ singleProd.selling_price }}
-                        <s style="opacity: 0.5">₹ {{ singleProd.price }}</s>
+                        >₹ {{ singleProd.selling_price | numberWithCommas }}
+                        <s style="opacity: 0.5"
+                          >₹ {{ singleProd.price | numberWithCommas }}</s
+                        >
                       </span>
                       <span class="proxima_regular" v-else
-                        >₹ {{ singleProd.price }}</span
+                        >₹ {{ singleProd.price | numberWithCommas }}</span
                       >
                     </NuxtLink>
                   </div>
@@ -494,7 +501,7 @@ export default {
     return {
       activeDropdown: null,
       showFilter: true,
-      carryMenu:false,
+      carryMenu: false,
 
       sorting: { code: "default", dir: "desc" },
       activeColor: [],
@@ -508,8 +515,8 @@ export default {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoscroll: true,
-        autoplay: true,
+        autoscroll: false,
+        autoplay: false,
         arrows: true,
         centerMode: false,
 

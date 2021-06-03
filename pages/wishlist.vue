@@ -15,7 +15,7 @@
       </section>
       <section class="wish-list-item-row" v-else>
         <div class="wish-list-page-container">
-          <h2 class="all-item-heading proxima_semi-bold ">ALL ITEMS</h2>
+          <h2 class="all-item-heading proxima_semi-bold">ALL ITEMS</h2>
           <div
             class="wish-list-wraper"
             v-for="(item, mainIndex) in wislistProducts"
@@ -33,10 +33,17 @@
                   @click="reomoveFromCart(item, mainIndex)"
                 />
               </div>
-              <h3><strong class="proxima_regular">Item Code:</strong> {{ item.group_id }}</h3>
-              <h4 class="proxima_regular "><strong class="proxima_regular">Color:</strong> {{ item.color }}</h4>
-              <select v-model="selectedSize[mainIndex]" class="proxima_regular ">
-                <option value="" disabled class="proxima_regular">Select Size</option>
+              <h3>
+                <strong class="proxima_regular">Item Code:</strong>
+                {{ item.group_id }}
+              </h3>
+              <h4 class="proxima_regular">
+                <strong class="proxima_regular">Color:</strong> {{ item.color }}
+              </h4>
+              <select v-model="selectedSize[mainIndex]" class="proxima_regular">
+                <option value="" disabled class="proxima_regular">
+                  Select Size
+                </option>
                 <option
                   v-for="(size, index) in item.variation"
                   :key="index"
@@ -49,15 +56,21 @@
                 v-if="sizeAlert && sizeAlertIndes == mainIndex"
                 style="clear: both"
               >
-                <p class="promotion-text proxima_regular" style="color:red">please select the size</p>
+                <p class="promotion-text proxima_regular" style="color: red">
+                  please select the size
+                </p>
               </div>
               <div class="move-bag-btn-div">
-                <a @click.prevent="addToCart(item, mainIndex)" class="button proxima_regular"
+                <a
+                  @click.prevent="addToCart(item, mainIndex)"
+                  class="button proxima_regular"
                   >MOVE TO BAG</a
                 >
                 <a @click.prevent>
                   <span class="price price_icon">₹</span
-                  ><span class="price proxima_regular"> {{ item.price }}</span></a
+                  ><span class="price proxima_regular">
+                    {{ item.price | numberWithCommas }}</span
+                  ></a
                 >
               </div>
             </div>

@@ -1,142 +1,31 @@
 <template>
   <div>
-    <section class="hero-area">
+    <section class="hero-area" v-if="bannerData.length > 0">
       <div class="herocrousal">
         <VueSlickCarousel v-bind="settings">
-          <div>
-            <img src="~/assets/images/banner1.jpg" alt="" class="hide-mob" />
+          <div v-for="(item, index) in bannerData" :key="index">
+            <img  :src="item.desktop_image" alt="" class="hide-mob" />
             <img
-              src="~/assets/images/banner-mob-1.jpg"
+             :src="item.mobile_image"
               alt=""
               class="show-mob"
             />
             <div class="crousal-text">
-              <h3 class="proxima_light">PERFORAMANCE WITH PURPOSE</h3>
-              <img src="~/assets/images/banner-sub-img.png" alt="" />
-              <a href="#" class="btn-fill proxima_regular"
-                >Shop The Collection</a
-              >
-            </div>
-          </div>
-          <div>
-            <img src="~/assets/images/banner2.jpg" alt="" class="hide-mob" />
-            <img
-              src="~/assets/images/banner-mob-2.jpg"
-              alt=""
-              class="show-mob"
-            />
-            <div class="white-text-box">
-              <h2 class="proxima_regular">
-                EXPLORE THE TUMI <span></span> VIRTUAL EXPERIENCE
-              </h2>
-              <a href="#" class="text-center learn-more proxima_regular"
-                >Learn More</a
-              >
-              <img
-                src="~/assets/images/gif-img.GIF"
-                alt=""
-                class="gif-img hide-mob"
-              />
-              <img
-                src="~/assets/images/gif-img-mob.GIF"
-                alt=""
-                class="gif-img show-mob"
-              />
+              <h3 class="proxima_light"><span v-html="item.description"></span></h3>
+              <!-- <img src="~/assets/images/banner-sub-img.png" alt="subimage" /> -->
+              <!-- <NuxtLink :to="item.url" class="btn-fill proxima_regular"
+                >Shop The Collection</NuxtLink
+              > -->
             </div>
           </div>
         </VueSlickCarousel>
       </div>
     </section>
     <!-- ============================ SHOP BY CATEGORY =============== -->
-    <section class="shop-by-catagery">
-      <div class="container-fluid">
-        <div class="heding-with-line">
-          <div class="tm-title__line"></div>
-          <h2 class="main-heading proxima_bold">SHOP BY CATEGORY</h2>
-          <div class="tm-title__line"></div>
-        </div>
-        <div class="cata-inner-row">
-          <div class="cata-img-box">
-            <img src="~/assets/images/cata-1.jpg" alt="" />
-            <p class="proxima_regular">Luggage</p>
-          </div>
-          <div class="cata-img-box">
-            <img src="~/assets/images/cata-2.jpg" alt="" />
-            <p class="proxima_regular">Backpacks</p>
-          </div>
-          <div class="cata-img-box">
-            <img src="~/assets/images/cata-3.jpg" alt="" />
-            <p class="proxima_regular">Totes</p>
-          </div>
-          <div class="cata-img-box">
-            <img src="~/assets/images/cata-4.jpg" alt="" />
-            <p class="proxima_regular">Crossbodies</p>
-          </div>
-          <div class="cata-img-box">
-            <img src="~/assets/images/cata-5.jpg" alt="" />
-            <p class="proxima_regular">Accessories</p>
-          </div>
-          <div class="cata-img-box">
-            <img src="~/assets/images/cata-6.jpg" alt="" />
-            <p class="proxima_regular">Recycled Capsule</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="full-page-border"></div>
-    <!-- =======================  Innovative design section ============= -->
-    <section class="innovative-sec">
-      <div class="container-fluid">
-        <div class="row">
-          <div
-            class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 pd-right-remove pd-remove-mob"
-          >
-            <div class="innovative-inner">
-              <div class="inovative-content">
-                <h4 class="text-red proxima_regular">Devoe</h4>
-                <h5 class="proxima_regular">
-                  Innovative design <span>and </span> performance
-                </h5>
-                <a href="" class="button-link proxima_bold"
-                  >See the collection</a
-                >
-              </div>
-              <div class="inove-large-img">
-                <img src="~/assets/images/inova-1.jpg" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 col-12 mt--top pd-remove-mob">
-            <div class="inovate-right">
-              <div class="inove-large-img">
-                <img src="~/assets/images/inova-2.jpg" alt="" />
-              </div>
-              <div class="inovative-content">
-                <h4 class="text-red proxima_regular">Sustainability</h4>
-                <h5 class="proxima_regular">Recycled materials</h5>
-                <a href="" class="button-link proxima_bold"
-                  >See the collection</a
-                >
-              </div>
-            </div>
-            <div class="inovate-right mt-30">
-              <div class="inove-large-img order-2">
-                <img src="~/assets/images/inova-3.jpg" alt="" />
-              </div>
-              <div class="inovative-content order-1">
-                <h4 class="text-red proxima_regular">Lightweight</h4>
-                <h5 class="proxima_regular">
-                  Versatile, and thoughtful design
-                </h5>
-                <a href="" class="button-link proxima_bold"
-                  >See the collection</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div v-if="Object.keys(homePageData).length != 0">
+      <span v-html="homePageData.content"></span>
+    </div>
+
     <!-- ================================ WATCH THE WORLD OF TUMI on dekshtop ====================== -->
     <section class="watch-world hide-mob">
       <div class="container">
@@ -222,35 +111,36 @@
           <h2 class="main-heading proxima_bold">WATCH THE WORLD OF TUMI</h2>
           <div class="tm-title__line"></div>
         </div>
-    
 
-      <div class="watch-mobile video-play-list">
-        <VueSlickCarousel v-bind="videoSetting">
-          <div v-for="(item, index) in 3" :key="index">
-            <div class="pos-relative">
-              <div>
-              <a href="#">
-                <img src="~/assets/images/video-1.jpg" alt="" />
-                <div class="playicon tm-icon__play">
-                  <i class=" " aria-hidden="true"
-                    ><img src="~/assets/images/play-icon.png"
-                  /></i>
+        <div class="watch-mobile video-play-list">
+          <VueSlickCarousel v-bind="videoSetting">
+            <div v-for="(item, index) in 3" :key="index">
+              <div class="pos-relative">
+                <div>
+                  <a href="#">
+                    <img src="~/assets/images/video-1.jpg" alt="" />
+                    <div class="playicon tm-icon__play">
+                      <i class=" " aria-hidden="true"
+                        ><img src="~/assets/images/play-icon.png"
+                      /></i>
+                    </div>
+                  </a>
                 </div>
-              </a>
+                <h4 class="text-red">
+                  <a href="#" class="text-red proxima_regular"
+                    >19 DEGREE ALUMINUM
+                  </a>
+                </h4>
+                <h3 id="video1SubTitle_TXT" class="tm-h3">
+                  <a href="#" class="proxima_regular performce-txt"
+                    >PERFORAMANCE WITH PURPOSE</a
+                  >
+                </h3>
+                <a href="" class="button-link proxima_bold">Explore more</a>
+              </div>
             </div>
-            <h4 class="text-red">
-              <a href="#" class="text-red proxima_regular"
-                >19 DEGREE ALUMINUM
-              </a>
-            </h4>
-            <h3 id="video1SubTitle_TXT" class="tm-h3">
-              <a href="#" class="proxima_regular performce-txt">PERFORAMANCE WITH PURPOSE</a>
-            </h3>
-            <a href="" class="button-link proxima_bold">Explore more</a>
-          </div>
-          </div>
-        </VueSlickCarousel>
-      </div>
+          </VueSlickCarousel>
+        </div>
       </div>
     </section>
     <!-- ========================== EXPLORE #TUMIHK ========================= -->
@@ -267,7 +157,7 @@
             <ul class="blog-icon">
               <li><a href="#" class="proxima_regular">jamie.xia</a></li>
               <li>
-                <a href="#"><img src="~/assets/images/instagram.png"></a>
+                <a href="#"><img src="~/assets/images/instagram.png" /></a>
               </li>
             </ul>
           </div>
@@ -276,47 +166,19 @@
     </section>
     <div class="full-page-border"></div>
     <!-- ===================== Explore section strat=========== -->
-    <section class="alfa-sec">
-      <div class="container">
-        <ul>
-          <li>
-            <div class="alfa-content">
-              <a href="" class="anchor-width">
-                <h3 class="tm-h3 proxima_regular">
-                  Explore<br />
-                  Alpha 3
-                </h3>
-                <a href="#" class="button-link proxima_bold">Shop Now</a>
-              </a>
-            </div>
-            <div class="alfa-img-box">
-              <img src="~/assets/images/alfa-1.jpg" alt="" />
-            </div>
-          </li>
-          <li>
-            <div class="alfa-content">
-              <a href="" class="anchor-width">
-                <h3 class="tm-h3 proxima_regular">
-                  The TUMI<br />
-                  Difference
-                </h3>
-                <a href="#" class="button-link proxima_bold">Shop Now</a>
-              </a>
-            </div>
-            <div class="alfa-img-box">
-              <img src="~/assets/images/alfa-2.jpg" alt="" />
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
+    <span v-html="homePageData.content_1"></span>
     <!-- ========================== recomnded for you ========================= -->
+
     <section class="recomnded-section">
       <div class="container">
         <h2 class="proxima_regular">RECOMMENDATIONS FOR YOU</h2>
         <div class="recomnded-wrap">
           <VueSlickCarousel v-bind="recomndedSetting">
-            <div class="re-com-item" v-for="(recItem, recIndex) in 10" :key="recIndex">
+            <div
+              class="re-com-item"
+              v-for="(recItem, recIndex) in 10"
+              :key="recIndex"
+            >
               <img src="~assets/images/recomded.png" />
               <h3 class="proxima_bold">Norman back pack</h3>
               <p class="proxima_regular">All bro Brands</p>
@@ -390,45 +252,47 @@ export default {
         ],
       },
       recomndedSetting: {
-          centerMode: true,
-     arrows:true,
-     slidesToShow: 7,
-     autoplay:true,
-      slidesToScroll: 1,
-     speed: 1500,
-     index: 2,
-     focusOnSelect:true,
-     responsive: [{
-       breakpoint: 768,
-       settings: {
-         arrows: true,
-         centerMode: true,
-         centerPadding: '40px',
-         slidesToShow: 3
-       }
-     }, {
-       breakpoint: 480,
-       settings: {
-         arrows: false,
-         centerMode: true,
-         centerPadding: '40px',
-         slidesToShow: 1
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        arrows: false,
         centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1
-      }
-    }
-  ]
+        arrows: true,
+        slidesToShow: 7,
+        autoplay: true,
+        slidesToScroll: 1,
+        speed: 1500,
+        index: 2,
+        focusOnSelect: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: true,
+              centerMode: true,
+              centerPadding: "40px",
+              slidesToShow: 3,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: "40px",
+              slidesToShow: 1,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: "40px",
+              slidesToShow: 1,
+            },
+          },
+        ],
       },
       videoSetting: {
         focusOnSelect: true,
-        infinite:false,
+        infinite: false,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 3,

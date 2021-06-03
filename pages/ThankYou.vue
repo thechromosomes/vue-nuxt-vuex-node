@@ -65,7 +65,8 @@
                       <strong>Payment Method:</strong> {{ payment_method }}
                     </td>
                     <td scope="row">
-                      <strong>Subtotal</strong> ₹ {{ sub_total }}
+                      <strong>Subtotal</strong> ₹
+                      {{ sub_total | numberWithCommas }}
                     </td>
                   </tr>
                   <tr>
@@ -74,7 +75,7 @@
                     <td scope="row"></td>
                     <td scope="row">
                       <strong>Delivery Charge</strong> ₹
-                      {{ $store.state.cartAjax.cod_charge }}
+                      {{ $store.state.cartAjax.cod_charge | numberWithCommas }}
                     </td>
                   </tr>
                   <tr>
@@ -84,7 +85,8 @@
                     <td scope="row"></td>
                     <td scope="row"></td>
                     <td scope="row">
-                      <strong>Order Total</strong> ₹ {{ total }}
+                      <strong>Order Total</strong> ₹
+                      {{ total | numberWithCommas }}
                     </td>
                   </tr>
                 </tbody>
@@ -123,9 +125,9 @@
                       <span>{{ item.name }}</span>
                     </div>
                   </td>
-                  <td scope="row">₹ {{ item.price }}</td>
+                  <td scope="row">₹ {{ item.price | numberWithCommas }}</td>
                   <td scope="row">{{ item.qty }}</td>
-                  <td scope="row">₹ {{ sub_total }}</td>
+                  <td scope="row">₹ {{ sub_total | numberWithCommas }}</td>
                 </tr>
               </tbody>
             </table>

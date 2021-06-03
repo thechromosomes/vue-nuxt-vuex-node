@@ -10,7 +10,9 @@
                 v-if="$store.state.cartAjax.cart_product.length == 0"
                 class="cart-empty"
               >
-                <p class="empty-head-title proxima_regular">phew! your cart is empty</p>
+                <p class="empty-head-title proxima_regular">
+                  phew! your cart is empty
+                </p>
 
                 <img
                   src="@/assets/images/empty-cart.png"
@@ -43,7 +45,10 @@
 
                         <div class="item_name">
                           <a href="#" class="">
-                            <strong class="proxima_regular">{{ product.name }}</strong> <br />
+                            <strong class="proxima_regular">{{
+                              product.name
+                            }}</strong>
+                            <br />
                             <span
                               class="product_options-cart proxima_regular"
                               v-if="JSON.parse(product.size).color"
@@ -65,7 +70,7 @@
                               class="product_options-cart Loyalty_LineItem hide_permanent proxima_regular"
                             ></span>
                             <span class="proxima_regular">
-                            Pre-ordered items: {{ product.qty }}
+                              Pre-ordered items: {{ product.qty }}
                             </span>
                             <br />
                             <span class="proxima_regular"
@@ -106,7 +111,9 @@
                           /></a>
                         </div>
                         <div class="price_info proxima_regular">
-                          <span class="price proxima_regular">₹{{ product.price }}</span>
+                          <span class="price proxima_regular"
+                            >₹{{ product.price | numberWithCommas}}</span
+                          >
                         </div>
                       </div>
                     </div>
@@ -117,7 +124,10 @@
                         Total:
                         <strong>
                           <span class="price proxima_regular"
-                            >₹{{ $store.state.cartAjax.cart_total }}</span
+                            >₹{{
+                              $store.state.cartAjax.cart_total
+                                | numberWithCommas
+                            }}</span
                           >
                         </strong>
                       </h4>
@@ -125,13 +135,16 @@
                         class="total proxima_regular"
                         v-if="
                           $store.state.cartAjax.discount_amount != '' &&
-                            $store.state.cartAjax.discount_amount != null
+                          $store.state.cartAjax.discount_amount != null
                         "
                       >
                         Dsicount:
                         <strong>
                           <span class="price proxima_regular"
-                            >₹{{ $store.state.cartAjax.discount_amount }}</span
+                            >₹{{
+                              $store.state.cartAjax.discount_amount
+                                | numberWithCommas
+                            }}</span
                           >
                         </strong>
                       </h4>
@@ -141,7 +154,7 @@
                         id="preOrderDate"
                         v-if="
                           $store.state.cartAjax.discount_code == '' ||
-                            $store.state.cartAjax.discount_code == null
+                          $store.state.cartAjax.discount_code == null
                         "
                       >
                         <input
@@ -153,11 +166,18 @@
                           v-model="applied_coupon"
                           autocomplete="off"
                         />
-                        <button @click.prevent="addRemoveCoupon('add')" class="black-button proxima_regular">
+                        <button
+                          @click.prevent="addRemoveCoupon('add')"
+                          class="black-button proxima_regular"
+                        >
                           Apply
                         </button>
                       </div>
-                      <div class="tooltiptext red proxima_regular" id="preOrderDate" v-else>
+                      <div
+                        class="tooltiptext red proxima_regular"
+                        id="preOrderDate"
+                        v-else
+                      >
                         <input
                           type="text"
                           placeholder="remove coupon"
@@ -168,7 +188,10 @@
                           disabled
                           autocomplete="off"
                         />
-                        <button @click.prevent="addRemoveCoupon('remove')" class="proxima_regular">
+                        <button
+                          @click.prevent="addRemoveCoupon('remove')"
+                          class="proxima_regular"
+                        >
                           Remove
                         </button>
                       </div>
@@ -199,7 +222,7 @@ export default {
   data() {
     return {
       addToCartVal: 0,
-      applied_coupon: ""
+      applied_coupon: "",
     };
   },
 
@@ -217,13 +240,13 @@ export default {
           method: "post",
           url: `/product/remove-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form
+          params: form,
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
             data: response,
-            vm: this
+            vm: this,
           });
           if (response.success) {
             this.$gtm.push({
@@ -237,11 +260,11 @@ export default {
                       id: item.master_sku,
                       price: item.selling_price,
                       variant: item.fynd_size,
-                      quantity: item.qty
-                    }
-                  ]
-                }
-              }
+                      quantity: item.qty,
+                    },
+                  ],
+                },
+              },
             });
           }
         } else {
@@ -267,13 +290,13 @@ export default {
           method: "post",
           url: `/product/update-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form
+          params: form,
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
             data: response,
-            vm: this
+            vm: this,
           });
         } else {
           throw "no response from api";
@@ -343,13 +366,13 @@ export default {
           method: "post",
           url,
           token,
-          params: form
+          params: form,
         });
 
         if (response.success) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response
+            data: response,
           });
           this.$toast.open(response.message);
         } else {
@@ -358,32 +381,32 @@ export default {
       } catch (error) {
         console.log("error form the add coupon foo >>", error);
       }
-    }
+    },
   },
   watch: {
-    "$store.state.cartAjax.cart_page_message": function() {
+    "$store.state.cartAjax.cart_page_message": function () {
       if (
         this.$store.state.cartAjax.cart_page_message != "" &&
         this.$store.state.cartAjax.cart_page_message != null
       ) {
         this.$toast.open(this.$store.state.cartAjax.cart_page_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: ""
+          data: "",
         });
       }
     },
-    "$store.state.cartAjax.cart_page_erro_page": function() {
+    "$store.state.cartAjax.cart_page_erro_page": function () {
       if (
         this.$store.state.cartAjax.cart_page_error_message != "" &&
         this.$store.state.cartAjax.cart_page_error_message != null
       ) {
         this.$toast.error(this.$store.state.cartAjax.cart_page_error_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: ""
+          data: "",
         });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -393,136 +416,138 @@ export default {
   margin-bottom: 40px;
 }
 .cart .title {
-    font-size: 25px;
-    font-weight: 700;
-    margin: 20px 0px;
-    text-transform: uppercase;
-    letter-spacing: 0.25px;
+  font-size: 25px;
+  font-weight: 700;
+  margin: 20px 0px;
+  text-transform: uppercase;
+  letter-spacing: 0.25px;
 }
 .cart .title {
-    font-size: 25px;
-    font-weight: 700;
-    margin: 20px 0px;
-    text-transform: uppercase;
-    letter-spacing: 0.25px;
+  font-size: 25px;
+  font-weight: 700;
+  margin: 20px 0px;
+  text-transform: uppercase;
+  letter-spacing: 0.25px;
 }
 .cartItemProducts .productItem {
-    display: flex;
-    width: 100%;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px 0px;
-    border-bottom: 1px solid #ddd;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 0px;
+  border-bottom: 1px solid #ddd;
 }
 .cartItemProducts .productItem .image-info {
-    width: 20%;
+  width: 20%;
 }
 .cartItemProducts .productItem .item_name {
-    width: 30%;
-    padding: 10px 20px;
+  width: 30%;
+  padding: 10px 20px;
 }
 .cartItemProducts .productItem .item_name a {
-    color: #000;
+  color: #000;
 }
 .cartItemProducts .productItem .item_name strong {
-    font-size: 20px;
+  font-size: 20px;
 }
 .cartItemProducts .productItem .qty_info {
-    width: 30%;
-    text-align: center;
+  width: 30%;
+  text-align: center;
 }
 .cartItemProducts .productItem .qty_info a {
-    background-color: #555;
-    color: #fff;
-    padding: 6px 20px;
-    cursor: pointer;
+  background-color: #555;
+  color: #fff;
+  padding: 6px 20px;
+  cursor: pointer;
 }
 .cartItemProducts .productItem .qty_info input {
-    width: 20%;
-    padding: 13px 2px;
-    text-align: center;
-    background: transparent;
-    border: none;
+  width: 20%;
+  padding: 13px 2px;
+  text-align: center;
+  background: transparent;
+  border: none;
 }
 .cartItemProducts .productItem .qty_info a {
-    background-color: #555;
-    color: #fff;
-    padding: 15px 20px;
-    cursor: pointer;
+  background-color: #555;
+  color: #fff;
+  padding: 15px 20px;
+  cursor: pointer;
 }
 .cartItemProducts .productItem .remove {
-    width: 10%;
-    text-align: center;
+  width: 10%;
+  text-align: center;
 }
 .cartItemProducts .productItem .remove a {
-    cursor: pointer;
+  cursor: pointer;
 }
 .cartItemProducts .productItem .price_info {
-    width: 10%;
-    text-align: center;
+  width: 10%;
+  text-align: center;
 }
 .cartItemProducts .productItem .price_info span {
-    font-size: 20px;
-    font-weight: 700;
+  font-size: 20px;
+  font-weight: 700;
 }
 .cartItemSidebar {
-    width: 100%;
-    background: #fafafa;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    position: sticky;
-    top: 65px;
+  width: 100%;
+  background: #fafafa;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  position: sticky;
+  top: 65px;
 }
 .cartItemSidebar .total {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 10px 0px;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px 0px;
 }
 .cartItemSidebar input {
-    padding: 10px 10px;
-    border-radius: 0px;
-    border: none;
-    margin: 10px 0px;
+  padding: 10px 10px;
+  border-radius: 0px;
+  border: none;
+  margin: 10px 0px;
 }
 .buttons-checkout {
-    width: 100%;
+  width: 100%;
 }
-#preOrderDate{ display: flex;}
+#preOrderDate {
+  display: flex;
+}
 @media only screen and (max-width: 991px) {
-.cartItemProducts .productItem {
+  .cartItemProducts .productItem {
     flex-wrap: wrap;
-}
-.cartItemProducts .productItem {
+  }
+  .cartItemProducts .productItem {
     display: flex;
     width: 100%;
     justify-content: flex-start;
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
-}
-.cartItemProducts .productItem .image-info {
+  }
+  .cartItemProducts .productItem .image-info {
     width: 20%;
     margin-bottom: 10px;
-}
-.cartItemProducts .productItem .item_name {
+  }
+  .cartItemProducts .productItem .item_name {
     width: 80%;
-}
-.cartItemProducts .productItem .qty_info {
+  }
+  .cartItemProducts .productItem .qty_info {
     width: 30%;
     text-align: left;
-}
-.cartItemProducts .productItem .price_info, .cartItemProducts .productItem .remove {
+  }
+  .cartItemProducts .productItem .price_info,
+  .cartItemProducts .productItem .remove {
     width: 30%;
-}
-
+  }
 }
 @media only screen and (max-width: 767px) {
-.cartItemProducts .productItem .qty_info a {
+  .cartItemProducts .productItem .qty_info a {
     background-color: #555;
     color: #fff;
     padding: 6px 15px;
     cursor: pointer;
-}
+  }
 }
 </style>
