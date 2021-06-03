@@ -2517,9 +2517,9 @@ label.cvform-lbl-checkbox:before {
 
 .alfa-content {
   padding-right: 50px;
-  text-align: left;
+  text-align: right;
   padding-left: 50px;
-  display: flex;
+  display: block;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
@@ -3693,7 +3693,7 @@ label.cvform-lbl-checkbox:before {
 }
 
 .all-detail-div {
-  padding: 0px 60px 0px 0px;
+  padding: 0px 35px 0px 0px;
 }
 
 .tum-max h2 {
@@ -4265,7 +4265,7 @@ label.cvform-lbl-checkbox:before {
   padding-bottom: 15px;
   position: relative;
 }
-.para-con-boder > ul li:before {
+/* .para-con-boder > ul li:before {
   content: "";
   position: absolute;
   left: -20px;
@@ -4274,7 +4274,7 @@ label.cvform-lbl-checkbox:before {
   background: #000;
   top: 8px;
   transform: rotate(45deg);
-}
+} */
 .info-colpse p {
   color: #777;
   letter-spacing: 0.02em;
@@ -4300,6 +4300,7 @@ label.cvform-lbl-checkbox:before {
   color: #777;
   display: block;
 }
+.warnty-return a:hover{ color: #c41e3a;}
 
 .modal-header {
   justify-content: flex-end;
@@ -4376,12 +4377,13 @@ label.cvform-lbl-checkbox:before {
 }
 
 .weight-capcity {
-  display: flex;
-  padding: 13px 0px;
+  display: block;
+  padding: 13px 0px; column-count: 3;
 }
 
 .weight-capcity .w-cap {
-  padding-right: 20px;
+  padding-right: 0px;
+  padding-bottom: 21px;
 }
 
 .warnty-return ul {
@@ -4555,7 +4557,7 @@ label.cvform-lbl-checkbox:before {
 }
 
 .advisor-list .msg-icon {
-  font-size: 18px;
+  font-size: 18px;padding-bottom: 7px;
 }
 
 .wrapper.show .overly-bg {
@@ -4964,7 +4966,8 @@ label.cvform-lbl-checkbox:before {
         font-size: 12px;
         font-weight: 700;}
     
-       
+       .input-error{ color: red;}
+       .move-bag-btn-div a{ cursor: pointer;}
         
         
         

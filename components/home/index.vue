@@ -3,22 +3,41 @@
     <section class="hero-area" v-if="bannerData.length > 0">
       <div class="herocrousal">
         <VueSlickCarousel v-bind="settings">
-          <div v-for="(item, index) in bannerData" :key="index">
+          <!-- <div v-for="(item, index) in bannerData" :key="index">
             <img  :src="item.desktop_image" alt="" class="hide-mob" />
             <img
              :src="item.mobile_image"
               alt=""
               class="show-mob"
             />
-            <div class="crousal-text">
-              <h3 class="proxima_light"><span v-html="item.description"></span></h3>
-              <!-- <img src="~/assets/images/banner-sub-img.png" alt="subimage" /> -->
-              <!-- <NuxtLink :to="item.url" class="btn-fill proxima_regular"
-                >Shop The Collection</NuxtLink
-              > -->
+            <div v-html="item.description" >
+              <div>
+             
+              </div>
             </div>
-          </div>
-        </VueSlickCarousel>
+          </div> -->
+
+         
+   
+     <div> <img src="~/assets/images/banner1.jpg" alt="" class="hide-mob"> <img src="~/assets/images/banner-mob-1.jpg" alt=""
+         class="show-mob">
+       <div class="crousal-text">
+         <h3 class="proxima_light">PERFORAMANCE WITH PURPOSE</h3>
+         <img src="~/assets/images/banner-sub-img.png" alt=""> <a href="#" class="btn-fill proxima_regular">Shop The
+           Collection</a>
+       </div>
+     </div>
+     <div> <img src="~/assets/images/banner2.jpg" alt="" class="hide-mob"> <img src="~/assets/images/banner-mob-2.jpg" alt=""
+         class="show-mob">
+       <div class="white-text-box">
+         <h2 class="proxima_regular"> EXPLORE THE TUMI <span></span> VIRTUAL EXPERIENCE </h2>
+         <a href="#" class="text-center learn-more proxima_regular">Learn More</a> <img src="~/assets/images/gif-img.GIF" alt=""
+           class="gif-img hide-mob"> <img src="~/assets/images/gif-img-mob.GIF" alt="" class="gif-img show-mob">
+       </div>
+     </div>
+  
+
+</VueSlickCarousel>
       </div>
     </section>
     <!-- ============================ SHOP BY CATEGORY =============== -->
@@ -166,7 +185,7 @@
     </section>
     <div class="full-page-border"></div>
     <!-- ===================== Explore section strat=========== -->
-    <span v-html="homePageData.content_1"></span>
+    <div v-html="homePageData.content_1"></div>
     <!-- ========================== recomnded for you ========================= -->
 
     <section class="recomnded-section">
