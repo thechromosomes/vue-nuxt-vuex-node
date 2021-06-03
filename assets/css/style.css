@@ -675,8 +675,10 @@ input::placeholder {
 .icon-embed:before {
   content: "\e928";
 }
-.icon-arrow-go-sm:before, .icon-go:before, .tumi-icon-ft-arrow_right_2:before {
-  content: '\e804';
+.icon-arrow-go-sm:before,
+.icon-go:before,
+.tumi-icon-ft-arrow_right_2:before {
+  content: "\e804";
 }
 .icon-info:before {
   content: "\e92a";
@@ -2483,18 +2485,34 @@ label.cvform-lbl-checkbox:before {
   font-family: "icomoon" !important;
 }
 /* =================================== alpha section css =========== */
-.alfa-sec.alfa-on-pd{ margin: 0px;padding: 40px 0px;}
-.recom-pd{ display: flex; align-items: center;}
-.alfa-content-pdp{ display: flex; align-items: center;justify-content: center;}
-.alfa-sec.alfa-on-pd .slick-slide img{   text-align: right;width: 300px;
+.alfa-sec.alfa-on-pd {
+  margin: 0px;
+  padding: 40px 0px;
+}
+.recom-pd {
+  display: flex;
+  align-items: center;
+}
+.alfa-content-pdp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.alfa-sec.alfa-on-pd .slick-slide img {
+  text-align: right;
+  width: 300px;
   object-fit: contain;
   vertical-align: text-top;
   min-height: 300px;
 }
-.anchor-width-pdp{     margin-right: 30px;
- 
-  text-align: right;}
-  .alfa-img-box-pdp{ width: 70%;}
+.anchor-width-pdp {
+  margin-right: 30px;
+
+  text-align: right;
+}
+.alfa-img-box-pdp {
+  width: 70%;
+}
 .alfa-sec {
   margin: 40px 0px 40px 60px;
 }
@@ -2517,9 +2535,9 @@ label.cvform-lbl-checkbox:before {
 
 .alfa-content {
   padding-right: 50px;
-  text-align: left;
+  text-align: right;
   padding-left: 50px;
-  display: flex;
+  display: block;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
@@ -3693,7 +3711,7 @@ label.cvform-lbl-checkbox:before {
 }
 
 .all-detail-div {
-  padding: 0px 60px 0px 0px;
+  padding: 0px 35px 0px 0px;
 }
 
 .tum-max h2 {
@@ -3724,7 +3742,9 @@ label.cvform-lbl-checkbox:before {
   padding: 15px 0px;
   line-height: 24px;
 }
-.quantity-color strong > span{font-size: 13px;}
+.quantity-color strong > span {
+  font-size: 13px;
+}
 .stock-status .in-stok {
   font-size: 12px;
   letter-spacing: 0.04em;
@@ -3742,8 +3762,8 @@ label.cvform-lbl-checkbox:before {
   color: #555;
   font-size: 12px;
   text-transform: uppercase;
-  
-   margin-left: 30px;
+
+  margin-left: 30px;
 }
 
 .color {
@@ -4265,7 +4285,7 @@ label.cvform-lbl-checkbox:before {
   padding-bottom: 15px;
   position: relative;
 }
-.para-con-boder > ul li:before {
+/* .para-con-boder > ul li:before {
   content: "";
   position: absolute;
   left: -20px;
@@ -4274,7 +4294,7 @@ label.cvform-lbl-checkbox:before {
   background: #000;
   top: 8px;
   transform: rotate(45deg);
-}
+} */
 .info-colpse p {
   color: #777;
   letter-spacing: 0.02em;
@@ -4299,6 +4319,9 @@ label.cvform-lbl-checkbox:before {
   letter-spacing: 0.04em;
   color: #777;
   display: block;
+}
+.warnty-return a:hover {
+  color: #c41e3a;
 }
 
 .modal-header {
@@ -4376,12 +4399,16 @@ label.cvform-lbl-checkbox:before {
 }
 
 .weight-capcity {
-  display: flex;
+  display: block;
   padding: 13px 0px;
 }
 
 .weight-capcity .w-cap {
-  padding-right: 20px;
+  padding-right: 0px;
+  padding-bottom: 22px;
+  width: 33%;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .warnty-return ul {
@@ -4556,6 +4583,7 @@ label.cvform-lbl-checkbox:before {
 
 .advisor-list .msg-icon {
   font-size: 18px;
+  padding-bottom: 7px;
 }
 
 .wrapper.show .overly-bg {
@@ -4792,10 +4820,13 @@ label.cvform-lbl-checkbox:before {
 .cm-list .checkbox-wrap {
   margin-bottom: 5px;
 }
-.quantity-color{ display: flex; align-items: center;}
+.quantity-color {
+  display: flex;
+  align-items: center;
+}
 .qtyAdjustBox {
- 
-  display: block; margin: 10px 0px;
+  display: block;
+  margin: 10px 0px;
 }
 
 .qtyAdjustBox a {
@@ -4905,72 +4936,109 @@ label.cvform-lbl-checkbox:before {
   padding: 20px 0 8px 70px;
 }
 
-.black-banner-heading{color: #FFF;
-  letter-spacing: .095em;
+.black-banner-heading {
+  color: #fff;
+  letter-spacing: 0.095em;
   font-size: 36px;
- 
-  padding-bottom: 20px;}
-  .static-breadcrum li{ display: inline-block; }
-  .static-breadcrum li > a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 12px;
-    display: block;
-    padding-bottom: 18px;
+
+  padding-bottom: 20px;
 }
-  .static-breadcrum{ padding-left: 0px; }
-  .static-back-btn{align-items: center;
-  color: #c42239; font-size: 18px;}
-  .static-back-btn:hover{color: #c42239; text-decoration: underline;}
-  .main-content-static-div{max-width: 1200px;
+.static-breadcrum li {
+  display: inline-block;
+}
+.static-breadcrum li > a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  display: block;
+  padding-bottom: 18px;
+}
+.static-breadcrum {
+  padding-left: 0px;
+}
+.static-back-btn {
+  align-items: center;
+  color: #c42239;
+  font-size: 18px;
+}
+.static-back-btn:hover {
+  color: #c42239;
+  text-decoration: underline;
+}
+.main-content-static-div {
+  max-width: 1200px;
   margin: 3em auto;
-  padding: 0 40px;}
-  .static-heading{ font-size: 18px; color: #555; }
-  .statics-pages-wraper P{line-height: 1.8em;margin-bottom: 1.6em;
-  margin-top: 8px; font-size: 15px;}
-  .static-back-btn img{margin-left: 10px;transform: scaleY(-1);vertical-align: middle;}
-  .static-breadcrum{ padding-left: 0px; }
+  padding: 0 40px;
+}
+.static-heading {
+  font-size: 18px;
+  color: #555;
+}
+.statics-pages-wraper P {
+  line-height: 1.8em;
+  margin-bottom: 1.6em;
+  margin-top: 8px;
+  font-size: 15px;
+}
+.static-back-btn img {
+  margin-left: 10px;
+  transform: scaleY(-1);
+  vertical-align: middle;
+}
+.static-breadcrum {
+  padding-left: 0px;
+}
 /* =========================== payment method css ================= */
-  .static-breadcrum{ padding-left: 0px; }
-   /* ================== tumi lock  pagr css =========== */
-   .lock-item-wrap {
-    display: flex;
-    margin-top: 40px;
-    align-items: baseline;
-    justify-content: space-between; flex-wrap: wrap;
+.static-breadcrum {
+  padding-left: 0px;
 }
-  .tumi-lock-inner{ text-align: center; }
-  .tumi-lock-inner small {
-    display: block;
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 20px;
-    font-size: 11px;
-    line-height: 1.3333;
-    padding-bottom: 7px;
+/* ================== tumi lock  pagr css =========== */
+.lock-item-wrap {
+  display: flex;
+  margin-top: 40px;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.tumi-lock-inner img{ height: 247px; width: 247px;object-fit: cover ;border-radius: 100%;}
-    .tumi-lock-inner h6{font-weight: 700;
-      text-align: center;
-      margin-bottom: 15px;
-      color: #000;
-      font-size: 16px;
-      line-height: 1.3333;}
-      .tumi-lock-btn{text-decoration: none!important;
-        color: #000!important;
-        display: inline-block;
-        border: 3px solid #222;
-        padding: 8px 20px;
-        font-size: 12px;
-        font-weight: 700;}
-    
-       
-        
-        
-        
-     
-        
-       
-        
-        
-        
+.tumi-lock-inner {
+  text-align: center;
+}
+.tumi-lock-inner small {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px;
+  font-size: 11px;
+  line-height: 1.3333;
+  padding-bottom: 7px;
+}
+.tumi-lock-inner img {
+  height: 247px;
+  width: 247px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.tumi-lock-inner h6 {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.3333;
+}
+.tumi-lock-btn {
+  text-decoration: none !important;
+  color: #000 !important;
+  display: inline-block;
+  border: 3px solid #222;
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.input-error {
+  color: red;
+}
+.move-bag-btn-div a {
+  cursor: pointer;
+}
