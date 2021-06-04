@@ -1158,8 +1158,9 @@ width: 10%;
     }
     .alfa-content,
     .alfa-img-box {
-        width: 100%;
+        width: 100%;text-align: center;
     }
+    .info-txt.open-detail h3{ padding-top: 23px;}
     .alfa-content .tm-h3 {
         font-size: 16px;
         padding-top: 10px;
