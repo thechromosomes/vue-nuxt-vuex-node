@@ -84,7 +84,12 @@
 
                 <!-- ============================mobile slider====================== -->
                 <div class="mobile-single-pd-crousal">
-                  <div>
+                  <div
+                    v-if="
+                      singleProductList.single_prod_data.gallery &&
+                      singleProductList.single_prod_data.gallery.length > 0
+                    "
+                  >
                     <VueSlickCarousel v-bind="mobileSingleslider">
                       <div
                         v-for="(itemSingle, indexSingle) in singleProductList
