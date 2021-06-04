@@ -600,12 +600,14 @@
     height: 280px;
     padding: 0;position: relative;
     top: 62px;margin: 0 auto;text-align: center; }
+
     .clp-three-cont h2{text-transform: uppercase;
     font-size: 28px;
     line-height: 32px;
     letter-spacing: .075em;
     margin: 30px 0 90px 0; color: #fff;
     padding: 0;padding-top: 32px;}
+    
     .clp-three-cont span{ display: block;}
     .heading-css strong{ display: block; font-size: 26px;}
     .heading-css strong > span{ display:block;}

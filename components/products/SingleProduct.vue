@@ -194,8 +194,22 @@
                 </div>
 
                 <!-- the comparison side bar -->
-                <!-- <ExploreComparison v-if="showPersonlization" /> -->
-
+                <!-- <ExploreComparison v-if="showExplore" /> -->
+                   <div class="air-line-div">
+                <div class="abc-div"> <span class="proxima_regular abctxt">ABC</span>
+                  <p class="proxima_regular">Free Personalization</p>
+                  <small class="proxima_regular">Available for this product</small> 
+                  <span class="proxima_regular color-hover add-now" id="add-btn">add now</span>
+                 <!-- ===================== perazlion=============componet -->
+                 <Peresonalization v-if="showPersonlization"/>
+                 
+                </div>
+                <div class="abc-div"> <span class="plane"><i class="fa fa-plane icon-ft-pdp-airlineguide" aria-hidden="true"></i></span>
+                  <p class="proxima_regular">Airline Guide</p>
+                  <small class="proxima_regular">Carrier size requirements</small> <span
+                    class="proxima_regular color-hover viw-list">view list</span>
+                </div>
+              </div>
                 <div class="size-comprison">
                   <img src="~/assets/images/single-pd/light_desktop.png" />
                   <h3 class="proxima_regular">Size comparison</h3>
@@ -203,7 +217,7 @@
                     >What can you fit in your TUMI?</small
                   >
                   <a
-                    @click.prevent="() => (showPersonlization = true)"
+                    @click.prevent="() => (showExplore = true)"
                     class="proxima_regular color-hover"
                     >Explore</a
                   >
@@ -482,19 +496,21 @@ import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import ImageZoom from "./imageZoom";
 import ExploreComparison from "./ExploreComparison";
-import SingleProductFooter from "./singleProductFooter";
+import Peresonalization from "./Peresonalization";
+
 import { mapState } from "vuex";
 
 export default {
   components: {
     VueSlickCarousel,
     ImageZoom,
-    SingleProductFooter,
+    Peresonalization,
     ExploreComparison,
   },
   data() {
     return {
       showPersonlization: false,
+      showExplore:false,
       showFetSpec: false,
       showContactDetail: false,
       showFotter: true,
