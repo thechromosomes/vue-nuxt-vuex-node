@@ -1263,7 +1263,7 @@ width: 10%;
     }
     /*-------------watch world mobile---------*/
     .watch-mobile h4 {
-        font-size: 12px;
+        font-size: 12px;padding-top: 20px;
     }
     .watch-mobile h3 {
         font-size: 16px;
@@ -1271,21 +1271,21 @@ width: 10%;
     .watch-mobile>a {
         font-size: 15px;
     }
-    .watch-mobile .slick-slide img {
+    /* .watch-mobile .slick-slide img {
         margin-bottom: 15px;
     }
     .watch-mobile .slick-slide {
         transform: scale(.8);
-    }
-    .watch-mobile .slick-slide.slick-active.slick-center.slick-current {
+    } */
+    /* .watch-mobile .slick-slide.slick-active.slick-center.slick-current {
         transform: scale(.9);
         transition: all .8s ease;
-    }
+    } */
     .watch-mobile .playicon.tm-icon__play {
         width: 45px;
     }
     .watch-mobile .tm-icon__play {
-        top: 40%;
+        top: 28%;
     }
     .watch-mobile .slick-slide>div {
         padding: 10px;
@@ -1960,23 +1960,26 @@ top: 14px;
 }
 
 
-/* ========================= clp pages responsive css ================ */
+/* ================ banner css================= */
+.watch-mobile.video-play-list{width: 100%;
+    white-space: nowrap;
+    overflow: auto;
+    text-align: center;}
+    .watch-mobile.video-play-list .category-filter {
+        width: 70%;
+        position: relative;
+        transition: all .5s;
+        cursor: pointer;
+        display: inline-block;
+        margin: 0px 20px;
+        margin-bottom: 30px;
+    }
+        .watch-mobile.video-play-list .pos-relative {
+            position: relative;
+            padding: 33px;
+            border: 2.2px solid #6f6f6f;
+        }
 
-/* @media only screen and (max-width: 1190px) {
-    .clp-page-two-banner .baneer-content{top: 68px;}
-  }
-  
-  
-     @media only screen and(max-width: 1024px) {
-  
-      .clp-page-two-banner .baneer-content h2{ font-size: 28px;}
-      .travel-div-bg {top: calc(50% - 184px);}
-      .clp-page-two-banner .baneer-content h2 {font-size: 31px;}
-       .travel-div-bg{position: absolute;top: calc(50% - 189px);}
-      
-      } */
-  
-  
-     /* @media only screen and (max-width: 991px) {
-  
-     } */
+        .watch-mobile.video-play-list::-webkit-scrollbar {
+            display: none;
+        }

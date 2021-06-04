@@ -17,27 +17,48 @@
             </div>
           </div> -->
 
-         
-   
-     <div> <img src="~/assets/images/banner1.jpg" alt="" class="hide-mob"> <img src="~/assets/images/banner-mob-1.jpg" alt=""
-         class="show-mob">
-       <div class="crousal-text">
-         <h3 class="proxima_light">PERFORAMANCE WITH PURPOSE</h3>
-         <img src="~/assets/images/banner-sub-img.png" alt=""> <a href="#" class="btn-fill proxima_regular">Shop The
-           Collection</a>
-       </div>
-     </div>
-     <div> <img src="~/assets/images/banner2.jpg" alt="" class="hide-mob"> <img src="~/assets/images/banner-mob-2.jpg" alt=""
-         class="show-mob">
-       <div class="white-text-box">
-         <h2 class="proxima_regular"> EXPLORE THE TUMI <span></span> VIRTUAL EXPERIENCE </h2>
-         <a href="#" class="text-center learn-more proxima_regular">Learn More</a> <img src="~/assets/images/gif-img.GIF" alt=""
-           class="gif-img hide-mob"> <img src="~/assets/images/gif-img-mob.GIF" alt="" class="gif-img show-mob">
-       </div>
-     </div>
-  
-
-</VueSlickCarousel>
+          <div>
+            <img src="~/assets/images/banner1.jpg" alt="" class="hide-mob" />
+            <img
+              src="~/assets/images/banner-mob-1.jpg"
+              alt=""
+              class="show-mob"
+            />
+            <div class="crousal-text">
+              <h3 class="proxima_light">PERFORAMANCE WITH PURPOSE</h3>
+              <img src="~/assets/images/banner-sub-img.png" alt="" />
+              <a href="#" class="btn-fill proxima_regular"
+                >Shop The Collection</a
+              >
+            </div>
+          </div>
+          <div>
+            <img src="~/assets/images/banner2.jpg" alt="" class="hide-mob" />
+            <img
+              src="~/assets/images/banner-mob-2.jpg"
+              alt=""
+              class="show-mob"
+            />
+            <div class="white-text-box">
+              <h2 class="proxima_regular">
+                EXPLORE THE TUMI <span></span> VIRTUAL EXPERIENCE
+              </h2>
+              <a href="#" class="text-center learn-more proxima_regular"
+                >Learn More</a
+              >
+              <img
+                src="~/assets/images/gif-img.GIF"
+                alt=""
+                class="gif-img hide-mob"
+              />
+              <img
+                src="~/assets/images/gif-img-mob.GIF"
+                alt=""
+                class="gif-img show-mob"
+              />
+            </div>
+          </div>
+        </VueSlickCarousel>
       </div>
     </section>
     <!-- ============================ SHOP BY CATEGORY =============== -->
@@ -131,9 +152,9 @@
           <div class="tm-title__line"></div>
         </div>
 
-        <div class="watch-mobile video-play-list">
-          <VueSlickCarousel v-bind="videoSetting">
-            <div v-for="(item, index) in 3" :key="index">
+     <div class="watch-mobile video-play-list visual-filters-container">
+          
+             <div  class="category-filter">
               <div class="pos-relative">
                 <div>
                   <a href="#">
@@ -158,8 +179,58 @@
                 <a href="" class="button-link proxima_bold">Explore more</a>
               </div>
             </div>
-          </VueSlickCarousel>
-        </div>
+            <div  class="category-filter">
+              <div class="pos-relative">
+                <div>
+                  <a href="#">
+                    <img src="~/assets/images/video-2.c7eb9c4.jpg" alt="" />
+                    <div class="playicon tm-icon__play">
+                      <i class=" " aria-hidden="true"
+                        ><img src="~/assets/images/play-icon.png"
+                      /></i>
+                    </div>
+                  </a>
+                </div>
+                <h4 class="text-red">
+                  <a href="#" class="text-red proxima_regular"
+                    >TUMI | McLaren Collection
+                  </a>
+                </h4>
+                <h3 id="video1SubTitle_TXT" class="tm-h3">
+                  <a href="#" class="proxima_regular performce-txt"
+                    >PERFORAMANCE WITH PURPOSE</a
+                  >
+                </h3>
+                <a href="" class="button-link proxima_bold">Explore more</a>
+              </div>
+            </div>
+            <div  class="category-filter">
+              <div class="pos-relative">
+                <div>
+                  <a href="#">
+                    <img src="~/assets/images/video-3.894e2ae.jpg" alt="" />
+                    <div class="playicon tm-icon__play">
+                      <i class=" " aria-hidden="true"
+                        ><img src="~/assets/images/play-icon.png"
+                      /></i>
+                    </div>
+                  </a>
+                </div>
+                <h4 class="text-red">
+                  <a href="#" class="text-red proxima_regular"
+                    >SS2021 Newness
+                  </a>
+                </h4>
+                <h3 id="video1SubTitle_TXT" class="tm-h3">
+                  <a href="#" class="proxima_regular performce-txt"
+                    >Daniel Henney X Spring 2021 Newness</a
+                  >
+                </h3>
+                <a href="" class="button-link proxima_bold">Explore more</a>
+              </div>
+            </div>
+         
+        </div> 
       </div>
     </section>
     <!-- ========================== EXPLORE #TUMIHK ========================= -->

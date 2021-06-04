@@ -1598,6 +1598,10 @@ label.cvform-lbl-checkbox:before {
   border: 0px;
   opacity: 0;
 }
+.header.sticky.fixed .header-search.hidee-fix-tab:hover .form-control.tab-ico{ 
+  width: auto;
+  border: 1px solid #ccc;
+  opacity: 1;}
 /*------add on-active class in header search------*/
 
 .header.sticky.fixed .header-search.on-active input {
@@ -4969,7 +4973,7 @@ label.cvform-lbl-checkbox:before {
        .input-error{ color: red;}
        .move-bag-btn-div a{ cursor: pointer;}
         
-        /* --------------------------------css -crpusal------ */
+        /* --------------------------------css=============== */
         
      
         
