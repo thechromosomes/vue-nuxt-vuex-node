@@ -200,21 +200,37 @@
 
                 <!-- the comparison side bar -->
                 <!-- <ExploreComparison v-if="showExplore" /> -->
-                   <div class="air-line-div">
-                <div class="abc-div"> <span class="proxima_regular abctxt">ABC</span>
-                  <p class="proxima_regular">Free Personalization</p>
-                  <small class="proxima_regular">Available for this product</small> 
-                  <span class="proxima_regular color-hover add-now" id="add-btn">add now</span>
-                 <!-- ===================== perazlion=============componet -->
-                 <Peresonalization v-if="showPersonlization"/>
-                 
+                <div class="air-line-div">
+                  <div class="abc-div">
+                    <span class="proxima_regular abctxt">ABC</span>
+                    <p class="proxima_regular">Free Personalization</p>
+                    <small class="proxima_regular"
+                      >Available for this product</small
+                    >
+                    <span
+                      class="proxima_regular color-hover add-now"
+                      id="add-btn"
+                      >add now</span
+                    >
+                    <!-- ===================== perazlion=============componet -->
+                    <Peresonalization v-if="showPersonlization" />
+                  </div>
+                  <div class="abc-div">
+                    <span class="plane"
+                      ><i
+                        class="fa fa-plane icon-ft-pdp-airlineguide"
+                        aria-hidden="true"
+                      ></i
+                    ></span>
+                    <p class="proxima_regular">Airline Guide</p>
+                    <small class="proxima_regular"
+                      >Carrier size requirements</small
+                    >
+                    <span class="proxima_regular color-hover viw-list"
+                      >view list</span
+                    >
+                  </div>
                 </div>
-                <div class="abc-div"> <span class="plane"><i class="fa fa-plane icon-ft-pdp-airlineguide" aria-hidden="true"></i></span>
-                  <p class="proxima_regular">Airline Guide</p>
-                  <small class="proxima_regular">Carrier size requirements</small> <span
-                    class="proxima_regular color-hover viw-list">view list</span>
-                </div>
-              </div>
                 <div class="size-comprison">
                   <img src="~/assets/images/single-pd/light_desktop.png" />
                   <h3 class="proxima_regular">Size comparison</h3>
@@ -246,6 +262,14 @@
                     <div class="info-colpse" v-if="showProductDetail">
                       <div class="para-con-boder proxima_regular">
                         <ul>
+                          <li
+                            v-show="
+                              singleProductList.single_prod_data.style_code
+                            "
+                          >
+                            Style:
+                            {{ singleProductList.single_prod_data.style_code }}
+                          </li>
                           <li
                             v-for="(desc, descKey) in renderDescription"
                             :key="descKey"
@@ -290,6 +314,19 @@
                         <div class="weight-capcity">
                           <div
                             class="w-cap"
+                            v-for="(Itemdetails, indexDet) in singleProductList
+                              .single_prod_data.item_detials"
+                            :key="indexDet"
+                          >
+                            <h4 class="proxima_bold feature-heding">
+                              {{ indexDet.replaceAll("_", " ") }}
+                            </h4>
+                            <p class="proxima_regular">
+                              {{ Itemdetails }}
+                            </p>
+                          </div>
+                          <div
+                            class="w-cap"
                             v-for="(desc2, descKey2) in renderDescription2"
                             :key="descKey2"
                           >
@@ -328,6 +365,17 @@
                     <div class="info-colpse" v-if="showContactDetail">
                       <div class="para-con-boder">
                         <ul class="advisor-list">
+                          <li
+                            v-for="(prdDetails, ind) in singleProductList
+                              .single_prod_data.advisory_detials"
+                            :key="ind"
+                          >
+                            <span class="proxima_regular">{{
+                              ind.replaceAll("_", " ")
+                            }}</span>
+                            <a class="proxima_regular">{{ prdDetails }}</a>
+                          </li>
+
                           <li>
                             <div>
                               <span
@@ -515,7 +563,7 @@ export default {
   data() {
     return {
       showPersonlization: false,
-      showExplore:false,
+      showExplore: false,
       showFetSpec: false,
       showContactDetail: false,
       showFotter: true,
@@ -849,7 +897,8 @@ export default {
             color: this.singleProductList.single_prod_data.color,
           });
           form.product_id = this.selectedSizeAttr.id_product;
-          form.product_parent_id = this.singleProductList.single_prod_data.id_product;
+          form.product_parent_id =
+            this.singleProductList.single_prod_data.id_product;
           form.product_options = product_options_json;
           form.fynd_size = this.singleProductList.single_prod_data.fynd_size;
           form.fynd_uid = this.singleProductList.single_prod_data.fynd_uid;
@@ -858,7 +907,8 @@ export default {
           form.master_sku = this.singleProductList.single_prod_data.sku;
           form.price = this.singleProductList.single_prod_data.price;
           form.qty_ordered = this.addToCartVal;
-          form.final_price = this.singleProductList.single_prod_data.selling_price;
+          form.final_price =
+            this.singleProductList.single_prod_data.selling_price;
           form.store = this.$store.state.cartAjax.store;
           if (
             this.$store.state.cartAjax.cart_id != null &&
@@ -914,12 +964,12 @@ export default {
                       {
                         name: this.singleProductList.single_prod_data.name,
                         id: this.singleProductList.single_prod_data.sku,
-                        price: this.singleProductList.single_prod_data
-                          .selling_price,
-                        category: this.singleProductList.single_prod_data
-                          .category,
-                        variant: this.selectedSizeAttr
-                          .configrable_atribute_value,
+                        price:
+                          this.singleProductList.single_prod_data.selling_price,
+                        category:
+                          this.singleProductList.single_prod_data.category,
+                        variant:
+                          this.selectedSizeAttr.configrable_atribute_value,
                         quantity: "1",
                       },
                     ],
@@ -956,20 +1006,27 @@ export default {
           var tokenholder;
           var product_options_json = JSON.stringify({
             size: this.selectedComboSize.configrable_atribute_value,
-            color: this.singleProductList.single_prod_data.combo_product_data
-              .color,
+            color:
+              this.singleProductList.single_prod_data.combo_product_data.color,
           });
           form.product_id = this.selectedComboSize.id_product;
-          form.product_parent_id = this.singleProductList.single_prod_data.combo_product_data.id_product;
+          form.product_parent_id =
+            this.singleProductList.single_prod_data.combo_product_data.id_product;
           form.product_options = product_options_json;
-          form.fynd_size = this.singleProductList.single_prod_data.combo_product_data.fynd_size;
-          form.fynd_uid = this.singleProductList.single_prod_data.combo_product_data.fynd_uid;
-          form.name = this.singleProductList.single_prod_data.combo_product_data.name;
+          form.fynd_size =
+            this.singleProductList.single_prod_data.combo_product_data.fynd_size;
+          form.fynd_uid =
+            this.singleProductList.single_prod_data.combo_product_data.fynd_uid;
+          form.name =
+            this.singleProductList.single_prod_data.combo_product_data.name;
           form.sku = this.selectedComboSize.sku;
-          form.master_sku = this.singleProductList.single_prod_data.combo_product_data.sku;
-          form.price = this.singleProductList.single_prod_data.combo_product_data.price;
+          form.master_sku =
+            this.singleProductList.single_prod_data.combo_product_data.sku;
+          form.price =
+            this.singleProductList.single_prod_data.combo_product_data.price;
           form.qty_ordered = this.addToCartVal;
-          form.final_price = this.singleProductList.single_prod_data.combo_product_data.selling_price;
+          form.final_price =
+            this.singleProductList.single_prod_data.combo_product_data.selling_price;
           form.store = this.$store.state.cartAjax.store;
           if (
             this.$store.state.cartAjax.cart_id != null &&
@@ -1025,12 +1082,12 @@ export default {
                       {
                         name: this.singleProductList.single_prod_data.name,
                         id: this.singleProductList.single_prod_data.sku,
-                        price: this.singleProductList.single_prod_data
-                          .selling_price,
-                        category: this.singleProductList.single_prod_data
-                          .category,
-                        variant: this.selectedComboSize
-                          .configrable_atribute_value,
+                        price:
+                          this.singleProductList.single_prod_data.selling_price,
+                        category:
+                          this.singleProductList.single_prod_data.category,
+                        variant:
+                          this.selectedComboSize.configrable_atribute_value,
                         quantity: "1",
                       },
                     ],
@@ -1229,8 +1286,8 @@ export default {
                   {
                     name: this.singleProductList.single_prod_data.name,
                     id: this.singleProductList.single_prod_data.sku,
-                    price: this.singleProductList.single_prod_data
-                      .selling_price,
+                    price:
+                      this.singleProductList.single_prod_data.selling_price,
                     category: this.singleProductList.single_prod_data.category,
                     position: 1,
                   },
@@ -1286,7 +1343,8 @@ export default {
       this.singleProductList.single_prod_data.gallery &&
       this.singleProductList.single_prod_data.gallery.length > 0
     )
-      this.mainThumbImage = this.singleProductList.single_prod_data.gallery[0].image;
+      this.mainThumbImage =
+        this.singleProductList.single_prod_data.gallery[0].image;
   },
 
   mounted() {
@@ -1314,11 +1372,8 @@ export default {
     },
 
     renderDescription2() {
-      let {
-        material,
-        color,
-        warranty,
-      } = this.singleProductList.single_prod_data;
+      let { material, color, warranty } =
+        this.singleProductList.single_prod_data;
 
       let obj = {
         material,
