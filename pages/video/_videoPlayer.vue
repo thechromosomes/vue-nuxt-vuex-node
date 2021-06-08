@@ -3,10 +3,12 @@
         <section class="video-play-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-9">
+                    <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-sm-12">
                        <div class="video-box">
-                          <img src="~/assets/images/video-page-poster.jpg" class="video-poster">
-                        <iframe width="100%" height="549" src="https://www.youtube.com/embed/LhKdXCQ1gcw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          <!-- <img src="~/assets/images/video-page-poster.jpg" class="video-poster"> -->
+                          <div class="video-container embed-responsive embed-responsive-16by9">
+        <iframe width="977" height="549" src="https://www.youtube.com/embed/LhKdXCQ1gcw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="embed-responsive-item"></iframe>
+                          </div>
                         <div class="mclearn-text">
                             <h3 class="proxima_regular">TUMI | McLaren Collection</h3>
                             <h4 class="proxima_regular">PERFORAMANCE WITH PURPOSE</h4>
@@ -14,7 +16,7 @@
                         </div>
                         </div> 
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-xl-3 col-lg-12 col-md-12 col0sm-12 col-sm-12">
                         <div class="video-verticaly-slide">
                             <small class="proxima_semi-bold">EXPLORE MORE</small>
                             <div>
@@ -140,26 +142,44 @@ videosSetiing:{
   
   responsive: [
     {
+      breakpoint: 1199,
+      settings: {
+         vertical: false,
+  verticalSwiping: false,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  arrows:false,
+
+      }
+    },
+    {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
+        vertical: false,
+  verticalSwiping: false,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  arrows:false,
       }
     },
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
+       vertical: false,
+  verticalSwiping: false,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  arrows:false,
       }
     },
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
+        vertical: false,
+  verticalSwiping: false,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  arrows:false,
       }
     }
     // You can unslick at a given breakpoint now by adding:

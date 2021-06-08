@@ -67,7 +67,7 @@
     </div>
 
     <!-- ================================ WATCH THE WORLD OF TUMI on dekshtop ====================== -->
-    <section class="watch-world hide-mob">
+    <!-- <section class="watch-world hide-mob">
       <div class="container">
         <div class="heding-with-line">
           <div class="tm-title__line"></div>
@@ -142,9 +142,9 @@
           </li>
         </ul>
       </div>
-    </section>
+    </section> -->
     <!-- ================================ WATCH THE WORLD OF TUMI show on mobile ====================== -->
-    <section class="watch-world watch-world-mobile show-mob">
+    <!-- <section class="watch-world watch-world-mobile show-mob">
       <div class="container">
         <div class="heding-with-line">
           <div class="tm-title__line"></div>
@@ -232,7 +232,7 @@
          
         </div> 
       </div>
-    </section>
+    </section> -->
     <!-- ========================== EXPLORE #TUMIHK ========================= -->
     <section class="explore-sec">
       <h4 class="text-center proxima_regular">EXPLORE #TUMIHK</h4>

@@ -289,6 +289,23 @@
         max-height: auto;
         display: none;
     } */
+    .video-verticaly-slide .slick-prev {
+        left: auto!important;
+        position: absolute;
+        transform: none;
+        top: 50%;
+    }
+    .video-verticaly-slide .slick-next{ right: 0; top: 50%; left: auto;transform: rotate( 
+        180deg
+         );}
+         .video-verticaly-slide small {
+            font-size: 34px;
+           
+            padding-top: 90px;
+        }
+        .video-play-section{ margin: 0px;}
+        .video-verticaly-slide{ padding: 0px;}
+
 }
 
 
@@ -1957,7 +1974,52 @@ top: 14px;
       .cartItemProducts .productItem .item_name strong{ font-size: 16px!important;}
       .cartItemProducts .productItem .price_info span{ font-size: 16px!important;}
       .cart.proxima_regular img{width: 20px!important;}
-}
+      .form-login-div .select-icon-btn .icon-openarrow-right:before, .form-login-div .select-icon-btn .tumi-icon-ft-arrow_right_3:before {
+        content: "\e818";
+        transform: rotate(
+      92deg
+      );
+        font-size: 10px;
+        position: absolute;
+        z-index: 9;
+        color: #000;
+      }
+          
+      .form-login-div .select-icon-btn i {
+        position: absolute;
+        top: 36%;
+        left: 39%;
+        transform: translate(-50%, -50%);
+      }
+      .thumbnial-video-player {
+        /* display: inline-block; */
+        white-space: nowrap;
+        overflow: auto;
+        /* margin: 0px 70px; */
+    }
+      .thum-img-boxx{ display: inline-block; }
+      .thumb-one-payer {
+        width: 101%;
+        margin: 0px 16px;
+    }
+    .thumbnial-video-player::-webkit-scrollbar {
+        display: none;
+      }
+      .video-verticaly-slide small {
+        font-size: 22px;
+        padding-top: 126px;
+    }
+    /* .video-container {
+      
+        padding: 45.25%;
+        height: 100%;
+    }*/
+    .inovative-content {
+         margin-top: 0px; 
+    }
+    .watch-mobile.video-play-list .pos-relative{ padding: 15px!important;}
+    .watch-mobile.video-play-list .category-filter{ width: 100%!important;}
+} 
 
 
 /* ================ banner css================= */

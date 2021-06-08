@@ -73,7 +73,7 @@
                     <div class="dark-overlay"></div>
                     <div class="slider-for">
                       <div>
-                        <img :src="mainThumbImage" />
+                       <inner-image-zoom :src="mainThumbImage" />
                       </div>
                     </div>
                   </div>
@@ -502,7 +502,8 @@ import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import ImageZoom from "./imageZoom";
 import ExploreComparison from "./ExploreComparison";
 import Peresonalization from "./Peresonalization";
-
+import 'vue-inner-image-zoom/lib/vue-inner-image-zoom.css';
+import InnerImageZoom from 'vue-inner-image-zoom';
 import { mapState } from "vuex";
 
 export default {
@@ -511,6 +512,7 @@ export default {
     ImageZoom,
     Peresonalization,
     ExploreComparison,
+    'inner-image-zoom': InnerImageZoom
   },
   data() {
     return {

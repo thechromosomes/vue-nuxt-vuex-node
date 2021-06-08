@@ -107,7 +107,7 @@
                                             </div>
                                             <div class="select-icon-btn">
                                               <i
-                                                class="fa fa-angle-down"
+                                                class="icon-openarrow-right"
                                                 aria-hidden="true"
                                               ></i>
                                             </div>
@@ -235,7 +235,7 @@
                                             </div>
                                             <div class="select-icon-btn">
                                               <i
-                                                class="fa fa-angle-down"
+                                                class="icon-openarrow-right"
                                                 aria-hidden="true"
                                               ></i>
                                             </div>
@@ -298,7 +298,7 @@
                                             </div>
                                             <div class="select-icon-btn">
                                               <i
-                                                class="fa fa-angle-down"
+                                                class="icon-openarrow-right"
                                                 aria-hidden="true"
                                               ></i>
                                             </div>
@@ -354,7 +354,7 @@
                                             </div>
                                             <div class="select-icon-btn">
                                               <i
-                                                class="fa fa-angle-down"
+                                                class="icon-openarrow-right"
                                                 aria-hidden="true"
                                               ></i>
                                             </div>
@@ -387,7 +387,7 @@
                                             </div>
                                             <div class="select-icon-btn">
                                               <i
-                                                class="fa fa-angle-down"
+                                                class="icon-openarrow-right"
                                                 aria-hidden="true"
                                               ></i>
                                             </div>
@@ -420,7 +420,7 @@
                                             </div>
                                             <div class="select-icon-btn">
                                               <i
-                                                class="fa fa-angle-down"
+                                                class="icon-openarrow-right"
                                                 aria-hidden="true"
                                               ></i>
                                             </div>
@@ -670,7 +670,7 @@
                                             </div>
                                             <div class="select-icon-btn">
                                               <i
-                                                class="fa fa-angle-down"
+                                                class="icon-openarrow-right"
                                                 aria-hidden="true"
                                               ></i>
                                             </div>
@@ -794,7 +794,7 @@
                                             </div>
                                             <div class="select-icon-btn">
                                               <i
-                                                class="fa fa-angle-down"
+                                                class="icon-openarrow-right"
                                                 aria-hidden="true"
                                               ></i>
                                             </div>
@@ -854,7 +854,7 @@
                                             </div>
                                             <div class="select-icon-btn">
                                               <i
-                                                class="fa fa-angle-down"
+                                                class="icon-openarrow-right"
                                                 aria-hidden="true"
                                               ></i>
                                             </div>
@@ -910,7 +910,7 @@
                                             </div>
                                             <div class="select-icon-btn">
                                               <i
-                                                class="fa fa-angle-down"
+                                                class="icon-openarrow-right"
                                                 aria-hidden="true"
                                               ></i>
                                             </div>
@@ -943,7 +943,7 @@
                                             </div>
                                             <div class="select-icon-btn">
                                               <i
-                                                class="fa fa-angle-down"
+                                                class="icon-openarrow-right"
                                                 aria-hidden="true"
                                               ></i>
                                             </div>
@@ -976,7 +976,7 @@
                                             </div>
                                             <div class="select-icon-btn">
                                               <i
-                                                class="fa fa-angle-down"
+                                                class="icon-openarrow-right"
                                                 aria-hidden="true"
                                               ></i>
                                             </div>
@@ -1147,7 +1147,7 @@
                                         </div>
                                         <div class="select-icon-btn">
                                           <i
-                                            class="fa fa-angle-down"
+                                            class="icon-openarrow-right"
                                             aria-hidden="true"
                                           ></i>
                                         </div>
