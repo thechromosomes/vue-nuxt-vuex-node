@@ -379,7 +379,7 @@
                             :key="ind"
                           >
                             <span class="proxima_regular">{{
-                              ind.replaceAll("_", " ")
+                              ind.replaceAll("_", " ").toUpperCase()
                             }}</span>
                             <a class="proxima_regular">{{ prdDetails }}</a>
                           </li>
