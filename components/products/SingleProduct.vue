@@ -335,8 +335,10 @@
                             </h4>
                             <p class="proxima_regular">{{ desc2 }}</p>
                           </div>
+                        <div class="clearfix"></div>
+                          <div class="features-wrap">
                           <div
-                            class="w-cap"
+                            class="w-cap featrures"
                             v-for="(details, i) in singleProductList
                               .single_prod_data.visible_attributes"
                             :key="i"
@@ -344,8 +346,14 @@
                             <h4 class="proxima_bold feature-heding">
                               {{ details.label }}
                             </h4>
-                            <p class="proxima_regular">{{ details.value }}</p>
+                             <div class="clearfix"></div>
+                            <ul>
+                              <li class="proxima_regular">{{ details.value.split(',').join('\n') }}
+                           
+                              </li>
+                            </ul>
                           </div>
+                         </div>
                         </div>
                       </div>
                     </div>
@@ -365,7 +373,7 @@
                     <div class="info-colpse" v-if="showContactDetail">
                       <div class="para-con-boder">
                         <ul class="advisor-list">
-                          <li
+                          <li class="advisy-data"
                             v-for="(prdDetails, ind) in singleProductList
                               .single_prod_data.advisory_detials"
                             :key="ind"
@@ -376,7 +384,7 @@
                             <a class="proxima_regular">{{ prdDetails }}</a>
                           </li>
 
-                          <li>
+                          <!-- <li>
                             <div>
                               <span
                                 class="msg-icon icon-maywehelp-email"
@@ -390,8 +398,8 @@
                               class="proxima_regular"
                               >service.hk.tumi@tumi.com</a
                             >
-                          </li>
-                          <li>
+                          </li> -->
+                          <!-- <li>
                             <div>
                               <span class="msg-icon icon-maywehelp-call"></span>
                             </div>
@@ -399,7 +407,7 @@
                             <a href="tel:800-961-974" class="proxima_regular"
                               >800-961-974</a
                             >
-                          </li>
+                          </li> -->
                         </ul>
                       </div>
                     </div>

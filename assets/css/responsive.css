@@ -2019,6 +2019,7 @@ top: 14px;
     }
     .watch-mobile.video-play-list .pos-relative{ padding: 15px!important;}
     .watch-mobile.video-play-list .category-filter{ width: 100%!important;}
+    .features-wrap .w-cap.featrures:nth-last-child(2),.features-wrap .w-cap.featrures:last-child{ width: 50%;}
 } 
 
 
