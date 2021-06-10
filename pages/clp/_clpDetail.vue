@@ -590,7 +590,7 @@
     clear: both;}
    .clp-three-baneer{ background-image: url(~/assets/images/clp-page-three-banner.jpg); 
    background-repeat: no-repeat; min-height: 400px; background-size:cover; }
-.clp-three-cont{background-image: url(background-image: url(~/assets/images/clp-page-three-con.png);
+.clp-three-cont{background-image: url(~/assets/images/clp-page-three-con.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

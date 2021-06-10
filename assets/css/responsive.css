@@ -305,8 +305,22 @@
         }
         .video-play-section{ margin: 0px;}
         .video-verticaly-slide{ padding: 0px;}
+        /* ------------------ clp page css start------------ */
+        .clp-page-two-banner .baneer-content{top:40px;}
+.btn-collection{ width: 28%;}
+/* -------------- end ---------- */
 
 }
+/*================= media qurey 1190px ===================*/
+
+
+
+/* --------------------------clp page css ------------start-------- */
+@media only screen and (max-width: 1190px) {
+.clp-page-two-banner .baneer-content{top: 68px;}
+}
+/* -------------------end------------------------------ */
+
 
 
 /*================= media qurey 1024px ===================*/
@@ -330,6 +344,12 @@
     .header.sticky.fixed .middle-logo {
         padding-top: 15px;
     }
+    /* ----------------------clp page css start here on 1024px--------------------- */
+
+    .clp-page-two-banner .baneer-content h2{ font-size: 28px;}
+   .clp-page-two-banner .baneer-content h2 {font-size: 31px;}
+
+    /* ------------------------------- end ------------------ */
 }
 
 
@@ -407,6 +427,7 @@
     .explore-sec {
         margin-top: 60px;
     }
+    
 }
 
 
@@ -2020,6 +2041,61 @@ top: 14px;
     .watch-mobile.video-play-list .pos-relative{ padding: 15px!important;}
     .watch-mobile.video-play-list .category-filter{ width: 100%!important;}
     .features-wrap .w-cap.featrures:nth-last-child(2),.features-wrap .w-cap.featrures:last-child{ width: 50%;}
+    /* ================== clp pages css on 767============ */
+    .clp-page-two-banner .baneer-content P {
+        font-size: 18px;
+        line-height: 27px;}
+    .travel-div-bg{ position: relative; left: auto;top:auto; transform: none; width: 100%;padding: 15px!important; min-height: auto;}
+    .clp-page-two-banner .baneer-content{ width: 100%;}
+    .scroll-anchor-link-div{ display: none;}
+    .clp-page-two-banner {
+      
+        height: 380px;
+    }
+    .clp-page-two-banner img{ object-fit: cover; height: 380px;}
+    .travel-div-bg h2{ font-size: 32px;}
+    .what-matters{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .what-matters .left-content-clpthree{ width: 100%;}
+    .right-clp-three-img{ margin: 0px; width: 100%;}
+    .clp-three-wraper{ padding: 30px 15px;}
+    .what-matters .left-content-clpthree, .what-matters .right-clp-three-img{ width: 100%; margin: 0px;}
+    .what-matters.reverse-section .right-clp-three-img{ padding-bottom: 40px; margin-right: 0px;}
+    .what-matters.reverse-section .right-clp-three-img{
+        padding-bottom: 0px;
+    }
+    .btn-collection{ width: 50%;}
+    .recy-item h4{font-size: 14px;}
+    .learn-more-link{ margin-bottom: 20px; display: block;}
+    .what-matters{ padding: 30px 0px;}
+    .clp-banner{ display:block;text-align: center;}
+          .baneer-clp-content-mob{ display: block;}
+          .clp-banner h2{display: none;}
+          .clp-banner h3{font-size: 18px;
+            text-align: center;
+            color: #222;
+            padding-top: 20px;
+            margin-top: 12px;}
+          .clp-pd-wrap h2 {
+            font-size: 12px!important;}
+            .clp-banner{ background-image: none;min-height: auto;}
+            .mobile-banner-clp-one{ display: block;}
+          
+            .baneer-clp-content{ display: none;}
+            .hero-action-mob {
+              font-size: 12px;
+              padding: 6px 29px;
+              border: 1px solid #000;
+              border-radius: 0px;
+              margin-top: 15px;
+          }
+          .clp-products{ overflow: hidden; padding: 0px 15px; margin-top: 40px!important; margin-bottom: 0px!important;}
+            .hero-action-mob span{ display: none;}
+            .clp-banner img{ display: block!important;}
+              .clp-banner{ min-height: auto!important; background-image: none!important; display: block!important;overflow: hidden;}
+    /* ================clp css end =============== */
 } 
 
 

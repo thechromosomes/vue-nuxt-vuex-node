@@ -5081,4 +5081,24 @@ label.cvform-lbl-checkbox:before {
 .exclusive-ofer-slider .dark-overlay{ z-index: -1;}
 
         
-        
+        /* ================ clp page css ======== */
+        .clp-page-two-pd-slider .slick-prev {
+          left: 2%;z-index: 2;
+      }
+      .clp-page-two-pd-slider .slick-prev, .clp-page-two-pd-slider .slick-next{ background-color: #000; opacity: .5; height: 25px; width: 25px; border-radius: 50%;}
+      .clp-page-two-pd-slider .slick-prev:before{content: "\e944";
+        font-family: "icomoon" !important; font-size: 15px;}
+        .clp-page-two-pd-slider .slick-next:before{content: "\e945";
+          font-family: "icomoon" !important; font-size: 15px;}
+      .clp-page-two-pd-slider .slick-next{right: 2%;z-index: 2;}
+      /* ------------ susiblity clp page---------- */
+
+      #clp-three .slick-prev {
+        left: 2%;z-index: 2;
+    }
+    .#clp-three .slick-prev, #clp-three .slick-next{ background-color: #000; opacity: .5; height: 25px; width: 25px; border-radius: 50%;}
+    #clp-three .slick-prev:before{content: "\e944";
+      font-family: "icomoon" !important; font-size: 15px;}
+      #clp-three .slick-next:before{content: "\e945";
+        font-family: "icomoon" !important; font-size: 15px;}
+        #clp-three .slick-next{right: 2%;z-index: 2;}
