@@ -1,98 +1,111 @@
 <template>
   <div>
     <client-only>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <h1 class="text-center collection-title">STORE LOCATOR</h1>
-          </div>
-          <div class="col-sm-12">
-            <div class="find-store-nav">
-              <p>Find stores near this location</p>
-              <div class="loctor-nav-div">
-                <form>
-                  <input
-                    type="text"
-                    placeholder="start searching here"
-                    autocomplete="off"
-                    v-model="search"
+      <div class="store-loctor">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <h1 class="text-center collection-title proxima_bold">
+                STORE LOCATER
+              </h1>
+            </div>
+            <div class="col-sm-12">
+              <div class="find-store-nav">
+                <p class="proxima_regular">Find stores near this location</p>
+                <div class="loctor-nav-div">
+                  <form>
+                    <input
+                      type="text"
+                      placeholder="start searching here"
+                      autocomplete="off"
+                      v-model="search"
                     />
-                </form>
+                  </form>
+                </div>
               </div>
-              </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-5">
-            <div class="map-cont">
-              <ul>
-                <li
-                  v-for="(addressList, index) in filteredList"
-                  :key="index"
-                  @click="toggleInfoWindow(addressList, index)"
-                  style="cursor: pointer"
-                >
-                  <img src="@/assets/images/map-pin-black2.png" />
-                  <a click.prevent class="name"> {{ addressList.infoText.name }}</a>
-                  <p>
-                    {{ addressList.infoText.address }}
-                  </p>
-                  <p>
-                    <font-awesome-icon :icon="['fas', 'phone-alt']" />
-                    {{ addressList.infoText.phone }}
-                  </p>
-                </li>
-              </ul>
             </div>
           </div>
-          <div class="col-sm-8">
-            <div class="map-div">
-              <GmapMap
-                :options="infoOptions"
-                :center="center"
-                :zoom="zoom"
-                map-type-id="terrain"
-                ref="map"
-                  style="width: 100%; height: 400px"
-
-              >
-                <gmap-info-window
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="map-cont">
+                <ul>
+                  <li
+                    v-for="(addressList, index) in filteredList"
+                    :key="index"
+                    @click="toggleInfoWindow(addressList, index)"
+                    style="cursor: pointer"
+                  >
+                    <img src="@/assets/images/map-pin-black2.png" />
+                    <a click.prevent class="name proxima_regular">
+                      {{ addressList.infoText.name }}</a
+                    >
+                    <p class="proxima_regular">
+                      {{ addressList.infoText.address }}
+                    </p>
+                    <p class="proxima_regular">
+                      <font-awesome-icon :icon="['fas', 'phone-alt']" />
+                      {{ addressList.infoText.phone }}
+                    </p>
+                    <div>
+                      <a
+                        href="http://www.stevemadden.in"
+                        target="_blank"
+                        class="proxima_regular"
+                        >stevemadden.in</a
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="map-div">
+                <GmapMap
                   :options="infoOptions"
-                  :position="infoWindowPos"
-                  :opened="infoWinOpen"
-                  @closeclick="
-                    timingPopup = false;
-                    zoom = 4;
-                    infoWinOpen = false;
-                  "
+                  :center="center"
+                  :zoom="zoom"
+                  map-type-id="terrain"
+                  ref="map"
+                  style="width: 100%; height: 400px"
                 >
-                  <div class="info-window">
-                    <p class="font-bold">{{ infoContent.name }}</p>
-                    <p>{{ infoContent.address }}</p>
-                    <p>
-                      <span class="font-bold">Phone:</span>:
-                      {{ infoContent.phone }}
-                    </p>
-                    <p>
-                      <span class="font-bold">Email:</span>:
-                      {{ infoContent.email }}
-                    </p>
-                    <a
-                      :href="`https://maps.google.com/maps?daddr=${infoContent.address}`"
-                      target="blank"
-                    >
-                      Get Directions</a
-                    >
-                  </div>
-                </gmap-info-window>
-                <GmapMarker
-                  :key="index"
-                  v-for="(m, index) in filteredList"
-                  :position="m.position"
-                  :clickable="true"
-                  @click="toggleInfoWindow(m, index)"
-                />
-              </GmapMap>
+                  <gmap-info-window
+                    :options="infoOptions"
+                    :position="infoWindowPos"
+                    :opened="infoWinOpen"
+                    @closeclick="
+                      timingPopup = false;
+                      zoom = 4;
+                      infoWinOpen = false;
+                    "
+                  >
+                    <div class="info-window">
+                      <p class="font-bold">{{ infoContent.name }}</p>
+                      <p>{{ infoContent.address }}</p>
+                      <p>
+                        <span class="font-bold">Phone:</span>:
+                        {{ infoContent.phone }}
+                      </p>
+                      <p>
+                        <span class="font-bold">Email:</span>:
+                        {{ infoContent.email }}
+                      </p>
+                      <a
+                        :href="`https://maps.google.com/maps?daddr=${infoContent.address}`"
+                        target="blank"
+                      >
+                        Get Directions</a
+                      >
+                    </div>
+                  </gmap-info-window>
+                  <GmapMarker
+                    :key="index"
+                    v-for="(m, index) in filteredList"
+                    :position="m.position"
+                    :clickable="true"
+                    @click="toggleInfoWindow(m, index)"
+                  />
+                </GmapMap>
+              </div>
             </div>
           </div>
         </div>
@@ -208,7 +221,7 @@ export default {
           .includes(this.search.toLowerCase());
       });
     },
-  },  
+  },
 
   mounted() {
     this.getStore();

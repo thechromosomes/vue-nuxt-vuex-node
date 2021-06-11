@@ -42,11 +42,17 @@
               <div class="login-cart-div">
                 <ul>
                   <li
-                    class="login-li navbar-toggler pull-xs-right log-and-ragester header-log-ragister"
+                    class="
+                      login-li
+                      navbar-toggler
+                      pull-xs-right
+                      log-and-ragester
+                      header-log-ragister
+                    "
                     id="navbarSideButton"
                     type="button"
                   >
-                    <NuxtLink to="login" class="proxima_semi-bold"
+                    <NuxtLink to="/login" class="proxima_semi-bold"
                       >Login / Register</NuxtLink
                     >
                   </li>
@@ -101,7 +107,10 @@
                                         <div class="select-erap">
                                           <div class="select-view">
                                             <div
-                                              class="select-custom proxima_regular"
+                                              class="
+                                                select-custom
+                                                proxima_regular
+                                              "
                                             >
                                               HK 852
                                             </div>
@@ -139,7 +148,12 @@
                               style="margin-left: 0px; margin-right: 0px"
                             >
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                "
                               >
                                 <label class="proxima_regular">password</label>
                                 <div class="row">
@@ -229,7 +243,10 @@
                                         <div class="select-erap">
                                           <div class="select-view">
                                             <div
-                                              class="select-custom proxima_regular"
+                                              class="
+                                                select-custom
+                                                proxima_regular
+                                              "
                                             >
                                               HK 852
                                             </div>
@@ -267,7 +284,12 @@
                               style="margin-left: 0px; margin-right: 0px"
                             >
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                "
                               >
                                 <label class="proxima_regular"
                                   >Verification Code *</label
@@ -282,7 +304,13 @@
                                 </div>
                               </div>
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild title-field"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                  title-field
+                                "
                               >
                                 <label class="proxima_regular">Title</label>
                                 <div class="row">
@@ -292,7 +320,10 @@
                                         <div class="select-erap">
                                           <div class="select-view">
                                             <div
-                                              class="select-custom proxima_regular"
+                                              class="
+                                                select-custom
+                                                proxima_regular
+                                              "
                                             >
                                               HK 852
                                             </div>
@@ -322,7 +353,12 @@
                                 </div>
                               </div>
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                "
                               >
                                 <label class="proxima_regular">user Name</label>
                                 <div class="row">
@@ -332,7 +368,13 @@
                                 </div>
                               </div>
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild my-birth"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                  my-birth
+                                "
                               >
                                 <label class="proxima_regular"
                                   >My Birthday</label
@@ -348,7 +390,10 @@
                                         <div class="select-erap">
                                           <div class="select-view">
                                             <div
-                                              class="select-custom proxima_regular"
+                                              class="
+                                                select-custom
+                                                proxima_regular
+                                              "
                                             >
                                               HK 852
                                             </div>
@@ -381,7 +426,10 @@
                                         <div class="select-erap">
                                           <div class="select-view">
                                             <div
-                                              class="select-custom proxima_regular"
+                                              class="
+                                                select-custom
+                                                proxima_regular
+                                              "
                                             >
                                               HK 852
                                             </div>
@@ -414,7 +462,10 @@
                                         <div class="select-erap">
                                           <div class="select-view">
                                             <div
-                                              class="select-custom proxima_regular"
+                                              class="
+                                                select-custom
+                                                proxima_regular
+                                              "
                                             >
                                               HK 852
                                             </div>
@@ -444,7 +495,12 @@
                                 </div>
                               </div>
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                "
                               >
                                 <label class="proxima_regular">Emauil*</label>
                                 <div class="row">
@@ -454,7 +510,12 @@
                                 </div>
                               </div>
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                "
                               >
                                 <label class="proxima_regular">Password*</label>
                                 <div class="row">
@@ -464,7 +525,12 @@
                                 </div>
                               </div>
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                "
                               >
                                 <label class="proxima_regular"
                                   >Confirm password*</label
@@ -476,7 +542,12 @@
                                 </div>
                               </div>
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                "
                               >
                                 <div class="forgot-pass">
                                   <input
@@ -570,16 +641,26 @@
               v-for="(item, index) in header"
               :key="index"
             >
-              <a class="desktop-item proxima_semi-bold">{{ item.name }}</a>
+              <NuxtLink
+                :to="`/clp/${item.menu_url_key}`"
+                class="desktop-item proxima_semi-bold"
+                >{{ item.name }}</NuxtLink
+              >
               <input type="checkbox" id="showMega" />
               <label
                 for="showMega"
                 class="mobile-item proxima_semi-bold"
-                @click="updateActive(index)" :class="isActive == index ? 'isActive' : ''"
-                
-                >{{ item.name }}</label
+                @click="updateActive(index)"
+                :class="isActive == index ? 'isActive' : ''"
               >
-              <div class="mega-box" :class="isActive == index ? 'isActive' : ''">
+                <NuxtLink :to="`/clp/${item.menu_url_key}`">{{
+                  item.name
+                }}</NuxtLink></label
+              >
+              <div
+                class="mega-box"
+                :class="isActive == index ? 'isActive' : ''"
+              >
                 <div class="content">
                   <div class="row mega-mt first-row">
                     <h3 class="proxima_semi-bold hide-mob">{{ item.name }}</h3>
@@ -598,7 +679,8 @@
                           v-if="
                             childItem.landing_page == '' ||
                             childItem.landing_page == null
-                          " @click.native="() => (showMenu = false)"
+                          "
+                          @click.native="() => (showMenu = false)"
                           >{{ childItem.name }}</Nuxt-link
                         >
                         <Nuxt-link
@@ -638,7 +720,7 @@
             <div class="show-mob">
               <ul class="other-nav-links">
                 <li>
-                  <NuxtLink to="login" class="proxima_regular"
+                  <NuxtLink to="/login" class="proxima_regular"
                     >Login / Register</NuxtLink
                   >
 
@@ -664,7 +746,10 @@
                                         <div class="select-erap">
                                           <div class="select-view">
                                             <div
-                                              class="select-custom proxima_regular"
+                                              class="
+                                                select-custom
+                                                proxima_regular
+                                              "
                                             >
                                               HK 852
                                             </div>
@@ -699,7 +784,12 @@
                             </div>
                             <div class="row">
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                "
                               >
                                 <label class="proxima_regular">password</label>
                                 <div class="row">
@@ -788,7 +878,10 @@
                                         <div class="select-erap">
                                           <div class="select-view">
                                             <div
-                                              class="select-custom proxima_regular"
+                                              class="
+                                                select-custom
+                                                proxima_regular
+                                              "
                                             >
                                               HK 852
                                             </div>
@@ -823,7 +916,12 @@
                             </div>
                             <div class="row">
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                "
                               >
                                 <label class="proxima_regular"
                                   >Verification Code *</label
@@ -838,7 +936,13 @@
                                 </div>
                               </div>
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild title-field"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                  title-field
+                                "
                               >
                                 <label class="proxima_regular">Title</label>
                                 <div class="row">
@@ -848,7 +952,10 @@
                                         <div class="select-erap">
                                           <div class="select-view">
                                             <div
-                                              class="select-custom proxima_regular"
+                                              class="
+                                                select-custom
+                                                proxima_regular
+                                              "
                                             >
                                               HK 852
                                             </div>
@@ -878,7 +985,12 @@
                                 </div>
                               </div>
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                "
                               >
                                 <label class="proxima_regular">user Name</label>
                                 <div class="row">
@@ -888,7 +1000,13 @@
                                 </div>
                               </div>
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild my-birth"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                  my-birth
+                                "
                               >
                                 <label class="proxima_regular"
                                   >My Birthday</label
@@ -904,7 +1022,10 @@
                                         <div class="select-erap">
                                           <div class="select-view">
                                             <div
-                                              class="select-custom proxima_regular"
+                                              class="
+                                                select-custom
+                                                proxima_regular
+                                              "
                                             >
                                               HK 852
                                             </div>
@@ -937,7 +1058,10 @@
                                         <div class="select-erap">
                                           <div class="select-view">
                                             <div
-                                              class="select-custom proxima_regular"
+                                              class="
+                                                select-custom
+                                                proxima_regular
+                                              "
                                             >
                                               HK 852
                                             </div>
@@ -970,7 +1094,10 @@
                                         <div class="select-erap">
                                           <div class="select-view">
                                             <div
-                                              class="select-custom proxima_regular"
+                                              class="
+                                                select-custom
+                                                proxima_regular
+                                              "
                                             >
                                               HK 852
                                             </div>
@@ -1000,7 +1127,12 @@
                                 </div>
                               </div>
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                "
                               >
                                 <label class="proxima_regular">Emauil*</label>
                                 <div class="row">
@@ -1010,7 +1142,12 @@
                                 </div>
                               </div>
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                "
                               >
                                 <label class="proxima_regular">Password*</label>
                                 <div class="row">
@@ -1020,7 +1157,12 @@
                                 </div>
                               </div>
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                "
                               >
                                 <label class="proxima_regular"
                                   >Confirm password*</label
@@ -1032,7 +1174,12 @@
                                 </div>
                               </div>
                               <div
-                                class="col-sm-12 label-add pd-remove password-fild"
+                                class="
+                                  col-sm-12
+                                  label-add
+                                  pd-remove
+                                  password-fild
+                                "
                               >
                                 <div class="forgot-pass">
                                   <input
@@ -1094,7 +1241,11 @@
                 <li>
                   <a href="" class="proxima_regular">TUMI Exclusives Club</a>
                 </li>
-                <li><NuxtLink to="/storelocator" class="proxima_regular">Store Locator</NuxtLink></li>
+                <li>
+                  <NuxtLink to="/storelocator" class="proxima_regular"
+                    >Store Locator</NuxtLink
+                  >
+                </li>
                 <li>
                   <a href="" class="proxima_regular">Online Customer Service</a>
                 </li>
@@ -1238,6 +1389,7 @@
                 </div>
               </div>
             </li>
+            <client-only>
             <li class="mobile-search-fun">
               <a class="text-red">
                 <span class="icon icon-search-lg text-red" aria-hidden="true">
@@ -1270,7 +1422,10 @@
                                     >Nicols Small Crossbody</span
                                   >
                                   <span
-                                    class="item-details-category proxima_regular"
+                                    class="
+                                      item-details-category
+                                      proxima_regular
+                                    "
                                     >Harrison</span
                                   >
                                 </span>
@@ -1289,7 +1444,10 @@
                                     >Torque Sling</span
                                   >
                                   <span
-                                    class="item-details-category proxima_regular"
+                                    class="
+                                      item-details-category
+                                      proxima_regular
+                                    "
                                     >TUMI I McLaren</span
                                   >
                                 </span>
@@ -1308,7 +1466,10 @@
                                     >Trace Expandable Organizer Accessory</span
                                   >
                                   <span
-                                    class="item-details-category proxima_regular"
+                                    class="
+                                      item-details-category
+                                      proxima_regular
+                                    "
                                     >TUMI I McLaren</span
                                   >
                                 </span>
@@ -1327,7 +1488,10 @@
                                     >Nivolet Luggage Tag</span
                                   >
                                   <span
-                                    class="item-details-category proxima_regular"
+                                    class="
+                                      item-details-category
+                                      proxima_regular
+                                    "
                                     >TUMI I McLaren</span
                                   >
                                 </span>
@@ -1375,6 +1539,7 @@
                 ></NuxtLink
               >
             </li>
+            </client-only>
           </ul>
         </div>
       </div>
@@ -1403,14 +1568,13 @@ export default {
     updateScroll() {
       this.scrollPosition = window.scrollY;
     },
-    updateActive(index){
-      if (this.isActive == index)
-      {this.isActive = -1}
-      else{
-        this.isActive = index
+    updateActive(index) {
+      if (this.isActive == index) {
+        this.isActive = -1;
+      } else {
+        this.isActive = index;
       }
-      
-    }
+    },
   },
 
   computed: {

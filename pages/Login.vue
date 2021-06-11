@@ -72,7 +72,7 @@
         @expired="onExpired"
         @error="recaptchaError"
         size="invisible"
-        sitekey="6LdmY7QaAAAAALNMQFmqg3seM9k-RkXKz7-CYzEh"
+        sitekey="6Le_f9EaAAAAAJKZJt0KCc1cMStOPeZMluouawWz"
         :loadRecaptchaScript="true"
       ></vue-recaptcha>
     </client-only>
