@@ -13,7 +13,11 @@
                   >
                 </li>
                 <li>
-                  <a href="/storelocator" target="_blank" class="proxima_semi-bold">
+                  <a
+                    href="/storelocator"
+                    target="_blank"
+                    class="proxima_semi-bold"
+                  >
                     <i class="p-r-t--1 sprite-loc" alt="Store Locator"></i>
                     Store Locator</a
                   >
@@ -40,50 +44,67 @@
                 </li>
               </ul>
               <div class="login-cart-div">
-                <ul>
-                  <li
-                    class="
-                      login-li
-                      navbar-toggler
-                      pull-xs-right
-                      log-and-ragester
-                      header-log-ragister
-                    "
-                    id="navbarSideButton"
-                    type="button"
-                  >
-                    <NuxtLink to="/login" class="proxima_semi-bold"
-                      >Login / Register</NuxtLink
+                <client-only>
+                  <ul>
+                    <li
+                      class="
+                        login-li
+                        navbar-toggler
+                        pull-xs-right
+                        log-and-ragester
+                        header-log-ragister
+                      "
+                      id="navbarSideButton"
+                      type="button"
                     >
-                  </li>
-                  <li class="wish-list-icon">
-                    <NuxtLink to="/wishlist">
-                      <img src="~assets/images/heart.1b640f1.png" alt="logo" />
-                      <span
-                        class="count"
+                      <NuxtLink
                         v-if="
-                          Object.keys($store.state.cartAjax.wishlist).length !=
-                          0
+                          $store.state.cartAjax.customer_id != null &&
+                          $store.state.cartAjax.customer_id != '' &&
+                          $store.state.cartAjax.customer_session != '' &&
+                          $store.state.cartAjax.customer_session != null
                         "
-                        >{{
-                          $store.state.cartAjax.wishlist.product.split(",")
-                            .length
-                        }}
-                      </span>
-                      <span v-else class="count"> 0 </span>
-                    </NuxtLink>
-                  </li>
-                  <li>
-                    <NuxtLink to="/cart" class="text-red cart-icon">
-                      <span class="carticon-add" aria-hidden="true">
-                        <img src="~assets/images/cart.png" />
-                        <span class="text-red count-cart">{{
-                          $store.state.cartAjax.cart_product.length
-                        }}</span>
-                      </span>
-                    </NuxtLink>
-                  </li>
-                </ul>
+                        to="/Dashboard"
+                        class="proxima_semi-bold"
+                        >Account</NuxtLink
+                      >
+                      <nuxt-link class="proxima_semi-bold" v-else to="/login"
+                        >Login/Register</nuxt-link
+                      >
+                    </li>
+                    <li class="wish-list-icon">
+                      <NuxtLink to="/wishlist">
+                        <img
+                          src="~assets/images/heart.1b640f1.png"
+                          alt="logo"
+                        />
+                        <span
+                          class="count"
+                          v-if="
+                            Object.keys($store.state.cartAjax.wishlist)
+                              .length != 0
+                          "
+                          >{{
+                            $store.state.cartAjax.wishlist.product.split(",")
+                              .length
+                          }}
+                        </span>
+                        <span v-else class="count"> 0 </span>
+                      </NuxtLink>
+                    </li>
+                    <li>
+                      <NuxtLink to="/cart" class="text-red cart-icon">
+                        <span class="carticon-add" aria-hidden="true">
+                          <img src="~assets/images/cart.png" />
+                          <span class="text-red count-cart">{{
+                            $store.state.cartAjax.cart_product.length
+                          }}</span>
+                        </span>
+                      </NuxtLink>
+                    </li>
+                  </ul>
+                </client-only>
+
                 <div class="login-rages-overly">
                   <div
                     class="right-login-menu navbar-side login-process"
@@ -720,9 +741,22 @@
             <div class="show-mob">
               <ul class="other-nav-links">
                 <li>
-                  <NuxtLink to="/login" class="proxima_regular"
-                    >Login / Register</NuxtLink
-                  >
+                  <client-only>
+                    <NuxtLink
+                      v-if="
+                        $store.state.cartAjax.customer_id != null &&
+                        $store.state.cartAjax.customer_id != '' &&
+                        $store.state.cartAjax.customer_session != '' &&
+                        $store.state.cartAjax.customer_session != null
+                      "
+                      to="/Dashboard"
+                      class="proxima_regular"
+                      >Account</NuxtLink
+                    >
+                    <nuxt-link class="proxima_regular" v-else to="/login"
+                      >Login/Register</nuxt-link
+                    >
+                  </client-only>
 
                   <div
                     class="right-login-menu navbar-side login-process"
@@ -1267,9 +1301,22 @@
               id="navbarSideButton"
               type="button"
             >
-              <NuxtLink to="login" class="proxima_semi-bold"
-                >Login / Register</NuxtLink
-              >
+               <client-only>
+                    <NuxtLink
+                      v-if="
+                        $store.state.cartAjax.customer_id != null &&
+                        $store.state.cartAjax.customer_id != '' &&
+                        $store.state.cartAjax.customer_session != '' &&
+                        $store.state.cartAjax.customer_session != null
+                      "
+                      to="/Dashboard"
+                      class="proxima_semi-bold"
+                      >Account</NuxtLink
+                    >
+                    <nuxt-link class="proxima_semi-bold" v-else to="/login"
+                      >Login/Register</nuxt-link
+                    >
+                  </client-only>
               <div
                 class="right-login-menu navbar-side login-process"
                 id="navbarSide"
@@ -1390,155 +1437,161 @@
               </div>
             </li>
             <client-only>
-            <li class="mobile-search-fun">
-              <a class="text-red">
-                <span class="icon icon-search-lg text-red" aria-hidden="true">
-                  <div class="header-search mob-search-down">
-                    <input
-                      type="text"
-                      name=""
-                      class="form-control"
-                      placeholder="Search"
-                    />
-                    <div class="search-result">
-                      <div class="search-result-con">
-                        <div class="search-key">
-                          <h4 class="proxima_semi-bold">
-                            Hot Product Match<span>"a"</span>
-                          </h4>
-                        </div>
-                        <div class="search-pd-boxes">
-                          <ul class="image" id="matching_products">
-                            <li class="search-item">
-                              <a href="" title="">
-                                <span class="search_image"
-                                  ><img
-                                    src="~assets/images/searchpd1.jpg"
-                                    alt=""
-                                /></span>
-                                <span class="item-details">
-                                  <span
-                                    class="item-details-name proxima_regular"
-                                    >Nicols Small Crossbody</span
-                                  >
-                                  <span
-                                    class="
-                                      item-details-category
-                                      proxima_regular
-                                    "
-                                    >Harrison</span
-                                  >
-                                </span>
-                              </a>
-                            </li>
-                            <li class="search-item">
-                              <a href="" title="">
-                                <span class="search_image"
-                                  ><img
-                                    src="~assets/images/searchpd1.jpg"
-                                    alt=""
-                                /></span>
-                                <span class="item-details">
-                                  <span
-                                    class="item-details-name proxima_regular"
-                                    >Torque Sling</span
-                                  >
-                                  <span
-                                    class="
-                                      item-details-category
-                                      proxima_regular
-                                    "
-                                    >TUMI I McLaren</span
-                                  >
-                                </span>
-                              </a>
-                            </li>
-                            <li class="search-item">
-                              <a href="" title="">
-                                <span class="search_image"
-                                  ><img
-                                    src="~assets/images/searchpd1.jpg"
-                                    alt=""
-                                /></span>
-                                <span class="item-details">
-                                  <span
-                                    class="item-details-name proxima_regular"
-                                    >Trace Expandable Organizer Accessory</span
-                                  >
-                                  <span
-                                    class="
-                                      item-details-category
-                                      proxima_regular
-                                    "
-                                    >TUMI I McLaren</span
-                                  >
-                                </span>
-                              </a>
-                            </li>
-                            <li class="search-item lats-child-search">
-                              <a href="" title="">
-                                <span class="search_image"
-                                  ><img
-                                    src="~assets/images/searchpd1.jpg"
-                                    alt=""
-                                /></span>
-                                <span class="item-details">
-                                  <span
-                                    class="item-details-name proxima_regular"
-                                    >Nivolet Luggage Tag</span
-                                  >
-                                  <span
-                                    class="
-                                      item-details-category
-                                      proxima_regular
-                                    "
-                                    >TUMI I McLaren</span
-                                  >
-                                </span>
-                              </a>
-                            </li>
-                          </ul>
-                          <div class="view-all-result-bottom">
-                            <a href="#" class="proxima_regular"
-                              ><span class="icon"
-                                ><i class="sprite-search" alt="" title=""></i
-                              ></span>
-                              <span class="proxima_regular"
-                                ><i class="fa fa-search" aria-hidden="true"></i>
-                                View all results</span
-                              ></a
-                            >
+              <li class="mobile-search-fun">
+                <a class="text-red">
+                  <span class="icon icon-search-lg text-red" aria-hidden="true">
+                    <div class="header-search mob-search-down">
+                      <input
+                        type="text"
+                        name=""
+                        class="form-control"
+                        placeholder="Search"
+                      />
+                      <div class="search-result">
+                        <div class="search-result-con">
+                          <div class="search-key">
+                            <h4 class="proxima_semi-bold">
+                              Hot Product Match<span>"a"</span>
+                            </h4>
+                          </div>
+                          <div class="search-pd-boxes">
+                            <ul class="image" id="matching_products">
+                              <li class="search-item">
+                                <a href="" title="">
+                                  <span class="search_image"
+                                    ><img
+                                      src="~assets/images/searchpd1.jpg"
+                                      alt=""
+                                  /></span>
+                                  <span class="item-details">
+                                    <span
+                                      class="item-details-name proxima_regular"
+                                      >Nicols Small Crossbody</span
+                                    >
+                                    <span
+                                      class="
+                                        item-details-category
+                                        proxima_regular
+                                      "
+                                      >Harrison</span
+                                    >
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="search-item">
+                                <a href="" title="">
+                                  <span class="search_image"
+                                    ><img
+                                      src="~assets/images/searchpd1.jpg"
+                                      alt=""
+                                  /></span>
+                                  <span class="item-details">
+                                    <span
+                                      class="item-details-name proxima_regular"
+                                      >Torque Sling</span
+                                    >
+                                    <span
+                                      class="
+                                        item-details-category
+                                        proxima_regular
+                                      "
+                                      >TUMI I McLaren</span
+                                    >
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="search-item">
+                                <a href="" title="">
+                                  <span class="search_image"
+                                    ><img
+                                      src="~assets/images/searchpd1.jpg"
+                                      alt=""
+                                  /></span>
+                                  <span class="item-details">
+                                    <span
+                                      class="item-details-name proxima_regular"
+                                      >Trace Expandable Organizer
+                                      Accessory</span
+                                    >
+                                    <span
+                                      class="
+                                        item-details-category
+                                        proxima_regular
+                                      "
+                                      >TUMI I McLaren</span
+                                    >
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="search-item lats-child-search">
+                                <a href="" title="">
+                                  <span class="search_image"
+                                    ><img
+                                      src="~assets/images/searchpd1.jpg"
+                                      alt=""
+                                  /></span>
+                                  <span class="item-details">
+                                    <span
+                                      class="item-details-name proxima_regular"
+                                      >Nivolet Luggage Tag</span
+                                    >
+                                    <span
+                                      class="
+                                        item-details-category
+                                        proxima_regular
+                                      "
+                                      >TUMI I McLaren</span
+                                    >
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                            <div class="view-all-result-bottom">
+                              <a href="#" class="proxima_regular"
+                                ><span class="icon"
+                                  ><i class="sprite-search" alt="" title=""></i
+                                ></span>
+                                <span class="proxima_regular"
+                                  ><i
+                                    class="fa fa-search"
+                                    aria-hidden="true"
+                                  ></i>
+                                  View all results</span
+                                ></a
+                              >
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </span>
-              </a>
-            </li>
-            <li class="wish-list-icon">
-              <NuxtLink to="/wishlist">
-                <img src="~assets/images/heart.1b640f1.png" alt="logo" />
-                <span
-                  class="count"
-                  v-if="Object.keys($store.state.cartAjax.wishlist).length != 0"
-                  >{{
-                    $store.state.cartAjax.wishlist.product.split(",").length
-                  }}
-                </span>
-                <span v-else class="count"> 0 </span>
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/cart" class="text-red cart-icon"
-                ><span aria-hidden="true" class="carticon-add"
-                  ><img src="~assets/images/cart.png" />
-                  <span class="text-red count-cart">{{
-                    $store.state.cartAjax.cart_product.length
-                  }}</span></span
-                ></NuxtLink
-              >
-            </li>
+                  </span>
+                </a>
+              </li>
+              <li class="wish-list-icon">
+                <NuxtLink to="/wishlist">
+                  <img src="~assets/images/heart.1b640f1.png" alt="logo" />
+                  <span
+                    class="count"
+                    v-if="
+                      Object.keys($store.state.cartAjax.wishlist).length != 0
+                    "
+                    >{{
+                      $store.state.cartAjax.wishlist.product.split(",").length
+                    }}
+                  </span>
+                  <span v-else class="count"> 0 </span>
+                </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/cart" class="text-red cart-icon"
+                  ><span aria-hidden="true" class="carticon-add"
+                    ><img src="~assets/images/cart.png" />
+                    <span class="text-red count-cart">{{
+                      $store.state.cartAjax.cart_product.length
+                    }}</span></span
+                  ></NuxtLink
+                >
+              </li>
             </client-only>
           </ul>
         </div>
