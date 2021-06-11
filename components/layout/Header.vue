@@ -13,7 +13,7 @@
                   >
                 </li>
                 <li>
-                  <a href="#" target="_blank" class="proxima_semi-bold">
+                  <a href="/storelocator" target="_blank" class="proxima_semi-bold">
                     <i class="p-r-t--1 sprite-loc" alt="Store Locator"></i>
                     Store Locator</a
                   >
