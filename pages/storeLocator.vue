@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <h1 class="text-center collection-title">STORE LOCATER</h1>
+            <h1 class="text-center collection-title">STORE LOCATOR</h1>
           </div>
           <div class="col-sm-12">
             <div class="find-store-nav">
@@ -41,11 +41,6 @@
                     <font-awesome-icon :icon="['fas', 'phone-alt']" />
                     {{ addressList.infoText.phone }}
                   </p>
-                  <div>
-                    <a href="http://www.stevemadden.in" target="_blank"
-                      >stevemadden.in</a
-                    >
-                  </div>
                 </li>
               </ul>
             </div>

@@ -1094,7 +1094,7 @@
                 <li>
                   <a href="" class="proxima_regular">TUMI Exclusives Club</a>
                 </li>
-                <li><a href="" class="proxima_regular">Store Locator</a></li>
+                <li><NuxtLink to="/storelocator" class="proxima_regular">Store Locator</NuxtLink></li>
                 <li>
                   <a href="" class="proxima_regular">Online Customer Service</a>
                 </li>

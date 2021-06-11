@@ -7,7 +7,11 @@
             <div class="border-for">
               <div class="row">
                 <div
-                  class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 foot-hide-on order-3"
+                  class="
+                    col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12
+                    foot-hide-on
+                    order-3
+                  "
                 >
                   <div class="footer-box">
                     <h5 class="proxima_bold">CUSTOMER SERVICE</h5>
@@ -37,7 +41,11 @@
                   </div>
                 </div>
                 <div
-                  class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 foot-hide-on order-2"
+                  class="
+                    col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12
+                    foot-hide-on
+                    order-2
+                  "
                 >
                   <div class="footer-box">
                     <h5 class="proxima_bold">ABOUT TUMI</h5>
@@ -84,12 +92,18 @@
                   </div>
                 </div>
                 <div
-                  class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 pd-remove order-4 show-mob mob-mg"
+                  class="
+                    col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12
+                    pd-remove
+                    order-4
+                    show-mob
+                    mob-mg
+                  "
                 >
                   <div class="foot-news-icon">
                     <div class="social-media">
                       <h5 class="proxima_bold">
-                        <a href="">Find tumi store</a>
+                        <NuxtLink to="/storelocator">Find tumi store</NuxtLink>
                       </h5>
                     </div>
                   </div>
@@ -130,16 +144,15 @@
                             aria-hidden="true"
                           ></i>
                           TUMI SERVICE EMAIL</a
-                        >
+                        > 
                         <small class="proxima_semi-bold hide-mob"
                           >service.hk.tumi@tumi.com</small
                         >
                       </li>
                       <li class="hide-mob">
-                        <a href="" class="proxima_bold"
+                        <NuxtLink to="/storelocator" class="proxima_bold"
                           ><i class="sprite-locblack" aria-hidden="true"></i>
-                          FIND TUMI STORE</a
-                        >
+                          FIND TUMI STORE</NuxtLink>
                       </li>
                       <li>
                         <a href="" class="proxima_bold">WhatsApp</a>
@@ -160,17 +173,20 @@
                 <ul class="social-ul">
                   <li>
                     <a href="#"
-                      ><i class="fa fa-facebook" aria-hidden="true"><img src="~assets/images/facebook.png"></i
+                      ><i class="fa fa-facebook" aria-hidden="true"
+                        ><img src="~assets/images/facebook.png" /></i
                     ></a>
                   </li>
                   <li>
                     <a href="#"
-                      ><i class="fa fa-instagram" aria-hidden="true"><img src="~assets/images/instagram-foot.png"></i
+                      ><i class="fa fa-instagram" aria-hidden="true"
+                        ><img src="~assets/images/instagram-foot.png" /></i
                     ></a>
                   </li>
                   <li>
                     <a href=""
-                      ><i class="fa fa-youtube-play" aria-hidden="true"><img src="~assets/images/youtube.png"></i
+                      ><i class="fa fa-youtube-play" aria-hidden="true"
+                        ><img src="~assets/images/youtube.png" /></i
                     ></a>
                   </li>
                 </ul>
@@ -274,7 +290,9 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-5">
-            <div class="copy-logo"><img src="~assets/images/logo.png" alt="" /></div>
+            <div class="copy-logo">
+              <img src="~assets/images/logo.png" alt="" />
+            </div>
           </div>
           <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
             <p class="proxima_semi-bold">
