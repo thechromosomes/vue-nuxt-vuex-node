@@ -66,8 +66,10 @@
               v-for="(item, index) in luggage"
               :key="index"
             >
-              <img :src="item.image" />
-              <p class="proxima_light">{{ item.name }}</p>
+              <nuxt-link :to="`/product/${item.url_key}`">
+                <img :src="item.image" />
+                <p class="proxima_light">{{ item.name }}</p>
+              </nuxt-link>
             </div>
           </VueSlickCarousel>
         </div>
@@ -117,11 +119,15 @@
       <div class="container">
         <div class="clp-slider-wraper" v-if="duffels.length > 0">
           <VueSlickCarousel v-bind="dekshtopSlide">
-            <div class="item-one-clp-slide" v-for="item, index in duffels" :key="index" >
-               <nuxt-link :to="`/product/${item.url_key}`">
-              <img :src="item.image" />
-              <p class="proxima_light">{{item.name}}</p>
-               </nuxt-link>
+            <div
+              class="item-one-clp-slide"
+              v-for="(item, index) in duffels"
+              :key="index"
+            >
+              <nuxt-link :to="`/product/${item.url_key}`">
+                <img :src="item.image" />
+                <p class="proxima_light">{{ item.name }}</p>
+              </nuxt-link>
             </div>
           </VueSlickCarousel>
         </div>
@@ -138,29 +144,19 @@
         </p>
       </div>
     </section>
-    <section class="clp-page-two-pd-slider not-slide-dekhtop">
+  <section class="clp-page-two-pd-slider">
       <div class="container">
-        <div class="clp-slider-wraper">
-          <VueSlickCarousel v-bind="dekshtopSlide">
-            <div class="item-one-clp-slide">
-              <img src="~assets/images/carry-bag-1.jpg" />
-              <p class="proxima_light">19 Degree Aluminum</p>
-            </div>
-            <div class="item-one-clp-slide">
-              <img src="~assets/images/carry-bag-2.jpg" />
-              <p class="proxima_light">Alpha 3</p>
-            </div>
-            <div class="item-one-clp-slide">
-              <img src="~assets/images/carry-bag-3.jpg" />
-              <p class="proxima_light">Arrivé</p>
-            </div>
-            <div class="item-one-clp-slide">
-              <img src="~assets/images/carry-bag-4.jpg" />
-              <p class="proxima_light">Ashton</p>
-            </div>
-            <div class="item-one-clp-slide">
-              <img src="~assets/images/carry-bag-5.jpg" />
-              <p class="proxima_light">Devoe</p>
+        <div class="clp-slider-wraper" v-if="luggage2.length > 0">
+          <VueSlickCarousel v-bind="slides">
+            <div
+              class="item-one-clp-slide"
+              v-for="(item, index) in luggage2"
+              :key="index"
+            >
+              <nuxt-link :to="`/product/${item.url_key}`">
+                <img :src="item.image" />
+                <p class="proxima_light">{{ item.name }}</p>
+              </nuxt-link>
             </div>
           </VueSlickCarousel>
         </div>
@@ -177,29 +173,20 @@
         </p>
       </div>
     </section>
-    <section class="clp-page-two-pd-slider not-slide-dekhtop">
+
+    <section class="clp-page-two-pd-slider">
       <div class="container">
-        <div class="clp-slider-wraper">
-          <VueSlickCarousel v-bind="dekshtopSlide">
-            <div class="item-one-clp-slide">
-              <img src="~assets/images/mini-bag-1.jpg" />
-              <p class="proxima_light">Alpha 3</p>
-            </div>
-            <div class="item-one-clp-slide">
-              <img src="~assets/images/mini-bag-2.jpg" />
-              <p class="proxima_light">Alpha Accessories</p>
-            </div>
-            <div class="item-one-clp-slide">
-              <img src="~assets/images/mini-bag-3.jpg" />
-              <p class="proxima_light">Mobile Accessories</p>
-            </div>
-            <div class="item-one-clp-slide">
-              <img src="~assets/images/mini-bag-4.jpg" />
-              <p class="proxima_light">Nassau</p>
-            </div>
-            <div class="item-one-clp-slide">
-              <img src="~assets/images/mini-bag-5.jpg" />
-              <p class="proxima_light">Voyageur</p>
+        <div class="clp-slider-wraper" v-if="accessories.length > 0">
+          <VueSlickCarousel v-bind="slides">
+            <div
+              class="item-one-clp-slide"
+              v-for="(item, index) in accessories"
+              :key="index"
+            >
+              <nuxt-link :to="`/product/${item.url_key}`">
+                <img :src="item.image" />
+                <p class="proxima_light">{{ item.name }}</p>
+              </nuxt-link>
             </div>
           </VueSlickCarousel>
         </div>
@@ -207,6 +194,133 @@
     </section>
   </div>
 </template>
+
+<script>
+import VueSlickCarousel from "vue-slick-carousel";
+export default {
+  components: {
+    VueSlickCarousel,
+  },
+  data() {
+    return {
+      luggage: [],
+      luggage2: [],
+      bags: [],
+      duffels: [],
+      accessories: [],
+      slides: {
+        focusOnSelect: true,
+        arrows: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoscroll: true,
+        autoplay: true,
+
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              centerPadding: "150px",
+              centerMode: false,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              initialSlide: 2,
+              centerMode: false,
+              centerPadding: "100px",
+              arrows: false,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              centerMode: false,
+              centerPadding: "0px",
+              arrows: false,
+            },
+          },
+        ],
+      },
+
+      dekshtopSlide: {
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        autoplay: false,
+        autoplaySpeed: 2000,
+        responsive: [
+          {
+            breakpoint: 9999,
+            settings: "unslick",
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 3,
+              infinite: false,
+              dots: false,
+              arrows: false,
+              autoplay: false,
+            },
+          },
+        ],
+      },
+    };
+  },
+
+  methods: {
+    async getProductList(url, dataplaceholder) {
+      try {
+        let { service, store, count } = this.$store.state.list;
+
+        let form = {};
+        form.service = service;
+        form.store = store;
+        form.url_key = url;
+        form.page = 1;
+        form.count = count;
+
+        let response = await this.$store.dispatch("pimAjax", {
+          method: "post",
+          url: `/pimresponse.php`,
+          params: form,
+        });
+
+        if (response) {
+          this[dataplaceholder] = response.result.products;
+        } else {
+          throw "there is error from all product page >> no response";
+        }
+      } catch (error) {
+        this.$globalError(`error from all product page >>>> ${error}`);
+        if (error.message === "Network Error") {
+          this.$store.commit("updateState", {
+            error:
+              "Oops there seems to be some Network issue, please try again",
+          });
+        }
+      }
+    },
+  },
+  created() {
+    this.getProductList("luggage-carry-on-luggage", "luggage");
+    this.getProductList("bags-crossbodies", "bags");
+    this.getProductList("bags-duffels", "duffels");
+    this.getProductList("accessories-wallet---card-cases", "accessories");
+    this.getProductList("luggage-checked-luggage", "luggage2");
+  },
+};
+</script>
 <style scoped>
 /* ======================================= clp page two css ============== */
 
@@ -352,126 +466,3 @@ html {
   }
 }
 </style>
-<script>
-import VueSlickCarousel from "vue-slick-carousel";
-export default {
-  components: {
-    VueSlickCarousel,
-  },
-  data() {
-    return {
-      luggage: [],
-      bags: [],
-      duffels: [],
-      slides: {
-        focusOnSelect: true,
-        arrows: true,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        autoscroll: true,
-        autoplay: true,
-
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              centerPadding: "150px",
-              centerMode: false,
-            },
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-              initialSlide: 2,
-              centerMode: false,
-              centerPadding: "100px",
-              arrows: false,
-            },
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-              centerMode: false,
-              centerPadding: "0px",
-              arrows: false,
-            },
-          },
-        ],
-      },
-
-      dekshtopSlide: {
-        slidesToShow: 5,
-        slidesToScroll: 5,
-        autoplay: false,
-        autoplaySpeed: 2000,
-        responsive: [
-          {
-            breakpoint: 9999,
-            settings: "unslick",
-          },
-          {
-            breakpoint: 767,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 3,
-              infinite: false,
-              dots: false,
-              arrows: false,
-              autoplay: false,
-            },
-          },
-        ],
-      },
-    };
-  },
-
-  methods: {
-    async getProductList(url, dataplaceholder) {
-      try {
-        let { service, store, page, count } = this.$store.state.list;
-
-        let form = {};
-        form.service = service;
-        form.store = store;
-        form.url_key = url;
-        form.page = page;
-        form.count = count;
-
-        let response = await this.$store.dispatch("pimAjax", {
-          method: "post",
-          url: `/pimresponse.php`,
-          params: form,
-        });
-
-        if (response) {
-          this[dataplaceholder] = response.result.products;
-        } else {
-          throw "there is error from all product page >> no response";
-        }
-      } catch (error) {
-        this.$globalError(`error from all product page >>>> ${error}`);
-        if (error.message === "Network Error") {
-          this.$store.commit("updateState", {
-            error:
-              "Oops there seems to be some Network issue, please try again",
-          });
-        }
-      }
-    },
-  },
-  created() {
-    this.getProductList("luggage-carry-on-luggage", "luggage");
-    this.getProductList("bags-crossbodies", "bags");
-    this.getProductList("bags-duffels", "duffels");
-
-  },
-};
-</script>

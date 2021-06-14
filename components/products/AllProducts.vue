@@ -389,7 +389,7 @@
                       />
                     </NuxtLink>
                     <div class="pd-slider">
-                      <div class="pd-slider-itm">
+                      <div class="pd-slider-itm" v-if="singleProd.gallery.length > 0">
                         <VueSlickCarousel v-bind="authenticity">
                           <div
                             v-for="(image, imageIndex) in singleProd.gallery"

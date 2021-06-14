@@ -663,10 +663,18 @@
               :key="index"
             >
               <NuxtLink
+                v-if="
+                  item.menu_url_key == 'collections' ||
+                  item.menu_url_key == 'accessories' ||
+                  item.menu_url_key == 'luggage'
+                "
                 :to="`/clp/${item.menu_url_key}`"
                 class="desktop-item proxima_semi-bold"
                 >{{ item.name }}</NuxtLink
               >
+              <a v-else class="desktop-item proxima_semi-bold">{{
+                item.name
+              }}</a>
               <input type="checkbox" id="showMega" />
               <label
                 for="showMega"
@@ -674,10 +682,17 @@
                 @click="updateActive(index)"
                 :class="isActive == index ? 'isActive' : ''"
               >
-                <NuxtLink :to="`/clp/${item.menu_url_key}`">{{
-                  item.name
-                }}</NuxtLink></label
-              >
+                <NuxtLink
+                  v-if="
+                    item.menu_url_key == 'collections' ||
+                    item.menu_url_key == 'accessories' ||
+                    item.menu_url_key == 'luggage'
+                  "
+                  :to="`/clp/${item.menu_url_key}`"
+                  >{{ item.name }}</NuxtLink
+                >
+                <a v-else>{{ item.name }}</a>
+              </label>
               <div
                 class="mega-box"
                 :class="isActive == index ? 'isActive' : ''"
@@ -1301,22 +1316,22 @@
               id="navbarSideButton"
               type="button"
             >
-               <client-only>
-                    <NuxtLink
-                      v-if="
-                        $store.state.cartAjax.customer_id != null &&
-                        $store.state.cartAjax.customer_id != '' &&
-                        $store.state.cartAjax.customer_session != '' &&
-                        $store.state.cartAjax.customer_session != null
-                      "
-                      to="/Dashboard"
-                      class="proxima_semi-bold"
-                      >Account</NuxtLink
-                    >
-                    <nuxt-link class="proxima_semi-bold" v-else to="/login"
-                      >Login/Register</nuxt-link
-                    >
-                  </client-only>
+              <client-only>
+                <NuxtLink
+                  v-if="
+                    $store.state.cartAjax.customer_id != null &&
+                    $store.state.cartAjax.customer_id != '' &&
+                    $store.state.cartAjax.customer_session != '' &&
+                    $store.state.cartAjax.customer_session != null
+                  "
+                  to="/Dashboard"
+                  class="proxima_semi-bold"
+                  >Account</NuxtLink
+                >
+                <nuxt-link class="proxima_semi-bold" v-else to="/login"
+                  >Login/Register</nuxt-link
+                >
+              </client-only>
               <div
                 class="right-login-menu navbar-side login-process"
                 id="navbarSide"

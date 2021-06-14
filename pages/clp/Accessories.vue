@@ -491,13 +491,13 @@ export default {
   methods: {
     async getProductList(url, dataplaceholder) {
       try {
-        let { service, store, page, count } = this.$store.state.list;
+        let { service, store, count } = this.$store.state.list;
 
         let form = {};
         form.service = service;
         form.store = store;
         form.url_key = url;
-        form.page = page;
+        form.page = 1;
         form.count = count;
 
         let response = await this.$store.dispatch("pimAjax", {
