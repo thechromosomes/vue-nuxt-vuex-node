@@ -16,25 +16,47 @@
                   <div class="footer-box">
                     <h5 class="proxima_bold">CUSTOMER SERVICE</h5>
                     <ul class="foot-links-list">
-                      <li><a href="" class="proxima_semi-bold">Shipping</a></li>
-                      <li><a href="" class="proxima_semi-bold">Returns</a></li>
                       <li>
-                        <a href="" class="proxima_semi-bold">Payment methods</a>
-                      </li>
-                      <li>
-                        <a href="" class="proxima_semi-bold"
-                          >Product Info and Warranty</a
+                        <Nuxt-link to="/cms/shipping" class="proxima_semi-bold"
+                          >Shipping</Nuxt-link
                         >
                       </li>
                       <li>
-                        <a href="" class="proxima_semi-bold"
-                          >Airline Carry-On Guide</a
+                        <Nuxt-link to="/cms/returns" class="proxima_semi-bold"
+                          >Returns</Nuxt-link
                         >
                       </li>
-                      <li><a href="" class="proxima_semi-bold">FAQs</a></li>
                       <li>
-                        <a href="" class="proxima_semi-bold"
-                          >Setting your TUMI Lock</a
+                        <Nuxt-link
+                          to="/cms/payment-methods"
+                          class="proxima_semi-bold"
+                          >Payment methods</Nuxt-link
+                        >
+                      </li>
+                      <li>
+                        <Nuxt-link
+                          to="/cms/product-info-warranty"
+                          class="proxima_semi-bold"
+                          >Product Info and Warranty</Nuxt-link
+                        >
+                      </li>
+                      <li>
+                        <Nuxt-link
+                          to="/cms/airline-carry-on-guide"
+                          class="proxima_semi-bold"
+                          >Airline Carry-On Guide</Nuxt-link
+                        >
+                      </li>
+                      <li>
+                        <Nuxt-link to="/cms/faq" class="proxima_semi-bold"
+                          >FAQs</Nuxt-link
+                        >
+                      </li>
+                      <li>
+                        <Nuxt-link
+                          to="/cms/setting-your-tumi-lock"
+                          class="proxima_semi-bold"
+                          >Setting your TUMI Lock</Nuxt-link
                         >
                       </li>
                     </ul>
@@ -51,7 +73,9 @@
                     <h5 class="proxima_bold">ABOUT TUMI</h5>
                     <ul class="foot-links-list">
                       <li>
-                        <a href="" class="proxima_semi-bold">Our Story</a>
+                        <Nuxt-link to="/cms/our-story" class="proxima_semi-bold"
+                          >Our Story</Nuxt-link
+                        >
                       </li>
                       <li>
                         <a href="" class="proxima_semi-bold">TUMI Difference</a>
@@ -144,7 +168,7 @@
                             aria-hidden="true"
                           ></i>
                           TUMI SERVICE EMAIL</a
-                        > 
+                        >
                         <small class="proxima_semi-bold hide-mob"
                           >service.hk.tumi@tumi.com</small
                         >
@@ -152,7 +176,8 @@
                       <li class="hide-mob">
                         <NuxtLink to="/storelocator" class="proxima_bold"
                           ><i class="sprite-locblack" aria-hidden="true"></i>
-                          FIND TUMI STORE</NuxtLink>
+                          FIND TUMI STORE</NuxtLink
+                        >
                       </li>
                       <li>
                         <a href="" class="proxima_bold">WhatsApp</a>
@@ -174,19 +199,19 @@
                   <li>
                     <a href="#"
                       ><i class="fa fa-facebook" aria-hidden="true"
-                        ><img src="~assets/images/facebook.png" /></i
+                        ><img src="~assets/images/facebook.png"/></i
                     ></a>
                   </li>
                   <li>
                     <a href="#"
                       ><i class="fa fa-instagram" aria-hidden="true"
-                        ><img src="~assets/images/instagram-foot.png" /></i
+                        ><img src="~assets/images/instagram-foot.png"/></i
                     ></a>
                   </li>
                   <li>
                     <a href=""
                       ><i class="fa fa-youtube-play" aria-hidden="true"
-                        ><img src="~assets/images/youtube.png" /></i
+                        ><img src="~assets/images/youtube.png"/></i
                     ></a>
                   </li>
                 </ul>
@@ -305,4 +330,3 @@
     </section>
   </div>
 </template>
-
