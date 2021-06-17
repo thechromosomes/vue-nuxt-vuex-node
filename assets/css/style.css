@@ -4216,7 +4216,7 @@ label.cvform-lbl-checkbox:before {
 
 .size-comprison {
   text-align: center;
-  padding: 20px 0px;
+  /* padding: 20px 0px; */
   /* border-bottom: 2px solid #ccc;
   border-top: 2px solid #ccc; */
   margin-bottom: 30px;
