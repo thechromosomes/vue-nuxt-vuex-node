@@ -25,6 +25,7 @@ export const state = () => ({
   showLogIn: false,
   discount_code: "",
   gtm_product: [],
+  showHideCart: false,
 });
 
 export const actions = {
@@ -146,6 +147,11 @@ export const mutations = {
   removePageMessage(state, { data }) {
     state.cart_page_message = data;
     state.cart_page_error_message = data;
+  },
+
+  // show hide cart
+  showHideCart(state) {
+    state.showHideCart = !state.showHideCart;
   },
 
   // update cart data referencing cookies

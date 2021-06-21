@@ -1,16 +1,23 @@
 <template>
   <div>
-    <div class="cart-page">
+    <div class="cart-page active">
       <div class="tm-mask">
         <div class="tm-panel-container">
           <div class="tm-wrapper">
-            <div class="tm-panel tm-panel-basic " id="tm-panel-mini-cart">
+            <div
+              class="tm-panel tm-panel-basic"
+              id="tm-panel-mini-cart"
+              v-if="$store.state.cartAjax.cart_product.length > 0"
+            >
               <div class="">
                 <header class="tm-header">
-                  <h3 class="title"><span>1</span> Item in cart</h3>
+                  <h3 class="title">
+                    <span>{{ $store.state.cartAjax.cart_product.length }}</span>
+                    Item in cart
+                  </h3>
                   <span class="sub"></span
                   ><a
-                    href="#close"
+                    @click.prevent="emitFunction()"
                     class="close"
                     title="close"
                     aria-label="close"
@@ -18,52 +25,64 @@
                   ></a>
                 </header>
                 <div class="tm-content">
-                  <div class="scroll ">
+                  <div class="scroll">
                     <div class="scroll-inner">
                       <ul class="cart-products">
                         <li class="cart-product">
-                          <div class="cart-item ">
+                          <div
+                            class="cart-item"
+                            v-for="(product, index) in $store.state.cartAjax
+                              .cart_product"
+                            :key="index"
+                          >
                             <div class="product-image">
-                              <a href="#" class="" title="Lance Backpack"
-                                ><img
-                                  src="https://tumi.scene7.com/is/image/Tumi/1355367105_main"
-                                  alt="Lance Backpack"
-                              /></a>
+                              <NuxtLink
+                                :to="`/collections/product/${product.url_key}`"
+                                class=""
+                                title="Lance Backpack"
+                                ><img :src="product.image" alt="cart image"
+                              /></NuxtLink>
                             </div>
-                            <div class="product-details ">
+                            <div class="product-details">
                               <div class="product-badge">
-                                <span class="badge-added ">just added</span>
+                                <span class="badge-added" v-if="index == 0"
+                                  >just added</span
+                                >
                               </div>
-                              <a
-                                href="#"
+                              <NuxtLink
+                                :to="`/collections/product/${product.url_key}`"
                                 class="product-name"
                                 title="Lance Backpack"
-                                >Lance Backpack</a
+                                >{{ product.name }}</NuxtLink
                               >
-                              <div class="product-collection ">
-                                Alpha Bravo
-                              </div>
                               <div class="product-price">
                                 <div class="wrap">
-                                  <span class="price">HK$3,990.00</span>
+                                  <span class="price">
+                                    ₹{{
+                                      product.selling_price | numberWithCommas
+                                    }}</span
+                                  >
                                 </div>
                               </div>
-                              <div class="product-color">
-                                ColoNavy Camo
+                              <div
+                                class="product-color"
+                                v-if="JSON.parse(product.size).color"
+                              >
+                                Color : {{ JSON.parse(product.size).color }}
                               </div>
                               <div class="product-qty">
-                                Quantity:1
+                                Quantity: {{ product.qty }}
                               </div>
-                              <div class="product-monogram"></div>
+                              <!-- <div class="product-monogram"></div> -->
                             </div>
-                            <a
+                            <!-- <a
                               href="#remove"
                               class="product-remove"
                               title="Remove Lance Backpack"
                               aria-label="Remove Lance Backpack"
                               ><span class="icon icon-x"></span
-                            ></a>
-                            <div style="clear:both; "></div>
+                            ></a> -->
+                            <div style="clear: both"></div>
                           </div>
                         </li>
                       </ul>
@@ -73,22 +92,38 @@
                 <div class="tm-footer">
                   <div class="cart-meta">
                     <div class="subtotal-label">Total Order</div>
-                    <div class="subtotal-value">HK$10,723.00</div>
+                    <div class="subtotal-value">
+                      ₹{{ $store.state.cartAjax.cart_total | numberWithCommas }}
+                    </div>
                   </div>
-                  <a
-                    href="/cart"
+                  <NuxtLink
+                    to="/cart"
+                    @click.native="emitFunction()"
                     class="tm-button tm-red-button checkBtn"
                     title="Go to shopping cart"
                     tabindex="0"
-                    >Go to shopping cart</a
+                    >Go to shopping cart</NuxtLink
                   ><a
-                    href="#continue-shopping"
-                    class="tm-button tm-white-button tm-panel-close continueShopBtn"
+                    @click.prevent="contShopping()"
+                    class="
+                      tm-button tm-white-button tm-panel-close
+                      continueShopBtn
+                    "
                     title="Continue shopping"
                     >Continue shopping</a
                   >
                 </div>
               </div>
+            </div>
+            <div v-else>
+              <a
+                @click.prevent="emitFunction()"
+                class="close"
+                title="close"
+                aria-label="close"
+                ><span class="icon icon-x"></span
+              ></a>
+              <h3>phew! your cart is empty</h3>
             </div>
           </div>
         </div>
@@ -102,13 +137,17 @@ export default {
   data() {
     return {
       addToCartVal: 0,
-      applied_coupon: ""
+      applied_coupon: "",
     };
   },
 
   methods: {
     emitFunction() {
-      this.$parent.toggleCart();
+      this.$parent.toogleCart();
+    },
+    contShopping(){
+      this.$router.push("/") 
+      this.emitFunction()
     },
 
     async removeCartItem(item) {
@@ -124,12 +163,12 @@ export default {
           method: "post",
           url: `/product/remove-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form
+          params: form,
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response
+            data: response,
           });
           if (response.success) {
             this.$gtm.push({
@@ -143,11 +182,11 @@ export default {
                       id: item.master_sku,
                       price: item.selling_price,
                       variant: item.fynd_size,
-                      quantity: item.qty
-                    }
-                  ]
-                }
-              }
+                      quantity: item.qty,
+                    },
+                  ],
+                },
+              },
             });
           }
         } else {
@@ -172,12 +211,12 @@ export default {
           method: "post",
           url: `/product/update-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form
+          params: form,
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response
+            data: response,
           });
         } else {
           throw "no response from api";
@@ -242,13 +281,13 @@ export default {
           method: "post",
           url,
           token: this.$store.state.cartAjax.cart_token,
-          params: form
+          params: form,
         });
 
         if (response.success) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response
+            data: response,
           });
           this.$toast.open(response.message);
         } else {
@@ -257,33 +296,33 @@ export default {
       } catch (error) {
         console.log("error form the add coupon foo >>", error);
       }
-    }
+    },
   },
 
   watch: {
-    // "$store.state.cartAjax.cart_page_message": function () {
-    //   if (
-    //     this.$store.state.cartAjax.cart_page_message != "" &&
-    //     this.$store.state.cartAjax.cart_page_message != null
-    //   ) {
-    //     this.$toast.open(this.$store.state.cartAjax.cart_page_message);
-    //     this.$store.commit("cartAjax/removePageMessage", {
-    //       data: "",
-    //    });
-    //   }
-    // },
-    "$store.state.cartAjax.cart_page_erro_page": function() {
+    "$store.state.cartAjax.cart_page_message": function () {
+      if (
+        this.$store.state.cartAjax.cart_page_message != "" &&
+        this.$store.state.cartAjax.cart_page_message != null
+      ) {
+        this.$toast.open(this.$store.state.cartAjax.cart_page_message);
+        this.$store.commit("cartAjax/removePageMessage", {
+          data: "",
+        });
+      }
+    },
+    "$store.state.cartAjax.cart_page_erro_page": function () {
       if (
         this.$store.state.cartAjax.cart_page_error_message != "" &&
         this.$store.state.cartAjax.cart_page_error_message != null
       ) {
         this.$toast.error(this.$store.state.cartAjax.cart_page_error_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: ""
+          data: "",
         });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

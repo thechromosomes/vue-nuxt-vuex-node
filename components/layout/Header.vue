@@ -60,9 +60,9 @@
                       <NuxtLink
                         v-if="
                           $store.state.cartAjax.customer_id != null &&
-                            $store.state.cartAjax.customer_id != '' &&
-                            $store.state.cartAjax.customer_session != '' &&
-                            $store.state.cartAjax.customer_session != null
+                          $store.state.cartAjax.customer_id != '' &&
+                          $store.state.cartAjax.customer_session != '' &&
+                          $store.state.cartAjax.customer_session != null
                         "
                         to="/Dashboard"
                         class="proxima_semi-bold"
@@ -93,14 +93,17 @@
                       </NuxtLink>
                     </li>
                     <li>
-                      <NuxtLink to="/cart" class="text-red cart-icon">
+                      <a
+                        @click.prevent="toogleCart()"
+                        class="text-red cart-icon"
+                      >
                         <span class="carticon-add" aria-hidden="true">
                           <img src="~assets/images/cart.png" />
                           <span class="text-red count-cart">{{
                             $store.state.cartAjax.cart_product.length
                           }}</span>
                         </span>
-                      </NuxtLink>
+                      </a>
                     </li>
                   </ul>
                 </client-only>
@@ -665,8 +668,8 @@
               <NuxtLink
                 v-if="
                   item.menu_url_key == 'collections' ||
-                    item.menu_url_key == 'accessories' ||
-                    item.menu_url_key == 'luggage'
+                  item.menu_url_key == 'accessories' ||
+                  item.menu_url_key == 'luggage'
                 "
                 :to="`/clp/${item.menu_url_key}`"
                 class="desktop-item proxima_semi-bold"
@@ -685,8 +688,8 @@
                 <NuxtLink
                   v-if="
                     item.menu_url_key == 'collections' ||
-                      item.menu_url_key == 'accessories' ||
-                      item.menu_url_key == 'luggage'
+                    item.menu_url_key == 'accessories' ||
+                    item.menu_url_key == 'luggage'
                   "
                   :to="`/clp/${item.menu_url_key}`"
                   >{{ item.name }}</NuxtLink
@@ -714,7 +717,7 @@
                           :to="`/collections/${childItem.menu_url_key}/`"
                           v-if="
                             childItem.landing_page == '' ||
-                              childItem.landing_page == null
+                            childItem.landing_page == null
                           "
                           @click.native="() => (showMenu = false)"
                           >{{ childItem.name }}</Nuxt-link
@@ -724,7 +727,7 @@
                           :to="`/cms/${childItem.landing_page}`"
                           v-if="
                             childItem.landing_page != '' &&
-                              childItem.landing_page != null
+                            childItem.landing_page != null
                           "
                           >{{ childItem.name }}</Nuxt-link
                         >
@@ -760,9 +763,9 @@
                     <NuxtLink
                       v-if="
                         $store.state.cartAjax.customer_id != null &&
-                          $store.state.cartAjax.customer_id != '' &&
-                          $store.state.cartAjax.customer_session != '' &&
-                          $store.state.cartAjax.customer_session != null
+                        $store.state.cartAjax.customer_id != '' &&
+                        $store.state.cartAjax.customer_session != '' &&
+                        $store.state.cartAjax.customer_session != null
                       "
                       to="/Dashboard"
                       class="proxima_regular"
@@ -1320,9 +1323,9 @@
                 <NuxtLink
                   v-if="
                     $store.state.cartAjax.customer_id != null &&
-                      $store.state.cartAjax.customer_id != '' &&
-                      $store.state.cartAjax.customer_session != '' &&
-                      $store.state.cartAjax.customer_session != null
+                    $store.state.cartAjax.customer_id != '' &&
+                    $store.state.cartAjax.customer_session != '' &&
+                    $store.state.cartAjax.customer_session != null
                   "
                   to="/Dashboard"
                   class="proxima_semi-bold"
@@ -1598,20 +1601,20 @@
                 </NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/cart" class="text-red cart-icon"
+                <a @click.prevent="toogleCart()" class="text-red cart-icon"
                   ><span aria-hidden="true" class="carticon-add"
                     ><img src="~assets/images/cart.png" />
                     <span class="text-red count-cart">{{
                       $store.state.cartAjax.cart_product.length
                     }}</span></span
-                  ></NuxtLink
+                  ></a
                 >
               </li>
             </client-only>
           </ul>
         </div>
       </div>
-      <Cart />
+      <Cart v-if="$store.state.cartAjax.showHideCart" />
     </nav>
   </header>
 </template>
@@ -1627,7 +1630,7 @@ export default {
       scrollPosition: null,
       showMenu: false,
       close: false,
-      isActive: -1
+      isActive: -1,
     };
   },
   async mounted() {
@@ -1639,20 +1642,24 @@ export default {
     updateScroll() {
       this.scrollPosition = window.scrollY;
     },
+
+    toogleCart() {
+      this.$store.commit("cartAjax/showHideCart");
+    },
     updateActive(index) {
       if (this.isActive == index) {
         this.isActive = -1;
       } else {
         this.isActive = index;
       }
-    }
+    },
   },
 
   computed: {
-    ...mapState(["header"])
+    ...mapState(["header"]),
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.updateScroll);
-  }
+  },
 };
 </script>
