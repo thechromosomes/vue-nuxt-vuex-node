@@ -60,9 +60,9 @@
                       <NuxtLink
                         v-if="
                           $store.state.cartAjax.customer_id != null &&
-                          $store.state.cartAjax.customer_id != '' &&
-                          $store.state.cartAjax.customer_session != '' &&
-                          $store.state.cartAjax.customer_session != null
+                            $store.state.cartAjax.customer_id != '' &&
+                            $store.state.cartAjax.customer_session != '' &&
+                            $store.state.cartAjax.customer_session != null
                         "
                         to="/Dashboard"
                         class="proxima_semi-bold"
@@ -665,8 +665,8 @@
               <NuxtLink
                 v-if="
                   item.menu_url_key == 'collections' ||
-                  item.menu_url_key == 'accessories' ||
-                  item.menu_url_key == 'luggage'
+                    item.menu_url_key == 'accessories' ||
+                    item.menu_url_key == 'luggage'
                 "
                 :to="`/clp/${item.menu_url_key}`"
                 class="desktop-item proxima_semi-bold"
@@ -685,8 +685,8 @@
                 <NuxtLink
                   v-if="
                     item.menu_url_key == 'collections' ||
-                    item.menu_url_key == 'accessories' ||
-                    item.menu_url_key == 'luggage'
+                      item.menu_url_key == 'accessories' ||
+                      item.menu_url_key == 'luggage'
                   "
                   :to="`/clp/${item.menu_url_key}`"
                   >{{ item.name }}</NuxtLink
@@ -714,7 +714,7 @@
                           :to="`/collections/${childItem.menu_url_key}/`"
                           v-if="
                             childItem.landing_page == '' ||
-                            childItem.landing_page == null
+                              childItem.landing_page == null
                           "
                           @click.native="() => (showMenu = false)"
                           >{{ childItem.name }}</Nuxt-link
@@ -724,7 +724,7 @@
                           :to="`/cms/${childItem.landing_page}`"
                           v-if="
                             childItem.landing_page != '' &&
-                            childItem.landing_page != null
+                              childItem.landing_page != null
                           "
                           >{{ childItem.name }}</Nuxt-link
                         >
@@ -760,9 +760,9 @@
                     <NuxtLink
                       v-if="
                         $store.state.cartAjax.customer_id != null &&
-                        $store.state.cartAjax.customer_id != '' &&
-                        $store.state.cartAjax.customer_session != '' &&
-                        $store.state.cartAjax.customer_session != null
+                          $store.state.cartAjax.customer_id != '' &&
+                          $store.state.cartAjax.customer_session != '' &&
+                          $store.state.cartAjax.customer_session != null
                       "
                       to="/Dashboard"
                       class="proxima_regular"
@@ -1320,9 +1320,9 @@
                 <NuxtLink
                   v-if="
                     $store.state.cartAjax.customer_id != null &&
-                    $store.state.cartAjax.customer_id != '' &&
-                    $store.state.cartAjax.customer_session != '' &&
-                    $store.state.cartAjax.customer_session != null
+                      $store.state.cartAjax.customer_id != '' &&
+                      $store.state.cartAjax.customer_session != '' &&
+                      $store.state.cartAjax.customer_session != null
                   "
                   to="/Dashboard"
                   class="proxima_semi-bold"
@@ -1611,20 +1611,23 @@
           </ul>
         </div>
       </div>
+      <Cart />
     </nav>
   </header>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import Cart from "./Cart";
 
 export default {
+  components: { Cart },
   data() {
     return {
       scrollPosition: null,
       showMenu: false,
       close: false,
-      isActive: -1,
+      isActive: -1
     };
   },
   async mounted() {
@@ -1642,14 +1645,14 @@ export default {
       } else {
         this.isActive = index;
       }
-    },
+    }
   },
 
   computed: {
-    ...mapState(["header"]),
+    ...mapState(["header"])
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.updateScroll);
-  },
+  }
 };
 </script>

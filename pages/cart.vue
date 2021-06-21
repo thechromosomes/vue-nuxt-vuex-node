@@ -112,7 +112,7 @@
                         </div>
                         <div class="price_info proxima_regular">
                           <span class="price proxima_regular"
-                            >₹{{ product.price | numberWithCommas}}</span
+                            >₹{{ product.price | numberWithCommas }}</span
                           >
                         </div>
                       </div>
@@ -135,7 +135,7 @@
                         class="total proxima_regular"
                         v-if="
                           $store.state.cartAjax.discount_amount != '' &&
-                          $store.state.cartAjax.discount_amount != null
+                            $store.state.cartAjax.discount_amount != null
                         "
                       >
                         Dsicount:
@@ -154,7 +154,7 @@
                         id="preOrderDate"
                         v-if="
                           $store.state.cartAjax.discount_code == '' ||
-                          $store.state.cartAjax.discount_code == null
+                            $store.state.cartAjax.discount_code == null
                         "
                       >
                         <input
@@ -222,7 +222,7 @@ export default {
   data() {
     return {
       addToCartVal: 0,
-      applied_coupon: "",
+      applied_coupon: ""
     };
   },
 
@@ -240,13 +240,13 @@ export default {
           method: "post",
           url: `/product/remove-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form,
+          params: form
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
             data: response,
-            vm: this,
+            vm: this
           });
           if (response.success) {
             this.$gtm.push({
@@ -260,11 +260,11 @@ export default {
                       id: item.master_sku,
                       price: item.selling_price,
                       variant: item.fynd_size,
-                      quantity: item.qty,
-                    },
-                  ],
-                },
-              },
+                      quantity: item.qty
+                    }
+                  ]
+                }
+              }
             });
           }
         } else {
@@ -290,13 +290,13 @@ export default {
           method: "post",
           url: `/product/update-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form,
+          params: form
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
             data: response,
-            vm: this,
+            vm: this
           });
         } else {
           throw "no response from api";
@@ -366,13 +366,13 @@ export default {
           method: "post",
           url,
           token,
-          params: form,
+          params: form
         });
 
         if (response.success) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response,
+            data: response
           });
           this.$toast.open(response.message);
         } else {
@@ -381,32 +381,32 @@ export default {
       } catch (error) {
         console.log("error form the add coupon foo >>", error);
       }
-    },
+    }
   },
   watch: {
-    "$store.state.cartAjax.cart_page_message": function () {
+    "$store.state.cartAjax.cart_page_message": function() {
       if (
         this.$store.state.cartAjax.cart_page_message != "" &&
         this.$store.state.cartAjax.cart_page_message != null
       ) {
         this.$toast.open(this.$store.state.cartAjax.cart_page_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: "",
+          data: ""
         });
       }
     },
-    "$store.state.cartAjax.cart_page_erro_page": function () {
+    "$store.state.cartAjax.cart_page_erro_page": function() {
       if (
         this.$store.state.cartAjax.cart_page_error_message != "" &&
         this.$store.state.cartAjax.cart_page_error_message != null
       ) {
         this.$toast.error(this.$store.state.cartAjax.cart_page_error_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: "",
+          data: ""
         });
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -5580,3 +5580,1144 @@ img.yearBlockImage {
   font-family: "Proxima Nova", proxima-nova, arial, "Hiragino Sans GB",
     "Microsoft Yahei", sans-serif;
 }
+.new_staticpages {
+  width: 100%;
+}
+.cms_newBox {
+  padding: 20px 20px 40px;
+  text-align: center;
+  font-family: "proxima-nova-bold";
+}
+.cms_newBox h4 {
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(85, 85, 85);
+}
+.cms_newBox .img-box {
+  width: 60%;
+  margin: 21px auto;
+}
+.cms_newBox .text {
+  font-family: "proxima-nova-regular";
+  font-size: 15px;
+  font-weight: 400;
+  color: rgb(85, 85, 85);
+  margin: 15px 0;
+}
+.langham_conten_btn {
+  background-color: #636363;
+  color: #fff !important;
+  margin: 2px;
+  padding: 11px 42px;
+  text-decoration: none !important;
+}
+.new_staticpages .langham_box {
+  background-color: #f0f0f0;
+  width: 68%;
+  height: 100%;
+  margin: 0 auto;
+  font-family: Proxima Nova, proxima-nova, arial, Hiragino Sans GB,
+    Microsoft Yahei, sans-serif;
+}
+.langham_container {
+  padding: 60px 24px 64px 24px;
+  margin-bottom: 96px;
+}
+.langham_conten {
+  margin: auto;
+  max-width: 960px;
+  text-align: center;
+  color: #181616;
+}
+.langham_conten p {
+  font-weight: 300;
+  font-size: 15px;
+  color: #000;
+  margin: 15px 0;
+}
+.langham_conten h2 {
+  margin-bottom: 32px;
+  font-size: 23px;
+  line-height: 26px;
+  color: #888888 !important;
+  font-family: Proxima Nova, proxima-nova, arial, Hiragino Sans GB,
+    Microsoft Yahei, sans-serif;
+  /* letter-spacing: 1px; */
+  font-weight: 500;
+}
+.langham_conten span {
+  color: #000;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: 0.5px underline;
+}
+.langham_conten ol {
+  text-align: left;
+  font-weight: 300;
+  font-size: 15px;
+  list-style: decimal;
+}
+.langham_conten li {
+  margin-bottom: 16px;
+}
+.hide-desk {
+  display: none;
+}
+.member {
+  width: 100%;
+  font-family: "proxima-nova-regular";
+}
+
+.member .title {
+  width: 100%;
+  background-color: #222222;
+  padding: 5px 0 8px 70px;
+  height: 170px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.member .title h4 {
+  font-weight: 800;
+  font-size: 36px;
+  letter-spacing: 3.42px;
+  color: #fff;
+}
+
+.member .customer-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 3em auto;
+  padding: 0 40px;
+}
+.member .customer-page h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+}
+.member .customer-page p {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  margin-top: 8px;
+  color: #555;
+  font-weight: 400;
+  font-family: "proxima-nova-regular";
+}
+/* ============================= diffrence tumi css=============== */
+.tumi-difference-page-wraper .CRContainer .topBanner {
+  position: relative;
+  width: 100%;
+}
+.tumi-difference-page-wraper .ctnr-breadcrumb-pagination,
+.tumi-difference-page-wraper .jcarousel {
+  position: relative;
+}
+.tumi-difference-page-wraper .breadcrumb {
+  color: #fff;
+  display: table;
+  padding-left: 25px;
+  top: 27px;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  min-height: 15px;
+  background: transparent;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000,
+    1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+.tumi-difference-page-wraper .breadcrumb ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tumi-difference-page-wraper .breadcrumb li {
+  text-transform: capitalize;
+  color: #fff;
+  float: left;
+}
+.tumi-difference-page-wraper .breadcrumb li a,
+.tumi-difference-page-wraper .breadcrumb li a:visited {
+  color: #fff;
+  margin: 0 7px;
+}
+.CRContainer .topBannerInner {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  margin-top: -86px;
+  top: 50%;
+}
+.tumi-difference-page-wraper .CRContainer .topBanner .content {
+  position: relative;
+  width: 60%;
+  margin-left: 20%;
+  border: 3px solid #fff;
+  padding: 35px 0;
+}
+.tumi-difference-page-wraper .CRContainer .topBanner .content h1 {
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+  font-weight: 700;
+  margin: 0;
+}
+.tumi-difference-page-wraper .CRContainer .topBanner img {
+  max-width: 100%;
+  min-width: 100%;
+}
+.tumi-difference-page-wraper .tumi_difference {
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+.tumi-difference-page-wraper #diffAndAbout {
+  width: 100%;
+  height: 412px;
+  display: block;
+  overflow: hidden;
+}
+.tumi-difference-page-wraper #diffBlock {
+  width: 65%;
+  float: left;
+  padding: 30px;
+}
+.tumi-difference-page-wraper #diffBlockInner {
+  border: 3px solid #555;
+  height: 364px;
+  display: block;
+  text-align: center;
+  position: relative;
+  padding: 60px 50px;
+}
+.tumi-difference-page-wraper .tgCmsComponent .content h1 {
+  font-size: 20px;
+}
+.tumi-difference-page-wraper .tgCmsComponent .content h1,
+.tumi-difference-page-wraper .tgCmsComponent .content h3 {
+  font-weight: 800;
+}
+.tumi-difference-page-wraper .grayDivider {
+  width: 50px;
+  height: 1px;
+  margin: 30px auto;
+}
+.tumi-difference-page-wraper #diffBlockInner p {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  line-height: 1.75;
+  color: #555;
+}
+.tumi-difference-page-wraper #aboutBlock {
+  width: 35%;
+  background-color: #ebebeb;
+  text-align: center;
+  float: right;
+  padding: 60px 5px 30px;
+}
+.tumi-difference-page-wraper .about a:hover,
+.tumi-difference-page-wraper .about a:link,
+.tumi-difference-page-wraper .about a:visited {
+  color: #222;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 1px;
+  border-bottom: 2px solid #ebebeb;
+}
+.tumi-difference-page-wraper .about li {
+  padding: 3px 0;
+}
+.tumi-difference-page-wraper .about .separator-sm {
+  width: 30px;
+  margin: 20px auto;
+  border-bottom: 1px solid #999;
+  height: 1px;
+}
+.tumi-difference-page-wraper #aboutBlock,
+.tumi-difference-page-wraper #diffBlock {
+  display: block;
+  height: 100%;
+  position: relative;
+}
+.tumi-difference-page-wraper .tgCmsComponent .about h1,
+.tumi-difference-page-wraper .tgCmsComponent .about h2 {
+  color: #000;
+  font-size: 20px;
+}
+.tumi-difference-page-wraper .about .separator-sm {
+  width: 30px;
+  margin: 20px auto;
+  border-bottom: 1px solid #999;
+  height: 1px;
+}
+.tumi-difference-page-wraper .about ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tumi-difference-page-wraper .about li:first-child {
+  padding-top: 0;
+}
+.tumi-difference-page-wraper .about a.active,
+.about a:hover {
+  border-bottom: 2px solid #000;
+}
+.tumi-difference-page-wraper .about a:hover,
+.about a:link,
+.about a:visited {
+  color: #222;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 1px;
+  border-bottom: 2px solid #ebebeb;
+}
+.tumi-difference-page-wraper .finishLineContainer {
+  width: 100%;
+  height: 680px;
+  display: block;
+  overflow: hidden;
+}
+.tumi-difference-page-wraper .finishLineBlock {
+  height: 40%;
+  margin: auto;
+  padding-top: 60px;
+  width: 365px;
+  position: relative;
+  display: block;
+}
+.tumi-difference-page-wraper .num30Image {
+  width: 100%;
+  position: absolute;
+  margin: 0;
+}
+.tumi-difference-page-wraper .finishLineBlock,
+.tumi-difference-page-wraper .finishLineBlock h1,
+.tumi-difference-page-wraper .finishLineBlock p {
+  width: 365px;
+  position: relative;
+  display: block;
+}
+.tumi-difference-page-wraper .num30Image img {
+  width: 288px;
+  height: 183px;
+  margin-right: auto;
+  margin-left: auto;
+  float: center;
+  display: block;
+  top: 0;
+}
+.tumi-difference-page-wraper .tgCmsComponent .content h1 {
+  font-size: 20px;
+  padding-bottom: 23px;
+}
+.tumi-difference-page-wraper .finishLineBlock p {
+  text-align: center;
+  float: center;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  line-height: 1.75;
+  color: #555;
+}
+.tumi-difference-page-wraper .finishLineTrials {
+  width: 100%;
+  height: 60%;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+.tumi-difference-page-wraper #trialBlockOne,
+.tumi-difference-page-wraper #trialBlockThree,
+.tumi-difference-page-wraper #trialBlockTwo {
+  width: 33%;
+  display: inline-block;
+  float: center;
+}
+.tumi-difference-page-wraper #trialBlockOne {
+  padding-left: 40px;
+}
+.tumi-difference-page-wraper menu,
+.tumi-difference-page-wraper ol,
+.tumi-difference-page-wraper ul {
+  padding: 0 0 0 40px;
+}
+
+.tumi-difference-page-wraper .finishLineTrials li {
+  font-weight: 800;
+  list-style: decimal !important;
+}
+.tumi-difference-page-wraper .finishLineTrials li p {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  line-height: 2;
+  color: #555;
+  margin: 0;
+}
+.tumi-difference-page-wraper #tabletFix {
+  display: none;
+}
+.tumi-difference-page-wraper #trialBlockThree {
+  padding-left: 60px;
+}
+.tumi-difference-page-wraper .funcationalContainer {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.tumi-difference-page-wraper .functionalTopImageBlock {
+  width: 50%;
+  height: 445px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  display: block;
+  background-image: url(http://cdn-media.amplience.com/tumi/images/FW14_TUMI_Lifestyle_Dave_CannonBackpack_Olive_RGB_72dpi.jpg);
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.tumi-difference-page-wraper .tgCmsComponent .functionalTopImageBlock {
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  display: block;
+  background-image: url(../images/mag-with-bag-diffrene.jpg);
+}
+.tumi-difference-page-wraper .funcationalBlockContainer {
+  height: 930px;
+  display: block;
+  overflow: hidden;
+  margin: 30px;
+}
+.tumi-difference-page-wraper .functionalBlock,
+.tumi-difference-page-wraper .functionalBoxBlock {
+  border-right: 2px solid #000;
+  border-left: 2px solid #000;
+}
+.tumi-difference-page-wraper .funcationalContainer,
+.functionalBlock {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+.tumi-difference-page-wraper .functionalBlock {
+  height: 46%;
+  float: top;
+  border-top: 2px solid #000;
+}
+.tumi-difference-page-wraper #functioanlBlockInner {
+  width: 50%;
+  height: 350px;
+  display: block;
+  float: right;
+  position: relative;
+  padding: 20px 50px;
+}
+.tumi-difference-page-wraper #functioanlBlockInner h1 {
+  text-align: center;
+  color: #222;
+  font-weight: 800;
+  font-size: 20px;
+  padding: 30px 30px 0;
+}
+.tumi-difference-page-wraper .grayDivider,
+.tumi-difference-page-wraper .grayDividerLong,
+.tumi-difference-page-wraper .grayDividerVertical {
+  background-image: none;
+  background-color: #969696;
+}
+.tumi-difference-page-wraper #functioanlBlockInner h2 {
+  text-align: center;
+  color: #222;
+  font-weight: 550;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+.tumi-difference-page-wraper .functionalBoxBlock {
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 2px solid #000;
+}
+.tumi-difference-page-wraper .functionalBoxBlock .innerBlock.top {
+  border: 0;
+  padding: 10px 0;
+}
+.tumi-difference-page-wraper .functionalBoxBlock .innerBlock {
+  margin: 0 20px;
+}
+.tumi-difference-page-wraper .functionalBoxBlock .ctnr-tabs {
+  margin: 0 auto;
+  display: flex;
+}
+.tumi-difference-page-wraper .functionalBoxBlock .ctnr-tabs .tab {
+  width: 24%;
+  padding: 0 2px;
+  color: #555;
+  font-size: 16px;
+  font-weight: 400;
+}
+.tumi-difference-page-wraper .functionalBoxBlock .ctnr-tabs .tab {
+  display: inline-block;
+  cursor: pointer;
+}
+.tumi-difference-page-wraper .functionalBoxBlock .ctnr-tabs .tab .label {
+  background: #ebebeb;
+  padding: 14px 0;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #222;
+  font-size: 16px;
+}
+
+.tumi-difference-page-wraper .functionalBoxBlock .ctnr-tabs .tab {
+  width: 24%;
+  padding: 0 2px;
+  color: #555;
+  font-size: 16px;
+  font-weight: 400;
+}
+.tumi-difference-page-wraper
+  .ctnr-product-sets
+  .prod-extra-features
+  [class*="span"],
+.tumi-difference-page-wraper .row-fluid-no-gutter [class*="span"] {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 0;
+}
+.tumi-difference-page-wraper .functionalBoxBlock .innerBlock {
+  margin: 0 20px;
+}
+.tumi-difference-page-wraper .functionalBoxBlock .innerBlock.bottom div {
+  padding: 0 10px;
+}
+.tumi-difference-page-wraper #tabsLeftBox {
+  width: 50%;
+  float: left;
+  position: relative;
+  padding: 20px 0 0 30px;
+}
+.tumi-difference-page-wraper .functionalBoxBlock .innerBlock.bottom div {
+  padding: 0 10px;
+}
+.tumi-difference-page-wraper .numImage img {
+  height: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  float: center;
+  top: 0;
+}
+.tumi-difference-page-wraper #tabsLeftBox h1 {
+  font-size: 20px;
+  font-weight: 800;
+  padding: 40px;
+  position: relative;
+  color: #222;
+  text-align: center;
+}
+.tumi-difference-page-wraper #tabsLeftBox h2 {
+  text-align: center;
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  position: relative;
+}
+.tumi-difference-page-wraper #tabsLeftBox p {
+  text-align: center;
+  color: #555;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  padding: 0 50px;
+  position: relative;
+}
+.tumi-difference-page-wraper #tabsLeftBox,
+#tabsRighttBox,
+.functionalBoxBlock.slide1 .ctnr-tabs .tab1 .arrowIcon,
+.functionalBoxBlock.slide2 .ctnr-tabs .tab2 .arrowIcon,
+.functionalBoxBlock.slide3 .ctnr-tabs .tab3 .arrowIcon,
+.functionalBoxBlock.slide4 .ctnr-tabs .tab4 .arrowIcon,
+.numImage img {
+  display: block;
+}
+.tumi-difference-page-wraper #tabsRighttBox img {
+  height: 350px;
+  float: center;
+}
+.tumi-difference-page-wraper .functionalBoxBlock .innerBlock.bottom div {
+  padding: 0 10px;
+}
+.tumi-difference-page-wraper #tabsLeftBox {
+  width: 50%;
+  float: left;
+  position: relative;
+  padding: 20px 0 0 30px;
+}
+.tumi-difference-page-wraper .numImage {
+  width: 100%;
+  position: absolute;
+  margin: 0;
+}
+.tumi-difference-page-wraper .numImage img {
+  height: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  float: center;
+  top: 0;
+}
+.tumi-difference-page-wraper #tabsLeftBox h2 {
+  text-align: center;
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  position: relative;
+}
+.tumi-difference-page-wraper #tabsLeftBox p {
+  text-align: center;
+  color: #555;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  padding: 0 50px;
+  position: relative;
+}
+.tumi-difference-page-wraper #tabsRighttBox {
+  width: 50%;
+  float: right;
+  position: relative;
+  text-align: center;
+  padding-top: 20px;
+}
+.tumi-difference-page-wraper #tabsRighttBox img {
+  height: 350px;
+  float: center;
+}
+.tumi-difference-page-wraper .functionalBoxBlock .innerBlock.bottom div {
+  padding: 0 10px;
+}
+.tumi-difference-page-wraper #tabsLeftBox {
+  width: 50%;
+  float: left;
+  position: relative;
+  padding: 20px 0 0 30px;
+}
+.tumi-difference-page-wraper .innovationContainer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.tumi-difference-page-wraper .techTopImageBlock {
+  width: 50%;
+  height: 445px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  display: block;
+  background-image: url(http://cdn-media.amplience.com/tumi/images/FW14_TUMI_Product_TegraLiteMax_HerringBrown_RGB_72dpi.jpg);
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.tumi-difference-page-wraper .tgCmsComponent .techTopImageBlock {
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  display: block;
+  background-image: url(../images/tmi-difrance-mob.jpg);
+}
+.tumi-difference-page-wraper .techBlockContainer {
+  height: 994px;
+  display: block;
+  overflow: hidden;
+  margin: 30px;
+}
+.tumi-difference-page-wraper .techBlock {
+  width: 100%;
+  height: 49%;
+  float: top;
+}
+.tumi-difference-page-wraper #techBlockInner {
+  float: right;
+  display: block;
+  width: 50%;
+  height: 100%;
+}
+.tumi-difference-page-wraper #techBlockInnerDiv {
+  height: 350px;
+  margin: 30px;
+  padding: 0 40px;
+}
+.tumi-difference-page-wraper .innoBoxBlock,
+.tumi-difference-page-wraper .techBlock {
+  background-color: #ebebeb;
+}
+.tumi-difference-page-wraper #techBlockInner h1 {
+  font-weight: 800;
+  font-size: 20px;
+  padding: 30px 30px 0;
+}
+.tumi-difference-page-wraper #techBlockInner h2 {
+  font-weight: 550;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+.tumi-difference-page-wraper #techBlockInner p {
+  text-align: center;
+  color: #555;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 20px 0 15px;
+  line-height: 1.75;
+}
+.tumi-difference-page-wraper #techLearnMoreBlockInner {
+  width: 100%;
+  height: 42px;
+  position: absolute;
+  bottom: 0;
+}
+.tumi-difference-page-wraper #techLearnMoreBlockInner h1 {
+  text-align: center;
+  color: #222;
+  font-weight: 800;
+  font-size: 20px;
+}
+.tumi-difference-page-wraper #techBlockInnerDiv,
+.tumi-difference-page-wraper .techBlock {
+  position: relative;
+  display: block;
+}
+.tumi-difference-page-wraper #innoBlockInnerTop,
+.tumi-difference-page-wraper .innoBlockIcon,
+.tumi-difference-page-wraper .innoBlockInnerTopBox,
+.tumi-difference-page-wraper .innoBoxBlock {
+  position: relative;
+}
+.tumi-difference-page-wraper #innoBlockInnerTop {
+  max-width: 100%;
+  height: 250px;
+  display: block;
+  float: left;
+  padding: 2px 0 2px 2px;
+  margin: 0;
+  text-align: center;
+}
+.tumi-difference-page-wraper #innoBlockInnerTop {
+  max-width: 100%;
+  height: 250px;
+  display: block;
+  float: left;
+  padding: 2px 0 2px 2px;
+  margin: 0;
+}
+
+.tumi-difference-page-wraper .innoBlockIcon {
+  width: 100%;
+  height: 107px;
+  display: inline-block;
+  float: left;
+}
+.tumi-difference-page-wraper .innoBlockIcon img {
+  max-width: 52px;
+  max-height: 51px;
+  display: block;
+  margin-top: 25px;
+}
+.tumi-difference-page-wraper .innoBlockText {
+  height: 254px;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.tumi-difference-page-wraper .tgCmsComponent .innoBlockText h3 {
+  width: 100%;
+  height: auto;
+  font-size: 12px;
+  display: block;
+  padding-top: 2px;
+}
+.tumi-difference-page-wraper .innoBlockText p {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  line-height: 1.5;
+  color: #555;
+  display: inline-block;
+  padding: 10px 40px 0;
+  margin: 0;
+}
+.tumi-difference-page-wraper .innoBlockInnerBottomBox,
+.tumi-difference-page-wraper .innoBlockInnerTopBox {
+  width: 25%;
+  background-color: #fff;
+  border-right: 3px solid #ebebeb;
+  float: left;
+}
+.tumi-difference-page-wraper .innoBoxBlock,
+.tumi-difference-page-wraper .techBlock {
+  background-color: #ebebeb;
+}
+.tumi-difference-page-wraper .innoBlockIcon img {
+  max-width: 52px;
+  max-height: 51px;
+  display: block;
+  margin-top: 25px;
+  display: block;
+  margin: 20px auto;
+}
+
+.tumi-difference-page-wraper .VideoGeorgeEsquivel {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.tumi-difference-page-wraper .VideoBorder {
+  width: 80%;
+  display: block;
+  position: relative;
+  margin: 30px auto;
+}
+.tumi-difference-page-wraper .WorldClassContainer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.tumi-difference-page-wraper .worldClassBlockContainer {
+  height: 830px;
+  display: block;
+  overflow: hidden;
+  margin: 30px;
+}
+.tumi-difference-page-wraper .worldClassBlock {
+  width: 100%;
+  height: 51%;
+  position: relative;
+  display: block;
+  float: top;
+  border-top: 2px solid #000;
+}
+.tumi-difference-page-wraper .worldClassVideo {
+  width: 50%;
+  height: 445px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+.tumi-difference-page-wraper #worldClassBlockInner {
+  width: 50%;
+  height: 100%;
+  display: block;
+  float: right;
+  position: relative;
+  padding: 20px 50px;
+}
+.tumi-difference-page-wraper #worldClassBlockInner h1 {
+  text-align: center;
+  color: #222;
+  font-weight: 800;
+  font-size: 20px;
+  padding: 30px 30px 0;
+}
+.tumi-difference-page-wraper #worldClassBlockInner h2 {
+  text-align: center;
+  color: #222;
+  font-weight: 550;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+.tumi-difference-page-wraper #worldClassBlockInner p {
+  text-align: center;
+  color: #555;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 10px 30px 50px;
+  line-height: 1.75;
+}
+.tumi-difference-page-wraper .worldClassBoxBlock {
+  width: 100%;
+  height: 49%;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-bottom: 2px solid #000;
+}
+.tumi-difference-page-wraper #worldClassBoxBlockCenter,
+.tumi-difference-page-wraper #worldClassBoxBlockLeft {
+  height: 100%;
+  float: left;
+  width: 33%;
+  position: relative;
+  display: block;
+}
+.tumi-difference-page-wraper .grayDividerVerticalDiv {
+  width: 1%;
+  margin: 0;
+  padding: 40px 0 0;
+  position: relative;
+  display: block;
+  float: left;
+}
+.tumi-difference-page-wraper #worldClassBoxBlockLeft {
+  padding: 30px 60px 0;
+}
+.tumi-difference-page-wraper #worldClassBoxBlockCenter h2,
+#worldClassBoxBlockRight h2 {
+  color: #222;
+  font-weight: 800;
+  font-size: 14px;
+}
+.tumi-difference-page-wraper #worldClassBoxBlockLeft p {
+  font-weight: 800;
+  color: #222;
+  font-size: 25px;
+  line-height: 1.75;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 50px;
+}
+.tumi-difference-page-wraper .grayDividerVertical {
+  width: 1px;
+  height: 264px;
+}
+.tumi-difference-page-wraper #worldClassBoxBlockCenter,
+#worldClassBoxBlockLeft {
+  height: 100%;
+  float: left;
+  width: 33%;
+  position: relative;
+  display: block;
+}
+.tumi-difference-page-wraper #worldClassBoxBlockCenter p,
+.tumi-difference-page-wraper #worldClassBoxBlockCenter ul li {
+  color: #555;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.75;
+}
+.tumi-difference-page-wraper #worldClassBoxBlockCenter {
+  padding: 60px 40px 0;
+}
+.tumi-difference-page-wraper #worldClassBoxBlockCenter p,
+.tumi-difference-page-wraper #worldClassBoxBlockCenter ul li {
+  color: #555;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.75;
+  list-style: disc;
+}
+.tumi-difference-page-wraper #worldClassBoxBlockRight {
+  width: 33%;
+  display: block;
+  float: right;
+  position: relative;
+  padding: 60px 40px 0;
+}
+.tumi-difference-page-wraper .nav-item.nav-link {
+  border: 0px;
+}
+.tumi-difference-page-wraper .nav-item.nav-link.active {
+  position: relative;
+}
+.tumi-difference-page-wraper
+  .nav-item.nav-link.active
+  .label.removeFocusIndicator {
+  background: #222;
+  color: #fff;
+  position: relative;
+}
+.tumi-difference-page-wraper .nav-tabs {
+  border: 0px;
+}
+.tumi-difference-page-wraper .nav-item.nav-link.active::after {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #222;
+  margin: 0 auto;
+  display: none;
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+}
+.tumi-difference-page-wraper .show-mob {
+  display: none;
+}
+.proxima_bold.hide-0n-mob.ex-invoation {
+  position: absolute;
+  border: 0;
+  bottom: 0;
+  left: 25%;
+}
+
+/* luggage-page */
+.luggage-page {
+  width: 100%;
+}
+.luggage-page .luggage-banner {
+  width: 100%;
+  position: relative;
+}
+.luggage-page .luggage-banner .breadcrumb {
+  width: 100%;
+  position: absolute;
+  color: #fff;
+  background-color: transparent;
+  display: table;
+  padding-left: 25px;
+  top: 0px;
+  z-index: 2;
+  min-height: 15px;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000,
+    1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+.luggage-page .luggage-banner .breadcrumb ul {
+  display: table-cell;
+  vertical-align: middle;
+}
+.breadcrumb li {
+  text-transform: capitalize;
+  float: left;
+}
+.luggage-page .luggage-banner .banner-content {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  font-family: "Proxima Nova", proxima-nova, arial, "Hiragino Sans GB",
+    "Microsoft Yahei", sans-serif;
+}
+.luggage-page .luggage-banner .banner-content .hero-content {
+  text-align: center;
+  padding: 7% 3%;
+  width: 35%;
+  margin-left: 6.6%;
+}
+.luggage-page .luggage-banner .banner-content .hero-content h2 {
+  font-size: 21px;
+  font-weight: 600;
+}
+.luggage-page .luggage-banner .banner-content .hero-content p {
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+.luggage-page .luggage-banner .banner-content .hero-content a {
+  background-color: transparent;
+  border: 2px solid #000;
+  color: #000;
+  border-radius: 0;
+  padding: 0 12px;
+  height: 36px;
+  line-height: 34px;
+  text-transform: capitalize;
+  font-size: 13px;
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.luggage-page .luggage-banner .banner-content .hero-content a span {
+  vertical-align: middle;
+  padding-left: 5px;
+  font-size: 9px;
+}
+.luggage-page .luggage-banner .banner-content .hero-content a:hover {
+  color: #c41e3a;
+}
+
+.luggage-page .proCategory {
+  max-width: 1280px;
+  margin: 75px auto 45px;
+  font-family: "Proxima Nova", proxima-nova, arial, "Hiragino Sans GB",
+    "Microsoft Yahei", sans-serif;
+}
+.luggage-page .proCategory ul {
+  margin-top: 30px;
+  overflow: auto;
+  padding: 0;
+}
+.luggage-page .proCategory ul li {
+  width: 33%;
+  height: 100%;
+  display: block;
+  padding: 0 15px;
+}
+
+.luggage-page .proCategory ul div a {
+  cursor: pointer;
+  color: #222;
+  text-decoration: none;
+}
+.luggage-page .proCategory ul div {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.luggage-page .proCategory ul div img {
+  width: 100%;
+  height: 100%;
+}
+.luggage-page .fl {
+  float: left;
+}
+.luggage-page .proCategory ul div h2 {
+  font-size: 18px;
+  color: #777;
+  margin: 0 0 15px;
+  font-weight: 100;
+}
+.luggage-page .proCategory ul div a.TCLink_3 {
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  color: #222;
+  text-decoration: none;
+}
+.breadcrumb li.active {
+  color: #fff;
+}
+.luggage-page.accessories .proCategory h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 35px;
+  color: #222;
+  margin: 0 auto;
+  font-weight: 700;
+}
+.luggage-page.accessories .luggage-banner .banner-content .hero-content {
+  color: #fff !important;
+}
+.luggage-page.accessories .luggage-banner .banner-content .hero-content a {
+  border-color: #fff;
+  color: #fff;
+}

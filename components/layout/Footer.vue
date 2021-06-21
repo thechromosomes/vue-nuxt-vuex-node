@@ -89,11 +89,11 @@
                       <li>
                         <a href="" class="proxima_semi-bold">Virtual Store</a>
                       </li>
-                      <li>
+                      <!-- <li>
                         <span class="proxima_bold hide-mob"
                           >Corporate Contacts</span
                         >
-                      </li>
+                      </li> -->
                       <li>
                         <a href="" class="proxima_semi-bold">News and Media</a>
                       </li>
@@ -110,6 +110,11 @@
                       <li>
                         <a href="" class="proxima_semi-bold"
                           >TUMI Exclusives Club Member Regulations</a
+                        >
+                      </li>
+                      <li>
+                        <a href="" class="proxima_semi-bold"
+                          >TUMI | THE LANGHAM</a
                         >
                       </li>
                     </ul>

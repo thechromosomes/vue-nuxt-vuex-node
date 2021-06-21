@@ -1,59 +1,144 @@
 <template>
   <div>
-    <section class="clp-banner">
-      <img
-        src="~assets/images/clp-pd-mob-banner.jpg"
-        class="mobile-banner-clp-one"
-      />
-
-      <div class="baneer-clp-content-mob">
-        <h2 class="proxima_bold">LUGGAGE</h2>
-        <h3 class="proxima_bold">Innovative And Durable Features</h3>
-        <a
-          class="hero-action-mob btn proxima_regular"
-          target="_blank"
-          href="/collections/luggage-carry-on-luggage/"
-        >
-          View All<span class="icon icon-go"></span>
-        </a>
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="baneer-clp-content">
-              <h2 class="proxima_bold">LUGGAGE</h2>
-              <h3 class="proxima_bold">Innovative And Durable Features</h3>
-              <a
-                class="hero-action btn proxima_regular"
-                target="_blank"
-                href=""
+    <!-- <div class="luggage-page">
+      <div class="luggage-banner">
+        <img
+          src="~assets/images/clp-pd-desbanner.jpg"
+          alt="img"
+          class="w-100 hide-mob"
+        />
+        <img
+          src="~assets/images/clp-pd-mob-banner.jpg"
+          alt="img"
+          class="w-100 hide-desk "
+        />
+        <div id="breadcrumb" class="breadcrumb hide-mob">
+          <ul>
+            <li>
+              <a href="#" class="home"><span itemprop="name">Home</span></a>
+            </li>
+            <li class="active">
+              &nbsp;&gt;&nbsp;<a href="javascript:void(0);"
+                ><span>Luggage</span></a
               >
-                View All<span class="icon icon-go"></span>
-              </a>
-            </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="banner-content ">
+          <div class="hero-content no-border hidden-phone ">
+            <h2 class="hide-mob">LUGGAGE</h2>
+            <p class="hero-text">Innovative And Durable Features</p>
+            <a class="hero-action btn" target="_blank" href="#">
+              View All<span class="icon icon-go hide-mob"></span>
+            </a>
           </div>
         </div>
       </div>
-    </section>
-    <!-- ===================================== products clp ================ -->
-    <section class="clp-products" v-if="luggage.length > 0">
-      <div class="container">
-        <div class="row">
-          <div
-            class="col-lg-4 col-md-4 col-sm-4 col-4"
-            v-for="(item, index) in luggage"
-            :key="index"
-          >
-            <div class="clp-pd-wrap">
-              <img :src="item.image" />
-              <h2 class="proxima_regular">{{item.name}}</h2>
-              <nuxt-link class="TCLink_3 proxima_bold" :to="`/product/${item.url_key}`">Buy Now</nuxt-link>
+
+      <div class="proCategory ">
+        <ul class="cf removeFocusIndicator">
+          <li class="fl removeFocusIndicator">
+            <div class="removeFocusIndicator">
+              <a
+                href="https://www.tumi-hk.com/c-luggage/carryon-luggage/"
+                target="_blank"
+                class="removeFocusIndicator"
+                ><img
+                  src="~assets/images/p-cat.jpg"
+                  class="removeFocusIndicator"
+              /></a>
+              <h2>CARRY-ON</h2>
+              <a
+                class="TCLink_3"
+                href="https://www.tumi-hk.com/c-luggage/carryon-luggage/"
+                >Buy Now &gt;</a
+              >
             </div>
-          </div>
-        </div>
+          </li>
+
+          <li class="fl">
+            <div>
+              <a
+                href="https://www.tumi-hk.com/c-luggage/checked-luggage/"
+                target="_blank"
+                ><img src="~assets/images/p-cat.jpg"
+              /></a>
+              <h2>CHECKED LUGGAGE</h2>
+              <a
+                class="TCLink_3"
+                href="https://www.tumi-hk.com/c-luggage/checked-luggage/"
+                >Buy Now &gt;</a
+              >
+            </div>
+          </li>
+
+          <li class="fl">
+            <div>
+              <a
+                href="https://www.tumi-hk.com/c-luggage/new-arrivals"
+                target="_blank"
+                ><img src="~assets/images/p-cat.jpg"
+              /></a>
+              <h2>GARMENT BAG</h2>
+              <a
+                class="TCLink_3"
+                href="https://www.tumi-hk.com/c-luggage/new-arrivals"
+                >Buy Now &gt;</a
+              >
+            </div>
+          </li>
+
+          <li class="fl">
+            <div>
+              <a
+                href="https://www.tumi-hk.com/c-luggage/best-sellers-luggage/"
+                target="_blank"
+                ><img src="~assets/images/p-cat.jpg"
+              /></a>
+              <h2>BEST SELLER</h2>
+              <a
+                class="TCLink_3"
+                href="https://www.tumi-hk.com/c-luggage/best-sellers-luggage/"
+                >Buy Now &gt;</a
+              >
+            </div>
+          </li>
+
+          <li class="fl">
+            <div>
+              <a
+                href="https://www.tumi-hk.com/c-luggage/new-arrivals/"
+                target="_blank"
+                ><img src="~assets/images/p-cat.jpg"
+              /></a>
+              <h2>NEW ARRIVAL</h2>
+              <a
+                class="TCLink_3"
+                href="https://www.tumi-hk.com/c-luggage/new-arrivals/"
+                >Buy Now &gt;</a
+              >
+            </div>
+          </li>
+
+          <li class="fl">
+            <div>
+              <a
+                href="https://www.tumi-hk.com/c-luggage/personalized-luggage/"
+                target="_blank"
+                ><img src="~assets/images/p-cat.jpg"
+              /></a>
+              <h2>PERSONALIZATION</h2>
+              <a
+                class="TCLink_3"
+                href="https://www.tumi-hk.com/c-luggage/personalized-luggage/"
+                >Buy Now &gt;</a
+              >
+            </div>
+          </li>
+        </ul>
       </div>
-    </section>
+    </div> -->
   </div>
 </template>
 <style scoped>
@@ -142,7 +227,7 @@
 export default {
   data() {
     return {
-      luggage: [],
+      luggage: []
     };
   },
   methods: {
@@ -160,7 +245,7 @@ export default {
         let response = await this.$store.dispatch("pimAjax", {
           method: "post",
           url: `/pimresponse.php`,
-          params: form,
+          params: form
         });
 
         if (response) {
@@ -172,15 +257,14 @@ export default {
         this.$globalError(`error from all product page >>>> ${error}`);
         if (error.message === "Network Error") {
           this.$store.commit("updateState", {
-            error:
-              "Oops there seems to be some Network issue, please try again",
+            error: "Oops there seems to be some Network issue, please try again"
           });
         }
       }
-    },
+    }
   },
   created() {
     this.getProductList("luggage-carry-on-luggage", "luggage");
-  },
+  }
 };
 </script>

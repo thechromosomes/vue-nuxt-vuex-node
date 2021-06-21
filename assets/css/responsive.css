@@ -477,6 +477,9 @@
 
 @media only screen and (max-width: 767px) {
   /*------------mobilr icons color css------srat-----*/
+  .hide-desk {
+    display: block;
+  }
   .header-search
     .selectboxit
     .selectboxit-arrow-container
@@ -2266,6 +2269,69 @@ top: 14px;
     word-wrap: unset;
     width: auto;
   }
+  .new_staticpages .langham_box {
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .member .title {
+    padding: 0;
+    text-align: center;
+  }
+
+  .luggage-page .proCategory ul div h2 {
+    margin: 15px 0 0;
+    font-size: 13px;
+    height: 29px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .luggage-page .luggage-banner .banner-content {
+    position: static;
+  }
+  .luggage-page .luggage-banner .banner-content .hero-content {
+    width: 100%;
+    margin: 0;
+  }
+  .luggage-page .luggage-banner .banner-content .hero-content p {
+    font-size: 18px;
+    text-align: center;
+    color: #222;
+    padding-top: 0;
+    margin-top: 12px;
+    font-weight: 400;
+  }
+  .luggage-page .luggage-banner .banner-content .hero-content a {
+    margin: 0;
+    background-color: #fff;
+    color: #222;
+    border: 2px solid #222;
+    font-size: 14px;
+    line-height: 3px;
+    padding: 15px 40px;
+    margin-top: 10px;
+  }
+  .luggage-page .proCategory {
+    margin-top: 20px;
+  }
+  .luggage-page.accessories .luggage-banner .banner-content .hero-content {
+    color: #000 !important;
+  }
+  .luggage-page.accessories .luggage-banner .banner-content .hero-content a {
+    border-color: #000;
+    color: #000;
+  }
+  .luggage-page.accessories .luggage-banner .banner-content .hero-content h2 {
+    display: block !important;
+    font-size: 30px;
+  }
+  .luggage-page.accessories .proCategory h1 {
+    display: none;
+  }
 }
 
 /* ================ banner css================= */
@@ -2293,3 +2359,5 @@ top: 14px;
 .watch-mobile.video-play-list::-webkit-scrollbar {
   display: none;
 }
+
+/* side cart page  */
