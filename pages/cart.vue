@@ -1,214 +1,190 @@
 <template>
   <div>
     <client-only>
-      <div id="cart" class="cart">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h1 class="title text-center proxima_semi-bold">Your cart</h1>
-              <div
-                v-if="$store.state.cartAjax.cart_product.length == 0"
-                class="cart-empty"
-              >
-                <p class="empty-head-title proxima_regular">
-                  phew! your cart is empty
-                </p>
+      <div class="cart_page">
+        <div class="freeShipMessage-container">
+          <div class="freeShipMessage ">
+            <h2 class="heading ">
+              <a href="#" title="Continue shopping"> &lt; Continue shopping</a>
+            </h2>
+            <div class="shipping-return-header ">
+              Free shipping
+            </div>
+          </div>
+        </div>
 
-                <img
-                  src="@/assets/images/empty-cart.png"
-                  alt="empty_cart"
-                  width="200px"
-                />
-              </div>
-              <form v-if="$store.state.cartAjax.cart_product.length != 0">
-                <div class="row">
-                  <div class="col-md-12 col-lg-8 col-12">
-                    <div class="cartItemProducts">
-                      <div
-                        class="productItem"
-                        v-for="(product, index) in $store.state.cartAjax
-                          .cart_product"
-                        :key="index"
-                      >
-                        <div class="image-info">
-                          <div class="product_image display-inline">
-                            <a
-                              :href="`/collections/product/${product.url_key}`"
-                            >
-                              <img
-                                :src="product.image"
-                                alt="HOWLER SAND SUEDE"
-                              />
-                            </a>
-                          </div>
-                        </div>
+        <div class="cart-container ">
+          <div class="cart_box">
+            <div class="row">
+              <div class="col-md-8 col-lg-8 col-12">
+                <h2 class="heading">
+                  Shopping Cart ({{
+                    $store.state.cartAjax.cart_product.length
+                  }})
+                </h2>
+                <div
+                  class="row-no-stack hide-mob "
+                  id="cart-items-headers-container"
+                >
+                  <div class="cart-items-headers row" role="row">
+                    <div class="col-6 " role="gridcell" tabindex="-1">
+                      Item
+                    </div>
+                    <div class="col-3 p-0 " role="gridcell" tabindex="-1">
+                      Item Price
+                    </div>
+                    <div class="col-3 p-0" role="gridcell" tabindex="-1">
+                      Total Price
+                    </div>
+                  </div>
+                </div>
+                <!-- cart-items -->
 
-                        <div class="item_name">
-                          <a href="#" class="">
-                            <strong class="proxima_regular">{{
-                              product.name
-                            }}</strong>
-                            <br />
-                            <span
-                              class="product_options-cart proxima_regular"
-                              v-if="JSON.parse(product.size).color"
-                              >Color :
-                              {{ JSON.parse(product.size).color }}</span
-                            >
-                            <span
-                              class="product_options-cart proxima_regular"
-                              v-if="JSON.parse(product.size).size"
-                              >Size : {{ JSON.parse(product.size).size }}</span
-                            >
-                            <span
-                              class="product_options-cart Loyalty_LineItem hide_permanent proxima_regular"
-                            ></span>
-                            <span
-                              class="product_options-cart Loyalty_LineItem hide_permanent proxima_regular"
-                            ></span>
-                            <span
-                              class="product_options-cart Loyalty_LineItem hide_permanent proxima_regular"
-                            ></span>
-                            <span class="proxima_regular">
-                              Pre-ordered items: {{ product.qty }}
-                            </span>
-                            <br />
-                            <span class="proxima_regular"
-                              ><div
-                                class="cart__meta-text pre-order-message proxima_regular"
-                                data-product-id="5172417462405"
-                              ></div>
-                            </span>
+                <div
+                  class="cart-items"
+                  v-for="(product, index) in $store.state.cartAjax.cart_product"
+                  :key="index"
+                >
+                  <div class="cart-item-details row">
+                    <div class="col-12 col-md-6  cart-item-detail">
+                      <div class="item">
+                        <div class="left-item">
+                          <a :href="`/collections/product/${product.url_key}`">
+                            <img
+                              :src="product.image"
+                              alt="International Expandable 4 Wheeled Carry-On"
+                              title="International Expandable 4 Wheeled Carry-On"
+                            />
                           </a>
                         </div>
-                        <div class="qty_info proxima_regular">
-                          <div class="proxima_regular">
-                            <a
-                              class="minus-symbol proxima_regular"
-                              @click.prevent="addCartVal('minus', product)"
-                              >-</a
-                            >
-                            <input
-                              name="updates[]"
-                              class="cart__product-qty tc item-quantity proxima_regular"
-                              :value="product.qty"
-                              type="text"
-                              disabled
-                            />
-                            <a
-                              class="plus-symbol proxima_regular"
-                              @click.prevent="addCartVal('add', product)"
-                              >+</a
-                            >
-                          </div>
-                        </div>
-
-                        <div class="remove desktopOnly proxima_regular">
+                        <div class="right-item">
                           <a
-                            @click.prevent="removeCartItem(product)"
-                            class="cart proxima_regular"
-                            ><img src="~assets/images/remove.webp" alt="Remove"
-                          /></a>
-                        </div>
-                        <div class="price_info proxima_regular">
-                          <span class="price proxima_regular"
-                            >₹{{ product.price | numberWithCommas }}</span
-                          >
+                            :href="`/collections/product/${product.url_key}`"
+                            class="ledger-prod-name "
+                            >{{ product.name }}
+                          </a>
+                          <small> {{ product.category }}</small>
+                          <p v-if="JSON.parse(product.size).size">
+                            <span>STYLE#:</span>
+                            {{ JSON.parse(product.size).size }}
+                          </p>
+                          <p v-if="JSON.parse(product.size).color">
+                            <span>COLOR:</span>
+                            {{ JSON.parse(product.size).color }}
+                          </p>
+                          <div class=" cart-item-status hide-desk mt-4">
+                            <div class="value item-price price-strike">
+                              ₹{{ product.selling_price | numberWithCommas }}
+                            </div>
+                            <!-- <div class="value item-price discounted ">
+                          ₹,743.00
+                        </div> -->
+                          </div>
+                          <div class=" cart-item-totals  hide-desk ">
+                            <p>₹{{ product.row_total | numberWithCommas }}</p>
+                          </div>
+                          <div class="ledger-prod-actions ">
+                            <span class="link edit-link hide-mob">
+                              <a class="cta quick-view-link " href="#">Edit</a>
+                            </span>
+                            <span class="spacer hide-mob">|</span>
+                            <span class="link delete-link ">
+                              <a
+                                class="cta"
+                                @click.prevent="removeCartItem(product)"
+                                href="#"
+                                >Remove</a
+                              >
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <div class="col-3 cart-item-status hide-mob ">
+                      <div class=" cart-item-status">
+                        <div class="value item-price price-strike">
+                          ₹{{ product.selling_price | numberWithCommas }}
+                        </div>
+                        <!-- <div class="value item-price discounted ">
+                          ₹,743.00
+                        </div> -->
+                      </div>
+                    </div>
+                    <div class="col-3 span2 cart-item-totals hide-mob ">
+                      <p>₹{{ product.row_total | numberWithCommas }}</p>
+                    </div>
                   </div>
-                  <div class="col-md-12 col-lg-4 col-12">
-                    <div class="cartItemSidebar">
-                      <h4 class="total proxima_regular">
-                        Total:
-                        <strong>
-                          <span class="price proxima_regular"
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 col-12 p-0">
+                <div class="right-box">
+                  <h2 class="heading">Order Summary</h2>
+                  <div class="cart-summry">
+                    <div class="cart-total">
+                      <div class="left-item">
+                        <p>Subtotal</p>
+                      </div>
+                      <div class="right-item">
+                        <p>
+                          <span
                             >₹{{
                               $store.state.cartAjax.cart_total
                                 | numberWithCommas
                             }}</span
                           >
-                        </strong>
-                      </h4>
-                      <h4
-                        class="total proxima_regular"
-                        v-if="
-                          $store.state.cartAjax.discount_amount != '' &&
-                            $store.state.cartAjax.discount_amount != null
-                        "
-                      >
-                        Dsicount:
-                        <strong>
-                          <span class="price proxima_regular"
-                            >₹{{
-                              $store.state.cartAjax.discount_amount
-                                | numberWithCommas
-                            }}</span
-                          >
-                        </strong>
-                      </h4>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="cart-total">
+                      <div class="left-item">
+                        <p>Shipping</p>
+                      </div>
+                      <div class="right-item">
+                        <p>
+                          <span>Free</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="cart-total">
+                      <div class="left-item">
+                        <p>Total Order</p>
+                      </div>
+                      <div class="right-item">
+                        <p>
+                          ₹{{
+                            $store.state.cartAjax.cart_total | numberWithCommas
+                          }}
+                        </p>
+                      </div>
+                    </div>
+                    <button
+                      class="btn  checkout "
+                      @click.prevent="() => $router.push('/checkout')"
+                    >
+                      Checkout
+                    </button>
+                  </div>
 
-                      <div
-                        class="tooltiptext proxima_regular"
-                        id="preOrderDate"
-                        v-if="
-                          $store.state.cartAjax.discount_code == '' ||
-                            $store.state.cartAjax.discount_code == null
-                        "
+                  <div class="cart-service hide-mob ">
+                    <h3 class="">Customer Service</h3>
+                    <div class="tumi-customer">
+                      <img src="~assets/images/phoneblack.png" alt="" />
+                      <a href="tel:800-961-974"> 800-961-974</a>
+                      <p class="help-text">Monday to Friday 9 : 00 - 18 : 00</p>
+                    </div>
+                    <div class="tumi-customer">
+                      <img src="~assets/images/chatblack.png" alt="" />
+                      <a href="javaScript:void(0)" title="TUMI LIVE CHAT">
+                        TUMI LIVE CHAT</a
                       >
-                        <input
-                          type="text"
-                          placeholder="Apply coupon"
-                          name="coupon"
-                          value="Coupon"
-                          ref="applied_coupon"
-                          v-model="applied_coupon"
-                          autocomplete="off"
-                        />
-                        <button
-                          @click.prevent="addRemoveCoupon('add')"
-                          class="black-button proxima_regular"
-                        >
-                          Apply
-                        </button>
-                      </div>
-                      <div
-                        class="tooltiptext red proxima_regular"
-                        id="preOrderDate"
-                        v-else
-                      >
-                        <input
-                          type="text"
-                          placeholder="remove coupon"
-                          name="coupon"
-                          value="Coupon"
-                          ref="applied_coupon"
-                          v-model="$store.state.cartAjax.discount_code"
-                          disabled
-                          autocomplete="off"
-                        />
-                        <button
-                          @click.prevent="addRemoveCoupon('remove')"
-                          class="proxima_regular"
-                        >
-                          Remove
-                        </button>
-                      </div>
-
-                      <div class="buttons-checkout proxima_regular">
-                        <input
-                          type="submit"
-                          class="btn black-button"
-                          name="checkout"
-                          value="Checkout"
-                          @click.prevent="() => $router.push('/checkout')"
-                        />
-                      </div>
+                      <p class="help-text">Monday to Friday 9 : 00 - 18 : 00</p>
+                      <a class="contact-now" target="_blank" href="#">
+                        Contact now&gt;
+                      </a>
                     </div>
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -411,143 +387,289 @@ export default {
 </script>
 
 <style scoped>
-.empty-head {
-  margin-top: -46px;
-  margin-bottom: 40px;
+.cart_page {
+  font-family: "Proxima Nova", proxima-nova, arial, "Hiragino Sans GB",
+    "Microsoft Yahei", sans-serif;
 }
-.cart .title {
-  font-size: 25px;
-  font-weight: 700;
-  margin: 20px 0px;
-  text-transform: uppercase;
-  letter-spacing: 0.25px;
-}
-.cart .title {
-  font-size: 25px;
-  font-weight: 700;
-  margin: 20px 0px;
-  text-transform: uppercase;
-  letter-spacing: 0.25px;
-}
-.cartItemProducts .productItem {
-  display: flex;
+.cart_page .freeShipMessage-container {
   width: 100%;
+  background-color: #faf0f1;
+  font-family: "Proxima Nova", proxima-nova, arial, "Hiragino Sans GB",
+    "Microsoft Yahei", sans-serif;
+}
+.cart_page .freeShipMessage-container .freeShipMessage {
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  white-space: nowrap;
+  display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 10px 0px;
-  border-bottom: 1px solid #ddd;
 }
-.cartItemProducts .productItem .image-info {
-  width: 20%;
+.cart_page .freeShipMessage-container .freeShipMessage h2 {
+  color: #999;
+  font-size: 12px;
+  font-weight: 400;
+  width: 40%;
+  text-align: left;
+  margin: 0;
+  line-height: unset;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
 }
-.cartItemProducts .productItem .item_name {
-  width: 30%;
-  padding: 10px 20px;
+.cart_page .freeShipMessage-container .freeShipMessage h2 a {
+  color: #999;
 }
-.cartItemProducts .productItem .item_name a {
+.cart_page .freeShipMessage-container .freeShipMessage {
+  color: #c42239;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.cart_page .cart-container {
+  max-width: 1200px;
+  padding: 0 33px;
+  margin: 0 auto;
+}
+.cart_box .heading {
+  font-size: 16px;
   color: #000;
+  padding-top: 11px;
+  margin-bottom: 9px;
+  font-weight: 400;
+  text-transform: none;
+  font-family: "Proxima Nova", proxima-nova, arial, "Hiragino Sans GB",
+    "Microsoft Yahei", sans-serif;
+  letter-spacing: 0.5px;
 }
-.cartItemProducts .productItem .item_name strong {
-  font-size: 20px;
+
+.cart-items-headers {
+  font-size: 13px;
+  color: #222;
 }
-.cartItemProducts .productItem .qty_info {
-  width: 30%;
-  text-align: center;
+.cart-items-headers {
+  border-bottom: 1px solid #ebebeb;
+  padding: 10px 0;
 }
-.cartItemProducts .productItem .qty_info a {
-  background-color: #555;
-  color: #fff;
-  padding: 6px 20px;
-  cursor: pointer;
-}
-.cartItemProducts .productItem .qty_info input {
-  width: 20%;
-  padding: 13px 2px;
-  text-align: center;
-  background: transparent;
-  border: none;
-}
-.cartItemProducts .productItem .qty_info a {
-  background-color: #555;
-  color: #fff;
-  padding: 15px 20px;
-  cursor: pointer;
-}
-.cartItemProducts .productItem .remove {
-  width: 10%;
-  text-align: center;
-}
-.cartItemProducts .productItem .remove a {
-  cursor: pointer;
-}
-.cartItemProducts .productItem .price_info {
-  width: 10%;
-  text-align: center;
-}
-.cartItemProducts .productItem .price_info span {
-  font-size: 20px;
-  font-weight: 700;
-}
-.cartItemSidebar {
+.cart_page .cart-items .cart-item-details {
   width: 100%;
-  background: #fafafa;
-  text-align: center;
-  padding: 20px;
-  margin-top: 20px;
-  position: sticky;
-  top: 65px;
+  border-bottom: 1px solid #ccc;
+  padding: 39px 0 34px;
 }
-.cartItemSidebar .total {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 10px 0px;
-}
-.cartItemSidebar input {
-  padding: 10px 10px;
-  border-radius: 0px;
-  border: none;
-  margin: 10px 0px;
-}
-.buttons-checkout {
+
+.cart_page .cart-items .cart-item-details .cart-item-detail {
   width: 100%;
 }
-#preOrderDate {
+.cart_page .cart-items .cart-item-details .cart-item-detail .item {
+  width: 100%;
   display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
+
+.cart_page .cart-items .cart-item-details .cart-item-detail .left-item {
+  width: 40%;
+}
+.cart_page .cart-items .cart-item-details .cart-item-detail .right-item {
+  width: 60%;
+}
+.cart_page
+  .cart-items
+  .cart-item-details
+  .cart-item-detail
+  .right-item
+  a.ledger-prod-name {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  display: block;
+  padding-bottom: 8px;
+}
+.cart_page .cart-items .cart-item-details .cart-item-detail .right-item small {
+  font-weight: 600;
+  font-size: 10px;
+  padding-bottom: 4px;
+  color: #777;
+  font-family: proxima-nova, sans-serif;
+  margin-top: -4px;
+  display: block;
+}
+.cart_page .cart-items .cart-item-details .cart-item-detail .right-item p {
+  padding-bottom: 5px;
+  font-size: 12px;
+  margin: 0;
+  color: #777;
+}
+.cart_page .cart-items .cart-item-details .cart-item-detail .right-item p span {
+  font-weight: 600;
+  color: #555;
+}
+
+.cart_page
+  .cart-items
+  .cart-item-details
+  .cart-item-detail
+  .right-item
+  .ledger-prod-actions {
+  padding-top: 7px;
+}
+.cart_page
+  .cart-items
+  .cart-item-details
+  .cart-item-detail
+  .right-item
+  .ledger-prod-actions
+  a {
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+  letter-spacing: 0.5px;
+  text-decoration: underline;
+}
+
+.spacer {
+  padding: 0 13px 0 11px;
+  font-size: 12px;
+}
+
+.item-price {
+  color: #222;
+  font-size: 12px;
+  font-family: proxima-nova, sans-serif;
+  padding-bottom: 10px;
+}
+.cart-item-totals p {
+  color: #222;
+  font-size: 12px;
+
+  font-weight: 600;
+  font-family: proxima-nova, sans-serif;
+}
+.right-box {
+  margin-left: 8%;
+}
+.right-box .cart-summry {
+  border: 1px solid #ccc;
+  padding: 15px 10px;
+  max-width: 435px;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.025em;
+  margin: 20px 0;
+  text-transform: none;
+  color: #666;
+  width: 100%;
+}
+
+.right-box .cart-total {
+  width: 100%;
+  display: flex;
+  padding: 5px 0;
+}
+.right-box .cart-total .left-item,
+.right-box .cart-total .right-item {
+  width: 50%;
+}
+.right-box .cart-total .right-item {
+  text-align: right;
+}
+.right-box .cart-total .left-item p,
+.right-box .cart-total .right-item p {
+  font-size: 13px;
+  color: #555;
+  font-weight: 600;
+}
+.right-box .cart-total .right-item p span {
+  font-weight: 400;
+}
+
+.checkout {
+  background-color: #c41e3a;
+  border: none;
+  color: #fff;
+  width: 100%;
+  border-radius: 0;
+  margin: 20px 0;
+  font-size: 13px;
+  padding: 10px;
+}
+.cart-service {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.cart-service h3 {
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.cart-service .tumi-customer {
+  margin-bottom: 20px;
+}
+.tumi-customer img {
+  margin-right: 5px;
+  height: 14px;
+  width: auto;
+  margin-top: -4px;
+}
+.cart-service .tumi-customer a {
+  font-size: 14px;
+  font-weight: 700;
+}
+.tumi-customer a {
+  margin-bottom: 2px;
+}
+.cart-service .help-text {
+  color: #999;
+  margin-bottom: 5px;
+}
+.tumi-customer .help-text {
+  margin-top: 2px;
+  margin-left: 22px;
+  font-size: 13px;
+}
+.cart-service .tumi-customer a.contact-now {
+  font-size: 14px;
+  font-weight: 100;
+  margin-left: 22px;
+  text-decoration: underline;
+  letter-spacing: 0.5px;
+}
+
 @media only screen and (max-width: 991px) {
-  .cartItemProducts .productItem {
-    flex-wrap: wrap;
-  }
-  .cartItemProducts .productItem {
-    display: flex;
-    width: 100%;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-  }
-  .cartItemProducts .productItem .image-info {
-    width: 20%;
-    margin-bottom: 10px;
-  }
-  .cartItemProducts .productItem .item_name {
-    width: 80%;
-  }
-  .cartItemProducts .productItem .qty_info {
-    width: 30%;
-    text-align: left;
-  }
-  .cartItemProducts .productItem .price_info,
-  .cartItemProducts .productItem .remove {
-    width: 30%;
-  }
 }
 @media only screen and (max-width: 767px) {
-  .cartItemProducts .productItem .qty_info a {
-    background-color: #555;
-    color: #fff;
-    padding: 6px 15px;
-    cursor: pointer;
+  .cart_page .cart-items .cart-item-details .cart-item-detail .item {
+    flex-direction: row-reverse;
+  }
+  .cart_page .freeShipMessage-container .freeShipMessage {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cart_page .freeShipMessage-container .freeShipMessage h2 {
+    width: 100%;
+    text-align: center;
+  }
+  .right-box .cart-summry {
+    border: none;
+    padding: 25px 0 0;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+  .right-box {
+    margin: 0;
+    background: #ebebeb;
+    margin-top: 20px;
+  }
+  .cart_page .cart-container {
+    padding: 0 15px;
+  }
+  .cart_box .heading {
+    text-align: center;
   }
 }
 </style>

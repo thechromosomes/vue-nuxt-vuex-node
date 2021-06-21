@@ -6721,3 +6721,23 @@ img.yearBlockImage {
   border-color: #fff;
   color: #fff;
 }
+.option-con-wrap .quick-view-link {
+  background: #fff;
+  width: 150px;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.025em;
+  font-weight: 600;
+  color: #222;
+  display: inline-block;
+  text-transform: capitalize;
+  border: 2px solid #222;
+  height: 40px;
+  font-family: "Proxima Nova", proxima-nova, arial, "Hiragino Sans GB",
+    "Microsoft Yahei", sans-serif;
+  margin: 20px 0;
+}
+.option-con-wrap .quick-view-link:hover {
+  color: #ba0c2f;
+}
