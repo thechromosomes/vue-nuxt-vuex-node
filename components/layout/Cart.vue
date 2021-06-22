@@ -137,7 +137,7 @@ export default {
   data() {
     return {
       addToCartVal: 0,
-      applied_coupon: "",
+      applied_coupon: ""
     };
   },
 
@@ -145,9 +145,9 @@ export default {
     emitFunction() {
       this.$parent.toogleCart();
     },
-    contShopping(){
-      this.$router.push("/") 
-      this.emitFunction()
+    contShopping() {
+      this.$router.push("/");
+      this.emitFunction();
     },
 
     async removeCartItem(item) {
@@ -163,12 +163,12 @@ export default {
           method: "post",
           url: `/product/remove-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form,
+          params: form
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response,
+            data: response
           });
           if (response.success) {
             this.$gtm.push({
@@ -182,11 +182,11 @@ export default {
                       id: item.master_sku,
                       price: item.selling_price,
                       variant: item.fynd_size,
-                      quantity: item.qty,
-                    },
-                  ],
-                },
-              },
+                      quantity: item.qty
+                    }
+                  ]
+                }
+              }
             });
           }
         } else {
@@ -211,12 +211,12 @@ export default {
           method: "post",
           url: `/product/update-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form,
+          params: form
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response,
+            data: response
           });
         } else {
           throw "no response from api";
@@ -281,13 +281,13 @@ export default {
           method: "post",
           url,
           token: this.$store.state.cartAjax.cart_token,
-          params: form,
+          params: form
         });
 
         if (response.success) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response,
+            data: response
           });
           this.$toast.open(response.message);
         } else {
@@ -296,33 +296,33 @@ export default {
       } catch (error) {
         console.log("error form the add coupon foo >>", error);
       }
-    },
+    }
   },
 
   watch: {
-    "$store.state.cartAjax.cart_page_message": function () {
+    "$store.state.cartAjax.cart_page_message": function() {
       if (
         this.$store.state.cartAjax.cart_page_message != "" &&
         this.$store.state.cartAjax.cart_page_message != null
       ) {
         this.$toast.open(this.$store.state.cartAjax.cart_page_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: "",
+          data: ""
         });
       }
     },
-    "$store.state.cartAjax.cart_page_erro_page": function () {
+    "$store.state.cartAjax.cart_page_erro_page": function() {
       if (
         this.$store.state.cartAjax.cart_page_error_message != "" &&
         this.$store.state.cartAjax.cart_page_error_message != null
       ) {
         this.$toast.error(this.$store.state.cartAjax.cart_page_error_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: "",
+          data: ""
         });
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -382,14 +382,14 @@ export default {
   border-bottom: 2px solid #ccc;
   font-size: 18px;
   padding-bottom: 10px;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   text-transform: none;
   font-weight: 600;
 }
 .cart-page .tm-panel-container .tm-wrapper .tm-panel .tm-header .sub {
-  display: inline-block;
+  /* display: inline-block;
   font-size: 15px;
-  margin-bottom: 9px;
+  margin-bottom: 9px; */
 }
 .cart-page #tm-panel-mini-cart .tm-header .close {
   display: block;
@@ -497,7 +497,7 @@ export default {
   font-size: 11px;
   font-weight: 700;
   padding: 3px 8px;
-  display: none;
+  /* display: none; */
 }
 .cart-page
   #tm-panel-mini-cart

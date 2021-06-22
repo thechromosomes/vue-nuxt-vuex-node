@@ -13,7 +13,22 @@
           </div>
         </div>
 
-        <div class="cart-container ">
+        <div
+          class="empty_cart"
+          v-if="$store.state.cartAjax.cart_product.length == 0"
+        >
+          <p>Shopping cart is empty</p>
+          <img
+            src="@/assets/images/empty-cart.png"
+            alt="empty_cart"
+            width="200px"
+          />
+        </div>
+
+        <div
+          class="cart-container "
+          v-if="$store.state.cartAjax.cart_product.length != 0"
+        >
           <div class="cart_box">
             <div class="row">
               <div class="col-md-8 col-lg-8 col-12">
@@ -119,50 +134,55 @@
               <div class="col-md-4 col-lg-4 col-12 p-0">
                 <div class="right-box">
                   <h2 class="heading">Order Summary</h2>
-                  <div class="cart-summry">
-                    <div class="cart-total">
-                      <div class="left-item">
-                        <p>Subtotal</p>
+                  <div class="cart-mobile">
+                    <div class="cart-summry">
+                      <div class="cart-total">
+                        <div class="left-item">
+                          <p>Subtotal</p>
+                        </div>
+                        <div class="right-item">
+                          <p>
+                            <span
+                              >₹{{
+                                $store.state.cartAjax.cart_total
+                                  | numberWithCommas
+                              }}</span
+                            >
+                          </p>
+                        </div>
                       </div>
-                      <div class="right-item">
-                        <p>
-                          <span
-                            >₹{{
+                      <div class="cart-total">
+                        <div class="left-item">
+                          <p>Shipping</p>
+                        </div>
+                        <div class="right-item">
+                          <p>
+                            <span>Free</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="cart-total">
+                        <div class="left-item">
+                          <p>Total Order</p>
+                        </div>
+                        <div class="right-item">
+                          <p>
+                            ₹{{
                               $store.state.cartAjax.cart_total
                                 | numberWithCommas
-                            }}</span
-                          >
-                        </p>
+                            }}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                    <div class="cart-total">
-                      <div class="left-item">
-                        <p>Shipping</p>
-                      </div>
-                      <div class="right-item">
-                        <p>
-                          <span>Free</span>
-                        </p>
-                      </div>
+                    <div class="cart-mobile-btn">
+                      <button
+                        class="btn  checkout "
+                        @click.prevent="() => $router.push('/checkout')"
+                      >
+                        Checkout
+                      </button>
                     </div>
-                    <div class="cart-total">
-                      <div class="left-item">
-                        <p>Total Order</p>
-                      </div>
-                      <div class="right-item">
-                        <p>
-                          ₹{{
-                            $store.state.cartAjax.cart_total | numberWithCommas
-                          }}
-                        </p>
-                      </div>
-                    </div>
-                    <button
-                      class="btn  checkout "
-                      @click.prevent="() => $router.push('/checkout')"
-                    >
-                      Checkout
-                    </button>
                   </div>
 
                   <div class="cart-service hide-mob ">
@@ -188,6 +208,87 @@
             </div>
           </div>
         </div>
+
+        <!-- edit cart  -->
+        <div class="editcart_page">
+          <div class="dark-overly">
+            <div class="edit_cart_info">
+              <div class="promotional-badge ">
+                <div class="label-arrow-up"></div>
+                <div class="promotional-msg ">
+                  EXCLUSIVE
+                </div>
+              </div>
+
+              <div class="edit_product_info">
+                <div class="pro-img">
+                  <div class="img-box w-100">
+                    <img
+                      src="https://tumi.scene7.com/is/image/Tumi/1358735107_alt4?wid=440&hei=440&layer=2&opac=0&layer=3&opac=0"
+                      alt="img"
+                      class="w-100"
+                    />
+                  </div>
+                </div>
+                <div class="pro-info">
+                  <h4>Extended Trip Expandable 4 Wheeled Packing Case</h4>
+                  <div class="product-subtitle">
+                    <div class="product-category">
+                      TUMI V4
+                      <span class="view-entire-collection"
+                        ><a href="#" class="pdpInernalLink">
+                          View the entire series</a
+                        ></span
+                      >
+                    </div>
+                    <div class="product-style ">
+                      <span class="label">Style: </span>
+                      <span class="cart-quick-style">1358735107</span>
+                    </div>
+                  </div>
+
+                  <div class="price-column">
+                    <span class="price price-old">HK$5,990.00</span>
+                    <span class="price price-new">HK$4,493.00</span>
+                  </div>
+                  <span class="stock-message">
+                    <span itemprop="inventoryLevel" id="invetory_level">
+                      <span class="instock title-font uppercase">In Stock</span
+                      ><span class="stock-num">Hurry, only 2 left!</span>
+                    </span>
+                  </span>
+                  <div class="quantity">
+                    <strong class="proxima_bold mr-2">Quantity: </strong>
+                    <div class="qtyAdjustBox">
+                      <a class="minus" @click.prevent="addCartVal('minus')"
+                        >-</a
+                      >
+                      <input
+                        v-model.number="addToCartVal"
+                        disabled
+                        class="itemQty"
+                      />
+                      <a class="plus" @click.prevent="addCartVal('add')">+</a>
+                    </div>
+                  </div>
+                  <div class="update_cartBtn">
+                    <button type="submit" class="btn  add-to-cart-">
+                      Update shopping cart
+                    </button>
+                  </div>
+                  <a
+                    href="#"
+                    tabindex="0"
+                    class="close-overlay close-slider"
+                    aria-label="Close"
+                    ><span class="icon icon-x"></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- edit cart  end-->
       </div>
     </client-only>
   </div>
@@ -550,7 +651,7 @@ export default {
 .right-box {
   margin-left: 8%;
 }
-.right-box .cart-summry {
+.right-box .cart-mobile {
   border: 1px solid #ccc;
   padding: 15px 10px;
   max-width: 435px;
@@ -639,6 +740,53 @@ export default {
   letter-spacing: 0.5px;
 }
 
+.empty_cart {
+  max-width: 100%;
+  width: 300px;
+  text-align: center;
+  margin: 20px auto;
+}
+.empty_cart p {
+  margin: 10px 0;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  color: #555;
+}
+.quantity {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.update_cartBtn {
+  width: 100%;
+}
+.update_cartBtn button {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 0 12px;
+  background-color: #c41e3a;
+  border: none;
+  color: #fff;
+  border-radius: 0;
+  margin-top: 20px;
+  height: 36px;
+  line-height: 34px;
+}
+.close-overlay {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  background: #222;
+  cursor: pointer;
+  font-size: 12px;
+  padding-left: 4px;
+}
 @media only screen and (max-width: 991px) {
 }
 @media only screen and (max-width: 767px) {
@@ -652,6 +800,16 @@ export default {
   .cart_page .freeShipMessage-container .freeShipMessage h2 {
     width: 100%;
     text-align: center;
+  }
+  .right-box .cart-mobile-btn {
+    background: #fff;
+    padding: 0 10px;
+  }
+  .right-box .cart-mobile {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    padding: 0;
   }
   .right-box .cart-summry {
     border: none;
