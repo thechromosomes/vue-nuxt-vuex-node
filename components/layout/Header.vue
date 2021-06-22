@@ -1,5 +1,12 @@
 <template>
   <header class="header sticky" :class="[scrollPosition > 30 ? 'fixed' : '']">
+    <!-- vue loader -->
+    <div class="page-loader" v-if="$store.state.pageLoader">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
     <section class="top-nav">
       <div class="container-fluid">
         <div class="row">
@@ -666,12 +673,17 @@
               :key="index"
             >
               <NuxtLink
+                v-if="item.menu_url_key == 'collections'"
+                :to="`/clp/${item.menu_url_key}`"
+                class="desktop-item proxima_semi-bold"
+                >{{ item.name }}</NuxtLink
+              >
+              <NuxtLink
                 v-if="
-                  item.menu_url_key == 'collections' ||
                   item.menu_url_key == 'accessories' ||
                   item.menu_url_key == 'luggage'
                 "
-                :to="`/clp/${item.menu_url_key}`"
+                :to="`/clp-cms/${item.menu_url_key}`"
                 class="desktop-item proxima_semi-bold"
                 >{{ item.name }}</NuxtLink
               >
@@ -686,12 +698,17 @@
                 :class="isActive == index ? 'isActive' : ''"
               >
                 <NuxtLink
+                  v-if="item.menu_url_key == 'collections'"
+                  :to="`/clp/${item.menu_url_key}`"
+                  >{{ item.name }}</NuxtLink
+                >
+                <NuxtLink
                   v-if="
-                    item.menu_url_key == 'collections' ||
                     item.menu_url_key == 'accessories' ||
                     item.menu_url_key == 'luggage'
                   "
-                  :to="`/clp/${item.menu_url_key}`"
+                  :to="`/clp-cms/${item.menu_url_key}`"
+                  class="desktop-item proxima_semi-bold"
                   >{{ item.name }}</NuxtLink
                 >
                 <a v-else>{{ item.name }}</a>
@@ -1663,3 +1680,6 @@ export default {
   },
 };
 </script>
+<style scoped>
+@import url("@/assets/css/pages-css/loader.css");
+</style>

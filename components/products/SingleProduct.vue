@@ -284,6 +284,14 @@
                             {{ singleProductList.single_prod_data.style_code }}
                           </li>
                           <li
+                            v-show="
+                              singleProductList.single_prod_data.uk_item_code
+                            "
+                          >
+                            Style UK:
+                            {{ singleProductList.single_prod_data.uk_item_code }}
+                          </li>
+                          <li
                             v-for="(desc, descKey) in renderDescription"
                             :key="descKey"
                           >

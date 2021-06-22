@@ -37,7 +37,7 @@
                           >
                             <div class="product-image">
                               <NuxtLink
-                                :to="`/collections/product/${product.url_key}`"
+                                :to="`/product/${product.url_key}`"
                                 class=""
                                 title="Lance Backpack"
                                 ><img :src="product.image" alt="cart image"
@@ -45,12 +45,18 @@
                             </div>
                             <div class="product-details">
                               <div class="product-badge">
-                                <span class="badge-added" v-if="index == 0"
+                                <span
+                                  class="badge-added"
+                                  v-if="
+                                    index ==
+                                    $store.state.cartAjax.cart_product.length -
+                                      1
+                                  "
                                   >just added</span
                                 >
                               </div>
                               <NuxtLink
-                                :to="`/collections/product/${product.url_key}`"
+                                :to="`/product/${product.url_key}`"
                                 class="product-name"
                                 title="Lance Backpack"
                                 >{{ product.name }}</NuxtLink
@@ -137,7 +143,7 @@ export default {
   data() {
     return {
       addToCartVal: 0,
-      applied_coupon: ""
+      applied_coupon: "",
     };
   },
 
@@ -163,12 +169,12 @@ export default {
           method: "post",
           url: `/product/remove-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form
+          params: form,
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response
+            data: response,
           });
           if (response.success) {
             this.$gtm.push({
@@ -182,11 +188,11 @@ export default {
                       id: item.master_sku,
                       price: item.selling_price,
                       variant: item.fynd_size,
-                      quantity: item.qty
-                    }
-                  ]
-                }
-              }
+                      quantity: item.qty,
+                    },
+                  ],
+                },
+              },
             });
           }
         } else {
@@ -211,12 +217,12 @@ export default {
           method: "post",
           url: `/product/update-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form
+          params: form,
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response
+            data: response,
           });
         } else {
           throw "no response from api";
@@ -281,13 +287,13 @@ export default {
           method: "post",
           url,
           token: this.$store.state.cartAjax.cart_token,
-          params: form
+          params: form,
         });
 
         if (response.success) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response
+            data: response,
           });
           this.$toast.open(response.message);
         } else {
@@ -296,33 +302,33 @@ export default {
       } catch (error) {
         console.log("error form the add coupon foo >>", error);
       }
-    }
+    },
   },
 
   watch: {
-    "$store.state.cartAjax.cart_page_message": function() {
+    "$store.state.cartAjax.cart_page_message": function () {
       if (
         this.$store.state.cartAjax.cart_page_message != "" &&
         this.$store.state.cartAjax.cart_page_message != null
       ) {
         this.$toast.open(this.$store.state.cartAjax.cart_page_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: ""
+          data: "",
         });
       }
     },
-    "$store.state.cartAjax.cart_page_erro_page": function() {
+    "$store.state.cartAjax.cart_page_erro_page": function () {
       if (
         this.$store.state.cartAjax.cart_page_error_message != "" &&
         this.$store.state.cartAjax.cart_page_error_message != null
       ) {
         this.$toast.error(this.$store.state.cartAjax.cart_page_error_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: ""
+          data: "",
         });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

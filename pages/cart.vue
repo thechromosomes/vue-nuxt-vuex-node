@@ -3,13 +3,11 @@
     <client-only>
       <div class="cart_page">
         <div class="freeShipMessage-container">
-          <div class="freeShipMessage ">
-            <h2 class="heading ">
+          <div class="freeShipMessage">
+            <h2 class="heading">
               <a href="#" title="Continue shopping"> &lt; Continue shopping</a>
             </h2>
-            <div class="shipping-return-header ">
-              Free shipping
-            </div>
+            <div class="shipping-return-header">Free shipping</div>
           </div>
         </div>
 
@@ -26,7 +24,7 @@
         </div>
 
         <div
-          class="cart-container "
+          class="cart-container"
           v-if="$store.state.cartAjax.cart_product.length != 0"
         >
           <div class="cart_box">
@@ -38,14 +36,12 @@
                   }})
                 </h2>
                 <div
-                  class="row-no-stack hide-mob "
+                  class="row-no-stack hide-mob"
                   id="cart-items-headers-container"
                 >
                   <div class="cart-items-headers row" role="row">
-                    <div class="col-6 " role="gridcell" tabindex="-1">
-                      Item
-                    </div>
-                    <div class="col-3 p-0 " role="gridcell" tabindex="-1">
+                    <div class="col-6" role="gridcell" tabindex="-1">Item</div>
+                    <div class="col-3 p-0" role="gridcell" tabindex="-1">
                       Item Price
                     </div>
                     <div class="col-3 p-0" role="gridcell" tabindex="-1">
@@ -61,10 +57,10 @@
                   :key="index"
                 >
                   <div class="cart-item-details row">
-                    <div class="col-12 col-md-6  cart-item-detail">
+                    <div class="col-12 col-md-6 cart-item-detail">
                       <div class="item">
                         <div class="left-item">
-                          <a :href="`/collections/product/${product.url_key}`">
+                          <a :href="`/product/${product.url_key}`">
                             <img
                               :src="product.image"
                               alt="International Expandable 4 Wheeled Carry-On"
@@ -74,8 +70,8 @@
                         </div>
                         <div class="right-item">
                           <a
-                            :href="`/collections/product/${product.url_key}`"
-                            class="ledger-prod-name "
+                            :href="`/product/${product.url_key}`"
+                            class="ledger-prod-name"
                             >{{ product.name }}
                           </a>
                           <small> {{ product.category }}</small>
@@ -87,7 +83,7 @@
                             <span>COLOR:</span>
                             {{ JSON.parse(product.size).color }}
                           </p>
-                          <div class=" cart-item-status hide-desk mt-4">
+                          <div class="cart-item-status hide-desk mt-4">
                             <div class="value item-price price-strike">
                               ₹{{ product.selling_price | numberWithCommas }}
                             </div>
@@ -95,15 +91,20 @@
                           ₹,743.00
                         </div> -->
                           </div>
-                          <div class=" cart-item-totals  hide-desk ">
+                          <div class="cart-item-totals hide-desk">
                             <p>₹{{ product.row_total | numberWithCommas }}</p>
                           </div>
-                          <div class="ledger-prod-actions ">
+                          <div class="ledger-prod-actions">
                             <span class="link edit-link hide-mob">
-                              <a class="cta quick-view-link " href="#">Edit</a>
+                              <a
+                                class="cta quick-view-link"
+                                style="cursor: pointer"
+                                @click.prevent="toggleEditCart(product, index)"
+                                >Edit</a
+                              >
                             </span>
                             <span class="spacer hide-mob">|</span>
-                            <span class="link delete-link ">
+                            <span class="link delete-link">
                               <a
                                 class="cta"
                                 @click.prevent="removeCartItem(product)"
@@ -115,8 +116,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-3 cart-item-status hide-mob ">
-                      <div class=" cart-item-status">
+                    <div class="col-3 cart-item-status hide-mob">
+                      <div class="cart-item-status">
                         <div class="value item-price price-strike">
                           ₹{{ product.selling_price | numberWithCommas }}
                         </div>
@@ -125,7 +126,7 @@
                         </div> -->
                       </div>
                     </div>
-                    <div class="col-3 span2 cart-item-totals hide-mob ">
+                    <div class="col-3 span2 cart-item-totals hide-mob">
                       <p>₹{{ product.row_total | numberWithCommas }}</p>
                     </div>
                   </div>
@@ -177,7 +178,7 @@
                     </div>
                     <div class="cart-mobile-btn">
                       <button
-                        class="btn  checkout "
+                        class="btn checkout"
                         @click.prevent="() => $router.push('/checkout')"
                       >
                         Checkout
@@ -185,7 +186,7 @@
                     </div>
                   </div>
 
-                  <div class="cart-service hide-mob ">
+                  <div class="cart-service hide-mob">
                     <h3 class="">Customer Service</h3>
                     <div class="tumi-customer">
                       <img src="~assets/images/phoneblack.png" alt="" />
@@ -210,74 +211,132 @@
         </div>
 
         <!-- edit cart  -->
-        <div class="editcart_page">
+        <div class="editcart_page" v-if="editCart">
           <div class="dark-overly">
             <div class="edit_cart_info">
-              <div class="promotional-badge ">
+              <div class="promotional-badge">
                 <div class="label-arrow-up"></div>
-                <div class="promotional-msg ">
-                  EXCLUSIVE
-                </div>
+                <div class="promotional-msg">EXCLUSIVE</div>
               </div>
 
               <div class="edit_product_info">
                 <div class="pro-img">
                   <div class="img-box w-100">
                     <img
-                      src="https://tumi.scene7.com/is/image/Tumi/1358735107_alt4?wid=440&hei=440&layer=2&opac=0&layer=3&opac=0"
+                      :src="
+                        $store.state.cartAjax.cart_product[editCartIndex].image
+                      "
                       alt="img"
                       class="w-100"
                     />
                   </div>
                 </div>
                 <div class="pro-info">
-                  <h4>Extended Trip Expandable 4 Wheeled Packing Case</h4>
+                  <h4>
+                    {{ $store.state.cartAjax.cart_product[editCartIndex].name }}
+                  </h4>
                   <div class="product-subtitle">
                     <div class="product-category">
-                      TUMI V4
+                      {{
+                        $store.state.cartAjax.cart_product[editCartIndex]
+                          .category
+                      }}
                       <span class="view-entire-collection"
-                        ><a href="#" class="pdpInernalLink">
-                          View the entire series</a
+                        ><NuxtLink to="/" class="pdpInernalLink">
+                          View the entire series</NuxtLink
                         ></span
                       >
                     </div>
-                    <div class="product-style ">
+                    <div class="product-style">
                       <span class="label">Style: </span>
                       <span class="cart-quick-style">1358735107</span>
                     </div>
                   </div>
 
                   <div class="price-column">
-                    <span class="price price-old">HK$5,990.00</span>
-                    <span class="price price-new">HK$4,493.00</span>
+                    <!-- <span class="price price-old">HK$5,990.00</span> -->
+                    <span class="price price-new"
+                      >₹{{
+                        $store.state.cartAjax.cart_product[editCartIndex]
+                          .selling_price | numberWithCommas
+                      }}</span
+                    >
                   </div>
                   <span class="stock-message">
                     <span itemprop="inventoryLevel" id="invetory_level">
                       <span class="instock title-font uppercase">In Stock</span
-                      ><span class="stock-num">Hurry, only 2 left!</span>
+                      ><span class="stock-num"
+                        >Hurry, only
+                        {{
+                          $store.state.cartAjax.cart_product[editCartIndex]
+                            .max_qty
+                        }}
+                        left!</span
+                      >
                     </span>
                   </span>
                   <div class="quantity">
                     <strong class="proxima_bold mr-2">Quantity: </strong>
                     <div class="qtyAdjustBox">
-                      <a class="minus" @click.prevent="addCartVal('minus')"
+                      <a
+                        class="minus"
+                        :class="{
+                          disable:
+                            addToCartValClassRender[editCartIndex] == 1 ||
+                            $store.state.cartAjax.cart_product[editCartIndex]
+                              .qty == 1,
+                        }"
+                        @click.prevent="
+                          addCartVal(
+                            'minus',
+                            $store.state.cartAjax.cart_product[editCartIndex],
+                            editCartIndex
+                          )
+                        "
                         >-</a
                       >
                       <input
-                        v-model.number="addToCartVal"
+                        :value="
+                          $store.state.cartAjax.cart_product[editCartIndex].qty
+                        "
                         disabled
                         class="itemQty"
                       />
-                      <a class="plus" @click.prevent="addCartVal('add')">+</a>
+                      <a
+                        class="plus"
+                        :class="{
+                          disable:
+                            addToCartValClassRender[editCartIndex] ==
+                              $store.state.cartAjax.cart_product[editCartIndex]
+                                .max_qty ||
+                            addToCartValClassRender[editCartIndex] == 5 ||
+                            $store.state.cartAjax.cart_product[editCartIndex]
+                              .qty ==
+                              $store.state.cartAjax.cart_product[editCartIndex]
+                                .max_qty,
+                        }"
+                        @click.prevent="
+                          addCartVal(
+                            'add',
+                            $store.state.cartAjax.cart_product[editCartIndex],
+                            editCartIndex
+                          )
+                        "
+                        >+</a
+                      >
                     </div>
                   </div>
                   <div class="update_cartBtn">
-                    <button type="submit" class="btn  add-to-cart-">
+                    <button
+                      type="submit"
+                      @click="() => (editCart = false)"
+                      class="btn add-to-cart-"
+                    >
                       Update shopping cart
                     </button>
                   </div>
                   <a
-                    href="#"
+                    @click.prevent="() => (editCart = false)"
                     tabindex="0"
                     class="close-overlay close-slider"
                     aria-label="Close"
@@ -299,7 +358,10 @@ export default {
   data() {
     return {
       addToCartVal: 0,
-      applied_coupon: ""
+      applied_coupon: "",
+      editCart: false,
+      editCartIndex: "",
+      addToCartValClassRender: [],
     };
   },
 
@@ -317,13 +379,13 @@ export default {
           method: "post",
           url: `/product/remove-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form
+          params: form,
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
             data: response,
-            vm: this
+            vm: this,
           });
           if (response.success) {
             this.$gtm.push({
@@ -337,11 +399,11 @@ export default {
                       id: item.master_sku,
                       price: item.selling_price,
                       variant: item.fynd_size,
-                      quantity: item.qty
-                    }
-                  ]
-                }
-              }
+                      quantity: item.qty,
+                    },
+                  ],
+                },
+              },
             });
           }
         } else {
@@ -351,6 +413,12 @@ export default {
         this.$globalError(`error from remove cart >>>> ${error}`);
         console.log("error from remove cart >>>", error);
       }
+    },
+
+    toggleEditCart(item, index) {
+      this.editCartIndex = index;
+      this.addToCartVal = item.qty;
+      this.editCart = true;
     },
 
     async updateCart(item) {
@@ -367,13 +435,13 @@ export default {
           method: "post",
           url: `/product/update-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form
+          params: form,
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
             data: response,
-            vm: this
+            vm: this,
           });
         } else {
           throw "no response from api";
@@ -386,8 +454,9 @@ export default {
       }
     },
 
-    addCartVal(cartval, product) {
+    addCartVal(cartval, product, index) {
       this.addToCartVal = product.qty;
+      this.addToCartValClassRender[index] = product.qty;
       if (Object.keys(product).length === 0) {
         alert("no product available");
         return;
@@ -401,9 +470,15 @@ export default {
           this.addToCartVal < 5
         ) {
           this.addToCartVal += 1;
+          this.addToCartValClassRender[index] += 1;
         } else if (cartval === "minus") {
           this.addToCartVal -= 1;
           this.addToCartVal === 0 ? (this.addToCartVal = 1) : this.addToCartVal;
+
+          this.addToCartValClassRender[index] -= 1;
+          this.addToCartValClassRender[index] === 0
+            ? (this.addToCartValClassRender[index] = 1)
+            : this.addToCartValClassRender[index];
         }
       }
       this.updateCart(product);
@@ -443,13 +518,13 @@ export default {
           method: "post",
           url,
           token,
-          params: form
+          params: form,
         });
 
         if (response.success) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response
+            data: response,
           });
           this.$toast.open(response.message);
         } else {
@@ -458,32 +533,32 @@ export default {
       } catch (error) {
         console.log("error form the add coupon foo >>", error);
       }
-    }
+    },
   },
   watch: {
-    "$store.state.cartAjax.cart_page_message": function() {
+    "$store.state.cartAjax.cart_page_message": function () {
       if (
         this.$store.state.cartAjax.cart_page_message != "" &&
         this.$store.state.cartAjax.cart_page_message != null
       ) {
         this.$toast.open(this.$store.state.cartAjax.cart_page_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: ""
+          data: "",
         });
       }
     },
-    "$store.state.cartAjax.cart_page_erro_page": function() {
+    "$store.state.cartAjax.cart_page_erro_page": function () {
       if (
         this.$store.state.cartAjax.cart_page_error_message != "" &&
         this.$store.state.cartAjax.cart_page_error_message != null
       ) {
         this.$toast.error(this.$store.state.cartAjax.cart_page_error_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: ""
+          data: "",
         });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -829,5 +904,19 @@ export default {
   .cart_box .heading {
     text-align: center;
   }
+}
+
+/* disabel button */
+.plus.disable {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.minus.disable {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.empty-head {
+  margin-top: -46px;
+  margin-bottom: 40px;
 }
 </style>
