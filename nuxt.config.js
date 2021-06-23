@@ -30,6 +30,8 @@ export default {
 
   css: [
     "~/assets/css/bootstrap.min.css",
+    "~/assets/st/st.css",
+
     "~/assets/css/slick.css",
     "~/assets/css/slick-theme.css",
     "~/assets/css/style.css",
@@ -141,6 +143,7 @@ export default {
     extractCSS: {
       allChunks: true,
     },
+    vendor: ['aframe']
   },
 
   // google tag manger
@@ -168,9 +171,9 @@ export default {
             //   type: "error middleware",
             //   from: req.url,
             // });
-            res.redirect("/404");
+            // res.redirect("/404");
           } else {
-            res.redirect("/404");
+            // res.redirect("/404");
           }
         });
       },
