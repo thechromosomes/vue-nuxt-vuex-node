@@ -78,7 +78,11 @@
                         >
                       </li>
                       <li>
-                        <a href="" class="proxima_semi-bold">TUMI Difference</a>
+                        <Nuxt-link
+                          to="/cms/tumi-difference"
+                          class="proxima_semi-bold"
+                          >TUMI Difference</Nuxt-link
+                        >
                       </li>
                       <li>
                         <a href="" class="proxima_semi-bold">Sustainability</a>
@@ -108,13 +112,17 @@
                         >
                       </li>
                       <li>
-                        <a href="" class="proxima_semi-bold"
-                          >TUMI Exclusives Club Member Regulations</a
+                        <Nuxt-link
+                          to="/cms/member-regulations"
+                          class="proxima_semi-bold"
+                          >TUMI Exclusives Club Member Regulations</Nuxt-link
                         >
                       </li>
                       <li>
-                        <a href="" class="proxima_semi-bold"
-                          >TUMI | THE LANGHAM</a
+                        <Nuxt-link
+                          to="/cms/tumi-the-langham"
+                          class="proxima_semi-bold"
+                          >TUMI | THE LANGHAM</Nuxt-link
                         >
                       </li>
                     </ul>

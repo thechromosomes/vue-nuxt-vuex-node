@@ -338,7 +338,7 @@
                       >
                         {{ singleProd.promotional_tags }}
                       </li>
-                      <li>
+                      <li class="cm-list-box">
                         <label class="checkbox-wrap proxima_regular"
                           >Comapre &nbsp;<input
                             type="checkbox"

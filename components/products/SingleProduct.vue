@@ -378,15 +378,14 @@
                                 </li>
                               </ul>
                             </div>
-
-                            <!-- <div class="pdf-link proxima_regular ">
-                              <a
-                                href="https://www.tumi-hk.com/How_do_we_measure_HK_EN.pdf"
-                                target="_Blank"
-                              >
-                                How do we measure ?</a
-                              >
-                            </div> -->
+                          </div>
+                          <div class="link-ctnr">
+                            <a
+                              href="https://www.tumi-hk.com/How_do_we_measure_HK_EN.pdf"
+                              target="_Blank"
+                            >
+                              How do we measure ?</a
+                            >
                           </div>
                         </div>
                       </div>
