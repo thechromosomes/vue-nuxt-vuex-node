@@ -679,7 +679,7 @@
                 >{{ item.name }}</NuxtLink
               >
               <NuxtLink
-                v-if="
+                v-else-if="
                   item.menu_url_key == 'accessories' ||
                   item.menu_url_key == 'luggage'
                 "
@@ -703,7 +703,7 @@
                   >{{ item.name }}</NuxtLink
                 >
                 <NuxtLink
-                  v-if="
+                  v-else-if="
                     item.menu_url_key == 'accessories' ||
                     item.menu_url_key == 'luggage'
                   "
