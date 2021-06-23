@@ -1,6 +1,7 @@
 export const state = () => ({
   list: {
     search_input: "",
+    breadcrumb : '',
     page_error: "",
     service: "category",
     description: "",
@@ -196,6 +197,9 @@ export const mutations = {
           state.list.page_error = "No product found";
         }
 
+        state.list.breadcrumb = JSON.parse(
+          data.result.breadcrumb
+        );
         state.list.description = data.result.description;
         state.list.meta_title = data.result.meta_title;
         state.list.meta_description = data.result.meta_description;
@@ -253,11 +257,11 @@ export const mutations = {
             "No product found, please try by removing last applied filter.";
         }
         state.singleProductList.single_prod_data = data.result;
-        if (state.singleProductList.breadcrumb.length > 0) {
+        // if (state.singleProductList.breadcrumb.length > 0) {
           state.singleProductList.breadcrumb = JSON.parse(
             data.result.breadcrumb
           );
-        }
+        // }
       } else {
         state.singleProductList.page_error = data.response.error_message;
         state.singleProductList.product_loader = false;

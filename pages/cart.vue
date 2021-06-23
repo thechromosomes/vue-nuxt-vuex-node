@@ -5,7 +5,13 @@
         <div class="freeShipMessage-container">
           <div class="freeShipMessage">
             <h2 class="heading">
-              <a href="#" title="Continue shopping"> &lt; Continue shopping</a>
+              <a
+                href="#"
+                title="Continue shopping"
+                @click.prevent="contShopping()"
+              >
+                &lt; Continue shopping</a
+              >
             </h2>
             <div class="shipping-return-header">Free shipping</div>
           </div>
@@ -204,6 +210,29 @@
                       </a>
                     </div>
                   </div>
+
+                  <div class="accordion-section ">
+                    <a
+                      class="accordion-section-title "
+                      :class="{ open: returnPolice }"
+                      href="#"
+                      @click.prevent="returnPolice != returnPolice"
+                    >
+                      Return Policy</a
+                    >
+                    <div
+                      id="accordion-4"
+                      class="accordion-section-content"
+                      v-show="returnPolice"
+                    >
+                      <div class="content">
+                        <div class="ReturnPolicySpot cart-accordion-spot">
+                          <h3>Return Policy</h3>
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -221,7 +250,7 @@
 
               <div class="edit_product_info">
                 <div class="pro-img">
-                  <div class="img-box w-100">
+                  <div class="img-box w-75 m-auto">
                     <img
                       :src="
                         $store.state.cartAjax.cart_product[editCartIndex].image
@@ -284,7 +313,7 @@
                           disable:
                             addToCartValClassRender[editCartIndex] == 1 ||
                             $store.state.cartAjax.cart_product[editCartIndex]
-                              .qty == 1,
+                              .qty == 1
                         }"
                         @click.prevent="
                           addCartVal(
@@ -313,7 +342,7 @@
                             $store.state.cartAjax.cart_product[editCartIndex]
                               .qty ==
                               $store.state.cartAjax.cart_product[editCartIndex]
-                                .max_qty,
+                                .max_qty
                         }"
                         @click.prevent="
                           addCartVal(
@@ -342,6 +371,9 @@
                     aria-label="Close"
                     ><span class="icon icon-x"></span
                   ></a>
+                  <div class="view-details">
+                    <Nuxt-link to="/">View details</Nuxt-link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -362,10 +394,14 @@ export default {
       editCart: false,
       editCartIndex: "",
       addToCartValClassRender: [],
+      returnPolice: false
     };
   },
 
   methods: {
+    contShopping() {
+      this.$router.push("/");
+    },
     async removeCartItem(item) {
       try {
         var form = {};
@@ -379,13 +415,13 @@ export default {
           method: "post",
           url: `/product/remove-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form,
+          params: form
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
             data: response,
-            vm: this,
+            vm: this
           });
           if (response.success) {
             this.$gtm.push({
@@ -399,11 +435,11 @@ export default {
                       id: item.master_sku,
                       price: item.selling_price,
                       variant: item.fynd_size,
-                      quantity: item.qty,
-                    },
-                  ],
-                },
-              },
+                      quantity: item.qty
+                    }
+                  ]
+                }
+              }
             });
           }
         } else {
@@ -435,13 +471,13 @@ export default {
           method: "post",
           url: `/product/update-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form,
+          params: form
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
             data: response,
-            vm: this,
+            vm: this
           });
         } else {
           throw "no response from api";
@@ -518,13 +554,13 @@ export default {
           method: "post",
           url,
           token,
-          params: form,
+          params: form
         });
 
         if (response.success) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response,
+            data: response
           });
           this.$toast.open(response.message);
         } else {
@@ -533,32 +569,32 @@ export default {
       } catch (error) {
         console.log("error form the add coupon foo >>", error);
       }
-    },
+    }
   },
   watch: {
-    "$store.state.cartAjax.cart_page_message": function () {
+    "$store.state.cartAjax.cart_page_message": function() {
       if (
         this.$store.state.cartAjax.cart_page_message != "" &&
         this.$store.state.cartAjax.cart_page_message != null
       ) {
         this.$toast.open(this.$store.state.cartAjax.cart_page_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: "",
+          data: ""
         });
       }
     },
-    "$store.state.cartAjax.cart_page_erro_page": function () {
+    "$store.state.cartAjax.cart_page_erro_page": function() {
       if (
         this.$store.state.cartAjax.cart_page_error_message != "" &&
         this.$store.state.cartAjax.cart_page_error_message != null
       ) {
         this.$toast.error(this.$store.state.cartAjax.cart_page_error_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: "",
+          data: ""
         });
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -862,9 +898,62 @@ export default {
   font-size: 12px;
   padding-left: 4px;
 }
+
+.accordion-section {
+  width: 100%;
+  position: relative;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+.accordion-section a.accordion-section-title {
+  padding: 8px 10px 7px 20px;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: #222;
+  display: block;
+}
+.accordion-section a.accordion-section-title:before {
+  position: absolute;
+  left: 3px;
+  top: 13px;
+  content: "\e819";
+  font-family: tumi-icon-ft !important;
+  font-size: 8px;
+}
+
+.accordion-section.open a.accordion-section-title:before {
+  content: "\e81a";
+  font-family: tumi-icon-ft !important;
+}
+.ReturnPolicySpot h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.ReturnPolicySpot p {
+  font-size: 14px;
+}
+
+.view-details {
+  width: 100%;
+  margin-top: 15px;
+  text-align: right;
+}
+.view-details a {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-decoration: underline;
+  color: #222;
+}
+.view-details a:hover {
+  color: #c41e3a;
+}
 @media only screen and (max-width: 991px) {
 }
 @media only screen and (max-width: 767px) {
+  .accordion-section {
+    display: none;
+  }
   .cart_page .cart-items .cart-item-details .cart-item-detail .item {
     flex-direction: row-reverse;
   }

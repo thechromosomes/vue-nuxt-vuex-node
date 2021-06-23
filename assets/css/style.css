@@ -2763,6 +2763,19 @@ label.cvform-lbl-checkbox:before {
   background-color: #fff;
   margin-bottom: 0px;
 }
+.breadcrumb span a {
+  color: #666;
+  font-family: "proxima-nova-regular";
+  font-size: 12px;
+  margin: 0 7px;
+}
+.breadcrumb span a:hover {
+  text-decoration: underline;
+}
+.breadcrumb .arrow-space {
+  font-size: 12px;
+  color: #666;
+}
 
 .breadcrumb li {
   color: #666;
@@ -3267,7 +3280,8 @@ label.cvform-lbl-checkbox:before {
 
 .product-div-col {
   width: 32%;
-  float: left;
+  /* float: left; */
+  display: inline-block;
   position: relative;
   padding-right: 10px;
   padding-top: 10px;
@@ -3358,7 +3372,7 @@ label.cvform-lbl-checkbox:before {
 }
 
 .option-con-wrap {
-  padding: 22px 20px 0;
+  padding: 22px 20px 20px;
   z-index: 2;
   position: relative;
   background-color: #f8f8f8;
@@ -4451,6 +4465,7 @@ label.cvform-lbl-checkbox:before {
   border-left: 1px solid #eee;
   padding-left: 20px;
   margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 .warnty-return ul {
@@ -5341,7 +5356,7 @@ label.cvform-lbl-checkbox:before {
 
 .breadcrumb li a,
 .breadcrumb li a:visited {
-  color: #fff;
+  color: #737373;
   font-weight: 400;
   letter-spacing: 0.025em;
   margin: 0 7px;
@@ -6703,7 +6718,7 @@ img.yearBlockImage {
   color: #222;
   text-decoration: none;
 }
-.breadcrumb li.active {
+.luggage-page .breadcrumb li.active {
   color: #fff;
 }
 .luggage-page.accessories .proCategory h1 {
@@ -6724,24 +6739,23 @@ img.yearBlockImage {
 .option-con-wrap .quick-view-link {
   background: #fff;
   width: 150px;
-  padding: 8px 0;
+  padding: 12px 40px;
   text-align: center;
   font-size: 13px;
   letter-spacing: 0.025em;
   font-weight: 600;
   color: #222;
-  display: inline-block;
   text-transform: capitalize;
   border: 2px solid #222;
-  height: 40px;
   font-family: "Proxima Nova", proxima-nova, arial, "Hiragino Sans GB",
     "Microsoft Yahei", sans-serif;
-  margin: 20px 0;
 }
 .option-con-wrap .quick-view-link:hover {
   color: #ba0c2f;
 }
-
+.btn-box {
+  padding: 20px 0;
+}
 .editcart_page {
   width: 100%;
 }
