@@ -768,6 +768,7 @@
                 <input
                   type="text"
                   name=""
+                  @keyup="searchData"
                   class="form-control tab-ico"
                   placeholder="Search"
                 />
@@ -1656,6 +1657,18 @@ export default {
   },
 
   methods: {
+       searchData(e) {
+          var name = /^(?!\s*$).+/;
+          if (e.target.value.match(name)) {
+          this.$store.state.search_input = e.target.value;
+          this.$router.push({
+          path: "/search?q=" + this.$store.state.search_input,
+          });
+          } else {
+          this.$store.state.search_input = "";
+          }
+   
+      },
     updateScroll() {
       this.scrollPosition = window.scrollY;
     },
@@ -1675,6 +1688,7 @@ export default {
   computed: {
     ...mapState(["header"]),
   },
+
   beforeDestroy() {
     window.removeEventListener("scroll", this.updateScroll);
   },
