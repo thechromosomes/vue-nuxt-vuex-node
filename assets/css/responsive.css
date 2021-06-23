@@ -2332,6 +2332,233 @@ top: 14px;
   .luggage-page.accessories .proCategory h1 {
     display: none;
   }
+  /* ============================   tumi-difference  static page responsive ============= */
+  .tumi-difference-page-wraper #diffAndAbout {
+    height: auto;
+  }
+  .tumi-difference-page-wraper #diffBlock {
+    width: 100%;
+    float: none;
+  }
+  .tumi-difference-page-wraper #aboutBlock {
+    width: 100%;
+    float: none;
+  }
+  .tumi-difference-page-wraper #diffBlockInner {
+    height: auto;
+    padding: 25px 15px;
+  }
+  .tumi-difference-page-wraper #diffBlock {
+    padding: 15px;
+  }
+  .tumi-difference-page-wraper .breadcrumb {
+    display: none;
+  }
+  .tumi-difference-page-wraper .finishLineContainer {
+    height: auto;
+    padding: 0px 15px;
+  }
+  .tumi-difference-page-wraper .num30Image img {
+    width: 150px;
+    height: auto;
+  }
+  .tumi-difference-page-wraper .tgCmsComponent .content h1 {
+    font-size: 18px;
+  }
+  .tumi-difference-page-wraper #trialBlockOne,
+  .tumi-difference-page-wraper #trialBlockThree,
+  .tumi-difference-page-wraper #trialBlockTwo {
+    width: 100%;
+    padding-left: 0px;
+  }
+  .tumi-difference-page-wraper .finishLineTrials {
+    padding-left: 0px;
+  }
+  .tumi-difference-page-wraper menu,
+  .tumi-difference-page-wraper ol,
+  .tumi-difference-page-wraper ul {
+    padding: 0 0 0 18px;
+  }
+  .tumi-difference-page-wraper .tgCmsComponent .functionalTopImageBlock {
+    width: 100%;
+    position: relative;
+  }
+  .tumi-difference-page-wraper #functioanlBlockInner {
+    width: 100%;
+    height: auto;
+    float: none;
+    padding: 0px 15px;
+  }
+  .tumi-difference-page-wraper .functionalBlock {
+    height: auto;
+    border: 0px;
+  }
+  .tumi-difference-page-wraper .funcationalBlockContainer {
+    margin: 0px auto;
+  }
+  .tumi-difference-page-wraper .label.removeFocusIndicator span {
+    display: none;
+  }
+  .tumi-difference-page-wraper #tabsLeftBox {
+    width: 100%;
+    float: none;
+    padding: 0px;
+  }
+  .tumi-difference-page-wraper #tabsLeftBox p {
+    padding: 0px;
+  }
+  .tumi-difference-page-wraper #tabsLeftBox h1 {
+    padding: 0px;
+    padding-bottom: 20px;
+  }
+  .tumi-difference-page-wraper .functionalBoxBlock {
+    border: 0px;
+  }
+  .tumi-difference-page-wraper #tabsRighttBox {
+    width: 100%;
+    float: none;
+  }
+  #functioanlBlockInner p {
+    text-align: center;
+  }
+  .tumi-difference-page-wraper #tabsRighttBox img {
+    height: auto;
+    width: 236px;
+  }
+  .tumi-difference-page-wraper #functioanlBlockInner h1 {
+    display: none;
+  }
+  .tumi-difference-page-wraper #tabsRighttBox img {
+    height: auto;
+  }
+  .tumi-difference-page-wraper #functioanlBlockInner h2 {
+    padding: 15px 0px;
+  }
+  .tumi-difference-page-wraper .grayDivider {
+    display: none;
+  }
+  .tumi-difference-page-wraper .functionalBoxBlock .innerBlock {
+    margin: 0px;
+  }
+  .tumi-difference-page-wraper .functionalBoxBlock .innerBlock.bottom div {
+    padding: 0px;
+  }
+  /* .tumi-difference-page-wraper .tgCmsComponent .techTopImageBlock {
+                                width: 100%;} */
+
+  .tumi-difference-page-wraper .funcationalBlockContainer {
+    height: auto;
+  }
+  .tumi-difference-page-wraper .show-mob {
+    display: block !important;
+    text-align: center;
+    font-size: 18px;
+    padding-bottom: 20px;
+  }
+  .tumi-difference-page-wraper .techBlock {
+    height: auto;
+    background-color: transparent;
+  }
+  .tumi-difference-page-wraper #techBlockInner {
+    float: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .tumi-difference-page-wraper .techBlockContainer {
+    height: auto;
+    margin: 0px 15px;
+  }
+  .tumi-difference-page-wraper .tgCmsComponent .techTopImageBlock {
+    background-image: none;
+    position: relative;
+    height: auto;
+    width: 100%;
+  }
+  .tumi-difference-page-wraper #techBlockInner h1 {
+    display: none;
+    padding: 0px;
+  }
+  .tumi-difference-page-wraper #techBlockInnerDiv {
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .tumi-difference-page-wraper .hide-0n-mob {
+    display: none !important;
+  }
+  .tumi-difference-page-wraper .worldClassVideo {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  .tumi-difference-page-wraper #worldClassBlockInner {
+    width: 100%;
+    height: 100%;
+    display: block;
+    float: none;
+    position: relative;
+    padding: 20px 15px;
+    padding-bottom: 0px;
+  }
+  .tumi-difference-page-wraper .VideoBorder {
+    width: 100%;
+    margin: 0px;
+  }
+  .tumi-difference-page-wraper .worldClassBlockContainer {
+    height: auto;
+    display: block;
+    overflow: hidden;
+    margin: 0px;
+  }
+  .tumi-difference-page-wraper #worldClassBoxBlockCenter,
+  .tumi-difference-page-wraper #worldClassBoxBlockLeft {
+    height: 100%;
+    float: none;
+    width: 100%;
+    position: relative;
+    display: block;
+  }
+  .tumi-difference-page-wraper #worldClassBoxBlockRight {
+    width: 100%;
+    display: block;
+    float: none;
+    position: relative;
+    padding: 0px 15px 0;
+  }
+  .tumi-difference-page-wraper #worldClassBlockInner p {
+    padding-bottom: 10px;
+  }
+  .tumi-difference-page-wraper #worldClassBoxBlockLeft {
+    padding: 0 15px;
+  }
+  .tumi-difference-page-wraper #worldClassBoxBlockLeft p {
+    font-size: 18px;
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+  .tumi-difference-page-wraper #worldClassBoxBlockCenter {
+    padding: 20px 15px 0;
+  }
+  .tumi-difference-page-wraper #techBlockInner h2 {
+    text-align: center;
+  }
+  .tumi-difference-page-wraper #worldClassBlockInner h1 {
+    text-align: center;
+    color: #222;
+    font-weight: 800;
+    font-size: 18px;
+    padding: 0px 30px 0;
+    padding-bottom: 10px;
+  }
+  .worldClassVideo.show-mob {
+    margin-top: 30px;
+  }
 }
 
 /* ================ banner css================= */
