@@ -338,7 +338,7 @@
                       >
                         {{ singleProd.promotional_tags }}
                       </li>
-                      <li>
+                      <li class="cm-list-box">
                         <label class="checkbox-wrap proxima_regular"
                           >Comapre &nbsp;<input
                             type="checkbox"
@@ -484,7 +484,6 @@
                 <div class="align-center product_loader">
                   <img
                     src="~/assets/images/giphy.gif"
-                    v-show="list.product_loader === true"
                     width="40px"
                   />
                 </div>
@@ -973,5 +972,9 @@ export default {
 }
 .no_products {
   width: 100%;
+}
+.align-center {
+  align-items: center;
+  text-align: center;
 }
 </style>

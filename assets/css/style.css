@@ -3281,7 +3281,7 @@ label.cvform-lbl-checkbox:before {
 .product-div-col {
   width: 32%;
   /* float: left; */
-  display: inline-block;
+  /* display: inline-block; */
   position: relative;
   padding-right: 10px;
   padding-top: 10px;
@@ -3290,7 +3290,9 @@ label.cvform-lbl-checkbox:before {
 
 .pduct-right-div {
   width: 76%;
-  float: left;
+  /* float: left; */
+  display: flex;
+  flex-wrap: wrap;
   margin-left: 43px;
 }
 
@@ -3426,8 +3428,7 @@ label.cvform-lbl-checkbox:before {
 .cm-list {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-direction: row-reverse;
+  align-items: baseline;
   position: relative;
   z-index: 4;
 }
@@ -3435,6 +3436,11 @@ label.cvform-lbl-checkbox:before {
 .cm-list .checkbox-wrap .checkmark:after {
   left: 7px;
   top: 3px;
+}
+.cm-list-box {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .cm-list li:first-child {
@@ -3463,7 +3469,7 @@ label.cvform-lbl-checkbox:before {
 .checkbox-wrap {
   display: block;
   position: relative;
-  padding-left: 35px;
+  padding-left: 15px;
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 22px;
@@ -4443,6 +4449,25 @@ label.cvform-lbl-checkbox:before {
   display: inline-block;
   padding-right: 52px;
 }
+.features-wrap {
+  width: 100%;
+  display: inline-block;
+}
+.link-ctnr {
+  width: 100%;
+  text-align: right;
+  border-top: 1px solid #ebebed;
+  padding: 10px 0;
+  padding-bottom: 0;
+}
+.link-ctnr a {
+  font-size: 12px;
+  font-family: "proxima-nova-regular";
+  text-decoration: underline;
+}
+.link-ctnr a:hover {
+  color: #c41e3a;
+}
 .features-wrap .w-cap.featrures:nth-last-child(2) {
   width: 43%;
   display: block;
@@ -4859,6 +4884,7 @@ label.cvform-lbl-checkbox:before {
 
 .wish-list-all-pd {
   text-align: right;
+  margin-left: 5px;
 }
 
 .all-wish-img {
@@ -5932,6 +5958,7 @@ img.yearBlockImage {
 .tumi-difference-page-wraper .tgCmsComponent .content h1 {
   font-size: 20px;
   padding-bottom: 23px;
+  padding-top: 50px;
 }
 .tumi-difference-page-wraper .finishLineBlock p {
   text-align: center;
@@ -6051,14 +6078,26 @@ img.yearBlockImage {
 .tumi-difference-page-wraper .grayDividerLong,
 .tumi-difference-page-wraper .grayDividerVertical {
   background-image: none;
-  background-color: #969696;
+  border-top: 1px solid #ebebeb;
+  /* background-color: #969696; */
+}
+.tumi-difference-page-wraper .grayDividerLong {
+  width: 70%;
 }
 .tumi-difference-page-wraper #functioanlBlockInner h2 {
   text-align: center;
   color: #222;
-  font-weight: 550;
+  font-weight: 600;
   font-size: 18px;
   margin-bottom: 0;
+}
+.tumi-difference-page-wraper #functioanlBlockInner p {
+  text-align: center;
+  color: #555;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 10px 30px 0;
+  line-height: 1.75;
 }
 .tumi-difference-page-wraper .functionalBoxBlock {
   text-align: center;
@@ -6291,11 +6330,13 @@ img.yearBlockImage {
   font-weight: 800;
   font-size: 20px;
   padding: 30px 30px 0;
+  text-align: center;
 }
 .tumi-difference-page-wraper #techBlockInner h2 {
   font-weight: 550;
   font-size: 18px;
   margin-bottom: 0;
+  text-align: center;
 }
 .tumi-difference-page-wraper #techBlockInner p {
   text-align: center;
@@ -6357,6 +6398,7 @@ img.yearBlockImage {
   max-height: 51px;
   display: block;
   margin-top: 25px;
+  margin-bottom: 0;
 }
 .tumi-difference-page-wraper .innoBlockText {
   height: 254px;
@@ -6569,6 +6611,20 @@ img.yearBlockImage {
   color: #fff;
   position: relative;
 }
+.tumi-difference-page-wraper
+  .nav-item.nav-link.active
+  .label.removeFocusIndicator::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #222222;
+  bottom: -9px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: rotate(45deg);
+}
 .tumi-difference-page-wraper .nav-tabs {
   border: 0px;
 }
@@ -6594,7 +6650,22 @@ img.yearBlockImage {
   bottom: 0;
   left: 25%;
 }
+.tumi-difference-page-wraper
+  .tgCmsComponent
+  .content
+  h1.proxima_bold.hide-0n-mob.ex-invoation {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
+.innoBlockIcon .grayDividerInnoBox {
+  width: 50px;
+  height: 1px;
+  margin: 15px auto 0;
+  background-image: none;
+  border-top: 1px solid #ebebeb;
+}
 /* luggage-page */
 .luggage-page {
   width: 100%;
@@ -6917,4 +6988,7 @@ span.view-entire-collection {
   display: inline-block;
   margin-left: 3px;
   text-transform: none;
+}
+.tumi-difference-page-wraper {
+  font-family: "proxima-nova-regular";
 }
