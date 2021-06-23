@@ -205,18 +205,16 @@
                         TUMI LIVE CHAT</a
                       >
                       <p class="help-text">Monday to Friday 9 : 00 - 18 : 00</p>
-                      <a class="contact-now" target="_blank" href="#">
-                        Contact now&gt;
-                      </a>
+                     
                     </div>
                   </div>
 
                   <div class="accordion-section ">
                     <a
                       class="accordion-section-title "
+                      style="cursor: pointer"
                       :class="{ open: returnPolice }"
-                      href="#"
-                      @click.prevent="returnPolice != returnPolice"
+                      @click.prevent="() => returnPolice = !returnPolice"
                     >
                       Return Policy</a
                     >
@@ -227,7 +225,7 @@
                     >
                       <div class="content">
                         <div class="ReturnPolicySpot cart-accordion-spot">
-                          <h3>Return Policy</h3>
+                          <p>{{ $store.state.cartAjax.cart_product[0].shipping_returns }}</p>
                           <p></p>
                         </div>
                       </div>
@@ -271,7 +269,7 @@
                           .category
                       }}
                       <span class="view-entire-collection"
-                        ><NuxtLink to="/" class="pdpInernalLink">
+                        ><NuxtLink :to="`/product/${$store.state.cartAjax.cart_product[editCartIndex].url_key}`" class="pdpInernalLink">
                           View the entire series</NuxtLink
                         ></span
                       >
@@ -372,7 +370,7 @@
                     ><span class="icon icon-x"></span
                   ></a>
                   <div class="view-details">
-                    <Nuxt-link to="/">View details</Nuxt-link>
+                    <NuxtLink :to="`/product/${$store.state.cartAjax.cart_product[editCartIndex].url_key}`" >View details</NuxtLink>
                   </div>
                 </div>
               </div>
