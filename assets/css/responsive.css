@@ -1,6 +1,12 @@
 @media only screen and (max-width: 1366px) {
   .header.sticky.fixed .login-cart-div {
-    width: 23%;
+    width: 20% !important;
+  }
+  .header.sticky.fixed .logo {
+    width: 15% !important;
+  }
+  .header-search .form-control {
+    width: 80% !important;
   }
   /* .header.sticky.fixed {
         padding-top: 7px;
@@ -212,7 +218,7 @@
     background-color: #fff;
   }
   .header.sticky.fixed .login-cart-div {
-    width: auto;
+    width: auto !important;
   }
   .header.sticky.fixed .top-service-nav {
     display: flex;
