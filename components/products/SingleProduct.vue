@@ -919,7 +919,6 @@ export default {
     async addToCart() {
       if (Object.keys(this.selectedSizeAttr).length === 0) {
         this.sizeAlert = true;
-        return;
       } else {
         try {
           var form = {};
@@ -983,7 +982,6 @@ export default {
 
             // google tag manager
             if (response.success) {
-              this.selectedSizeAttr = "";
               this.$gtm.push({
                 event: "addToCart",
                 category: this.singleProductList.single_prod_data.category,
@@ -1353,8 +1351,7 @@ export default {
     // render from single variation
     if (
       this.singleProductList.single_prod_data &&
-      this.singleProductList.single_prod_data.variation &&
-      Object.keys(this.singleProductList.single_prod_data.variation).length == 1
+      this.singleProductList.single_prod_data.variation
     ) {
       var obj = this.singleProductList.single_prod_data.variation;
       this.selectedSizeAttr = obj[Object.keys(obj)[0]];
