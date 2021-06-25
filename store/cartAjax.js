@@ -30,7 +30,6 @@ export const state = () => ({
 
 export const actions = {
   actCartAjax({ rootState, commit, state }, data) {
-    console.log("token", data.token);
     commit("updatePageLoader", { display: true }, { root: true });
     var authOptions = {
       method: data.method,
