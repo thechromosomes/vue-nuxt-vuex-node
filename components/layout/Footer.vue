@@ -91,7 +91,11 @@
                         <a href="" class="proxima_semi-bold">Personalization</a>
                       </li>
                       <li>
-                        <a href="" class="proxima_semi-bold">Virtual Store</a>
+                        <Nuxt-link
+                          to="/cms/virtual-store"
+                          class="proxima_semi-bold"
+                          >Virtual Store</Nuxt-link
+                        >
                       </li>
                       <!-- <li>
                         <span class="proxima_bold hide-mob"

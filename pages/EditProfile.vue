@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="account-page editprofile-page">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-12">
             <h1 class="title clearfix">My Account</h1>
@@ -78,10 +78,10 @@
                       {{ validation.firstError("updateprofileData.name") }}
                     </p>
                   </span>
-                  <div class="btn-box mt-3">
+                  <div class="btn-box mt-2 sumbitbtn">
                     <input
                       type="submit"
-                      class="btn submit-button proxima_regular"
+                      class="btn  proxima_regular"
                       value="Update"
                       id="updateemail"
                     />

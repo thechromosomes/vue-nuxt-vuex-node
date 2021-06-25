@@ -1,311 +1,342 @@
 .account-page {
-    margin: 100px 0px;
+  margin: 100px 0px;
+  font-family: "proxima-nova-regular";
 }
 
 .account-page .title {
-    font-size: 30px;
-    letter-spacing: 0.5px;
-    font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
 }
 
 .account-page .customer-name {
-    font-size: 25px;
-    letter-spacing: 0.5px;
-    font-weight: bold;
-    margin-bottom: 0px;
-    text-transform: uppercase;
+  font-size: 25px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-transform: uppercase;
 }
 
 .address-page .form-control:focus {
-    outline: 1px solid #000;
+  outline: 1px solid #000;
 }
 
 .account-page .my-profile .profile-content {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
 }
 
 .account-page .my-profile .profile-content .img {
-    width: 15%;
+  width: 15%;
 }
 
 .account-page .my-profile .profile-data {
-    padding: 0 20px;
-    width: 85%;
+  padding: 0 20px;
+  width: 85%;
 }
 
 .account-page .my-profile .profile-data h2 {
-    font-weight: bold;
-    font-size: 25px;
-    text-transform: uppercase;
-    padding-bottom: 10px;
-    ;
+  font-weight: bold;
+  font-size: 25px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
 }
 
 .account-page .my-profile .profile-data h3 {
-    font-weight: bold;
-    font-size: 20px;
-    text-transform: capitalize;
-    letter-spacing: 0.5px;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
 }
 
 .account-page .my-profile .profile-data .name {
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 0px;
-    padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  padding-bottom: 5px;
 }
 
 .account-page .my-profile .profile-data .edit {
-    padding: 20px 0px;
+  padding: 20px 0px;
 }
 
 .account-page .my-profile .profile-data .edit a {
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border: 1px solid #000;
-    transition: all 0.5s;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  transition: all 0.5s;
 }
 
 .account-page .my-profile .profile-data .edit a:hover {
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 .account-page .my-profile .profile-data .name span {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .accountMenu ul {
-    margin: 20px 0px;
+  margin: 20px 0px;
 }
 
 .sidebar {
-    width: 100%;
+  width: 100%;
 }
 
 .sidebar ul {
-    margin: 10px 0px;
-    width: 100%;
+  margin: 10px 0px;
+  width: 100%;
 }
 
 .sidebar ul li {
-    /* border: 1px solid #000;
+  /* border: 1px solid #000;
     text-align: center; */
 }
 
 .sidebar ul li a {
-    padding: 5px 0px;
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  padding: 5px 0px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .sidebar ul li.active {
-    background-color: #000;
+  background-color: #000;
 }
 
 .sidebar ul li.active a {
-    color: #fff;
+  color: #fff;
 }
 
 .my-profile {
-    margin-top: 15px;
-    ;
+  margin-top: 15px;
 }
 /* =======================add ========================== */
 .sidebar {
-    width: 100%;
+  width: 100%;
 }
 
-.sidebar ul{
-    margin: 10px 0;
-    width: 100%;
+.sidebar ul {
+  margin: 10px 0;
+  width: 100%;
 }
 .sidebar ul li a {
-    text-transform: uppercase;
-    padding: 12px 15px;
-    color: #252525;
-    border: 1px solid #eee;
-    display: block;
-    text-decoration: none;
-    font-size: 14px;
-    letter-spacing: .5px;
+  text-transform: uppercase;
+  padding: 12px 15px;
+  color: #252525;
+  border: 1px solid #eee;
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
 /* address-page */
 
 @media (min-width: 1200px) {
-    .address-page .container,
-    .account-page .container {
-        max-width: 1140px;
-    }
+  .address-page .container,
+  .account-page .container {
+    max-width: 1140px;
+  }
 }
 
 .address-page {
-    margin: 100px 0px;
+  margin: 100px 0px;
 }
 
 .address-page .title {
-    font-size: 30px;
-    letter-spacing: 0.5px;
-    font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
 }
 
 .default-address {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 22px 5px;
-    align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 22px 5px;
+  align-items: center;
 }
 
 .address-type {
-    font-size: 20px;
-    margin: 10px 0px;
+  font-size: 20px;
+  margin: 10px 0px;
 }
 
 .address-type-box {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
+}
+.sumbitbtn input,
+.sumbitbtn a {
+  background: #000;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+.sumbitbtn input:hover,
+.sumbitbtn a:hover {
+  color: #000;
+  background-color: transparent;
+  border: 1px solid #000;
 }
 
 .submit_box {
-    width: 100%;
+  width: 100%;
 }
-
+.order-page {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.active-account-sidebar {
+  font-weight: 700;
+  background-color: #eee;
+}
 .submit_box input {
-    background: #000;
-    color: #fff;
-    padding: 10px 40px;
-    border-radius: 0px;
+  background: #000;
+  color: #fff;
+  padding: 10px 40px;
+  border-radius: 0px;
+  font-family: "proxima-nova-regular";
 }
 
 .customer_address label {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .input-error {
-    color: red;
+  color: red;
 }
 
 .ship-adress h2 {
-    font-size: 25px;
-    letter-spacing: 0.5px;
-    font-weight: bold;
-    margin-bottom: 0px;
-    text-transform: uppercase;
+  font-size: 25px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-transform: uppercase;
 }
 
 .address-list {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .ship-adress-area {
-    width: 48%;
-    background: #fff;
-    margin: 10px 5px;
-    border: 1px solid #000;
-    border-radius: 4px;
-    padding: 10px 20px;
+  width: 48%;
+  background: #fff;
+  margin: 10px 5px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 10px 20px;
 }
 
 .ship-adress-area .name span {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .ship-adress-area .name {
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0px;
 }
 
 .remove-address {
-    padding: 10px 0px;
+  padding: 10px 0px;
 }
 
 .remove-address a img {
-    width: 25px;
-    cursor: pointer;
+  width: 25px;
+  cursor: pointer;
 }
 
 .editprofile-page h2 {
-    font-size: 25px;
-    letter-spacing: 0.5px;
-    font-weight: bold;
-    margin-bottom: 0px;
-    text-transform: uppercase;
+  font-size: 25px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-transform: uppercase;
 }
 
 .btn-box {
-    width: 100%;
+  width: 100%;
 }
 
 .address .add-new-address {
-    border: none;
-    background-color: #000;
-    color: #fff;
-    padding: 10px 30px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 30px;
 }
 
 #add_address_title {
-    font-size: 25px;
-    letter-spacing: 0.5px;
-    font-weight: bold;
-    margin-bottom: 0px;
-    text-transform: uppercase;
-    margin-top: 20px;
+  font-size: 25px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  margin-top: 20px;
 }
 
 .action_bottom {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .action_bottom input,
 .action_bottom a {
-    text-transform: uppercase;
-    padding: 8px 20px;
-    border: 1px solid #000;
-    transition: all 0.5s;
-    border-radius: 0px;
-    font-size: 14px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border: 1px solid #000;
+  transition: all 0.5s;
+  border-radius: 0px;
+  font-size: 14px;
 }
 
 .action_bottom input:hover,
 .action_bottom a:hover {
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 .action_bottom a {
-    padding: 10px 20px;
-    margin-left: 5px;
+  padding: 10px 20px;
+  margin-left: 5px;
+}
+.black-button.proxima_regular {
+  background: #000;
+  padding: 10px 40px;
 }
 
 @media (max-width: 1199px) {
-    .container {
-        padding: 0px 10%;
-    }
+  .container {
+    padding: 0px 10%;
+  }
 }
 
 @media (max-width: 991px) {
-    .container {
-        padding: 0px 10%!important;
-    }
+  .container {
+    padding: 0px 10% !important;
+  }
+  .account-page {
+    margin: 20px 0;
+  }
 }
 
 @media (max-width: 767px) {
-    .address-list .ship-adress-area {
-        width: 100%;
-    }
-    .address-page {
-        margin: 30px 0px;
-    }
-    .address{ margin-top: 20px;}
+  .address-list .ship-adress-area {
+    width: 100%;
+  }
+  .address-page {
+    margin: 30px 0px;
+  }
+  .address {
+    margin-top: 20px;
+  }
 }

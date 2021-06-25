@@ -497,7 +497,31 @@
             </h3>
             <div class="tm-title__line"></div>
           </div>
-          <ul id="tm-pdp-recommend" class="tm-pdp-recommend"></ul>
+          <ul
+            id="tm-pdp-recommend"
+            class="tm-pdp-recommend"
+            v-if="recent_products && recent_products.length"
+          >
+            <VueSlickCarousel v-bind="recomndedSetting">
+              <li
+                v-for="(recItem, recIndex) in recent_products"
+                :key="recIndex"
+              >
+                <Nuxt-link :to="recItem.url_key">
+                  <div class="recomnded-wrap">
+                    <div class="re-com-item">
+                      <img :src="recItem.image" :alt="recItem.image" />
+                      <h3 class="proxima_bold">{{ recItem.name }}</h3>
+                      <p class="proxima_regular">{{ recItem.collection }}</p>
+                      <small class="proxima_regular"
+                        >₹{{ recItem.selling_price }}</small
+                      >
+                    </div>
+                  </div>
+                </Nuxt-link>
+              </li>
+            </VueSlickCarousel>
+          </ul>
         </div>
         <div class="tm-pdp-recommend-box">
           <div class="tm-title__h">
@@ -507,7 +531,36 @@
             </h3>
             <div class="tm-title__line"></div>
           </div>
-          <ul id="tm-pdp-recommend" class="tm-pdp-recommend"></ul>
+          <ul
+            id="tm-pdp-recommend"
+            class="tm-pdp-recommend"
+            v-if="
+              Object.keys(singleProductList.single_prod_data).length > 0 &&
+                singleProductList.single_prod_data.recommended &&
+                singleProductList.single_prod_data.recommended.length > 0
+            "
+          >
+            <VueSlickCarousel v-bind="recomndedSetting">
+              <li
+                v-for="(recItem, recIndex) in singleProductList.single_prod_data
+                  .recommended"
+                :key="recIndex"
+              >
+                <Nuxt-link :to="recItem.url_key">
+                  <div class="recomnded-wrap">
+                    <div class="re-com-item">
+                      <img :src="recItem.image" :alt="recItem.image" />
+                      <h3 class="proxima_bold">{{ recItem.name }}</h3>
+                      <p class="proxima_regular">{{ recItem.collection }}</p>
+                      <small class="proxima_regular"
+                        >₹{{ recItem.selling_price }}</small
+                      >
+                    </div>
+                  </div>
+                </Nuxt-link>
+              </li>
+            </VueSlickCarousel>
+          </ul>
         </div>
       </div>
     </div>
@@ -515,70 +568,51 @@
     <section class="alfa-sec alfa-on-pd">
       <div class="container">
         <div class="row">
-          <div
-            class="col-lg-6 col-sm-6 col-6"
-            v-if="recent_products && recent_products.length"
-          >
-            <VueSlickCarousel v-bind="recentlyViewd">
-              <div
-                class="recom-pd"
-                v-for="(singleProdR, prodIndexr) in recent_products"
-                :key="prodIndexr"
-              >
-                <div class="alfa-content-pdp">
-                  <a class="anchor-width-pdp">
-                    <h3 class="tm-h3 proxima_regular">
-                      {{ singleProdR.name }}
-                    </h3>
-                    <Nuxt-link
-                      :to="singleProdR.url_key"
-                      class="button-link proxima_bold"
-                      >Shop Now</Nuxt-link
-                    >
-                  </a>
-                  <div class="alfa-img-box-pdp">
-                    <div>
-                      <img :src="singleProdR.image" :alt="singleProdR.image" />
-                    </div>
+          <div class="col-lg-6 col-sm-6 col-6">
+            <div class="recom-pd">
+              <div class="alfa-content-pdp">
+                <a class="anchor-width-pdp">
+                  <h3 class="tm-h3 proxima_regular">
+                    Explore <br />
+                    Alpha 3
+                  </h3>
+                  <Nuxt-link to="/" class="button-link proxima_bold"
+                    >Shop Now</Nuxt-link
+                  >
+                </a>
+                <div class="alfa-img-box-pdp">
+                  <div>
+                    <img
+                      src="https://tmbackend.hostx1.de/cms_images/1621935096alfa-1.jpg"
+                      alt="img"
+                    />
                   </div>
                 </div>
               </div>
-            </VueSlickCarousel>
+            </div>
           </div>
           <div class="col-lg-6 col-sm-6 col-6">
-            <VueSlickCarousel
-              v-bind="recomenDed"
-              v-if="
-                Object.keys(singleProductList.single_prod_data).length > 0 &&
-                  singleProductList.single_prod_data.recommended &&
-                  singleProductList.single_prod_data.recommended.length > 0
-              "
-            >
-              <div
-                class="recom-pd"
-                v-for="(itemSingle, indexSingle) in singleProductList
-                  .single_prod_data.recommended"
-                :key="indexSingle"
-              >
-                <div class="alfa-content-pdp">
-                  <a href="" class="anchor-width-pdp">
-                    <h3 class="tm-h3 proxima_regular">
-                      {{ itemSingle.name }}
-                    </h3>
-                    <Nuxt-link
-                      :to="itemSingle.url_key"
-                      class="button-link proxima_bold"
-                      >Shop Now</Nuxt-link
-                    >
-                  </a>
-                  <div class="alfa-img-box-pdp">
-                    <div>
-                      <img :src="itemSingle.image" :alt="itemSingle.image" />
-                    </div>
+            <div class="recom-pd right-box">
+              <div class="alfa-content-pdp">
+                <a href="" class="anchor-width-pdp">
+                  <h3 class="tm-h3 proxima_regular">
+                    Explore <br />
+                    Alpha 3
+                  </h3>
+                  <Nuxt-link to="/" class="button-link proxima_bold"
+                    >Shop Now</Nuxt-link
+                  >
+                </a>
+                <div class="alfa-img-box-pdp">
+                  <div>
+                    <img
+                      src="https://tmbackend.hostx1.de/cms_images/1621935112alfa-2.jpg"
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>
-            </VueSlickCarousel>
+            </div>
           </div>
         </div>
       </div>
@@ -690,82 +724,6 @@ export default {
           }
         ]
       },
-      recentlyViewd: {
-        focusOnSelect: true,
-        centerMode: false,
-        infinite: true,
-        speed: 900,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        touchThreshold: 4,
-        autoscroll: true,
-        autoplay: true,
-        arrows: true,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              initialSlide: 2,
-              arrows: false
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              arrows: false
-            }
-          }
-        ]
-      },
-      recomenDed: {
-        focusOnSelect: true,
-        centerMode: false,
-        infinite: true,
-        speed: 900,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        touchThreshold: 4,
-        autoscroll: true,
-        autoplay: true,
-        arrows: true,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              initialSlide: 2,
-              arrows: false
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              arrows: false
-            }
-          }
-        ]
-      },
 
       mobileSingleslider: {
         focusOnSelect: true,
@@ -836,6 +794,37 @@ export default {
         slidesToShow: 1,
         slidesToScroll: 1,
         adaptiveHeight: true
+      },
+      recomndedSetting: {
+        centerMode: true,
+        centerPadding: "0px",
+        arrows: true,
+        slidesToShow: 4,
+        autoplay: true,
+        slidesToScroll: 1,
+        speed: 1500,
+
+        focusOnSelect: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: true,
+              centerMode: true,
+              centerPadding: "40px",
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: "40px",
+              slidesToShow: 1
+            }
+          }
+        ]
       },
 
       value1: 3.5,

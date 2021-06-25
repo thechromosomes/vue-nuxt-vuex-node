@@ -2,7 +2,7 @@
   <client-only>
     <div>
       <div class="account-page">
-        <div class="container">
+        <div class="container-fluid">
           <div class="row">
             <div class="col-12">
               <h1 class="title clearfix proxima_bold">My Account</h1>
@@ -17,7 +17,9 @@
               v-if="Object.keys(customer).length != 0"
             >
               <div class="customer-head">
-                <h2 class="customer-name proxima_bold">hi, {{ customer.full_name }}!</h2>
+                <h2 class="customer-name proxima_bold">
+                  hi, {{ customer.full_name }}!
+                </h2>
                 <p class="proxima_regular">
                   You can review and edit your account settings and orders here
                 </p>
@@ -42,7 +44,9 @@
                         <p class="name proxima_regular">
                           email: <span>{{ customer.email }}</span>
                         </p>
-                        <p class="name proxima_regular">password: <span>*******</span></p>
+                        <p class="name proxima_regular">
+                          password: <span>*******</span>
+                        </p>
                         <div class="edit">
                           <nuxt-link to="/EditProfile" class="proxima_regular"
                             >edit my profile</nuxt-link
@@ -80,7 +84,9 @@
                               `${maddress.city}, ${maddress.state},  ${maddress.street_address}, ${maddress.pin_code}`
                             }}</span
                           >
-                          <span v-else class="proxima_regular"> No active address </span>
+                          <span v-else class="proxima_regular">
+                            No active address
+                          </span>
                         </p>
                         <div class="edit proxima_regular">
                           <NuxtLink to="/addresses">View Address book</NuxtLink>
@@ -89,7 +95,7 @@
                     </div>
                   </div>
                 </div>
-              </div> 
+              </div>
             </div>
             <div v-else class="col-md-8 col-lg-8 col-12">
               <NuxtLink to="/login">

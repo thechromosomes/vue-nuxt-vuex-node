@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="account-page">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-12">
             <h1 class="title clearfix proxima_bold">My Account</h1>
@@ -49,7 +49,7 @@
               </div>
             </div>
             <div v-else>
-              <h3>
+              <h3 class="order-page">
                 No order forund please head to product page and get awesome
                 product!
               </h3>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="address-page">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-12">
             <h1 class="title clearfix proxima_bold  ">My Account</h1>
@@ -21,7 +21,9 @@
               <div class="customer_address edit_address" v-if="showForm">
                 <div class="row">
                   <div class="col-md-6 col-12">
-                    <label for="address_first_name_new" class="proxima_regular">First Name</label>
+                    <label for="address_first_name_new" class="proxima_regular"
+                      >First Name</label
+                    >
                     <input
                       type="text"
                       id="address_first_name_new"
@@ -37,7 +39,9 @@
                     </span>
                   </div>
                   <div class="col-md-6 col-12">
-                    <label for="address_last_name_new" class="proxima_regular">Last Name</label>
+                    <label for="address_last_name_new" class="proxima_regular"
+                      >Last Name</label
+                    >
                     <input
                       type="text"
                       id="address_last_name_new"
@@ -56,7 +60,9 @@
                 </div>
                 <div class="row">
                   <div class="col-md-6 col-12">
-                    <label for="address_address1_new" class="proxima_regular">Address 1</label>
+                    <label for="address_address1_new" class="proxima_regular"
+                      >Address 1</label
+                    >
                     <input
                       type="text"
                       id="address_address1_new"
@@ -73,7 +79,9 @@
                     </span>
                   </div>
                   <div class="col-md-6 col-12">
-                    <label for="address_address2_new" class="proxima_regular">Address2</label>
+                    <label for="address_address2_new" class="proxima_regular"
+                      >Address2</label
+                    >
                     <input
                       type="text"
                       id="address_address2_new"
@@ -86,7 +94,9 @@
                 </div>
                 <div class="row">
                   <div class="col-md-6 col-12">
-                    <label for="address_zip_new" class="proxima_regular">Zip</label>
+                    <label for="address_zip_new" class="proxima_regular"
+                      >Zip</label
+                    >
                     <input
                       type="text"
                       id="address_zip_new"
@@ -116,7 +126,9 @@
                     </template>
                   </div>
                   <div class="col-md-6 col-12">
-                    <label for="address_city_new" class="proxima_regular">City</label>
+                    <label for="address_city_new" class="proxima_regular"
+                      >City</label
+                    >
                     <input
                       type="text"
                       id="address_city_new"
@@ -135,17 +147,23 @@
                 </div>
                 <div class="row">
                   <div class="col-md-6 col-12">
-                    <label for="address_country_new " class="proxima_regular">Country</label>
+                    <label for="address_country_new " class="proxima_regular"
+                      >Country</label
+                    >
                     <select
                       id="address_country_new"
                       class="form-control form-control"
                       disabled
                     >
-                      <option value="India" class="proxima_regular">India</option>
+                      <option value="India" class="proxima_regular"
+                        >India</option
+                      >
                     </select>
                   </div>
                   <div class="col-md-6 col-12">
-                    <label for="address_province_new" class="proxima_regular">State</label>
+                    <label for="address_province_new" class="proxima_regular"
+                      >State</label
+                    >
                     <input
                       placeholder=""
                       :value="user.state"
@@ -165,7 +183,9 @@
                 </div>
                 <div class="row">
                   <div class="col-md-6 col-12">
-                    <label for="address_phone_new" class="proxima_regular">Phone</label>
+                    <label for="address_phone_new" class="proxima_regular"
+                      >Phone</label
+                    >
                     <input
                       type="text"
                       id="address_phone_new"
@@ -189,7 +209,9 @@
                         id="new-address"
                         v-model="user.defaultAddress"
                       />
-                      <label class="form-check-label proxima_regular" for="new-address"
+                      <label
+                        class="form-check-label proxima_regular"
+                        for="new-address"
                         >Set as Default Address?</label
                       >
                     </div>
@@ -212,7 +234,9 @@
                           v-model="user.address_type"
                           id="home-radio"
                         />
-                        <label for="home-radio" class="proxima_regular">Home</label>
+                        <label for="home-radio" class="proxima_regular"
+                          >Home</label
+                        >
                       </div>
                       <div class="p-2">
                         <input
@@ -222,12 +246,18 @@
                           v-model="user.address_type"
                           id="office-radio"
                         />
-                        <label for="office-radio" class="proxima_regular">Office</label>
+                        <label for="office-radio" class="proxima_regular"
+                          >Office</label
+                        >
                       </div>
                     </div>
                     <div class="col-md-12 col-12 p-0">
                       <div class="submit_box mt-4">
-                        <input class="btn new-btn proxima-regular" type="submit" value="Back" />
+                        <input
+                          class="btn new-btn proxima-regular"
+                          type="submit"
+                          value="Back"
+                        />
                         <input
                           class="btn new-btn ml-3 proxima-regular"
                           type="submit"
@@ -481,7 +511,7 @@ export default {
       this.$store.state.cartAjax.customer_session == ""
     )
       return this.$router.push("/login");
-      return true;
+    return true;
   },
   watch: {
     "user.pinCode": function() {

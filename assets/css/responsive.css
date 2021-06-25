@@ -477,6 +477,12 @@
   .tumi_story .content_story .left-box .story p {
     font-size: 16px;
   }
+  .faq-wraper .faq-tab {
+    display: none;
+  }
+  .faq-wraper {
+    width: 100%;
+  }
 }
 
 /*================= media qurey for mobile ===================*/
@@ -2564,6 +2570,83 @@ top: 14px;
   }
   .worldClassVideo.show-mob {
     margin-top: 30px;
+  }
+  /* virtual_store */
+  .virtual_store .virtual_store_slide .sticky_menu {
+    margin: 0;
+    border: none;
+    height: auto;
+  }
+  .virtual_store .virtual_store_slide .slider_info {
+    width: 80%;
+  }
+  .virtual_store .virtual_store_slide .slider_info strong {
+    font-size: 24px;
+  }
+  .virtual_store .slogan_con h2 {
+    font-size: 24px;
+  }
+  .virtual_store .slogan_con h1 {
+    font-size: 32px;
+  }
+  .virtual_store .app_collection .app_wrapper,
+  .app_game .app_wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .virtual_store .desc_box h3 {
+    margin: 0;
+    font-size: 40px;
+  }
+  .virtual_store .desc_box a {
+    padding: 10px 80px;
+  }
+  .virtual_store .desc_box {
+    margin-bottom: 30px;
+  }
+  .case_ani {
+    display: block;
+    text-align: center;
+  }
+  .virtual_store .spec_con .desc_box > div {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+  .virtual_store .spec_con .desc_box h3 {
+    font-size: 40px;
+    color: #222;
+  }
+  .virtual_store .app_game .game_1,
+  .virtual_store .app_game .game_2 {
+    display: none;
+  }
+  .virtual_store .app_game .desc_box > div {
+    margin: 0;
+  }
+  .app_list video {
+    position: relative;
+    left: 45%;
+    transform: translateX(-15%);
+    width: 150%;
+  }
+  .virtual_store .mirror_con {
+    overflow: hidden;
+  }
+  .func_con .col-12 {
+    margin-bottom: 40px;
+  }
+  .virtual_store .app_game .desc_box > div {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .virtual_store .virtual_store_slide {
+    background-image: url(../images/storeM-1.jpg);
+    height: 100%;
+    padding: 30px 0;
+  }
+  .virtual_store .virtual_store_slide .sticky_menu .menu {
+    text-align: center;
+    display: none;
   }
 }
 

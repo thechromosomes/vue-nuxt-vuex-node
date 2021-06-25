@@ -12,7 +12,7 @@
             />
             <div v-html="item.description" >
               <div>
-             
+
               </div>
             </div>
           </div> -->
@@ -153,7 +153,7 @@
         </div>
 
      <div class="watch-mobile video-play-list visual-filters-container">
-          
+
              <div  class="category-filter">
               <div class="pos-relative">
                 <div>
@@ -229,8 +229,8 @@
                 <a href="" class="button-link proxima_bold">Explore more</a>
               </div>
             </div>
-         
-        </div> 
+
+        </div>
       </div>
     </section> -->
     <!-- ========================== EXPLORE #TUMIHK ========================= -->
@@ -247,7 +247,7 @@
             <ul class="blog-icon">
               <li><a href="#" class="proxima_regular">jamie.xia</a></li>
               <li>
-                <a href="#"><img src="~/assets/images/instagram.png" /></a>
+                <a href="#"><img src="~/assets/images/instagram.png"/></a>
               </li>
             </ul>
           </div>
@@ -287,7 +287,7 @@ import { mapState } from "vuex";
 
 export default {
   components: {
-    VueSlickCarousel,
+    VueSlickCarousel
   },
   data() {
     return {
@@ -298,7 +298,7 @@ export default {
         centerMode: false,
         autoplay: false,
         autoplaySpeed: 2000,
-        dots: true,
+        dots: true
       },
       instaSettings: {
         focusOnSelect: true,
@@ -317,8 +317,8 @@ export default {
               slidesToShow: 3,
               slidesToScroll: 1,
               centerPadding: "150px",
-              centerMode: false,
-            },
+              centerMode: false
+            }
           },
           {
             breakpoint: 600,
@@ -327,8 +327,8 @@ export default {
               slidesToScroll: 2,
               initialSlide: 2,
               centerMode: false,
-              centerPadding: "100px",
-            },
+              centerPadding: "100px"
+            }
           },
           {
             breakpoint: 480,
@@ -336,19 +336,20 @@ export default {
               slidesToShow: 2,
               slidesToScroll: 2,
               centerMode: false,
-              centerPadding: "0px",
-            },
-          },
-        ],
+              centerPadding: "0px"
+            }
+          }
+        ]
       },
       recomndedSetting: {
         centerMode: true,
+        centerPadding: "0px",
         arrows: true,
         slidesToShow: 7,
         autoplay: true,
         slidesToScroll: 1,
         speed: 1500,
-        index: 2,
+
         focusOnSelect: true,
         responsive: [
           {
@@ -357,8 +358,8 @@ export default {
               arrows: true,
               centerMode: true,
               centerPadding: "40px",
-              slidesToShow: 3,
-            },
+              slidesToShow: 3
+            }
           },
           {
             breakpoint: 480,
@@ -366,8 +367,8 @@ export default {
               arrows: false,
               centerMode: true,
               centerPadding: "40px",
-              slidesToShow: 1,
-            },
+              slidesToShow: 1
+            }
           },
           {
             breakpoint: 480,
@@ -375,10 +376,10 @@ export default {
               arrows: false,
               centerMode: true,
               centerPadding: "40px",
-              slidesToShow: 1,
-            },
-          },
-        ],
+              slidesToShow: 1
+            }
+          }
+        ]
       },
       videoSetting: {
         focusOnSelect: true,
@@ -389,8 +390,8 @@ export default {
         autoscroll: true,
         autoplay: false,
         arrows: true,
-        centerMode: true,
-      },
+        centerMode: true
+      }
     };
   },
 
@@ -440,10 +441,7 @@ export default {
     },
     url() {
       return this.$store.state.BASE_URL + this.$route.fullPath;
-    },
-  },
+    }
+  }
 };
 </script>
-
-
-
