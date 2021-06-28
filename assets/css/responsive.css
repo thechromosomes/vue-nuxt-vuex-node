@@ -129,6 +129,28 @@
   .header.sticky.fixed .login-cart-div {
     width: 27%;
   }
+  .tumi-club .membership_card_list_level ul li {
+    font-size: 12px;
+  }
+  .tumi-club .membership_card_level_item {
+    margin-right: 10px;
+  }
+  .tumi-club .info-member {
+    width: 100%;
+    margin: 10px 0px;
+    font-size: 12px;
+  }
+  .tumi-club .membership_card_container {
+    width: 100%;
+    padding: 0px 2px;
+    max-width: 100%;
+  }
+  .faq-content-cntr {
+    width: 75%;
+  }
+  .faqSection .faq-filter {
+    width: 25%;
+  }
 }
 
 /*================= media qurey 1999px ===================*/
@@ -2647,6 +2669,153 @@ top: 14px;
   .virtual_store .virtual_store_slide .sticky_menu .menu {
     text-align: center;
     display: none;
+  }
+  .tumi-club .tmclub_banner .breadcrumb {
+    display: none;
+  }
+  .tumi-club .tmclub_banner h4 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .tumi-club .members-title .left-box h4,
+  .tumi-club .members-title .right-box h4 {
+    font-size: 18px;
+  }
+  .tumi-club .info-member p {
+    padding: 15px 15px 0;
+    margin: 0;
+    font-size: 15px;
+  }
+  .tumi-club .membership_card h5 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0px;
+  }
+  .tumi-club .membership_card .membership_card_list_level {
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .tumi-club .membership_card_level_item {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .membership_card_level_content_active {
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .tumi-club .membership_card_level_content_rule {
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .tumi-club .membership_card {
+    margin: 0;
+    padding: 15px;
+  }
+  .m_membership_card_join {
+    margin: 0px 14px 40px 14px;
+    border-left: 1px solid #dfdfdf;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+  }
+  .m_membership_card_join_title {
+    display: flex;
+    font-weight: 700;
+  }
+  .m_membership_card_join_title > div {
+    width: 50%;
+    padding: 10px 0;
+    background: #ebebeb;
+    text-align: center;
+    font-size: 18px;
+  }
+  .m_membership_card_join_title > div.active {
+    background: #222222;
+    color: #ffffff;
+  }
+  .m_membership_card_join_content {
+    padding: 15px;
+  }
+  .m_membership_card_join_content p {
+    margin: 0 0 5px 0;
+    font-size: 15px;
+    color: #666666;
+  }
+  a.membership_card_join_btn {
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+    margin-top: 10px;
+  }
+  .m_membership_card_join_content > div {
+    display: none;
+  }
+  .m_membership_card_join_content > div.active {
+    display: block;
+  }
+  .tumi-club.tm_event .tmclub_banner h4 {
+    position: static;
+    text-align: center;
+    transform: unset;
+    line-height: 150px;
+  }
+  .tumi-club.tm_event .info-member h3 {
+    font-size: 16px !important;
+    font-weight: 700;
+    width: 95%;
+  }
+  .tm_event
+    .media-detail-container_content_box
+    .media-detail-container_content {
+    flex-direction: column;
+  }
+  .tm_event
+    .media-detail-container_content_box
+    .media-detail-container_content
+    .img-box,
+  .tm_event
+    .media-detail-container_content_box
+    .media-detail-container_content
+    span {
+    width: 100%;
+    margin: 0;
+  }
+  .tm_event
+    .media-detail-container_content_box
+    .media-detail-container_content
+    span {
+    margin-top: 10px;
+  }
+  .tumi-club.tm_event .members-title .left-box h4,
+  .tumi-club.tm_event .members-title .right-box h4 {
+    font-size: 15px;
+  }
+  .tumi-club .membership_card_container {
+    margin-top: 20px;
+  }
+  .faq_page .main-head {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .faq-info-icon {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .faqSection .faq-filter {
+    display: none;
+  }
+  .faq-content-cntr {
+    width: 100%;
+  }
+  .faq_page {
+    padding: 0 15px;
+  }
+  .faq_page .faq-footer .faq-form-cntr {
+    width: 100%;
+    text-align: center;
   }
 }
 

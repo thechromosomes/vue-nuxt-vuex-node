@@ -174,7 +174,7 @@ export const mutations = {
 
     state.list.sort = [
       { code: "default", dir: "desc", label: "default" },
-      { code: "hot_items", dir: "asc", label: "Hot Items" },
+      // { code: "hot_items", dir: "asc", label: "Hot Items" },
       { code: "new_arrival", dir: "asc", label: "New Arrival" },
       { code: "selling_price", dir: "asc", label: "Price Low to High" },
       { code: "selling_price", dir: "desc", label: "Price High to Low" },

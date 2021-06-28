@@ -5867,7 +5867,7 @@ img.yearBlockImage {
 .tumi-difference-page-wraper .grayDivider {
   width: 50px;
   height: 1px;
-  margin: 30px auto;
+  margin: 10px auto;
 }
 .tumi-difference-page-wraper #diffBlockInner p {
   margin: 0;
@@ -7018,88 +7018,6 @@ span.view-entire-collection {
   font-family: "proxima-nova-regular";
 }
 
-.faq-wraper {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-.faq-wraper .nav-tabs .nav-link {
-  border: 1px solid transparent;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-  font-family: "proxima-nova-regular";
-}
-.faq-wraper .nav-tabs .nav-item {
-  width: 100%;
-}
-.faq-wraper .nav-tabs .nav-link.active {
-  background: transparent;
-  border-color: transparent !important;
-}
-.faq-wraper .nav-tabs .nav-link {
-  border: 1px solid transparent;
-  border-top-left-radius: 0rem !important;
-  border-top-right-radius: 0rem !important;
-}
-.faq-wraper .tab-content > .active {
-  display: block;
-}
-
-.faq-wraper .faq-tab {
-  background: #ebebeb;
-  padding: 30px 36px;
-  margin-top: 60px;
-
-  font-size: 15px;
-}
-.faq-wraper .static-heading {
-  text-align: center;
-  font-size: 30px;
-  color: #000;
-  padding-bottom: 25px;
-}
-.faq-wraper .panel-title a {
-  font-size: 18px;
-}
-.faq-wraper .panel-title .icon-plus {
-  font-size: 14px;
-  margin-right: 10px;
-}
-.faq-wraper .panel-group .panel {
-  border-radius: 0;
-  box-shadow: none;
-  border-color: #eeeeee;
-}
-
-.faq-wraper .panel-default > .panel-heading {
-  border-radius: 0;
-  color: #212121;
-  border-top: 2px solid #ccc;
-
-  border-color: #eeeeee;
-  transition: all linear 0.15s;
-  font-size: 15px;
-  letter-spacing: 0.04em;
-  color: #222;
-}
-.faq-wraper .panel-collapse.collapse.show {
-  border-top: 1px solid #cccccc91;
-}
-.faq-wraper .panel-title {
-  font-size: 14px;
-}
-
-.faq-wraper .panel-title > a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-}
-
-.faq-wraper .more-less {
-  float: right;
-  color: #212121;
-}
-
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #eeeeee;
   font-size: 14px;
@@ -7420,3 +7338,453 @@ span.view-entire-collection {
   color: #fff;
 }
 /*   virtual-store css end */
+
+/* tumi-club */
+.tumi-club {
+  width: 100%;
+  font-family: "proxima-nova-regular";
+}
+.tumi-club .tmclub_banner {
+  width: 100%;
+  position: relative;
+  font-family: "proxima-nova-regular";
+}
+.tumi-club .tmclub_banner h4 {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  color: #000;
+  text-align: center;
+  transform: translate(-50%, 0);
+  font-weight: 600;
+}
+.tumi-club .tmclub_banner .breadcrumb {
+  background-color: transparent;
+  position: absolute;
+  top: 6px;
+  left: 20px;
+}
+.tumi-club .tmclub_banner .breadcrumb li a {
+  color: #000;
+}
+.tumi-club .tmclub_banner .breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+.tumi-club .membership_card_container {
+  max-width: 1240px;
+  margin-top: 60px;
+  margin: 100px auto 0;
+}
+
+.tumi-club .members-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tumi-club .members-title .left-box,
+.tumi-club .members-title .right-box {
+  width: 50%;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+}
+.tumi-club .members-title .left-box h4,
+.tumi-club .members-title .right-box h4 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.tumi-club .members-title .left-box h4 {
+  color: #c42239;
+}
+
+.tumi-club .info-member {
+  margin-top: 30px;
+  width: 60%;
+  margin-bottom: 30px;
+}
+.tumi-club .info-member p {
+  color: #666;
+}
+.tumi-club .membership_card {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.tumi-club .membership_card h5 {
+  font-size: 32px;
+  color: #222222;
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.tumi-club .membership_card .membership_card_list_level {
+  width: 100%;
+  display: flex;
+}
+.tumi-club .membership_card_level_item {
+  width: 33.333%;
+  box-sizing: border-box;
+  margin-right: 50px;
+}
+.tumi-club .membership_card_level_item_title {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+}
+.membership_card_level_item_title_register {
+  background: #040707 url("../images/tm-member-card-register.png") no-repeat
+    right;
+}
+.membership_card_level_item_title_silver {
+  background: #040707 url("../images/tm-member-card-silver.png") no-repeat right;
+}
+
+.membership_card_level_item_title_gold {
+  background: #040707 url("../images/tm-member-card-gold.png") no-repeat right;
+}
+.membership_card_level_content {
+  background: #f6f6f6;
+  padding: 30px 20px 0;
+}
+.membership_card_level_content_active {
+  height: 325px;
+}
+.tumi-club .membership_card_list_level ul li {
+  width: 100%;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+.tumi-club .membership_card_list_level ul li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #959597;
+  position: absolute;
+  left: 0;
+  border-radius: 50%;
+  top: 7px;
+}
+.tumi-club .membership_card_list_level ul.gold li::before {
+  background: #c09955;
+}
+.tumi-club .membership_card_rule {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.tumi-club .membership_card_rule_text {
+  flex-basis: auto;
+  color: #222222;
+  text-align: right;
+  margin-right: 10px;
+}
+.tumi-club .membership_card_rule_line {
+  height: 1px;
+  flex-grow: 2;
+  margin: 0 auto;
+  background: #ebebeb;
+}
+.tumi-club .membership_card_level_content_rule {
+  height: 170px;
+}
+.membership_card_rule_tips {
+  font-size: 13px;
+  margin-bottom: 40px;
+  color: #555;
+}
+.membership_card_rule_tips a:hover {
+  color: #c42239;
+  text-decoration: underline;
+}
+.membership_card_join {
+  margin-bottom: 100px;
+}
+.membership_card_join_list {
+  display: flex;
+}
+.membership_card_join_item {
+  width: 50%;
+  margin-right: 50px;
+  border-left: 1px solid #dfdfdf;
+  border-right: 1px solid #dfdfdf;
+  border-bottom: 1px solid #dfdfdf;
+}
+.membership_card_join_title {
+  background: #ebebeb;
+  line-height: 72px;
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 32px;
+  color: #222222;
+  display: block;
+  font-weight: 800;
+}
+.membership_card_join_content {
+  padding: 20px;
+  font-size: 16px;
+  color: #666666;
+  height: 170px;
+  border-bottom: 1px solid #ebebeb;
+}
+.membership_card_join_item a.membership_card_join_btn {
+  margin: 30px auto;
+}
+a.membership_card_join_btn {
+  background-color: #b9202d;
+  text-decoration: none;
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 0;
+  position: relative;
+  font-size: 14px;
+  color: #ffffff;
+  margin: 0 auto;
+}
+.membership_card_join_item:last-child,
+.tumi-club .membership_card_level_item:last-child {
+  margin-right: 0;
+}
+.tumi-club.tm_event {
+  width: 100%;
+}
+.tumi-club.tm_event .tmclub_banner {
+  background-image: url("../images/mediaArea.jpg");
+  width: 100%;
+  height: 150px;
+}
+.tumi-club.tm_event .tmclub_banner .breadcrumb li,
+.tumi-club.tm_event .tmclub_banner .breadcrumb li a {
+  color: #fff;
+}
+.tumi-club.tm_event .tmclub_banner h4 {
+  left: 15%;
+  right: unset;
+  color: #fff;
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: 0.5px;
+}
+.tumi-club.tm_event .members-title .left-box h4,
+.tumi-club.tm_event .members-title .right-box h4 {
+  font-size: 24px;
+  color: #999;
+  font-weight: 500;
+  pointer-events: none;
+}
+.tumi-club.tm_event .members-title .right-box h4 {
+  color: #c41e3a;
+  pointer-events: fill;
+  cursor: pointer;
+}
+.tumi-club.tm_event .info-member {
+  width: 100%;
+  margin: 0;
+  padding: 15px 10px 0px 10px;
+}
+.tumi-club.tm_event .info-member h3 {
+  color: #222;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: left;
+  width: 69%;
+  margin: 8px;
+}
+
+.tumi-club.tm_event .info-member h5 {
+  text-indent: 5px;
+  font-size: 18px;
+  margin: 4px;
+  text-align: left;
+  color: #c42239;
+}
+.tm_event .media-detail-container_content_box .media-detail-container_content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.media-detail-container_content_box {
+  margin-bottom: 100px;
+}
+.tm_event
+  .media-detail-container_content_box
+  .media-detail-container_content
+  .img-box {
+  width: 70%;
+}
+.tm_event
+  .media-detail-container_content_box
+  .media-detail-container_content
+  span {
+  width: 30%;
+  margin: 0px 0px 0px 15px;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* faq_page */
+
+.faq_page {
+  width: 100%;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "proxima-nova-regular";
+}
+.faq_page .main-head {
+  width: 100%;
+  text-align: center;
+  color: #222;
+  font-size: 24px;
+  text-transform: none;
+  padding: 20px 0;
+  margin: 0;
+  font-weight: 700;
+}
+
+.faq_page .faq-content {
+  width: 100%;
+}
+.faq_page .faq-content .faqSection {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+  align-items: flex-start;
+}
+.faq-content-cntr {
+  width: 80%;
+}
+.faqSection .faq-filter {
+  margin-right: 40px;
+  background: #ebebeb;
+  padding: 30px 36px;
+  width: 20%;
+  font-size: 15px;
+}
+.faqSection .faq-filter h3 {
+  text-transform: uppercase;
+  color: #555;
+  font-size: 13px;
+  font-weight: 700;
+}
+.faqSection .faq-filter ul {
+  padding: 0;
+  margin: 0 0 0 14px;
+  list-style: none;
+  font-size: 15px;
+}
+.faqSection .faq-filter ul li {
+  margin-top: 15px;
+}
+.faqSection .faq-filter ul a {
+  color: #222;
+}
+.faqSection .faq-filter ul a h2 {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 100;
+  text-align: left;
+  color: #222;
+  letter-spacing: 0.5px;
+}
+.accordion .accordion-section .accordion-section-title {
+  width: 100%;
+  padding: 8px 10px 7px 0;
+  display: inline-block;
+  transition: all linear 0.15s;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: #222;
+}
+.accordion,
+.accordion .accordion-section {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.faq_page .accordion .icon-minus,
+.faq_page .accordion .icon-plus {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px !important;
+  font-size: 15px;
+  width: 10px;
+}
+.faq_page .accordion .icon-minus.hidden,
+.faq_page .accordion .icon-plus.hidden {
+  display: none;
+}
+.faq_page .icon-minus:before,
+.faq_page .icon-openarrow-right:before,
+.faq_page .icon-plus:before {
+  font-size: 8px;
+  position: relative;
+  top: -2px;
+}
+.faq_page .accordion .ctnr-product-item-details {
+  font-size: 13px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #eee;
+}
+.ctnr-product-item-details.dimentions {
+  padding: 16px 0 0;
+}
+.accordion-section-content {
+  display: none;
+}
+
+.faq_page .faq-footer {
+  background: #f2f2f2;
+  margin-top: 56px;
+  padding-bottom: 60px;
+  border-top: 1px solid #ccc;
+}
+
+.faq_page .faq-footer h2 {
+  color: #222;
+  font-size: 24px;
+  text-align: center;
+  text-transform: none;
+  padding: 10px 0;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding-top: 28px;
+}
+.faq_page .faq-footer .faq-form-cntr {
+  width: 482px;
+  margin: 0 auto;
+}
+.faq_page .faq-footer {
+  text-align: center;
+  /* margin: 10px 0 20px; */
+  color: #222;
+}
+.faq_page .faq-footer #faq-next-btn-cntr {
+  width: 180px;
+  margin: 0 auto;
+}
+.faq_page .faq-footer #faq-next-btn-cntr a {
+  background: #000;
+  color: #fff;
+  height: 40px;
+  display: block;
+  text-align: center;
+  border-radius: 0;
+  margin-top: 10px;
+}
+.faq_page .faq-footer #faq-next-btn-cntr a:hover {
+  color: #bd1d2d;
+}

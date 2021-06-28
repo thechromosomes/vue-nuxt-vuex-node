@@ -111,8 +111,8 @@
                         >
                       </li>
                       <li>
-                        <a href="" class="proxima_semi-bold"
-                          >TUMI Exclusives Club Membership Privileges</a
+                        <Nuxt-link to="/cms/tumi-club" class="proxima_semi-bold"
+                          >TUMI Exclusives Club Membership Privileges</Nuxt-link
                         >
                       </li>
                       <li>

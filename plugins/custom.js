@@ -24,7 +24,7 @@ jQuery(document).ready(function () {
   //   jQuery(this).parents(".submenu").removeClass("active");
   //   jQuery(this).parents(".mobile_menu").removeClass("fixheight");
   // });
-  
+
   // For mobile Footer collapsable
   jQuery(".footer_menu .menu_col h2").click(function () {
     jQuery(this).toggleClass("open");
@@ -44,4 +44,25 @@ jQuery(document).ready(function () {
       jQuery(this).addClass("active");
     }
   });
+
+
+  // toggle cms page tumi-club
+   let joinTitle =  jQuery('#join-title');
+   let loginTitle =  jQuery('#login-title');
+   let joinContent =  jQuery('#join-content');
+   let loginContent =  jQuery('#login-content');
+   jQuery(joinTitle).click(function () {
+
+    jQuery(joinTitle).toggleClass("active");
+    jQuery(joinContent).toggleClass("active");
+    jQuery(loginTitle).removeClass("active");
+    jQuery(loginContent).removeClass("active");
+  });
+   jQuery(loginTitle).click(function () {
+    jQuery(loginTitle).toggleClass("active");
+    jQuery(loginContent).toggleClass("active");
+    jQuery(joinTitle).removeClass("active");
+    jQuery(joinContent).removeClass("active");
+  });
+  // toggle cms page tumi-club end
 });
