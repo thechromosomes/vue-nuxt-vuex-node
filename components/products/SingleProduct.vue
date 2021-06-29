@@ -258,11 +258,18 @@
                     >Explore</a
                   >
                 </div> -->
-                <a
-                  @click.prevent="addToCart()"
-                  class="red-button add-cart-button proxima_semi-bold"
-                  >add to cart</a
+                 <span id="stick-cart-temp"></span>
+                <div
+                  :class="{
+                    addtocartsticky: fixedMobileCart && showStickycart
+                  }"
                 >
+                  <a
+                    @click.prevent="addToCart()"
+                    class="red-button add-cart-button proxima_semi-bold"
+                    >add to cart</a
+                  >
+                </div>
                 <div class="info-tab-single">
                   <div
                     class="info-txt"
@@ -640,6 +647,8 @@ export default {
   },
   data() {
     return {
+      fixedMobileCart: false,
+      showStickycart: false,
       showPersonlization: false,
       showExplore: false,
       showFetSpec: false,
@@ -1248,6 +1257,25 @@ export default {
       this.sizeAlert = false;
       this.selectedSizeAttr = size;
     },
+    updateAddToCart() {
+      function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <=
+            (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+      const box = document.querySelector("#stick-cart-temp");
+      if (isInViewport(box)) {
+        this.showStickycart = false;
+      } else {
+        this.showStickycart = true;
+      }
+    },
 
     // add and remove to wish list
     async addRemoveWishList(data, index) {
@@ -1337,6 +1365,7 @@ export default {
     // to fetch single product detail
 
     await this.getProductDetail();
+    this.fixedMobileCart = this.$device.isMobile;
     // render from single variation
     if (
       this.singleProductList.single_prod_data &&
@@ -1361,8 +1390,11 @@ export default {
       let recentV = $cookies.get("steveMadden_recent_views") || "";
       this.fetchRecentViews(recentV);
     }
+    window.addEventListener("scroll", this.updateAddToCart);
   },
-
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.updateAddToCart);
+  },
   computed: {
     ...mapState(["singleProductList"]),
     renderDescription() {

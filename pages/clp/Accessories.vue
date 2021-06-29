@@ -157,7 +157,9 @@
             </div>
           </VueSlickCarousel>
         </div>
-        <a href="/collections/accessories-wallet---card-cases" class="btn-collection proxima_regular"
+        <a
+          href="/collections/accessories-wallet---card-cases"
+          class="btn-collection proxima_regular"
           >Shop the Collection</a
         >
       </section>
@@ -179,10 +181,10 @@
         </div>
       </section>
       <section class="what-matters reverse-section">
-        <div class="right-clp-three-img order-2">
+        <div class="right-clp-three-img ">
           <img src="~/assets/images/Thriving.jpg" />
         </div>
-        <div class="left-content-clpthree order-1">
+        <div class="left-content-clpthree ">
           <h3 class="proxima_bold">3. Thriving Supply Chain</h3>
           <p class="proxima_regular">
             We have established a suppliers’ code of conduct known as the
@@ -218,12 +220,12 @@
           <img src="~/assets/images/people-focused.jpg" />
         </div>
       </section>
-      <section class="material-Innovation">
+      <section class="material-Innovation d-none">
         <div class="container">
           <div class="material-invo-wrap">
             <VueSlickCarousel v-bind="slides">
               <div class="invo-item-1">
-                <img src="~/assets/images/mat-1.jpg" />
+                <img src="~/assets/images/mat-1.jpg" class="w-100" />
                 <h5 class="proxima_bold">Recycled Plastic</h5>
                 <p class="proxima_regular">
                   980,531 plastic bottles have been diverted from landfill and
@@ -232,7 +234,7 @@
                 </p>
               </div>
               <div class="invo-item-1">
-                <img src="~/assets/images/mat-2.jpg" />
+                <img src="~/assets/images/mat-2.jpg" class="w-100" />
                 <h5 class="proxima_bold">Eliminating PVC Materials</h5>
                 <p class="proxima_regular">
                   Innovative design has helped us to eliminate the majority of
@@ -240,7 +242,7 @@
                 </p>
               </div>
               <div class="invo-item-1">
-                <img src="~/assets/images/mat-3.jpg" />
+                <img src="~/assets/images/mat-3.jpg" class="w-100" />
                 <h5 class="proxima_bold">Water-based Poly Fabric</h5>
                 <p class="proxima_regular">
                   We use a water-based polyurethane coating process for the
@@ -249,7 +251,7 @@
                 </p>
               </div>
               <div class="invo-item-1">
-                <img src="~/assets/images/mat-4.jpg" />
+                <img src="~/assets/images/mat-4.jpg" class="w-100" />
                 <h5 class="proxima_bold">Recycled Zinc</h5>
                 <p class="proxima_regular">
                   We’re cutting the amount of virgin zinc in hardware on our
@@ -268,176 +270,12 @@
 </template>
 <style scoped>
 /*==================================================== clp page three css start============== */
-.clp-three-wraper {
-  padding: 30px 80px;
-  clear: both;
-}
-.clp-three-baneer {
-  background-image: url(~/assets/images/clp-page-three-banner.jpg);
-  background-repeat: no-repeat;
-  min-height: 400px;
-  background-size: cover;
-}
-.clp-three-cont {
-  background-image: url("~/assets/images/clp-page-three-con.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent;
-  width: unset;
-  max-width: 400px;
-  height: 280px;
-  padding: 0;
-  position: relative;
-  top: 62px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.clp-three-cont h2 {
-  text-transform: uppercase;
-  font-size: 28px;
-  line-height: 32px;
-  letter-spacing: 0.075em;
-  margin: 30px 0 90px 0;
-  color: #fff;
-  padding: 0;
-  padding-top: 32px;
-}
-
-.clp-three-cont span {
-  display: block;
-}
-.heading-css strong {
-  display: block;
-  font-size: 26px;
-}
-.heading-css strong > span {
-  display: block;
-}
-.heading-css p {
-  font-size: 20px;
-  letter-spacing: 0.38px;
-  max-width: 990px;
-  margin: 0 auto;
-  line-height: 28px;
-  padding-top: 20px;
-}
-.built-to-last {
-  text-align: center;
-  margin-top: 30px;
-}
-.built-to-last img {
-  display: inline-block;
-  width: 60px;
-  margin: 0 auto;
-}
-.built-to-last p {
-  font-size: 14px;
-  line-height: 20px;
-  margin-top: 5px;
-}
-.built-to-last h4 {
-  padding-top: 15px;
-}
-.what-matters {
-  padding: 60px 0px;
-  display: flex;
-  align-items: center;
-}
-.what-matters .left-content-clpthree,
-.what-matters .right-clp-three-img {
-  width: 50%;
-}
-
-.left-content-clpthree p {
-  font-size: 18px;
-  letter-spacing: 0.34px;
-  line-height: 24px;
-  padding-bottom: 20px;
-}
-.what-matters .right-clp-three-img {
-  margin-left: 60px;
-}
-.left-content-clpthree h3 {
-  font-size: 23px;
-  padding-bottom: 22px;
-}
-
-.sustainability-is h4 {
-  font-size: 23px;
-  padding-bottom: 22px;
-}
-.sustainability-is p {
-  font-size: 18px;
-  padding-bottom: 17px;
-  letter-spacing: 0.34px;
-  line-height: 24px;
-}
-.what-matters.reverse-section .right-clp-three-img {
-  margin-left: 0px;
-  margin-right: 60px;
-}
-
-.recy-item {
-  text-align: center;
-  width: 25%;
-}
-.recy-item p {
-  font-weight: normal;
-  font-size: 11px;
-  line-height: 17px;
-  color: #666;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  margin: 5px 5%;
-}
-.recy-item h4 {
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 17px;
-  margin: 0 5%;
-}
-.btn-collection {
-  font-weight: 600;
-  padding: 10px 30px;
-  width: 19%;
-  border: solid #222 2px;
-  font-size: 14px;
-  letter-spacing: 0.025em;
-  display: block;
-  text-align: center;
-  margin: 50px auto 8px;
-}
-.learn-more-link {
-  font-size: 18px;
-  letter-spacing: 0.34px;
-  line-height: 24px;
-}
-.learn-more-link:hover {
-  color: #c41e3a;
-}
-.invo-item-1 {
-  width: 23%;
-  text-align: left;
-}
-.invo-item-1 h5 {
-  padding: 20px 0px 9px 0px;
-  font-size: 18px;
-}
-.invo-item-1 p {
-  font-size: 14px;
-}
-.material-invo-wrap {
-  display: flex;
-  justify-content: space-between;
-}
 </style>
 <script>
 import VueSlickCarousel from "vue-slick-carousel";
 export default {
   components: {
-    VueSlickCarousel,
+    VueSlickCarousel
   },
   data() {
     return {
@@ -459,19 +297,17 @@ export default {
               slidesToShow: 3,
               slidesToScroll: 1,
               centerPadding: "150px",
-              centerMode: false,
-            },
+              centerMode: false
+            }
           },
           {
             breakpoint: 600,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 2,
-              initialSlide: 2,
               centerMode: false,
-              centerPadding: "100px",
-              arrows: false,
-            },
+              arrows: false
+            }
           },
           {
             breakpoint: 480,
@@ -480,11 +316,11 @@ export default {
               slidesToScroll: 2,
               centerMode: false,
               centerPadding: "0px",
-              arrows: false,
-            },
-          },
-        ],
-      },
+              arrows: false
+            }
+          }
+        ]
+      }
     };
   },
 
@@ -503,7 +339,7 @@ export default {
         let response = await this.$store.dispatch("pimAjax", {
           method: "post",
           url: `/pimresponse.php`,
-          params: form,
+          params: form
         });
 
         if (response) {
@@ -515,15 +351,14 @@ export default {
         this.$globalError(`error from all product page >>>> ${error}`);
         if (error.message === "Network Error") {
           this.$store.commit("updateState", {
-            error:
-              "Oops there seems to be some Network issue, please try again",
+            error: "Oops there seems to be some Network issue, please try again"
           });
         }
       }
-    },
+    }
   },
   created() {
     this.getProductList("accessories-wallet---card-cases", "accessories");
-  },
+  }
 };
 </script>
