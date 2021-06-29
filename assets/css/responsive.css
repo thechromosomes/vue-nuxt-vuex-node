@@ -200,6 +200,10 @@
   .video-play-list li .button-link {
     margin-top: 15px;
   }
+  .button-link {
+    font-size: 12px;
+    padding: 0;
+  }
   .foot-hide-on {
     display: none;
   }
@@ -1092,7 +1096,7 @@ width: 10%;
     transition: all 0.8s ease;
   }
   .header.sticky.fixed .mob-search-down .form-control {
-    width: 100%;
+    width: 100% !important;
     opacity: 1;
   }
   /*------other links--menu------*/
@@ -1571,8 +1575,9 @@ top: 14px;
     padding: 0px;
   }
   .mob-t-hed .tm-pdp-carousel .tm-pdp-recommend-box {
-    width: 50%;
+    width: 100%;
     margin: 0;
+    padding: 0 15px;
   }
   .alfa-sec.alfa-on-pd {
     padding-bottom: 0px;
@@ -2073,9 +2078,11 @@ top: 14px;
     text-align: center;
     padding-top: 16px;
     margin: 0px;
+    width: 100%;
+    text-align: left;
   }
   .anchor-width-pdp h3 {
-    font-size: 15px;
+    font-size: 18px;
   }
   .inovative-content .button-link {
     font-size: 12px;
@@ -2816,6 +2823,9 @@ top: 14px;
   .faq_page .faq-footer .faq-form-cntr {
     width: 100%;
     text-align: center;
+  }
+  .recomnded-wrap .slick-center.slick-current .re-com-item {
+    transform: scale(1);
   }
 }
 

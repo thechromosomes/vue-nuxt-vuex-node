@@ -346,10 +346,9 @@ export default {
         centerPadding: "0px",
         arrows: true,
         slidesToShow: 7,
-        autoplay: true,
+        autoplay: false,
         slidesToScroll: 1,
         speed: 1500,
-
         focusOnSelect: true,
         responsive: [
           {
@@ -366,17 +365,8 @@ export default {
             settings: {
               arrows: false,
               centerMode: true,
-              centerPadding: "40px",
-              slidesToShow: 1
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: "40px",
-              slidesToShow: 1
+              centerPadding: "20px",
+              slidesToShow: 2
             }
           }
         ]

@@ -4625,7 +4625,7 @@ label.cvform-lbl-checkbox:before {
   margin: 0 1% 0 2%;
 }
 .tm-pdp-carousel .tm-pdp-recommend-box ul {
-  margin: 20px 0;
+  /* margin: 20px 0; */
   padding: 20px 0;
 }
 
@@ -4765,7 +4765,7 @@ label.cvform-lbl-checkbox:before {
 }
 
 .recomnded-section {
-  padding: 60px 0px;
+  padding: 30px 0px;
   border-top: 1px solid #ccc;
 }
 
@@ -4792,11 +4792,11 @@ label.cvform-lbl-checkbox:before {
 }
 
 .re-com-item h3 {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .re-com-item p {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .re-com-item small {
@@ -4880,8 +4880,8 @@ label.cvform-lbl-checkbox:before {
 }
 
 .recomnded-wrap .slick-slide {
-  opacity: 0.6;
-  width: 10px;
+  /* opacity: 0.6; */
+  /* width: 10px; */
 }
 
 .recomnded-wrap .slick-initialized .slick-slide {

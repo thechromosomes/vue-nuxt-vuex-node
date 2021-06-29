@@ -796,7 +796,7 @@ export default {
         adaptiveHeight: true
       },
       recomndedSetting: {
-        centerMode: true,
+        centerMode: false,
         centerPadding: "0px",
         arrows: true,
         slidesToShow: 4,
@@ -809,19 +809,8 @@ export default {
           {
             breakpoint: 768,
             settings: {
-              arrows: true,
-              centerMode: true,
-              centerPadding: "40px",
-              slidesToShow: 2
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
               arrows: false,
-              centerMode: true,
-              centerPadding: "40px",
-              slidesToShow: 1
+              slidesToShow: 2
             }
           }
         ]
