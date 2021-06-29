@@ -2853,6 +2853,9 @@ top: 14px;
   .btn-collection {
     width: 70%;
   }
+  .header.sticky.fixed .logo {
+    width: 37% !important;
+  }
 }
 
 /* ================ banner css================= */
