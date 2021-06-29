@@ -861,9 +861,9 @@ export default {
     },
 
     updateRecentView(singleProd, prodIndex) {
-      let recentV = $cookies.get("steveMadden_recent_views") || "";
+      let recentV = $cookies.get("coach_recent_views") || "";
       $cookies.set(
-        "steveMadden_recent_views",
+        "coach_recent_views",
         recentV.concat(`,${singleProd.sku}`),
         60 * 60 * 24 * 30
       );
