@@ -85,7 +85,11 @@
                         >
                       </li>
                       <li>
-                        <a href="" class="proxima_semi-bold">Sustainability</a>
+                        <Nuxt-link
+                          to="/cms/sustainability"
+                          class="proxima_semi-bold"
+                          >Sustainability</Nuxt-link
+                        >
                       </li>
                       <li>
                         <a href="" class="proxima_semi-bold">Personalization</a>
@@ -214,19 +218,25 @@
                 <h5 class="proxima_bold">FOLLOW US :</h5>
                 <ul class="social-ul">
                   <li>
-                    <a href="#"
+                    <a
+                      href="https://www.facebook.com/TumiTravel/"
+                      target="_blank"
                       ><i class="fa fa-facebook" aria-hidden="true"
                         ><img src="~assets/images/facebook.png"/></i
                     ></a>
                   </li>
                   <li>
-                    <a href="#"
+                    <a
+                      href="https://www.instagram.com/tumitravel/"
+                      target="_blank"
                       ><i class="fa fa-instagram" aria-hidden="true"
                         ><img src="~assets/images/instagram-foot.png"/></i
                     ></a>
                   </li>
                   <li>
-                    <a href=""
+                    <a
+                      href="https://www.youtube.com/user/TumiTravel/"
+                      target="_blank"
                       ><i class="fa fa-youtube-play" aria-hidden="true"
                         ><img src="~assets/images/youtube.png"/></i
                     ></a>

@@ -1,7 +1,5 @@
 <template>
   <div id="clp-three">
-    <!-- ==========================================clp page three create start========= -->
-
     <section class="clp-three-baneer">
       <div class="clp-three-cont">
         <h2 class="proxima_bold">
@@ -121,10 +119,10 @@
         </div>
       </section>
       <section class="what-matters reverse-section">
-        <div class="right-clp-three-img order-2">
+        <div class="right-clp-three-img ">
           <img src="~/assets/images/Innovative.jpg" />
         </div>
-        <div class="left-content-clpthree order-1">
+        <div class="left-content-clpthree ">
           <h3 class="proxima_bold">1. Innovative Products</h3>
           <p class="proxima_regular">
             TUMI is — and has always been — committed to creating durable
@@ -142,6 +140,7 @@
         </div>
       </section>
       <section class="recycled-ollection">
+        <h4 class="proxima_bold">Recycled Collection</h4>
         <div class="container" v-if="accessories.length > 0">
           <VueSlickCarousel v-bind="slides">
             <div
@@ -152,7 +151,7 @@
               <nuxt-link :to="`/product/${item.url_key}`">
                 <img :src="item.image" />
                 <p class="td-p td-p-small proxima_light">{{ item.color }}</p>
-                <h4 class="td-h4 proxima_light">{{ item.name }}</h4>
+                <h5 class="td-h4 proxima_light">{{ item.name }}</h5>
               </nuxt-link>
             </div>
           </VueSlickCarousel>
@@ -220,11 +219,13 @@
           <img src="~/assets/images/people-focused.jpg" />
         </div>
       </section>
-      <section class="material-Innovation d-none">
-        <div class="container">
-          <div class="material-invo-wrap">
+
+      <div class="new_innovation">
+        <div class="container-fluid">
+          <h4 class="proxima_bold">Material Innovation</h4>
+          <div class="material_invo_item">
             <VueSlickCarousel v-bind="slides">
-              <div class="invo-item-1">
+              <div class="invo-item">
                 <img src="~/assets/images/mat-1.jpg" class="w-100" />
                 <h5 class="proxima_bold">Recycled Plastic</h5>
                 <p class="proxima_regular">
@@ -233,7 +234,7 @@
                   the interior lining, zipper tape, webbing, and binding.
                 </p>
               </div>
-              <div class="invo-item-1">
+              <div class="invo-item">
                 <img src="~/assets/images/mat-2.jpg" class="w-100" />
                 <h5 class="proxima_bold">Eliminating PVC Materials</h5>
                 <p class="proxima_regular">
@@ -241,7 +242,7 @@
                   PVC used in our products.
                 </p>
               </div>
-              <div class="invo-item-1">
+              <div class="invo-item">
                 <img src="~/assets/images/mat-3.jpg" class="w-100" />
                 <h5 class="proxima_bold">Water-based Poly Fabric</h5>
                 <p class="proxima_regular">
@@ -250,7 +251,7 @@
                   process, resulting in less contaminants in the water supply.
                 </p>
               </div>
-              <div class="invo-item-1">
+              <div class="invo-item">
                 <img src="~/assets/images/mat-4.jpg" class="w-100" />
                 <h5 class="proxima_bold">Recycled Zinc</h5>
                 <p class="proxima_regular">
@@ -261,10 +262,28 @@
                   zinc and less zinc wasted in landfill.
                 </p>
               </div>
+              <div class="invo-item">
+                <img src="~/assets/images/cms-1.jpg" class="w-100" />
+                <h5 class="proxima_bold">Post-industrial Nylon</h5>
+                <p class="proxima_regular">
+                  We have introduced a post-industrial recycled nylon into
+                  several of our collections, and we’re always looking to expand
+                  our use of recycled materials.
+                </p>
+              </div>
+              <div class="invo-item">
+                <img src="~/assets/images/cms-2.jpg" class="w-100" />
+                <h5 class="proxima_bold">Recycled Paper</h5>
+                <p class="proxima_regular">
+                  Our hangtags are printed on recycled paper and we use
+                  soy-based ink which contains less VOCs and uses less
+                  petroleum.
+                </p>
+              </div>
             </VueSlickCarousel>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   </div>
 </template>

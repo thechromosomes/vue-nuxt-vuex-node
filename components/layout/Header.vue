@@ -14,9 +14,13 @@
             <div class="top-service-nav">
               <ul class="">
                 <li>
-                  <a href="" target="_blank" class="proxima_semi-bold">
+                  <Nuxt-link
+                    to="/cms/tumi-club"
+                    target="_blank"
+                    class="proxima_semi-bold"
+                  >
                     <i class="p-r-t--1 sprite-tm-icon-crown"></i> TUMI
-                    Exclusives Club</a
+                    Exclusives Club</Nuxt-link
                   >
                 </li>
                 <li>
@@ -32,7 +36,7 @@
                 <li>
                   <a
                     rel="nofollow"
-                    href=" "
+                    href="https://v1.live800.com/live800/chatClient/chatbox.jsp?companyID=1103215&configID=46295&jid=1780232594&s=1&lan=en "
                     target="_blank"
                     class="proxima_semi-bold"
                   >
@@ -44,7 +48,11 @@
                   >
                 </li>
                 <li>
-                  <a rel="nofollow" href="" class="proxima_semi-bold">
+                  <a
+                    rel="nofollow"
+                    href="tel:800961974"
+                    class="proxima_semi-bold"
+                  >
                     <i class="p-r-t--1 sprite-phone" alt="hotline"></i>
                     800-961-974</a
                   >

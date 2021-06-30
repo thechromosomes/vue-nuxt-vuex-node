@@ -2687,17 +2687,22 @@ label.cvform-lbl-checkbox:before {
 }
 
 .submit-button {
-  height: 34px;
+  /* height: 34px; */
   border: 0px;
   color: #fff;
   align-items: center;
-  background-color: #555;
-  line-height: 16px;
+  padding: 0px 20px;
+  background-color: #ccc;
+  /* line-height: 16px; */
   border-radius: 0px;
+  cursor: pointer;
 }
 
 .submit-button span {
-  font-size: 7px;
+  font-size: 9px;
+}
+.submit-button:hover span {
+  color: #c41e3a !important;
 }
 /*----------footer sprite images---------------*/
 
@@ -5352,13 +5357,13 @@ label.cvform-lbl-checkbox:before {
 /* ------------ susiblity clp page---------- */
 
 #clp-three .slick-prev {
-  left: 2%;
+  left: -25px;
   z-index: 2;
 }
-.#clp-three .slick-prev,
+#clp-three .slick-prev,
 #clp-three .slick-next {
-  background-color: #000;
-  opacity: 0.5;
+  background-color: #222;
+
   height: 25px;
   width: 25px;
   border-radius: 50%;
@@ -5367,14 +5372,16 @@ label.cvform-lbl-checkbox:before {
   content: "\e944";
   font-family: "icomoon" !important;
   font-size: 15px;
+  color: #fff !important;
 }
 #clp-three .slick-next:before {
   content: "\e945";
   font-family: "icomoon" !important;
   font-size: 15px;
+  color: #fff !important;
 }
 #clp-three .slick-next {
-  right: 2%;
+  right: -25px;
   z-index: 2;
 }
 
@@ -7959,6 +7966,34 @@ a.membership_card_join_btn {
 .recomnded-wrap .slick-prev {
   left: -5px;
 }
-.recomnded-wrap  .slick-next {
+.recomnded-wrap .slick-next {
   right: -5px;
+}
+.new_innovation {
+  width: 100%;
+}
+.new_innovation h4,
+.recycled-ollection h4 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.recycled-ollection h5 {
+  font-size: 13px;
+}
+
+.new_innovation .material_invo_item {
+  margin: 0 -10px;
+}
+
+.new_innovation .material_invo_item .invo-item {
+  padding: 0 10px;
+}
+.new_innovation .material_invo_item .invo-item h5 {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.new_innovation .material_invo_item {
 }
