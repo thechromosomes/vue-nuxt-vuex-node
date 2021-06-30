@@ -5385,6 +5385,11 @@ label.cvform-lbl-checkbox:before {
   z-index: 2;
 }
 
+.clp-three-baneer {
+  display: block;
+  float: left;
+  width: 100%;
+}
 /* tumi-about cms */
 .tumi-about {
   width: 100%;

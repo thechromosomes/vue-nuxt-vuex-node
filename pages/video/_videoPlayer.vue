@@ -69,7 +69,7 @@
         <div class="thum-img-boxx">
           <img src="~assets/images/thum-player-1.jpg" />
           <span class="play-icon-v">
-            <img src="/_nuxt/assets/images/play-icon.png" />
+            <img src="~assets/images/play-icon.png" />
           </span>
           <div class="tm-mediaWorld__dur">
             <span class="proxima_regular">01:00</span>
@@ -85,7 +85,7 @@
         <div class="thum-img-boxx">
           <img src="~assets/images/thum-player-2.jpg" />
           <span class="play-icon-v">
-            <img src="/_nuxt/assets/images/play-icon.png" />
+            <img src="~/assets/images/play-icon.png" />
           </span>
           <div class="tm-mediaWorld__dur">
             <span class="proxima_regular">01:00</span>
@@ -101,7 +101,7 @@
         <div class="thum-img-boxx">
           <img src="~assets/images/thum-player-3.jpg" />
           <span class="play-icon-v">
-            <img src="/_nuxt/assets/images/play-icon.png" />
+            <img src="~assets/images/play-icon.png" />
           </span>
 
           <div class="tm-mediaWorld__dur">
@@ -149,13 +149,12 @@
     </section>
   </div>
 </template>
-<style scoped>
-</style>
+<style scoped></style>
 <script>
 import VueSlickCarousel from "vue-slick-carousel";
 export default {
   components: {
-    VueSlickCarousel,
+    VueSlickCarousel
   },
   data() {
     return {
@@ -177,8 +176,8 @@ export default {
               verticalSwiping: false,
               slidesToShow: 4,
               slidesToScroll: 1,
-              arrows: false,
-            },
+              arrows: false
+            }
           },
           {
             breakpoint: 1024,
@@ -187,8 +186,8 @@ export default {
               verticalSwiping: false,
               slidesToShow: 4,
               slidesToScroll: 1,
-              arrows: false,
-            },
+              arrows: false
+            }
           },
           {
             breakpoint: 600,
@@ -197,8 +196,8 @@ export default {
               verticalSwiping: false,
               slidesToShow: 2,
               slidesToScroll: 1,
-              arrows: false,
-            },
+              arrows: false
+            }
           },
           {
             breakpoint: 480,
@@ -207,15 +206,15 @@ export default {
               verticalSwiping: false,
               slidesToShow: 2,
               slidesToScroll: 1,
-              arrows: false,
-            },
-          },
+              arrows: false
+            }
+          }
           // You can unslick at a given breakpoint now by adding:
           // settings: "unslick"
           // instead of a settings object
-        ],
-      },
+        ]
+      }
     };
-  },
+  }
 };
 </script>
