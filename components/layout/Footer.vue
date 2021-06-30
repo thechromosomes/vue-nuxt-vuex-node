@@ -222,7 +222,7 @@
                       href="https://www.facebook.com/TumiTravel/"
                       target="_blank"
                       ><i class="fa fa-facebook" aria-hidden="true"
-                        ><img src="~assets/images/facebook.png"/></i
+                        ><img src="~assets/images/facebook.png" /></i
                     ></a>
                   </li>
                   <li>
@@ -230,7 +230,7 @@
                       href="https://www.instagram.com/tumitravel/"
                       target="_blank"
                       ><i class="fa fa-instagram" aria-hidden="true"
-                        ><img src="~assets/images/instagram-foot.png"/></i
+                        ><img src="~assets/images/instagram-foot.png" /></i
                     ></a>
                   </li>
                   <li>
@@ -238,7 +238,7 @@
                       href="https://www.youtube.com/user/TumiTravel/"
                       target="_blank"
                       ><i class="fa fa-youtube-play" aria-hidden="true"
-                        ><img src="~assets/images/youtube.png"/></i
+                        ><img src="~assets/images/youtube.png" /></i
                     ></a>
                   </li>
                 </ul>
@@ -250,11 +250,11 @@
                     <input
                       type="text"
                       name=""
-                      id=""
+                      v-model="email"
                       placeholder="Enter Your Email Id"
                       class="form-control"
                     />
-                    <button class="submit-button">
+                    <button class="submit-button" @click="subscribeNews()">
                       <span
                         class="icon-arrow-go-lg color-hover"
                         aria-hidden="true"
@@ -262,6 +262,12 @@
                     </button>
                   </div>
                 </div>
+                <!-- an error display tags -->
+                <span v-if="validation.hasError('email')">
+                  <p class="input-error">
+                    {{ validation.firstError("email") }}
+                  </p>
+                </span>
                 <div>
                   <h3 class="proxima_bold">REGISTER YOUR TUMI</h3>
                   <div class="inline-input">
@@ -357,3 +363,45 @@
     </section>
   </div>
 </template>
+<script>
+import { Validator } from "simple-vue-validator";
+
+export default {
+  data() {
+    return {
+      email: "",
+    };
+  },
+
+  // form validatiors
+  validators: {
+    email: function (value) {
+      return Validator.value(value).required().email();
+    },
+  },
+
+  methods: {
+    async subscribeNews() {
+      try {
+        var validation = await this.$validate();
+        if (validation) {
+          let response = await this.$store.dispatch("cartAjax/actCartAjax", {
+            method: "post",
+            url: `/newsletter/news-letter`,
+            params: { email: this.email },
+          });
+
+          if (response.success) {
+            this.$toast.open(response.message);
+          } else {
+            this.$toast.error(response.message);
+            throw `${response.message}`;
+          }
+        }
+      } catch (error) {
+        this.$globalError(`error from the all subcribe email footer ${error}`);
+      }
+    },
+  },
+};
+</script>

@@ -31,14 +31,18 @@
                 <font-awesome-icon icon="shopping-cart" class="icon-svg" />
               </span>
               <span
-                class="order-summary-toggle__text order-summary-toggle__text--show"
+                class="
+                  order-summary-toggle__text order-summary-toggle__text--show
+                "
                 v-if="showSummary == false"
               >
                 <span>Show order summary</span>
                 <font-awesome-icon icon="angle-down" class="icon-svg" />
               </span>
               <span
-                class="order-summary-toggle__text order-summary-toggle__text--hide"
+                class="
+                  order-summary-toggle__text order-summary-toggle__text--hide
+                "
                 v-if="showSummary"
               >
                 <span>Hide order summary</span>
@@ -258,7 +262,10 @@
                                       placeholder=""
                                       autocomplete="off"
                                       v-model="user.pinCode"
-                                      class="field__input field__input--zip shipping-label-pb-input-st"
+                                      class="
+                                        field__input field__input--zip
+                                        shipping-label-pb-input-st
+                                      "
                                     />
                                   </label>
 
@@ -306,7 +313,12 @@
                                 </div> -->
 
                               <div
-                                class="field field--required field--show-floating-label field--half"
+                                class="
+                                  field
+                                  field--required
+                                  field--show-floating-label
+                                  field--half
+                                "
                               >
                                 <label
                                   class=""
@@ -317,7 +329,10 @@
                                     :value="user.state"
                                     autocomplete="off"
                                     disabled
-                                    class="field__input field__input--zip shipping-label-pb-input-st"
+                                    class="
+                                      field__input field__input--zip
+                                      shipping-label-pb-input-st
+                                    "
                                   />
                                 </label>
                                 <!-- an error display tags -->
@@ -351,10 +366,17 @@
                               </div>
 
                               <div
-                                class="field field--required field--show-floating-label"
+                                class="
+                                  field
+                                  field--required
+                                  field--show-floating-label
+                                "
                               >
                                 <div
-                                  class="field__input-wrapper field__input-wrapper--icon-right"
+                                  class="
+                                    field__input-wrapper
+                                    field__input-wrapper--icon-right
+                                  "
                                 >
                                   <!-- <label
                                   class="field__label field__label--visible"
@@ -364,7 +386,10 @@
                                   <input
                                     placeholder="Phone"
                                     autocomplete="off"
-                                    class="field__input field__input--numeric shipping-label-pb-input-st"
+                                    class="
+                                      field__input field__input--numeric
+                                      shipping-label-pb-input-st
+                                    "
                                     type="tel"
                                     v-model="user.mobileNo"
                                   />
@@ -400,7 +425,11 @@
                               </div>
 
                               <div
-                                class="field field--required field--show-floating-label"
+                                class="
+                                  field
+                                  field--required
+                                  field--show-floating-label
+                                "
                               >
                                 <div
                                   class="field__input-wrapper shipping-user-pd"
@@ -425,13 +454,23 @@
                               </div>
 
                               <div
-                                class="field field--required field--show-floating-label"
+                                class="
+                                  field
+                                  field--required
+                                  field--show-floating-label
+                                "
                               >
                                 <div
-                                  class="field__input-wrapper field__input-wrapper--icon-right"
+                                  class="
+                                    field__input-wrapper
+                                    field__input-wrapper--icon-right
+                                  "
                                 >
                                   <label
-                                    class="field__label field__label--visible shipping-adress-label"
+                                    class="
+                                      field__label field__label--visible
+                                      shipping-adress-label
+                                    "
                                     for="checkout_shipping_address_phone"
                                     >Address type</label
                                   >
@@ -439,7 +478,10 @@
                                   <div class="adress-option-div">
                                     <div class="input-box-1">
                                       <input
-                                        class="field__input field__input--numeric input-both"
+                                        class="
+                                          field__input field__input--numeric
+                                          input-both
+                                        "
                                         type="radio"
                                         autocomplete="off"
                                         value="home"
@@ -451,7 +493,10 @@
 
                                     <div class="input-box-1">
                                       <input
-                                        class="field__input field__input--numeric input-both"
+                                        class="
+                                          field__input field__input--numeric
+                                          input-both
+                                        "
                                         type="radio"
                                         autocomplete="off"
                                         value="office"
@@ -473,7 +518,12 @@
                           name="button"
                           type="submit"
                           id="continue_button"
-                          class="step__footer__continue-btn btn black-button proxima_regular"
+                          class="
+                            step__footer__continue-btn
+                            btn
+                            black-button
+                            proxima_regular
+                          "
                           aria-busy="false"
                         >
                           <span
@@ -663,7 +713,10 @@
                   <div class="order-summary">
                     <div class="order-summary__sections">
                       <div
-                        class="order-summary__section order-summary__section--product-list"
+                        class="
+                          order-summary__section
+                          order-summary__section--product-list
+                        "
                       >
                         <div
                           class="order-summary__section__content"
@@ -695,11 +748,17 @@
                                 </td>
                                 <th class="product__description" scope="row">
                                   <span
-                                    class="product__description__name order-summary__emphasis"
+                                    class="
+                                      product__description__name
+                                      order-summary__emphasis
+                                    "
                                     >{{ item.name }}
                                   </span>
                                   <span
-                                    class="product__description__variant order-summary__small-text"
+                                    class="
+                                      product__description__variant
+                                      order-summary__small-text
+                                    "
                                     v-if="
                                       JSON.parse(item.size).color &&
                                       JSON.parse(item.size).size
@@ -708,7 +767,11 @@
                                     {{ JSON.parse(item.size).size }}</span
                                   >
                                   <span
-                                    class="product__description__property order-summary__small-text proxima_regular"
+                                    class="
+                                      product__description__property
+                                      order-summary__small-text
+                                      proxima_regular
+                                    "
                                     data-prop="UPC"
                                   >
                                     UPC: N.A
@@ -741,7 +804,10 @@
                         </div>
                       </div>
                       <div
-                        class="order-summary__section order-summary__section--discount"
+                        class="
+                          order-summary__section
+                          order-summary__section--discount
+                        "
                       >
                         <div class="fieldset">
                           <div class="field">
@@ -804,7 +870,10 @@
                       </div>
 
                       <div
-                        class="order-summary__section order-summary__section--total-lines"
+                        class="
+                          order-summary__section
+                          order-summary__section--total-lines
+                        "
                       >
                         <table class="total-line-table">
                           <tbody class="total-line-table__tbody">
@@ -1424,6 +1493,16 @@ export default {
       this.$store.state.cartAjax.customer_id == ""
     ) {
       this.$router.push("/login");
+      this.$gtm.push({
+        event: "checkout",
+        action: "Checkout",
+        ecommerce: {
+          checkout: {
+            actionField: { step: 1, option: "Login" },
+            products: this.$store.state.cartAjax.gtm_product,
+          },
+        },
+      });
       return;
     }
 
