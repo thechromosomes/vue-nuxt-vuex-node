@@ -1,7 +1,8 @@
 export const state = () => ({
   list: {
+    firstgtm: true,
     search_input: "",
-    breadcrumb : '',
+    breadcrumb: "",
     page_error: "",
     service: "category",
     description: "",
@@ -179,8 +180,6 @@ export const mutations = {
       { code: "selling_price", dir: "asc", label: "Price Low to High" },
       { code: "selling_price", dir: "desc", label: "Price High to Low" },
       { code: "best_seller", dir: "asc", label: "Best Seller" },
-
-
     ];
 
     if (pageNo == 1) {
@@ -197,9 +196,7 @@ export const mutations = {
           state.list.page_error = "No product found";
         }
 
-        state.list.breadcrumb = JSON.parse(
-          data.result.breadcrumb
-        );
+        state.list.breadcrumb = JSON.parse(data.result.breadcrumb);
         state.list.description = data.result.description;
         state.list.meta_title = data.result.meta_title;
         state.list.meta_description = data.result.meta_description;
@@ -258,9 +255,7 @@ export const mutations = {
         }
         state.singleProductList.single_prod_data = data.result;
         // if (state.singleProductList.breadcrumb.length > 0) {
-          state.singleProductList.breadcrumb = JSON.parse(
-            data.result.breadcrumb
-          );
+        state.singleProductList.breadcrumb = JSON.parse(data.result.breadcrumb);
         // }
       } else {
         state.singleProductList.page_error = data.response.error_message;
@@ -340,6 +335,11 @@ export const mutations = {
     state.singleProductList.reviews_list = payload.reviews;
     state.singleProductList.total_review = payload.total_review;
     state.singleProductList.average_rating = payload.average_rating;
+  },
+
+  // first GTM state
+  firstgtmState(state) {
+    state.list.firstgtm = false;
   },
 
   // update device information

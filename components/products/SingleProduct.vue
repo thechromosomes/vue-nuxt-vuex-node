@@ -514,7 +514,10 @@
                 v-for="(recItem, recIndex) in recent_products"
                 :key="recIndex"
               >
-                <Nuxt-link :to="recItem.url_key">
+                <Nuxt-link
+                  :to="recItem.url_key"
+                  @click.native="gtm_product_clickr(recItem, recIndex)"
+                >
                   <div class="recomnded-wrap">
                     <div class="re-com-item">
                       <img :src="recItem.image" :alt="recItem.image" />
@@ -553,7 +556,10 @@
                   .recommended"
                 :key="recIndex"
               >
-                <Nuxt-link :to="recItem.url_key">
+                <Nuxt-link
+                  :to="recItem.url_key"
+                  @click.native="gtm_product_clickr(recItem, recIndex)"
+                >
                   <div class="recomnded-wrap">
                     <div class="re-com-item">
                       <img :src="recItem.image" :alt="recItem.image" />
@@ -889,6 +895,32 @@ export default {
       } else {
         document.body.classList.remove("remove-scrollBar");
       }
+    },
+
+    gtm_product_clickr(singleProd, prodIndex) {
+      this.$gtm.push({
+        event: "productClick",
+        action: "productClick",
+        category: singleProd.category,
+        label: "Recent product",
+        ecommerce: {
+          click: {
+            actionField: {
+              action: "click",
+              list: "Recent Product List",
+            },
+            products: [
+              {
+                name: singleProd.name,
+                id: singleProd.sku,
+                price: singleProd.price,
+                category: "Recent product",
+                position: prodIndex,
+              },
+            ],
+          },
+        },
+      });
     },
 
     sizecharts() {
@@ -1234,19 +1266,25 @@ export default {
           });
           if (response.response.success) {
             this.showFotter = true;
-            // if (response.result.sub_category == "FOOTWEAR") {
-            //   let sizeChartResponse = await this.$store.dispatch("pimAjax", {
-            //     method: "post",
-            //     url: `/pimresponse.php`,
-            //     params: {
-            //       service: "size_guide",
-            //       store,
-            //     },
-            //   });
-            //   if (sizeChartResponse.response.success) {
-            //     this.sizeChartData = sizeChartResponse.result;
-            //   }
-            // }
+            this.$gtm.push({
+              event: "ProductDetail",
+              action: "Product Detail",
+              category: this.singleProductList.single_prod_data.category,
+              ecommerce: {
+                detail: {
+                  products: [
+                    {
+                      name: this.singleProductList.single_prod_data.name,
+                      id: this.singleProductList.single_prod_data.sku,
+                      price:
+                        this.singleProductList.single_prod_data.selling_price,
+                      category:
+                        this.singleProductList.single_prod_data.category,
+                    },
+                  ],
+                },
+              },
+            });
           }
         } else {
           throw "no response from api";
@@ -1402,6 +1440,25 @@ export default {
       this.fetchRecentViews(recentV);
     }
     window.addEventListener("scroll", this.updateAddToCart);
+    if (this.singleProductList.single_prod_data.name) {
+      this.$gtm.push({
+        event: "ProductDetail",
+        action: "Product Detail",
+        category: this.singleProductList.single_prod_data.category,
+        ecommerce: {
+          detail: {
+            products: [
+              {
+                name: this.singleProductList.single_prod_data.name,
+                id: this.singleProductList.single_prod_data.sku,
+                price: this.singleProductList.single_prod_data.selling_price,
+                category: this.singleProductList.single_prod_data.category,
+              },
+            ],
+          },
+        },
+      });
+    }
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.updateAddToCart);

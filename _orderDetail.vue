@@ -82,7 +82,9 @@
                   <span
                     style="cursor: pointer"
                     @click="returnorder(items.bag_id, index)"
-                    v-else-if="items.return_item == 1 && items.bundle_set_id == null"
+                    v-else-if="
+                      items.return_item == 1 && items.bundle_set_id == null
+                    "
                     >Return</span
                   >
                   <span v-else> - </span>
@@ -191,18 +193,14 @@
                       style="font-size: 16px; line-height: 33px; height: auto"
                     >
                       <option value="">--Select Reason--</option>
-                      <option
-                        v-for="(reason, i) in reason"
-                        :value="i"
-                        :key="i"
-                      >
+                      <option v-for="(reason, i) in reason" :value="i" :key="i">
                         {{ reason.reason }}
                       </option>
                     </select>
                   </div>
 
                   <!-- cod form -->
-                  <template v-if="return_popup&&payment_method=='cod'">
+                  <template v-if="return_popup && payment_method == 'cod'">
                     <div class="field col-md-6 col-12 mt-3">
                       <input
                         type="text"
@@ -258,7 +256,7 @@
   </div>
 </template>
 <script>
-import axios from 'axios';
+import axios from "axios";
 import Sidebar from "@/components/my-account/Sidebar.vue";
 export default {
   components: {
@@ -423,7 +421,7 @@ export default {
     // order cancel follow function
     cancelThisOrder() {
       var form = {};
-      
+
       form.customer_id = this.$store.state.cartAjax.customer_id;
       form.customer_session = this.$store.state.cartAjax.customer_session;
       form.reason_id = this.reason[this.selected_reason].reason_id;
@@ -458,7 +456,8 @@ export default {
     returnThisOrder() {
       if (this.account_no == this.re_account_no) {
         if (this.ifsc_code != "") {
-          axios.get(`https://ifsc.razorpay.com/${this.ifsc_code}`)
+          axios
+            .get(`https://ifsc.razorpay.com/${this.ifsc_code}`)
             .then((response) => {
               this.bank_name = response.data.BANK;
               this.branch_name = response.data.BRANCH;
@@ -518,31 +517,36 @@ export default {
           });
       }
     },
-    cod_refund(){
-        var form = new FormData();
-        form.append("cart_id", this.cart_id);
-        form.append("account_holder", this.account_holder);
-        form.append("account_no",this.account_no);
-        form.append("bank_name", this.bank_name);
-        form.append("branch_name", this.branch_name);
-        form.append("ifsc_code", this.ifsc_code);
-        form.append("customer_id", this.$store.state.cartAjax.customer_id);
-        form.append("customer_session", this.$store.state.cartAjax.customer_session);
-        this.$store.dispatch("cartAjax/actCartAjax", {
-            method:'post',
-            token:this.$store.state.cartAjax.customer_token,
-            url:`/customer/cod-return`,
-            params:form
-        }).then(response => {
-           this.request_return();
-           this.account_holder='';
-           this.account_no='';
-           this.re_account_no='';
-           this.bank_name='';
-           this.branch_name='';
-           this.ifsc_code='';
+    cod_refund() {
+      var form = new FormData();
+      form.append("cart_id", this.cart_id);
+      form.append("account_holder", this.account_holder);
+      form.append("account_no", this.account_no);
+      form.append("bank_name", this.bank_name);
+      form.append("branch_name", this.branch_name);
+      form.append("ifsc_code", this.ifsc_code);
+      form.append("customer_id", this.$store.state.cartAjax.customer_id);
+      form.append(
+        "customer_session",
+        this.$store.state.cartAjax.customer_session
+      );
+      this.$store
+        .dispatch("cartAjax/actCartAjax", {
+          method: "post",
+          token: this.$store.state.cartAjax.customer_token,
+          url: `/customer/cod-return`,
+          params: form,
         })
-      }, 
+        .then((response) => {
+          this.request_return();
+          this.account_holder = "";
+          this.account_no = "";
+          this.re_account_no = "";
+          this.bank_name = "";
+          this.branch_name = "";
+          this.ifsc_code = "";
+        });
+    },
     returnorder(cart_id, v) {
       this.selected_bagId = cart_id;
       this.return_id = v;
@@ -552,7 +556,8 @@ export default {
       form.customer_session = this.$store.state.cartAjax.customer_session;
       form.action = "return";
       form.bag_id = cart_id;
-      this.$store.dispatch("cartAjax/actCartAjax", {
+      this.$store
+        .dispatch("cartAjax/actCartAjax", {
           method: "post",
           token: this.$store.state.cartAjax.customer_token,
           url: `/order/get-cancel-return-reasons`,
