@@ -8000,5 +8000,281 @@ a.membership_card_join_btn {
   margin: 20px 0;
 }
 
-.new_innovation .material_invo_item {
+/* product_compare */
+.product_compare {
+  width: 100%;
+  font-family: "proxima-nova-regular";
+}
+.continue-shopping-btn {
+  width: 100%;
+  margin: 10px 0;
+}
+.continue-shopping-btn a {
+  border: 1px solid black;
+  padding: 10px 30px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.continue-shopping-btn .error-left::before {
+  content: "←";
+  font-size: 15px;
+  margin-right: 5px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.continue-shopping-btn a:hover {
+  background: #e6e6e6;
+  color: #c41e3a;
+}
+.top_compare_title {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 30px 0;
+}
+.top_compare_title h4 {
+  width: 50%;
+  font-weight: 700;
+  font-size: 20px;
+}
+.top_compare_title .left {
+  width: 50%;
+  text-align: right;
+}
+.top_compare_title .left .ctnr-compare-email,
+.top_compare_title .left .ctnr-compare-print {
+  display: inline-block;
+  margin-right: 30px;
+  color: #666;
+  font-weight: 600;
+  font-size: 12px;
+}
+.top_compare_title .left .ctnr-compare-print {
+  margin: 0;
+}
+.top_compare_title .left .ctnr-compare-email .icon-email::before {
+  content: "\e81d";
+}
+.top_compare_title .left .ctnr-compare-print .icon-print::before {
+  content: "\e823";
+}
+.top_compare_title .left .ctnr-compare-print .icon-print,
+.top_compare_title .left .ctnr-compare-email .icon-email {
+  font-size: 15px;
+  margin-right: 2px;
+}
+.top_compare_title .left .ctnr-compare-email:hover .icon-email,
+.top_compare_title .left .ctnr-compare-email:hover a,
+.top_compare_title .left .ctnr-compare-print:hover a {
+  color: #c41e3a;
+  text-decoration: underline;
+}
+.product_compare .box-item {
+  width: 100%;
+  display: flex;
+  justify-self: flex-start;
+  align-items: baseline;
+  border: 1px solid #ebebeb;
+}
+.product_compare .box-item .product-item {
+  position: relative;
+  width: 33.33%;
+  padding: 30px 20px 24px;
+  border-right: 1px solid #ebebeb;
+  text-align: center;
+}
+.product_compare .compare_data {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.product_compare .compare_data .container {
+  max-width: 1000px;
+  margin: 0;
+  padding: 0;
+}
+.product_compare .box-item .product-item:last-child {
+  border: none;
+}
+.product_compare .box-item .product-item .color-blk {
+  margin-bottom: 20px;
+}
+.product-item .color-blk .color-options {
+  display: inline-block;
+}
+.product-item .color-blk .choose-colors {
+  padding: 0;
+  font-size: 0;
+  overflow: hidden;
+  height: auto;
+  width: 100%;
+  margin: 13px auto 0;
+}
+.product-item .color-blk .choose-colors li {
+  display: inline-block;
+  list-style: none;
+  margin-right: 8px;
+  border: 2px solid transparent;
+}
+.product-item .color-blk .choose-colors li a {
+  display: block;
+  height: 31px;
+  width: 31px;
+  background: #fff;
+  border: 2px solid #fff;
+}
+.product-item .color-blk .choose-colors li a img {
+  height: 27px;
+  width: 27px;
+  border: 0;
+}
+.product-item .color-blk .choose-colors li.selected {
+  border-color: #1f2428;
+}
+.product-item span {
+  font-weight: 400;
+  font-size: 10px;
+  color: #777;
+  padding-top: 3px;
+  letter-spacing: 0.5px;
+}
+.product-item .p-name {
+  color: #222;
+  padding-bottom: 0;
+  line-height: 14px;
+  text-transform: capitalize;
+  font-size: 13px;
+}
+.product-item .price {
+  color: #222;
+  margin-top: 20px;
+}
+.product-item .btn.btn-v-4 {
+  font-size: 13px;
+  font-weight: 600;
+  background-color: #c41e3a;
+  border: none;
+  color: #fff;
+  border-radius: 0;
+  padding: 8px 30px;
+}
+.product-item .product-style {
+  margin-top: 15px;
+  margin-bottom: 45px;
+  text-transform: uppercase;
+  color: #777;
+  font-size: 12px;
+}
+.product-item .product-style span {
+  font-size: 13px;
+}
+.product-item .closeicon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: #222;
+  color: #fff !important;
+  padding-top: 0;
+  cursor: pointer;
+}
+.product-item .closeicon .icon.icon-x {
+  color: #fff;
+}
+.product-item .closeicon:hover .icon.icon-x {
+  color: #c41e3a;
+}
+
+.box-item.fixedcompare {
+  position: fixed;
+  top: 50px;
+  z-index: 1;
+}
+.box-item.fixedcompare .product-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 25%;
+  background-color: #fff;
+}
+.box-item.fixedcompare .product-item .imgbox {
+  width: 40%;
+}
+.box-item.fixedcompare .product-item .pro_detail {
+  width: 60%;
+}
+.box-item.fixedcompare .product-item .product-style {
+  display: none;
+}
+.product_compare .box-item.fixedcompare .product-item .color-blk {
+  display: none;
+}
+
+.product_compare .compare_data_info {
+  margin-top: 300px;
+}
+.product_compare .compare_data_info .data-1 .table td,
+.product_compare .compare_data_info .data-1 .table th {
+  width: 25%;
+}
+.product_compare .compare_data_info .data-1 .table th {
+  text-align: right;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 13px;
+}
+.product_compare .compare_data_info .data-1 .table td {
+  text-align: center;
+  font-size: 13px;
+}
+.product_compare .compare_data_info .data-3 .table td,
+.product_compare .compare_data_info .data-3 .table th {
+  border-right: 1px solid #ddd;
+}
+.product_compare .compare_data_info .data-2 .feature-box {
+  width: 100%;
+  vertical-align: top;
+}
+.ctnr-feature-Icon {
+  text-align: center;
+}
+.product_compare .compare_data_info .data-2 .feature-box li {
+  padding: 0;
+  list-style: none;
+  float: right;
+  width: 32%;
+  text-transform: none;
+  font-weight: 400;
+  min-height: 105px;
+}
+.product_compare
+  .compare_data_info
+  .data-2
+  .feature-box
+  .ctnr-feature-Icon
+  li
+  .item-icon-img {
+  font-size: 35px !important;
+  margin: 0 !important;
+}
+.icon-tumiLightweight-lg:before,
+.tumi-icon-ft-lightweight:before {
+  content: "\2f";
+}
+.product_compare .compare_data_info .data-2 th {
+  vertical-align: middle;
+}
+.product_compare .compare_data_info .data-1_table th,
+.product_compare .compare_data_info .data-1_table td {
+  background: #ebebeb;
+  border-bottom: 1px solid #fff;
+}
+.product_compare
+  .compare_data_info
+  .data-1
+  .table-striped
+  tbody
+  tr:nth-of-type(2n + 1) {
+  background-color: rgb(235 235 235);
 }
