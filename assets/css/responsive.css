@@ -832,7 +832,7 @@
   }
   .wrapper .nav-links {
     position: fixed;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     max-width: 85%;
     top: 48px;
@@ -840,7 +840,7 @@
     background: #fff;
     display: block;
     padding: 0px;
-    line-height: 50px;
+    /* line-height: 50px; */
     overflow-y: auto;
     box-shadow: 1px 2px 5px #777;
     transition: all 0.3s ease;
@@ -1680,11 +1680,11 @@ top: 14px;
   .filter-product {
     left: 0;
     /* width: 59%; */
-    height: 100vh;
+    height: 100%;
     z-index: 99;
     display: block;
     overflow: auto;
-    top: unset;
+    top: 46px;
     position: fixed;
     background-color: #fff;
     padding-left: 0px;
@@ -1692,8 +1692,11 @@ top: 14px;
     box-shadow: 1px 4px 5px #777;
     background: #fff;
     padding-right: 0;
-    min-height: 1000px;
   }
+  .filter-pd-listing li .checkbox-wrap {
+    z-index: 1;
+  }
+
   .color-swatch li {
     display: none;
   }
@@ -1744,8 +1747,8 @@ top: 14px;
     font-size: 10px;
   }
   .filter-pd-listing li .checkmark {
-    height: 20px;
-    width: 20px;
+    height: 15px;
+    width: 15px;
   }
   .filter-overly-div {
     width: 100%;
@@ -1967,8 +1970,11 @@ top: 14px;
     font-size: 16px;
     font-weight: normal;
   }
+  .product-div-col {
+    padding-bottom: 0;
+  }
   .mobile-short-by:after {
-    background-image: url(~assets/images/down.png);
+    /* background-image: url(~assets/images/down.png);
     position: absolute;
     height: 20px;
     width: 20px;
@@ -1977,7 +1983,7 @@ top: 14px;
     top: 41%;
     background-size: 17px;
     background-repeat: no-repeat;
-    filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1); */
   }
   .pading-l-remove {
     padding-left: 0px;
@@ -2054,7 +2060,8 @@ top: 14px;
   .mobile-short-by .custon-select-list {
     display: block;
     position: absolute;
-    top: calc(100% - 264px);
+    /* top: calc(100% - 264px); */
+    bottom: 44px;
     padding-left: 10px;
     transition: all 0.8s ease;
   }
@@ -2855,6 +2862,33 @@ top: 14px;
   }
   .header.sticky.fixed .logo {
     width: 37% !important;
+  }
+  .option-con-wrap .quick-view-link {
+    padding: 8px 20px;
+    width: auto;
+  }
+  .option-con-wrap {
+    padding: 12px 10px 10px;
+  }
+  .product-div-col span {
+    padding-top: 10px;
+  }
+  .cm-list-box {
+    flex-wrap: wrap;
+  }
+  .product-div-col span.checkmark {
+    width: 10px;
+    height: 10px;
+  }
+  .wish-list-all-pd .empty-wish {
+    width: 10px;
+  }
+  .cm-list li:first-child {
+    font-size: 11px;
+    padding: 0 8px;
+  }
+  .cm-list .checkbox-wrap {
+    margin-bottom: 0;
   }
 }
 

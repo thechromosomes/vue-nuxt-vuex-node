@@ -3307,7 +3307,7 @@ label.cvform-lbl-checkbox:before {
 .pd-slider-itm .slick-slide img {
   display: block;
   width: 100% !important;
-  height: 260px;
+  /* height: 260px; */
   object-fit: contain;
 }
 
@@ -3443,6 +3443,7 @@ label.cvform-lbl-checkbox:before {
 .cm-list-box {
   display: flex;
   justify-content: flex-end;
+  align-items: baseline;
   width: 100%;
 }
 
@@ -3543,7 +3544,7 @@ label.cvform-lbl-checkbox:before {
 
 .single-img {
   width: 100%;
-  height: 260px;
+  /* height: 260px; */
 }
 
 .pd-img-box {
@@ -7954,4 +7955,10 @@ a.membership_card_join_btn {
   display: flex;
   justify-content: space-between;
   margin: 0 -10px;
+}
+.recomnded-wrap .slick-prev {
+  left: -5px;
+}
+.recomnded-wrap  .slick-next {
+  right: -5px;
 }
