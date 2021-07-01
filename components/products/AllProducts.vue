@@ -32,7 +32,7 @@
                   <span class="arrow-space"> > </span>
                 </span>
               </div>
-              <div class="carry-on-lagauge">
+              <!-- <div class="carry-on-lagauge">
                 <div
                   class="on-mob-toggle"
                   @click="() => (carryMenu = !carryMenu)"
@@ -48,84 +48,72 @@
                     Guide for size requirements by carrier.
                   </p>
                 </div>
-              </div>
+              </div> -->
             </div>
             <div class="col-sm-6 col-md-6 col-12">
               <div class="compare-div">
                 <strong class="proxima_semi-bold">Compare</strong>
                 <ul>
-                  <li>
-                    <div class="tool-tip-box">
+                  <li v-for="(cItem, cIndex) in 3" :key="cIndex">
+                    <div
+                      class="tool-tip-box"
+                      v-if="$store.state.compareItem[cIndex] != undefined"
+                    >
                       <div class="pos-relative">
                         <span class="cross-con"
                           ><i class="fa fa-times" aria-hidden="true"></i
                         ></span>
                         <div class="tolltip-left">
                           <img
-                            src="~/assets/images/all-pdp/tool-tip-img.jpg"
-                            alt
+                            :src="$store.state.compareItem[cIndex].image"
+                            alt="compare-image"
                           />
                         </div>
                         <div class="tolltip-right">
-                          <h6 class="proxima_bold">item 1</h6>
+                          <h6 class="proxima_bold">item {{ cIndex + 1 }}</h6>
                           <p>
-                            <a href class="proxima_regular"
-                              >International<br />
-                              Expandable 4 Wheeled <br />
-                              Carry-On</a
-                            >
+                            <a href class="proxima_regular">{{
+                              $store.state.compareItem[cIndex].name
+                            }}</a>
                           </p>
-                          <small class="proxima_regular proxima_regular"
-                            >Tumi max</small
+                          <small class="proxima_regular proxima_regular">{{
+                            $store.state.compareItem[cIndex].collection
+                          }}</small>
+                          <NuxtLink
+                            :to="`/product/${$store.state.compareItem[cIndex].url}`"
+                            class="extra-links proxima_regular"
+                            >Quick Buy</NuxtLink
                           >
-                          <a href="#" class="extra-links proxima_regular"
-                            >Quick Buy</a
-                          >
-                          <a href="#" class="extra-links proxima_regular"
+                          <a
+                            @click.prevent="
+                              addToCompare($store.state.compareItem[cIndex])
+                            "
+                            class="extra-links proxima_regular"
                             >Remove</a
                           >
                         </div>
                       </div>
                     </div>
-                    <img src="~/assets/images/all-pdp/compare-1.jpg" />
+                    <img
+                      v-if="$store.state.compareItem[cIndex] != undefined"
+                      :src="$store.state.compareItem[cIndex].image"
+                      alt
+                    />
+                    <img
+                      v-else
+                      src="~/assets/images/all-pdp/compare-gif.gif"
+                      alt
+                    />
                   </li>
-                  <li>
-                    <div class="tool-tip-box">
-                      <div class="pos-relative">
-                        <span class="cross-con"
-                          ><i class="fa fa-times" aria-hidden="true"></i
-                        ></span>
-                        <div class="tolltip-left">
-                          <img
-                            src="~/assets/images/all-pdp/tool-tip-img.jpg"
-                            alt
-                          />
-                        </div>
-                        <div class="tolltip-right">
-                          <h6 class="proxima_bold">item 1</h6>
-                          <p>
-                            <a href class="proxima_regular"
-                              >International<br />
-                              Expandable 4 Wheeled <br />
-                              Carry-On</a
-                            >
-                          </p>
-                          <small class="proxima_regular">Tumi max</small>
-                          <a href="#" class="extra-links proxima_regular"
-                            >Quick Buy</a
-                          >
-                          <a href="#" class="extra-links proxima_regular"
-                            >Remove</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <img src="~/assets/images/all-pdp/compare-2.jpg" />
-                  </li>
-                  <li><img src="~/assets/images/all-pdp/compare-gif.gif" /></li>
                 </ul>
-                <a href="#" class="cpmpare-link proxima_semi-bold"
+                <a
+                  href="#"
+                  v-if="$store.state.compareItem.length < 2"
+                  class="cpmpare-link proxima_semi-bold"
                   >Add 2 or 3 items</a
+                >
+                <a href="#" v-else class="cpmpare-link proxima_semi-bold"
+                  >compare</a
                 >
               </div>
             </div>
@@ -189,7 +177,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="option-select hide-mob">
+                <!-- <div class="option-select hide-mob">
                   <div class="select-erap">
                     <div class="select-view pieces-view">
                       <div class="select-custom proxima_regular">30 pieces</div>
@@ -202,8 +190,8 @@
                     <li><span class="proxima_regular">30 pieces</span></li>
                     <li><span class="proxima_regular"> all</span></li>
                   </ul>
-                </div>
-                <ul class="pagination-ul hide-mob">
+                </div> -->
+                <!-- <ul class="pagination-ul hide-mob">
                   <li>
                     <a href="#"
                       ><span
@@ -221,7 +209,7 @@
                       ></span
                     ></a>
                   </li>
-                </ul>
+                </ul> -->
               </div>
               <div
                 class="mobile-short-by"
@@ -336,9 +324,16 @@
                         {{ singleProd.promotional_tags }}
                       </li>
                       <li class="cm-list-box">
-                        <label class="checkbox-wrap proxima_regular"
+                        <label
+                          @click.prevent="addToCompare(singleProd)"
+                          class="checkbox-wrap proxima_regular"
                           >Comapre &nbsp;<input
                             type="checkbox"
+                            :checked="
+                              $store.state.compareItem.findIndex(
+                                (x) => x.sku === singleProd.sku
+                              ) >= 0
+                            "
                             class="check-box active"
                           />
                           <span class="checkmark"></span>
@@ -518,7 +513,6 @@ export default {
       activeDropdown: null,
       showFilter: true,
       carryMenu: false,
-
       sorting: { code: "default", dir: "desc" },
       activeColor: [],
       scrollPosition: "",
@@ -870,6 +864,32 @@ export default {
       } catch (error) {
         this.$globalError(`error from add addRemoveWishList >>>> ${error}`);
       }
+    },
+
+    addToCompare(singleProd) {
+      // let item = this.campareItem.findIndex(
+      //   (_item) => _item.name === singleProd.name
+      // );
+
+      // if (item > -1) {
+      //   this.campareItem.splice(item, 1);
+      // } else {
+      //   if (this.campareItem.length == 3) {
+      //     return;
+      //   }
+      //   let obj = {
+      //     name: singleProd.name,
+      //     sku: singleProd.sku,
+      //     image: singleProd.image,
+      //     collection: singleProd.collection,
+      //     url: singleProd.url_key,
+      //   };
+      //   this.campareItem.push(obj);
+      // }
+
+      this.$store.commit("toCompareItems", {
+        singleProd,
+      });
     },
 
     updateRecentView(singleProd, prodIndex) {
