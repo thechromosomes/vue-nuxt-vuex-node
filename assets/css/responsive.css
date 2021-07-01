@@ -393,7 +393,9 @@
   .clp-page-two-banner .baneer-content h2 {
     font-size: 31px;
   }
-
+  .box-item.fixedcompare {
+    top: 118px;
+  }
   /* ------------------------------- end ------------------ */
 }
 
@@ -511,6 +513,9 @@
   }
   .faq-wraper {
     width: 100%;
+  }
+  .product-item .btn.btn-v-4 {
+    padding: 8px 20px;
   }
 }
 
@@ -2893,6 +2898,9 @@ top: 14px;
   .cm-list .checkbox-wrap {
     margin-bottom: 0;
   }
+  .box-item.fixedcompare {
+    top: 47px;
+  }
 }
 
 /* ================ banner css================= */
@@ -2922,3 +2930,11 @@ top: 14px;
 }
 
 /* side cart page  */
+@media (max-width: 420px) {
+  .product_compare .compare_data .container {
+    padding: 0px !important;
+    max-width: 100%;
+  }
+  .box-item.fixedcompare {
+  }
+}

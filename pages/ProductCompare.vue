@@ -249,7 +249,7 @@
         </div>
 
         <div class="compare_data_info">
-          <div class="data-1 data-1_table">
+          <div class="data-1 data-1_table table-responsive">
             <table class="table table-striped m-0">
               <tbody>
                 <tr>
@@ -295,7 +295,7 @@
             </table>
           </div>
           <!-- data 2 -->
-          <div class="data-1 data-2">
+          <div class="data-1 data-2 table-responsive">
             <table class="table table-striped m-0 ">
               <tbody>
                 <tr>
@@ -387,7 +387,7 @@
           </div>
 
           <!-- table 3  -->
-          <div class="data-1 data-3">
+          <div class="data-1 data-3 table-responsive">
             <table class="table table-striped ">
               <tbody>
                 <tr>

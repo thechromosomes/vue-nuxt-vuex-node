@@ -8190,6 +8190,8 @@ a.membership_card_join_btn {
   position: fixed;
   top: 50px;
   z-index: 1;
+  right: 0;
+  justify-content: flex-end;
 }
 .box-item.fixedcompare .product-item {
   display: flex;
