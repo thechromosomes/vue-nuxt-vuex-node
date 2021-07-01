@@ -349,6 +349,9 @@
   .btn-collection {
     width: 28%;
   }
+  .box-item.fixedcompare {
+    top: 150px;
+  }
   /* -------------- end ---------- */
 }
 /*================= media qurey 1190px ===================*/

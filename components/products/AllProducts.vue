@@ -112,8 +112,8 @@
                   class="cpmpare-link proxima_semi-bold"
                   >Add 2 or 3 items</a
                 >
-                <a href="#" v-else class="cpmpare-link proxima_semi-bold"
-                  >compare</a
+                <nuxt-link to="/productcompare" v-else class="cpmpare-link proxima_semi-bold"
+                  >compare</nuxt-link
                 >
               </div>
             </div>
