@@ -13,7 +13,7 @@
           <div class="left">
             <div class="ctnr-compare-email">
               <span class="icon-email"></span
-              ><a id="mailToLink" href="#">mail result</a>
+              ><a id="mailToLink" href="mailto:demo@demo.com">mail result</a>
             </div>
             <div class="ctnr-compare-print">
               <a href="javascript:window.print();"
@@ -34,7 +34,7 @@
                 v-for="(item, index) in compareData"
                 :key="index"
               >
-                <div class="closeicon">
+                <div class="closeicon" @click="removeCompare(item, index)">
                   <span class="icon icon-x"></span>
                 </div>
                 <div class="imgbox">
@@ -78,7 +78,7 @@
             </div>
           </div>
         </div>
-
+        <!--
         <div class="compare_data_info">
           <div class="data-1 data-1_table">
             <table
@@ -101,7 +101,7 @@
                         {{ tData.value }}
                       </template>
                       <template v-else>
-                        dummy
+                        dummy {{comIndex}}
                       </template>
                     </td>
                   </template>
@@ -109,96 +109,7 @@
               </tbody>
             </table>
           </div>
-          <!-- data 2 -->
-          <!-- <div class="data-1 data-2">
-            <table class="table table-striped m-0">
-              <tbody>
-                <tr>
-                  <th scope="row">FEATURES</th>
-                  <td>N/A</td>
-                  <td>
-                    <div class="feature-box">
-                      <ul class="ctnr-feature-Icon removeFocusIndicator">
-                        <li>
-                          <span
-                            class="item-icon-img icon-tumiAirGradeAlHandle-lg"
-                          ></span
-                          ><br />
-                          Aircraft Grade Aluminum Extension Handle
-                        </li>
-                        <li>
-                          <span
-                            class="item-icon-img icon-tumiLightweight-lg"
-                          ></span
-                          ><br />
-                          Lightweight
-                        </li>
-                        <li class="removeFocusIndicator">
-                          <span
-                            class="item-icon-img icon-tumiOmegaClosure-lg"
-                          ></span
-                          ><br />
-                          Omega Closure System®
-                        </li>
-                        <li>
-                          <span class="item-icon-img icon-tumiTracer-lg"></span
-                          ><br />
-                          Tumi Tracer®
-                        </li>
-                        <li>
-                          <span
-                            class="item-icon-img icon-tumiXBrace45Handle-lg"
-                          ></span
-                          ><br />
-                          X-Brace 45® Handle System
-                        </li>
-                      </ul>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="feature-box">
-                      <ul class="ctnr-feature-Icon removeFocusIndicator">
-                        <li>
-                          <span
-                            class="item-icon-img icon-tumiAirGradeAlHandle-lg"
-                          ></span
-                          ><br />
-                          Aircraft Grade Aluminum Extension Handle
-                        </li>
-                        <li>
-                          <span
-                            class="item-icon-img icon-tumiLightweight-lg"
-                          ></span
-                          ><br />
-                          Lightweight
-                        </li>
-                        <li class="removeFocusIndicator">
-                          <span
-                            class="item-icon-img icon-tumiOmegaClosure-lg"
-                          ></span
-                          ><br />
-                          Omega Closure System®
-                        </li>
-                        <li>
-                          <span class="item-icon-img icon-tumiTracer-lg"></span
-                          ><br />
-                          Tumi Tracer®
-                        </li>
-                        <li>
-                          <span
-                            class="item-icon-img icon-tumiXBrace45Handle-lg"
-                          ></span
-                          ><br />
-                          X-Brace 45® Handle System
-                        </li>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div> -->
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -220,6 +131,14 @@ export default {
   methods: {
     updateScroll() {
       this.scrollPosition = window.scrollY;
+    },
+
+    removeCompare(singleProd, index) {
+      this.$store.commit("toCompareItems", {
+        singleProd
+      });
+
+      this.compareData.splice(index, 1);
     },
 
     updateViaColor(product, colorIndex, index) {
@@ -337,30 +256,33 @@ export default {
           });
         }
       }
+    }
+  },
+  watch: {
+    "$store.state.cartAjax.cart_page_message": function() {
+      if (
+        this.$store.state.cartAjax.cart_page_message != "" &&
+        this.$store.state.cartAjax.cart_page_message != null
+      ) {
+        this.$store.commit("cartAjax/showHideCart");
+      }
     },
-    watch: {
-      "$store.state.cartAjax.cart_page_message": function() {
-        if (
-          this.$store.state.cartAjax.cart_page_message != "" &&
-          this.$store.state.cartAjax.cart_page_message != null
-        ) {
-          // this.$toast.open(this.$store.state.cartAjax.cart_page_message);
-          // this.$store.commit("cartAjax/removePageMessage", {
-          //   data: ""
-          // });
-          this.$store.commit("cartAjax/showHideCart");
-        }
-      },
-      "$store.state.cartAjax.cart_page_erro_page": function() {
-        if (
-          this.$store.state.cartAjax.cart_page_error_message != "" &&
-          this.$store.state.cartAjax.cart_page_error_message != null
-        ) {
-          this.$toast.error(this.$store.state.cartAjax.cart_page_error_message);
-          this.$store.commit("cartAjax/removePageMessage", {
-            data: ""
-          });
-        }
+    "$store.state.cartAjax.cart_page_erro_page": function() {
+      if (
+        this.$store.state.cartAjax.cart_page_error_message != "" &&
+        this.$store.state.cartAjax.cart_page_error_message != null
+      ) {
+        this.$toast.error(this.$store.state.cartAjax.cart_page_error_message);
+        this.$store.commit("cartAjax/removePageMessage", {
+          data: ""
+        });
+      }
+    },
+
+    compareData: function() {
+      if (this.compareData.length <= 1) {
+        this.$router.back();
+        this.$router.push("/");
       }
     }
   },

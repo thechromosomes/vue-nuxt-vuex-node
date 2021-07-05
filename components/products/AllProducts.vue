@@ -32,23 +32,21 @@
                   <span class="arrow-space"> > </span>
                 </span>
               </div>
-              <!-- <div class="carry-on-lagauge">
+              <div class="carry-on-lagauge">
                 <div
                   class="on-mob-toggle"
+                  v-if="list.description"
                   @click="() => (carryMenu = !carryMenu)"
                   :class="{ carryMenu: carryMenu }"
                 >
                   <h4 class="proxima_regular">
-                    Carry On Luggage - Travel Rolling Luggage
+                    {{list.pageHead}}
                   </h4>
                   <p class="proxima_regular travl-light-onmob">
-                    Travel light with our collection of carry-on luggage.
-                    Perfectly fits in your flight's overhead or under the seat
-                    and meets all TSA guidelines. Please review Airline Carry-On
-                    Guide for size requirements by carrier.
+                   {{list.description}}
                   </p>
                 </div>
-              </div> -->
+              </div>
             </div>
             <div class="col-sm-6 col-md-6 col-12">
               <div class="compare-div">
@@ -874,26 +872,6 @@ export default {
     },
 
     addToCompare(singleProd) {
-      // let item = this.campareItem.findIndex(
-      //   (_item) => _item.name === singleProd.name
-      // );
-
-      // if (item > -1) {
-      //   this.campareItem.splice(item, 1);
-      // } else {
-      //   if (this.campareItem.length == 3) {
-      //     return;
-      //   }
-      //   let obj = {
-      //     name: singleProd.name,
-      //     sku: singleProd.sku,
-      //     image: singleProd.image,
-      //     collection: singleProd.collection,
-      //     url: singleProd.url_key,
-      //   };
-      //   this.campareItem.push(obj);
-      // }
-
       this.$store.commit("toCompareItems", {
         singleProd
       });
