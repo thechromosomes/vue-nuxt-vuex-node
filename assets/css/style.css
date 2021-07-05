@@ -2814,13 +2814,16 @@ label.cvform-lbl-checkbox:before {
 
 .compare-div ul li {
   display: inline-block;
+  margin-left: 13px;
+  position: relative;
+  cursor: pointer;
   width: 50px;
   height: 60px;
   padding: 4px;
   border: 1px solid #ccc;
-  margin-left: 13px;
-  position: relative;
-  cursor: pointer;
+}
+.compare-div ul li img.compare-image {
+  width: 100%;
 }
 
 .compare-div strong {
@@ -2836,7 +2839,12 @@ label.cvform-lbl-checkbox:before {
   padding-left: 10px;
   color: #777;
 }
-
+.compare-div .cpmpare-link.color {
+  text-decoration: underline;
+}
+.compare-div .cpmpare-link.color:hover {
+  color: #c41e3a;
+}
 .tool-tip-box {
   padding: 10px;
   border: 1px solid #c1c1c1;
@@ -2888,6 +2896,12 @@ label.cvform-lbl-checkbox:before {
 .tool-tip-box .pos-relative {
   display: flex;
   width: 100%;
+}
+.tool-tip-box .pos-relative .tolltip-right {
+  width: 60%;
+}
+.tool-tip-box .pos-relative .tolltip-left {
+  width: 40%;
 }
 
 .tool-tip-box .pos-relative span > i {
@@ -4483,7 +4497,8 @@ label.cvform-lbl-checkbox:before {
   float: left;
   padding-left: 0px;
   padding-right: 20px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
+  display: none;
 }
 .features-wrap .w-cap.featrures:nth-last-child(2) h4,
 .features-wrap .w-cap.featrures:last-child h4 {
@@ -4498,8 +4513,9 @@ label.cvform-lbl-checkbox:before {
   padding-left: 0px;
   border-left: 1px solid #eee;
   padding-left: 20px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   margin-bottom: 15px;
+  display: none;
 }
 
 .warnty-return ul {
@@ -8127,6 +8143,11 @@ a.membership_card_join_btn {
   background: #fff;
   border: 2px solid #fff;
 }
+.product-item .color-blk .choose-colors li span {
+  padding-top: 20px;
+  font-size: 14px;
+  display: block;
+}
 .product-item .color-blk .choose-colors li a img {
   height: 27px;
   width: 27px;
@@ -8193,6 +8214,8 @@ a.membership_card_join_btn {
   position: fixed;
   top: 50px;
   z-index: 1;
+  right: 0;
+  justify-content: flex-end;
 }
 .box-item.fixedcompare .product-item {
   display: flex;
@@ -8280,4 +8303,27 @@ a.membership_card_join_btn {
   tbody
   tr:nth-of-type(2n + 1) {
   background-color: rgb(235 235 235);
+}
+
+.interior-exterior {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.interior-exterior > .external_features {
+  width: 50%;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  margin-bottom: 10px;
+}
+.interior-exterior .external_features .exterior-feature-item h5 {
+  font-size: 12px;
+  font-family: "proxima-nova-bold";
+  text-transform: uppercase;
+  color: #858585;
+  margin-bottom: 10px;
+}
+.interior-exterior .external_features:last-child {
+  border-left: 1px solid #eee;
+  padding-left: 15px;
 }

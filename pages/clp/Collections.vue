@@ -5,7 +5,7 @@
       <img src="~assets/images/clp-page-two-banner.jpg" />
       <div class="baneer-content">
         <h2 class="proxima_bold">
-          Spring 2021 Collection <span>Breakdown</span>
+          Spring 2021 Collection <span >Breakdown</span>
         </h2>
         <p class="proxima_regular">
           From lightweight commute-friendly backpacks to luxurious leather

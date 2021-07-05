@@ -13,7 +13,7 @@
           <div class="left">
             <div class="ctnr-compare-email">
               <span class="icon-email"></span
-              ><a id="mailToLink" href="mailto:demo@demo.com" >mail result</a>
+              ><a id="mailToLink" href="mailto:demo@demo.com">mail result</a>
             </div>
             <div class="ctnr-compare-print">
               <a href="javascript:window.print();"
@@ -53,20 +53,19 @@
                   </p>
                   <div class="color-blk">
                     <div class="color-options">
-                      <ul class="no-list choose-colors">
-                       
+                      <ul class="no-list choose-colors selct-color">
                         <li
                           v-for="(color, colorIndex) in item.color_variation"
                           :key="colorIndex"
                           :class="[
-                            color.color == item.color ? 'border-color-dyn' : '',
+                            color.color == item.color ? 'border-color-dyn' : ''
                           ]"
                         >
                           <span
                             style="cursor: pointer"
                             :style="getHexColor(color.color, index, item.color)"
                             @click="updateViaColor(color, colorIndex, index)"
-                          >{{color.color}}</span>
+                          ></span>
                         </li>
                       </ul>
                     </div>
@@ -79,7 +78,7 @@
             </div>
           </div>
         </div>
-        <!-- 
+        <!--
         <div class="compare_data_info">
           <div class="data-1 data-1_table">
             <table
@@ -123,7 +122,7 @@ export default {
   data() {
     return {
       scrollPosition: null,
-      compareData: [],
+      compareData: []
     };
   },
   async mounted() {
@@ -136,7 +135,7 @@ export default {
 
     removeCompare(singleProd, index) {
       this.$store.commit("toCompareItems", {
-        singleProd,
+        singleProd
       });
 
       this.compareData.splice(index, 1);
@@ -170,12 +169,12 @@ export default {
       let form = {
         service: "compare",
         store: 1,
-        sku: Object.values(sku).join(","),
+        sku: Object.values(sku).join(",")
       };
       var response = await this.$store.dispatch("pimAjax", {
         method: "get",
         url: `/pimresponse.php`,
-        params: form,
+        params: form
       });
       if (response.response.success) {
         this.compareData = response.result;
@@ -237,13 +236,13 @@ export default {
           method: "post",
           url: urlHolder,
           params: form,
-          token: tokenholder,
+          token: tokenholder
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
             vm: this,
-            data: response,
+            data: response
           });
         } else {
           throw "no response from api";
@@ -253,15 +252,14 @@ export default {
 
         if (error.message === "Network Error") {
           this.$store.commit("updateSingleProdState", {
-            error:
-              "Oops there seems to be some Network issue, please try again",
+            error: "Oops there seems to be some Network issue, please try again"
           });
         }
       }
-    },
+    }
   },
   watch: {
-    "$store.state.cartAjax.cart_page_message": function () {
+    "$store.state.cartAjax.cart_page_message": function() {
       if (
         this.$store.state.cartAjax.cart_page_message != "" &&
         this.$store.state.cartAjax.cart_page_message != null
@@ -269,27 +267,27 @@ export default {
         this.$store.commit("cartAjax/showHideCart");
       }
     },
-    "$store.state.cartAjax.cart_page_erro_page": function () {
+    "$store.state.cartAjax.cart_page_erro_page": function() {
       if (
         this.$store.state.cartAjax.cart_page_error_message != "" &&
         this.$store.state.cartAjax.cart_page_error_message != null
       ) {
         this.$toast.error(this.$store.state.cartAjax.cart_page_error_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: "",
+          data: ""
         });
       }
     },
 
-    compareData: function () {
+    compareData: function() {
       if (this.compareData.length <= 1) {
         this.$router.back();
         this.$router.push("/");
       }
-    },
+    }
   },
   created() {
     this.getProduct();
-  },
+  }
 };
 </script>
