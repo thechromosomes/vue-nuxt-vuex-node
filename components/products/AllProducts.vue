@@ -32,7 +32,7 @@
                   <span class="arrow-space"> > </span>
                 </span>
               </div>
-              <div class="carry-on-lagauge">
+              <!-- <div class="carry-on-lagauge">
                 <div
                   class="on-mob-toggle"
                   @click="() => (carryMenu = !carryMenu)"
@@ -48,84 +48,77 @@
                     Guide for size requirements by carrier.
                   </p>
                 </div>
-              </div>
+              </div> -->
             </div>
             <div class="col-sm-6 col-md-6 col-12">
               <div class="compare-div">
                 <strong class="proxima_semi-bold">Compare</strong>
                 <ul>
-                  <li>
-                    <div class="tool-tip-box">
+                  <li v-for="(cItem, cIndex) in 3" :key="cIndex">
+                    <div
+                      class="tool-tip-box"
+                      v-if="$store.state.compareItem[cIndex] != undefined"
+                    >
                       <div class="pos-relative">
                         <span class="cross-con"
                           ><i class="fa fa-times" aria-hidden="true"></i
                         ></span>
                         <div class="tolltip-left">
                           <img
-                            src="~/assets/images/all-pdp/tool-tip-img.jpg"
-                            alt
+                            :src="$store.state.compareItem[cIndex].image"
+                            alt="compare-image"
                           />
                         </div>
                         <div class="tolltip-right">
-                          <h6 class="proxima_bold">item 1</h6>
+                          <h6 class="proxima_bold">item {{ cIndex + 1 }}</h6>
                           <p>
-                            <a href class="proxima_regular"
-                              >International<br />
-                              Expandable 4 Wheeled <br />
-                              Carry-On</a
-                            >
+                            <a href class="proxima_regular">{{
+                              $store.state.compareItem[cIndex].name
+                            }}</a>
                           </p>
-                          <small class="proxima_regular proxima_regular"
-                            >Tumi max</small
+                          <small class="proxima_regular proxima_regular">{{
+                            $store.state.compareItem[cIndex].collection
+                          }}</small>
+                          <NuxtLink
+                            :to="
+                              `/product/${$store.state.compareItem[cIndex].url}`
+                            "
+                            class="extra-links proxima_regular"
+                            >Quick Buy</NuxtLink
                           >
-                          <a href="#" class="extra-links proxima_regular"
-                            >Quick Buy</a
-                          >
-                          <a href="#" class="extra-links proxima_regular"
+                          <a
+                            @click.prevent="
+                              addToCompare($store.state.compareItem[cIndex])
+                            "
+                            class="extra-links proxima_regular"
                             >Remove</a
                           >
                         </div>
                       </div>
                     </div>
-                    <img src="~/assets/images/all-pdp/compare-1.jpg" />
+                    <img
+                      v-if="$store.state.compareItem[cIndex] != undefined"
+                      :src="$store.state.compareItem[cIndex].image"
+                      class="compare-image"
+                    />
+                    <img
+                      v-else
+                      src="~/assets/images/all-pdp/compare-gif.gif"
+                      class="compare-image"
+                    />
                   </li>
-                  <li>
-                    <div class="tool-tip-box">
-                      <div class="pos-relative">
-                        <span class="cross-con"
-                          ><i class="fa fa-times" aria-hidden="true"></i
-                        ></span>
-                        <div class="tolltip-left">
-                          <img
-                            src="~/assets/images/all-pdp/tool-tip-img.jpg"
-                            alt
-                          />
-                        </div>
-                        <div class="tolltip-right">
-                          <h6 class="proxima_bold">item 1</h6>
-                          <p>
-                            <a href class="proxima_regular"
-                              >International<br />
-                              Expandable 4 Wheeled <br />
-                              Carry-On</a
-                            >
-                          </p>
-                          <small class="proxima_regular">Tumi max</small>
-                          <a href="#" class="extra-links proxima_regular"
-                            >Quick Buy</a
-                          >
-                          <a href="#" class="extra-links proxima_regular"
-                            >Remove</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <img src="~/assets/images/all-pdp/compare-2.jpg" />
-                  </li>
-                  <li><img src="~/assets/images/all-pdp/compare-gif.gif" /></li>
                 </ul>
-                <a href="#" class="cpmpare-link proxima_semi-bold"
+                <a
+                  href="#"
+                  v-if="$store.state.compareItem.length < 2"
+                  class="cpmpare-link proxima_semi-bold"
                   >Add 2 or 3 items</a
+                >
+                <nuxt-link
+                  to="/productcompare"
+                  v-else
+                  class="cpmpare-link color proxima_semi-bold"
+                  >Compare now</nuxt-link
                 >
               </div>
             </div>
@@ -189,7 +182,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="option-select hide-mob">
+                <!-- <div class="option-select hide-mob">
                   <div class="select-erap">
                     <div class="select-view pieces-view">
                       <div class="select-custom proxima_regular">30 pieces</div>
@@ -202,8 +195,8 @@
                     <li><span class="proxima_regular">30 pieces</span></li>
                     <li><span class="proxima_regular"> all</span></li>
                   </ul>
-                </div>
-                <ul class="pagination-ul hide-mob">
+                </div> -->
+                <!-- <ul class="pagination-ul hide-mob">
                   <li>
                     <a href="#"
                       ><span
@@ -221,7 +214,7 @@
                       ></span
                     ></a>
                   </li>
-                </ul>
+                </ul> -->
               </div>
               <div
                 class="mobile-short-by"
@@ -287,8 +280,7 @@
                                 type="checkbox"
                                 :checked="
                                   list.applied_filters.findIndex(
-                                    (x) =>
-                                      x === `${item.code}~${item.value_key}`
+                                    x => x === `${item.code}~${item.value_key}`
                                   ) >= 0
                                 "
                               />
@@ -329,16 +321,23 @@
                       <li
                         v-show="
                           singleProd.promotional_tags != null &&
-                          singleProd.promotional_tags != ''
+                            singleProd.promotional_tags != ''
                         "
                         class="proxima_regular"
                       >
                         {{ singleProd.promotional_tags }}
                       </li>
                       <li class="cm-list-box">
-                        <label class="checkbox-wrap proxima_regular"
+                        <label
+                          @click.prevent="addToCompare(singleProd)"
+                          class="checkbox-wrap proxima_regular"
                           >Comapre &nbsp;<input
                             type="checkbox"
+                            :checked="
+                              $store.state.compareItem.findIndex(
+                                x => x.sku === singleProd.sku
+                              ) >= 0
+                            "
                             class="check-box active"
                           />
                           <span class="checkmark"></span>
@@ -415,14 +414,13 @@
                     <div class="color-option">
                       <ul class="selct-color">
                         <li
-                          v-for="(
-                            color, colorIndex
-                          ) in singleProd.color_variation"
+                          v-for="(color,
+                          colorIndex) in singleProd.color_variation"
                           :key="colorIndex"
                           :class="[
                             color.color == singleProd.color
                               ? 'border-color-dyn'
-                              : '',
+                              : ''
                           ]"
                         >
                           <!-- <img src="~/assets/images/all-pdp/color-1.jpg" /> -->
@@ -490,7 +488,7 @@
                 class="no_products text-center"
                 v-if="
                   list.Product_list.length == 0 &&
-                  $store.state.pageLoader == false
+                    $store.state.pageLoader == false
                 "
               >
                 <h1 class="proxima_bold">Sorry !</h1>
@@ -511,14 +509,13 @@ import VueSlickCarousel from "vue-slick-carousel";
 
 export default {
   components: {
-    VueSlickCarousel,
+    VueSlickCarousel
   },
   data() {
     return {
       activeDropdown: null,
       showFilter: true,
       carryMenu: false,
-
       sorting: { code: "default", dir: "desc" },
       activeColor: [],
       scrollPosition: "",
@@ -543,8 +540,8 @@ export default {
               slidesToShow: 1,
               slidesToScroll: 1,
 
-              centerMode: false,
-            },
+              centerMode: false
+            }
           },
           {
             breakpoint: 600,
@@ -553,8 +550,8 @@ export default {
               slidesToScroll: 1,
               initialSlide: 2,
               centerMode: false,
-              centerPadding: "100px",
-            },
+              centerPadding: "100px"
+            }
           },
           {
             breakpoint: 480,
@@ -562,11 +559,11 @@ export default {
               slidesToShow: 1,
               slidesToScroll: 1,
               centerMode: false,
-              centerPadding: "0px",
-            },
-          },
-        ],
-      },
+              centerPadding: "0px"
+            }
+          }
+        ]
+      }
     };
   },
 
@@ -577,29 +574,29 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: this.list.meta_description,
+          content: this.list.meta_description
         },
         {
           hid: "keyword",
           name: "keyword",
-          content: this.list.meta_keyword,
+          content: this.list.meta_keyword
         },
         {
           hid: "og:title",
           content: this.title,
-          property: "og:title",
+          property: "og:title"
         },
         {
           hid: "og:description",
           content: this.description,
-          property: "og:description",
+          property: "og:description"
         },
         {
           hid: "og:url",
           content: this.url,
-          property: "og:url",
-        },
-      ],
+          property: "og:url"
+        }
+      ]
     };
   },
   methods: {
@@ -611,8 +608,8 @@ export default {
         category: this.list.pageHead,
         ecommerce: {
           currencyCode: "INR",
-          impressions: this.gtm_product_impressions,
-        },
+          impressions: this.gtm_product_impressions
+        }
       });
     },
     // toggle filter droopdown
@@ -630,10 +627,15 @@ export default {
       try {
         await this.$store.commit("prepareState", {
           routeParam: this.$route.params.productCategory,
-          pageNo: pageNumber,
+          pageNo: pageNumber
         });
-        let { service, store, pass_url_key, page, count } =
-          this.$store.state.list;
+        let {
+          service,
+          store,
+          pass_url_key,
+          page,
+          count
+        } = this.$store.state.list;
 
         let form = {};
         form.service = service;
@@ -663,13 +665,13 @@ export default {
         let response = await this.$store.dispatch("pimAjax", {
           method: "post",
           url: `/pimresponse.php`,
-          params: form,
+          params: form
         });
 
         if (response) {
           await this.$store.commit("updateState", {
             error: null,
-            data: response,
+            data: response
           });
           // google tag manager
           this.gtm_product_impressions = [];
@@ -692,7 +694,7 @@ export default {
                 category,
                 list,
                 position,
-                appliedFilter,
+                appliedFilter
               });
             }
             this.$gtm.push({
@@ -702,8 +704,8 @@ export default {
               category: response.result.products[0].category,
               ecommerce: {
                 currencyCode: "INR",
-                impressions: this.gtm_product_impressions,
-              },
+                impressions: this.gtm_product_impressions
+              }
             });
           }
           if (process.browser && pageNumber == 1) {
@@ -716,8 +718,7 @@ export default {
         this.$globalError(`error from all product page >>>> ${error}`);
         if (error.message === "Network Error") {
           this.$store.commit("updateState", {
-            error:
-              "Oops there seems to be some Network issue, please try again",
+            error: "Oops there seems to be some Network issue, please try again"
           });
         }
       }
@@ -738,8 +739,8 @@ export default {
         query: {
           ...this.$route.query,
           sort: event.code,
-          sort_dir: event.dir,
-        },
+          sort_dir: event.dir
+        }
       });
 
       this.sorting.code = event.label;
@@ -759,7 +760,7 @@ export default {
       if (window.scrollY >= loader_position - 1000) {
         await this.$store.commit("universalListMutate", {
           data: Number(this.list.page) + 1,
-          changeState: "page",
+          changeState: "page"
         });
         if (
           this.list.page <= this.list.total_page &&
@@ -781,7 +782,7 @@ export default {
     updateViaColor(product, colorIndex, index) {
       this.$store.commit("updateProductColor", {
         product,
-        index,
+        index
       });
     },
 
@@ -794,10 +795,10 @@ export default {
       if (Object.keys(wishList).length != 0) {
         const groupResult = wishList.group
           .split(",")
-          .filter((word) => word == groupId);
+          .filter(word => word == groupId);
         const productResult = wishList.product
           .split(",")
-          .filter((word) => word == ProductId);
+          .filter(word => word == ProductId);
 
         if (groupResult.length > 0 && productResult.length > 0) {
           return "wishlist-active";
@@ -820,7 +821,7 @@ export default {
           product_id: item.id_product,
           customer_id: this.$store.state.cartAjax.customer_id,
           customer_session: this.$store.state.cartAjax.customer_session,
-          group_id: item.group_id,
+          group_id: item.group_id
         };
 
         if (data === "add") {
@@ -828,21 +829,21 @@ export default {
             method: "post",
             url: `/wishlist/add-wishlist`,
             token: this.$store.state.cartAjax.customer_token,
-            params: form,
+            params: form
           });
         } else {
           var response = await this.$store.dispatch("cartAjax/actCartAjax", {
             method: "post",
             url: `/wishlist/remove-wishlist`,
             token: this.$store.state.cartAjax.customer_token,
-            params: form,
+            params: form
           });
         }
 
         if (response.success) {
           this.$toast.open(response.message);
           this.$store.commit("cartAjax/updateWishList", {
-            payload: response.data,
+            payload: response.data
           });
 
           this.$gtm.push({
@@ -858,11 +859,11 @@ export default {
                     id: item.sku,
                     price: item.selling_price,
                     category: item.category,
-                    position: 1,
-                  },
-                ],
-              },
-            },
+                    position: 1
+                  }
+                ]
+              }
+            }
           });
         } else {
           throw "no response from api";
@@ -870,6 +871,32 @@ export default {
       } catch (error) {
         this.$globalError(`error from add addRemoveWishList >>>> ${error}`);
       }
+    },
+
+    addToCompare(singleProd) {
+      // let item = this.campareItem.findIndex(
+      //   (_item) => _item.name === singleProd.name
+      // );
+
+      // if (item > -1) {
+      //   this.campareItem.splice(item, 1);
+      // } else {
+      //   if (this.campareItem.length == 3) {
+      //     return;
+      //   }
+      //   let obj = {
+      //     name: singleProd.name,
+      //     sku: singleProd.sku,
+      //     image: singleProd.image,
+      //     collection: singleProd.collection,
+      //     url: singleProd.url_key,
+      //   };
+      //   this.campareItem.push(obj);
+      // }
+
+      this.$store.commit("toCompareItems", {
+        singleProd
+      });
     },
 
     updateRecentView(singleProd, prodIndex) {
@@ -892,7 +919,7 @@ export default {
           click: {
             actionField: {
               action: "click",
-              list: "list",
+              list: "list"
             },
             products: [
               {
@@ -900,18 +927,18 @@ export default {
                 id: singleProd.sku,
                 price: singleProd.price,
                 category: singleProd.category,
-                position: prodIndex,
-              },
-            ],
-          },
-        },
+                position: prodIndex
+              }
+            ]
+          }
+        }
       });
     },
 
     // scroll to top
     scrollToTop() {
       window.scrollTo({ top: 0, behavior: "smooth" });
-    },
+    }
   },
 
   computed: {
@@ -934,7 +961,7 @@ export default {
     },
     url() {
       return this.$store.state.BASE_URL + this.$route.fullPath;
-    },
+    }
   },
 
   async fetch() {
@@ -948,9 +975,9 @@ export default {
   },
 
   watch: {
-    "$route.query": function () {
+    "$route.query": function() {
       this.getProductList();
-    },
+    }
 
     // "$store.state.list.sortingData": {
     //   deep: true,
@@ -971,7 +998,7 @@ export default {
       this.servergtm();
     }
     this.$store.commit("firstgtmState");
-  },
+  }
 };
 </script>
 

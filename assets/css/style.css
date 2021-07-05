@@ -2814,13 +2814,16 @@ label.cvform-lbl-checkbox:before {
 
 .compare-div ul li {
   display: inline-block;
+  margin-left: 13px;
+  position: relative;
+  cursor: pointer;
   width: 50px;
   height: 60px;
   padding: 4px;
   border: 1px solid #ccc;
-  margin-left: 13px;
-  position: relative;
-  cursor: pointer;
+}
+.compare-div ul li img.compare-image {
+  width: 100%;
 }
 
 .compare-div strong {
@@ -2836,7 +2839,12 @@ label.cvform-lbl-checkbox:before {
   padding-left: 10px;
   color: #777;
 }
-
+.compare-div .cpmpare-link.color {
+  text-decoration: underline;
+}
+.compare-div .cpmpare-link.color:hover {
+  color: #c41e3a;
+}
 .tool-tip-box {
   padding: 10px;
   border: 1px solid #c1c1c1;
@@ -2888,6 +2896,12 @@ label.cvform-lbl-checkbox:before {
 .tool-tip-box .pos-relative {
   display: flex;
   width: 100%;
+}
+.tool-tip-box .pos-relative .tolltip-right {
+  width: 60%;
+}
+.tool-tip-box .pos-relative .tolltip-left {
+  width: 40%;
 }
 
 .tool-tip-box .pos-relative span > i {
@@ -8000,6 +8014,9 @@ a.membership_card_join_btn {
   margin: 20px 0;
 }
 
+.accordion-section.active .accordion-section-content {
+  display: block;
+}
 /* product_compare */
 .product_compare {
   width: 100%;
@@ -8123,6 +8140,11 @@ a.membership_card_join_btn {
   width: 31px;
   background: #fff;
   border: 2px solid #fff;
+}
+.product-item .color-blk .choose-colors li span {
+  padding-top: 20px;
+  font-size: 14px;
+  display: block;
 }
 .product-item .color-blk .choose-colors li a img {
   height: 27px;

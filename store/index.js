@@ -50,6 +50,7 @@ export const state = () => ({
   bestSellerWomen: [],
   bestSellerMan: [],
   bannerData: [],
+  compareItem: [],
 });
 
 export const actions = {
@@ -135,6 +136,28 @@ export const mutations = {
     state.header = data;
   },
 
+  // to compare item
+  toCompareItems(state, data) {
+    let item = state.compareItem.findIndex(
+      (_item) => _item.sku === data.singleProd.sku
+    );
+
+    if (item > -1) {
+      state.compareItem.splice(item, 1);
+    } else {
+      if (state.compareItem.length == 3) {
+        return;
+      }
+      let obj = {
+        name: data.singleProd.name,
+        sku: data.singleProd.sku,
+        image: data.singleProd.image,
+        collection: data.singleProd.collection,
+        url: data.singleProd.url_key,
+      };
+      state.compareItem.push(obj);
+    }
+  },
   // get cms data for the home page
   setCmsData(state, cmsData) {
     try {
