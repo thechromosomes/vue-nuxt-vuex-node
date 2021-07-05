@@ -75,6 +75,18 @@
                   </button>
                 </div>
               </div>
+              <div class="product-item" v-if="compareData.length === 2">
+                <div class="product-item_empty">
+                  <img
+                    src="~/assets/images/all-pdp/compare-gif.gif"
+                    alt="img"
+                  />
+                  <p>
+                    Use our recommendations to complete your comparison
+                  </p>
+                  <span class="icon-arrow-down">&#x2193;</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

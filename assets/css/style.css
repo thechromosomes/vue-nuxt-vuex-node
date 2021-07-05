@@ -2811,9 +2811,12 @@ label.cvform-lbl-checkbox:before {
   justify-content: flex-end;
   align-items: center;
 }
-
+.compare-div ul {
+  display: inline-flex;
+  justify-content: flex-start;
+}
 .compare-div ul li {
-  display: inline-block;
+  /* display: inline-block; */
   margin-left: 13px;
   position: relative;
   cursor: pointer;
@@ -2852,7 +2855,7 @@ label.cvform-lbl-checkbox:before {
   position: absolute;
   display: flex;
   left: calc(100% - 147px);
-  top: -146px;
+  top: -140px;
   z-index: 999;
   background-color: #fff;
 }
@@ -8326,4 +8329,20 @@ a.membership_card_join_btn {
 .interior-exterior .external_features:last-child {
   border-left: 1px solid #eee;
   padding-left: 15px;
+}
+
+.box-item .product-item_empty {
+  border: 1px dashed #ccc;
+  padding: 37px 5%;
+  margin-bottom: 22px;
+}
+
+.box-item.fixedcompare .product-item_empty {
+  padding: 26px 5%;
+  margin: 0;
+}
+.box-item.fixedcompare .product-item_empty .icon-arrow-down {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
 }
