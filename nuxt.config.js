@@ -39,8 +39,8 @@ export default {
 
   plugins: [
     { src: "@/plugins/globalErrorHandler" },
-    { src: "@plugins/fetchCookies", mode: "client" },
     { src: "@/plugins/tokenAndCms.js" },
+    { src: "@plugins/fetchCookies", mode: "client" },
     { src: "@/plugins/custom.js", mode: "client" },
     "@/plugins/element-ui",
     "@/plugins/loading-placeHolder",

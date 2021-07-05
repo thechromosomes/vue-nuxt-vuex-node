@@ -1,239 +1,25 @@
 <template>
   <div>
+     <client-only>
     <section class="hero-area" v-if="bannerData.length > 0">
       <div class="herocrousal">
         <VueSlickCarousel v-bind="settings">
-          <!-- <div v-for="(item, index) in bannerData" :key="index">
-            <img  :src="item.desktop_image" alt="" class="hide-mob" />
-            <img
-             :src="item.mobile_image"
-              alt=""
-              class="show-mob"
-            />
-            <div v-html="item.description" >
-              <div>
-
-              </div>
-            </div>
-          </div> -->
-
-          <div>
-            <img src="~/assets/images/banner1.jpg" alt="" class="hide-mob" />
-            <img
-              src="~/assets/images/banner-mob-1.jpg"
-              alt=""
-              class="show-mob"
-            />
-            <div class="crousal-text">
-              <h3 class="proxima_light">PERFORAMANCE WITH PURPOSE</h3>
-              <img src="~/assets/images/banner-sub-img.png" alt="" />
-              <a href="#" class="btn-fill proxima_regular"
-                >Shop The Collection</a
-              >
-            </div>
-          </div>
-          <div>
-            <img src="~/assets/images/banner2.jpg" alt="" class="hide-mob" />
-            <img
-              src="~/assets/images/banner-mob-2.jpg"
-              alt=""
-              class="show-mob"
-            />
-            <div class="white-text-box">
-              <h2 class="proxima_regular">
-                EXPLORE THE TUMI <span></span> VIRTUAL EXPERIENCE
-              </h2>
-              <a href="#" class="text-center learn-more proxima_regular"
-                >Learn More</a
-              >
-              <img
-                src="~/assets/images/gif-img.GIF"
-                alt=""
-                class="gif-img hide-mob"
-              />
-              <img
-                src="~/assets/images/gif-img-mob.GIF"
-                alt=""
-                class="gif-img show-mob"
-              />
+          <div v-for="(item, index) in bannerData" :key="index">
+            <img :src="item.desktop_image" alt="" class="hide-mob" />
+            <img :src="item.mobile_image" alt="" class="show-mob" />
+            <div v-html="item.description">
+              <div></div>
             </div>
           </div>
         </VueSlickCarousel>
       </div>
     </section>
+     </client-only>
     <!-- ============================ SHOP BY CATEGORY =============== -->
     <div v-if="Object.keys(homePageData).length != 0">
       <span v-html="homePageData.content"></span>
     </div>
 
-    <!-- ================================ WATCH THE WORLD OF TUMI on dekshtop ====================== -->
-    <!-- <section class="watch-world hide-mob">
-      <div class="container">
-        <div class="heding-with-line">
-          <div class="tm-title__line"></div>
-          <h2 class="main-heading proxima_bold">WATCH THE WORLD OF TUMI</h2>
-          <div class="tm-title__line"></div>
-        </div>
-      </div>
-      <div class="videos-sec">
-        <ul class="video-play-list">
-          <li>
-            <div class="pos-relative">
-              <a href="#">
-                <img src="~/assets/images/video-1.jpg" alt="" />
-                <div class="playicon tm-icon__play">
-                  <i class=" " aria-hidden="true"
-                    ><img src="~/assets/images/play-icon.png"
-                  /></i>
-                </div>
-              </a>
-            </div>
-            <h4 class="text-red">
-              <a href="#" class="text-red proxima_regular"
-                >19 DEGREE ALUMINUM
-              </a>
-            </h4>
-            <h3 id="video1SubTitle_TXT" class="tm-h3">
-              <a href="#" class="proxima_regular">An Evolution In Travel</a>
-            </h3>
-            <a href="" class="button-link proxima_bold">Explore more</a>
-          </li>
-          <li>
-            <div class="pos-relative">
-              <a href="#">
-                <img src="~/assets/images/video-2.jpg" alt="" />
-                <div class="playicon tm-icon__play">
-                  <i class=" " aria-hidden="true"
-                    ><img src="~/assets/images/play-icon.png"
-                  /></i>
-                </div>
-              </a>
-            </div>
-            <h4 class="text-red">
-              <a href="#" class="text-red proxima_regular"
-                >TUMI | McLaren Collection</a
-              >
-            </h4>
-            <h3 id="" class="tm-h3">
-              <a href="#" class="proxima_regular">PERFORAMANCE WITH PURPOSE</a>
-            </h3>
-            <a href="" class="button-link proxima_bold">Explore more</a>
-          </li>
-          <li>
-            <div class="pos-relative">
-              <a href="#">
-                <img src="~/assets/images/video-3.jpg" alt="" />
-                <div class="playicon tm-icon__play">
-                  <i class=" " aria-hidden="true"
-                    ><img src="~/assets/images/play-icon.png"
-                  /></i>
-                </div>
-              </a>
-            </div>
-            <h4 class="text-red">
-              <a href="#" class="text-red proxima_regular">SS2021 Newness</a>
-            </h4>
-            <h3 id="" class="tm-h3">
-              <a href="#" class="proxima_regular"
-                >Daniel Henney x Spring 2021 Newness</a
-              >
-            </h3>
-            <a href="" class="button-link proxima_bold">Explore more</a>
-          </li>
-        </ul>
-      </div>
-    </section> -->
-    <!-- ================================ WATCH THE WORLD OF TUMI show on mobile ====================== -->
-    <!-- <section class="watch-world watch-world-mobile show-mob">
-      <div class="container">
-        <div class="heding-with-line">
-          <div class="tm-title__line"></div>
-          <h2 class="main-heading proxima_bold">WATCH THE WORLD OF TUMI</h2>
-          <div class="tm-title__line"></div>
-        </div>
-
-     <div class="watch-mobile video-play-list visual-filters-container">
-
-             <div  class="category-filter">
-              <div class="pos-relative">
-                <div>
-                  <a href="#">
-                    <img src="~/assets/images/video-1.jpg" alt="" />
-                    <div class="playicon tm-icon__play">
-                      <i class=" " aria-hidden="true"
-                        ><img src="~/assets/images/play-icon.png"
-                      /></i>
-                    </div>
-                  </a>
-                </div>
-                <h4 class="text-red">
-                  <a href="#" class="text-red proxima_regular"
-                    >19 DEGREE ALUMINUM
-                  </a>
-                </h4>
-                <h3 id="video1SubTitle_TXT" class="tm-h3">
-                  <a href="#" class="proxima_regular performce-txt"
-                    >PERFORAMANCE WITH PURPOSE</a
-                  >
-                </h3>
-                <a href="" class="button-link proxima_bold">Explore more</a>
-              </div>
-            </div>
-            <div  class="category-filter">
-              <div class="pos-relative">
-                <div>
-                  <a href="#">
-                    <img src="~/assets/images/video-2.c7eb9c4.jpg" alt="" />
-                    <div class="playicon tm-icon__play">
-                      <i class=" " aria-hidden="true"
-                        ><img src="~/assets/images/play-icon.png"
-                      /></i>
-                    </div>
-                  </a>
-                </div>
-                <h4 class="text-red">
-                  <a href="#" class="text-red proxima_regular"
-                    >TUMI | McLaren Collection
-                  </a>
-                </h4>
-                <h3 id="video1SubTitle_TXT" class="tm-h3">
-                  <a href="#" class="proxima_regular performce-txt"
-                    >PERFORAMANCE WITH PURPOSE</a
-                  >
-                </h3>
-                <a href="" class="button-link proxima_bold">Explore more</a>
-              </div>
-            </div>
-            <div  class="category-filter">
-              <div class="pos-relative">
-                <div>
-                  <a href="#">
-                    <img src="~/assets/images/video-3.894e2ae.jpg" alt="" />
-                    <div class="playicon tm-icon__play">
-                      <i class=" " aria-hidden="true"
-                        ><img src="~/assets/images/play-icon.png"
-                      /></i>
-                    </div>
-                  </a>
-                </div>
-                <h4 class="text-red">
-                  <a href="#" class="text-red proxima_regular"
-                    >SS2021 Newness
-                  </a>
-                </h4>
-                <h3 id="video1SubTitle_TXT" class="tm-h3">
-                  <a href="#" class="proxima_regular performce-txt"
-                    >Daniel Henney X Spring 2021 Newness</a
-                  >
-                </h3>
-                <a href="" class="button-link proxima_bold">Explore more</a>
-              </div>
-            </div>
-
-        </div>
-      </div>
-    </section> -->
-    <!-- ========================== EXPLORE #TUMIHK ========================= -->
     <section class="explore-sec">
       <h4 class="text-center proxima_regular">EXPLORE #TUMIHK</h4>
       <div class="explore">
@@ -247,7 +33,7 @@
             <ul class="blog-icon">
               <li><a href="#" class="proxima_regular">jamie.xia</a></li>
               <li>
-                <a href="#"><img src="~/assets/images/instagram.png"/></a>
+                <a href="#"><img src="~/assets/images/instagram.png" /></a>
               </li>
             </ul>
           </div>
@@ -287,7 +73,7 @@ import { mapState } from "vuex";
 
 export default {
   components: {
-    VueSlickCarousel
+    VueSlickCarousel,
   },
   data() {
     return {
@@ -298,11 +84,11 @@ export default {
         centerMode: false,
         autoplay: false,
         autoplaySpeed: 2000,
-        dots: true
+        dots: true,
       },
       instaSettings: {
         focusOnSelect: true,
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 6,
         slidesToScroll: 1,
@@ -317,8 +103,8 @@ export default {
               slidesToShow: 3,
               slidesToScroll: 1,
               centerPadding: "150px",
-              centerMode: false
-            }
+              centerMode: false,
+            },
           },
           {
             breakpoint: 600,
@@ -327,8 +113,8 @@ export default {
               slidesToScroll: 2,
               initialSlide: 2,
               centerMode: false,
-              centerPadding: "100px"
-            }
+              centerPadding: "100px",
+            },
           },
           {
             breakpoint: 480,
@@ -336,10 +122,10 @@ export default {
               slidesToShow: 2,
               slidesToScroll: 2,
               centerMode: false,
-              centerPadding: "0px"
-            }
-          }
-        ]
+              centerPadding: "0px",
+            },
+          },
+        ],
       },
       recomndedSetting: {
         centerMode: true,
@@ -357,8 +143,8 @@ export default {
               arrows: true,
               centerMode: true,
               centerPadding: "40px",
-              slidesToShow: 3
-            }
+              slidesToShow: 3,
+            },
           },
           {
             breakpoint: 480,
@@ -366,10 +152,10 @@ export default {
               arrows: false,
               centerMode: true,
               centerPadding: "20px",
-              slidesToShow: 2
-            }
-          }
-        ]
+              slidesToShow: 2,
+            },
+          },
+        ],
       },
       videoSetting: {
         focusOnSelect: true,
@@ -380,8 +166,8 @@ export default {
         autoscroll: true,
         autoplay: false,
         arrows: true,
-        centerMode: true
-      }
+        centerMode: true,
+      },
     };
   },
 
@@ -431,7 +217,7 @@ export default {
     },
     url() {
       return this.$store.state.BASE_URL + this.$route.fullPath;
-    }
-  }
+    },
+  },
 };
 </script>
