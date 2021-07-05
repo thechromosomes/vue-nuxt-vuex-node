@@ -54,6 +54,7 @@
                   <div class="color-blk">
                     <div class="color-options">
                       <ul class="no-list choose-colors">
+                       
                         <li
                           v-for="(color, colorIndex) in item.color_variation"
                           :key="colorIndex"
@@ -65,7 +66,7 @@
                             style="cursor: pointer"
                             :style="getHexColor(color.color, index, item.color)"
                             @click="updateViaColor(color, colorIndex, index)"
-                          ></span>
+                          >{{color.color}}</span>
                         </li>
                       </ul>
                     </div>
