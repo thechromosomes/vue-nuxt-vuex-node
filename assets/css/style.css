@@ -4497,7 +4497,8 @@ label.cvform-lbl-checkbox:before {
   float: left;
   padding-left: 0px;
   padding-right: 20px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
+  display: none;
 }
 .features-wrap .w-cap.featrures:nth-last-child(2) h4,
 .features-wrap .w-cap.featrures:last-child h4 {
@@ -4512,8 +4513,9 @@ label.cvform-lbl-checkbox:before {
   padding-left: 0px;
   border-left: 1px solid #eee;
   padding-left: 20px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   margin-bottom: 15px;
+  display: none;
 }
 
 .warnty-return ul {
@@ -8301,4 +8303,27 @@ a.membership_card_join_btn {
   tbody
   tr:nth-of-type(2n + 1) {
   background-color: rgb(235 235 235);
+}
+
+.interior-exterior {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.interior-exterior > .external_features {
+  width: 50%;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  margin-bottom: 10px;
+}
+.interior-exterior .external_features .exterior-feature-item h5 {
+  font-size: 12px;
+  font-family: "proxima-nova-bold";
+  text-transform: uppercase;
+  color: #858585;
+  margin-bottom: 10px;
+}
+.interior-exterior .external_features:last-child {
+  border-left: 1px solid #eee;
+  padding-left: 15px;
 }
