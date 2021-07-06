@@ -12,7 +12,7 @@
                 <iframe
                   width="977"
                   height="549"
-                  src="https://www.youtube.com/embed/LhKdXCQ1gcw"
+                  :src="`https://www.youtube.com/embed/${videoURL}`"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -64,57 +64,8 @@
         </div>
       </div>
     </section>
-    <section class="thumbnial-video-player">
-      <div class="thumb-one-payer">
-        <div class="thum-img-boxx">
-          <img src="~assets/images/thum-player-1.jpg" />
-          <span class="play-icon-v">
-            <img src="~assets/images/play-icon.png" />
-          </span>
-          <div class="tm-mediaWorld__dur">
-            <span class="proxima_regular">01:00</span>
-          </div>
-        </div>
-        <div class="mclearn-text">
-          <h3 class="proxima_regular">TUMI | McLaren Collection</h3>
-          <h4 class="proxima_regular">PERFORAMANCE WITH PURPOSE</h4>
-          <p class="proxima_regular">DATE: 2021/4/2</p>
-        </div>
-      </div>
-      <div class="thumb-one-payer">
-        <div class="thum-img-boxx">
-          <img src="~assets/images/thum-player-2.jpg" />
-          <span class="play-icon-v">
-            <img src="~/assets/images/play-icon.png" />
-          </span>
-          <div class="tm-mediaWorld__dur">
-            <span class="proxima_regular">01:00</span>
-          </div>
-        </div>
-        <div class="mclearn-text">
-          <h3 class="proxima_regular">TUMI | McLaren Collection</h3>
-          <h4 class="proxima_regular">PERFORAMANCE WITH PURPOSE</h4>
-          <p class="proxima_regular">DATE: 2021/4/2</p>
-        </div>
-      </div>
-      <div class="thumb-one-payer">
-        <div class="thum-img-boxx">
-          <img src="~assets/images/thum-player-3.jpg" />
-          <span class="play-icon-v">
-            <img src="~assets/images/play-icon.png" />
-          </span>
 
-          <div class="tm-mediaWorld__dur">
-            <span class="proxima_regular">01:00</span>
-          </div>
-        </div>
-        <div class="mclearn-text">
-          <h3 class="proxima_regular">TUMI | McLaren Collection</h3>
-          <h4 class="proxima_regular">PERFORAMANCE WITH PURPOSE</h4>
-          <p class="proxima_regular">DATE: 2021/4/2</p>
-        </div>
-      </div>
-    </section>
+    <div v-html="videoCmsData"></div>
     <section class="alfa-sec">
       <div class="container">
         <ul>
@@ -158,6 +109,8 @@ export default {
   },
   data() {
     return {
+      videoCmsData: {},
+      videoURL: "LhKdXCQ1gcw",
       videosSetiing: {
         dots: true,
         infinite: true,
@@ -215,6 +168,31 @@ export default {
         ]
       }
     };
+  },
+  async fetch() {
+    let pageData = this.$store.state.cmsPagesData.video;
+    if (pageData != undefined) {
+      this.videoCmsData = pageData.content;
+      this.videoURL = this.$route.params.videoPlayer;
+      console.log(" this.videoURL", this.videoURL);
+    } else {
+      this.$router.push("/404");
+    }
+  },
+
+  mounted() {
+    // // Get the .click-me element
+    var clickMe = document.querySelectorAll(".videoUrl");
+    // console.log(clickMe);
+    // This will run when the .click-me element is clicked
+    if (clickMe) {
+      clickMe.forEach(event => {
+        event.addEventListener("click", e => {
+          this.videoURL = e.target.getAttribute("data-value");
+          // console.log("id", this.videoURL);
+        });
+      });
+    }
   }
 };
 </script>

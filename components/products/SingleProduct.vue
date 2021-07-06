@@ -667,9 +667,11 @@
         </div>
       </div>
     </section>
+    <ModalPopUp />
   </div>
 </template>
 <script>
+import ModalPopUp from "./Modal";
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
@@ -686,6 +688,7 @@ export default {
     ImageZoom,
     Peresonalization,
     ExploreComparison,
+    ModalPopUp,
     "inner-image-zoom": InnerImageZoom
   },
   data() {

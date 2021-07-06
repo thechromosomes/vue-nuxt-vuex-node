@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      cmsData: {},
+      cmsData: {}
     };
   },
 
@@ -24,11 +24,11 @@ export default {
   methods: {
     cmsToggle(event) {
       alert("Hi");
-console.log(event)
+      console.log(event);
       if (event.target.matches("accordion-section")) {
         event.target.classList.add("active");
       }
-    },
+    }
   },
 
   mounted() {
@@ -46,6 +46,6 @@ console.log(event)
     //     clickMe.classList.add('active');
     //   });
     // }
-  },
+  }
 };
 </script>
