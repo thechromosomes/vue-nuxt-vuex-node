@@ -241,23 +241,12 @@
                     <small class="proxima_regular"
                       >Carrier size requirements</small
                     >
-                    <span class="proxima_regular color-hover viw-list"
+                    <span class="proxima_regular color-hover viw-list" @click="() => this.$router.push('/cms/airline-carry-on-guide')"
                       >view list</span
                     >
                   </div>
                 </div>
-                <!-- <div class="size-comprison">
-                  <img src="~/assets/images/single-pd/light_desktop.png" />
-                  <h3 class="proxima_regular">Size comparison</h3>
-                  <small class="proxima_regular"
-                    >What can you fit in your TUMI?</small
-                  >
-                  <a
-                    @click.prevent="() => (showExplore = true)"
-                    class="proxima_regular color-hover"
-                    >Explore</a
-                  >
-                </div> -->
+
                 <span id="stick-cart-temp"></span>
                 <div
                   :class="{
