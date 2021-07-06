@@ -5252,7 +5252,7 @@ label.cvform-lbl-checkbox:before {
   transform: rotate(-90deg);
   background-color: #c41e3a;
   left: 41%;
-  z-index: 9;
+  z-index: 2;
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -5314,6 +5314,7 @@ label.cvform-lbl-checkbox:before {
   border: 2px solid #000;
   padding: 20px;
   position: relative;
+  cursor: pointer;
 }
 .thum-img-boxx span {
   position: absolute;
@@ -8338,7 +8339,7 @@ a.membership_card_join_btn {
 }
 
 .box-item.fixedcompare .product-item_empty {
-  padding: 26px 5%;
+  padding: 10px 5%;
   margin: 0;
 }
 .box-item.fixedcompare .product-item_empty .icon-arrow-down {
