@@ -232,8 +232,11 @@
     padding: 21px 9px;
     line-height: 12px;
   }
-  .header.sticky.fixed .header-search {
+  /* .header.sticky.fixed .header-search {
     display: none;
+  } */
+  .header.sticky .icon-search-lg.text-red {
+    display: inline-block;
   }
   .header.sticky.fixed .logo,
   .header.sticky.fixed .show-on-fixed-header {
@@ -758,17 +761,17 @@
     width: 100%;
     padding: 12px 15px;
     background-color: #ebebeb;
+    margin-top: 12px;
   }
-  .mob-search-down {
-    display: none;
-  }
-  .mobile-search-fun:hover .header-search.mob-search-down {
+
+  /* .mobile-search-fun .header-search.mob-search-down {
     display: block;
     margin-top: 13px;
-  }
+  } */
   .mob-search-down .form-control {
     border: none !important;
     outline: 0px;
+    width: 100% !important;
   }
   .header-search.mob-search-down:before {
     left: 33px;
@@ -1136,15 +1139,17 @@ width: 10%;
   .hero-area {
     height: auto;
   }
-  .crousal-text {
+  crousal-text {
     top: 11%;
-    left: 0;
-    right: 0;
     margin: 0 auto;
     display: block;
     text-align: center;
     font-size: 21px;
-  }
+    transform: none;
+    left: auto;
+    right: 0;
+    left: 0;
+}
   .crousal-text img {
     width: 270px !important;
     margin: 0 auto;
@@ -1158,7 +1163,7 @@ width: 10%;
     line-height: 36px;
   }
   .white-text-box {
-    width: 85%;
+    width: 85%;    padding: 16px 20px;
   }
   .white-text-box .learn-more {
     padding: 13px 44px 13px 44px;
@@ -2896,7 +2901,7 @@ top: 14px;
     padding: 0 8px;
   }
   .cm-list .checkbox-wrap {
-    margin-bottom: 0;
+    margin-bottom: 0;display: none;
   }
   .box-item.fixedcompare {
     top: 47px;

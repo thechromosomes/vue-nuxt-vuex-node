@@ -8352,7 +8352,7 @@ a.membership_card_join_btn {
 }
 .interior-exterior .external_features:last-child {
   border-left: 1px solid #eee;
-  padding-left:30px;
+  padding-left: 30px;
 }
 
 .box-item .product-item_empty {
@@ -8383,4 +8383,7 @@ a.membership_card_join_btn {
 .stickey-profile {
   position: sticky;
   top: 19%;
+}
+.header.sticky .icon-search-lg.text-red {
+  display: none;
 }

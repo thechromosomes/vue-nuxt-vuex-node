@@ -75,9 +75,9 @@
                       <NuxtLink
                         v-if="
                           $store.state.cartAjax.customer_id != null &&
-                            $store.state.cartAjax.customer_id != '' &&
-                            $store.state.cartAjax.customer_session != '' &&
-                            $store.state.cartAjax.customer_session != null
+                          $store.state.cartAjax.customer_id != '' &&
+                          $store.state.cartAjax.customer_session != '' &&
+                          $store.state.cartAjax.customer_session != null
                         "
                         to="/Dashboard"
                         class="proxima_semi-bold"
@@ -90,7 +90,7 @@
                     <li class="wish-list-icon">
                       <NuxtLink to="/wishlist">
                         <img
-                          src="~assets/images/heart.1b640f1.png"
+                          src="~/assets/images/heart.1b640f1.png"
                           alt="logo"
                         />
                         <span
@@ -689,7 +689,7 @@
               <NuxtLink
                 v-else-if="
                   item.menu_url_key == 'accessories' ||
-                    item.menu_url_key == 'luggage'
+                  item.menu_url_key == 'luggage'
                 "
                 :to="`/clp-cms/${item.menu_url_key}`"
                 class="desktop-item proxima_semi-bold"
@@ -713,10 +713,10 @@
                 <NuxtLink
                   v-else-if="
                     item.menu_url_key == 'accessories' ||
-                      item.menu_url_key == 'luggage'
+                    item.menu_url_key == 'luggage'
                   "
                   :to="`/clp-cms/${item.menu_url_key}`"
-                  class=" proxima_semi-bold"
+                  class="proxima_semi-bold"
                   >{{ item.name }}</NuxtLink
                 >
                 <a v-else>{{ item.name }}</a>
@@ -742,7 +742,7 @@
                           :to="`/collections/${childItem.menu_url_key}/`"
                           v-if="
                             childItem.landing_page == '' ||
-                              childItem.landing_page == null
+                            childItem.landing_page == null
                           "
                           @click.native="() => (showMenu = false)"
                           >{{ childItem.name }}</Nuxt-link
@@ -752,7 +752,7 @@
                           :to="`/cms/${childItem.landing_page}`"
                           v-if="
                             childItem.landing_page != '' &&
-                              childItem.landing_page != null
+                            childItem.landing_page != null
                           "
                           >{{ childItem.name }}</Nuxt-link
                         >
@@ -788,9 +788,9 @@
                     <NuxtLink
                       v-if="
                         $store.state.cartAjax.customer_id != null &&
-                          $store.state.cartAjax.customer_id != '' &&
-                          $store.state.cartAjax.customer_session != '' &&
-                          $store.state.cartAjax.customer_session != null
+                        $store.state.cartAjax.customer_id != '' &&
+                        $store.state.cartAjax.customer_session != '' &&
+                        $store.state.cartAjax.customer_session != null
                       "
                       to="/Dashboard"
                       class="proxima_regular"
@@ -1348,9 +1348,9 @@
                 <NuxtLink
                   v-if="
                     $store.state.cartAjax.customer_id != null &&
-                      $store.state.cartAjax.customer_id != '' &&
-                      $store.state.cartAjax.customer_session != '' &&
-                      $store.state.cartAjax.customer_session != null
+                    $store.state.cartAjax.customer_id != '' &&
+                    $store.state.cartAjax.customer_session != '' &&
+                    $store.state.cartAjax.customer_session != null
                   "
                   to="/Dashboard"
                   class="proxima_semi-bold"
@@ -1360,252 +1360,28 @@
                   >Login/Register</nuxt-link
                 >
               </client-only>
-              <div
-                class="right-login-menu navbar-side login-process"
-                id="navbarSide"
-              >
-                <div class="overly-pos navbar-side-item">
-                  <h3 class="proxima_bold">My Account</h3>
-                  <h4 class="proxima_regular">
-                    Log in to your TUMI.HK account
-                  </h4>
-                  <div class="form-login-div">
-                    <div class="container">
-                      <form method="" class="">
-                        <div class="row" style="margin: 0px">
-                          <div class="col-sm-12 label-add pd-remove">
-                            <label class="proxima_regular">phone</label>
-                            <div class="row">
-                              <div class="col-sm-4 col-4">
-                                <div class="option-wrp">
-                                  <div class="option-select">
-                                    <div class="select-erap">
-                                      <div class="select-view">
-                                        <div
-                                          class="select-custom proxima_regular"
-                                        >
-                                          HK 852
-                                        </div>
-                                        <div class="select-icon-btn">
-                                          <i
-                                            class="icon-openarrow-right"
-                                            aria-hidden="true"
-                                          ></i>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <ul class="custon-select-list">
-                                      <li>
-                                        <span class="proxima_regular"
-                                          >Default</span
-                                        >
-                                      </li>
-                                      <li>
-                                        <span class="proxima_regular">
-                                          Hot Item</span
-                                        >
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-sm-8 col-8">
-                                <input type="text" class="form-control" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="row"
-                          style="margin-left: 0px; margin-right: 0px"
-                        >
-                          <div
-                            class="col-sm-12 label-add pd-remove password-fild"
-                          >
-                            <label class="proxima_regular">password</label>
-                            <div class="row">
-                              <div class="col-sm-12">
-                                <input type="text" class="form-control" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="forgot-pass">
-                          <input type="checkbox" class="check-box" name="" />
-                          <span class="proxima_regular"
-                            >Remember my account</span
-                          >
-                          <a href="#" class="proxima_regular color-hover"
-                            >Forgot your password?</a
-                          >
-                        </div>
-                        <button class="login-btn proxima_regular">Login</button>
-                      </form>
-                      <div class="i-have-read">
-                        <p class="proxima_regular">
-                          I have read and agreed to the TUMI website's
-                          <a href="" class="color-hover"
-                            >Terms and Conditions</a
-                          >
-                          ,<a href="" class="color-hover"> Privacy Policy</a>
-                          and
-                          <a href="" class="color-hover"
-                            >TUMI Exclusive Club's Member Regulations .</a
-                          >
-                        </p>
-                      </div>
-                      <div class="ragester-acco">
-                        <strong class="proxima_semi-bold"
-                          >Still No TUMI Account?</strong
-                        >
-                        <a href="" class="proxima_semi-bold rage-btn"
-                          >ragester an account</a
-                        >
-                      </div>
-                      <div class="need-help">
-                        <a href="#" class="proxima_regular"
-                          ><span class="msg-icon icon-maywehelp-chat"></span
-                          >Need Help?</a
-                        >
-                        <a href="#" class="proxima_regular">
-                          <span class=""></span>
-                        </a>
-                        <a href="#" class="proxima_regular"
-                          >Contact online customer service</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            </li>
+            <li>
+              <span
+                class="icon-search-lg text-red"
+                @click="togglSshowSearch()"
+              ></span>
             </li>
             <client-only>
               <li class="mobile-search-fun">
                 <a class="text-red">
-                  <span class="icon icon-search-lg text-red" aria-hidden="true">
-                    <div class="header-search mob-search-down">
+                  <span class="icon text-red" aria-hidden="true">
+                    <div
+                      class="header-search mob-search-down"
+                      v-if="showSearch"
+                    >
                       <input
                         type="text"
+                         ref="headerSearchBar"
                         name=""
                         class="form-control"
                         placeholder="Search"
                       />
-                      <div class="search-result">
-                        <div class="search-result-con">
-                          <div class="search-key">
-                            <h4 class="proxima_semi-bold">
-                              Hot Product Match<span>"a"</span>
-                            </h4>
-                          </div>
-                          <div class="search-pd-boxes">
-                            <ul class="image" id="matching_products">
-                              <li class="search-item">
-                                <a href="" title="">
-                                  <span class="search_image"
-                                    ><img
-                                      src="~assets/images/searchpd1.jpg"
-                                      alt=""
-                                  /></span>
-                                  <span class="item-details">
-                                    <span
-                                      class="item-details-name proxima_regular"
-                                      >Nicols Small Crossbody</span
-                                    >
-                                    <span
-                                      class="
-                                        item-details-category
-                                        proxima_regular
-                                      "
-                                      >Harrison</span
-                                    >
-                                  </span>
-                                </a>
-                              </li>
-                              <li class="search-item">
-                                <a href="" title="">
-                                  <span class="search_image"
-                                    ><img
-                                      src="~assets/images/searchpd1.jpg"
-                                      alt=""
-                                  /></span>
-                                  <span class="item-details">
-                                    <span
-                                      class="item-details-name proxima_regular"
-                                      >Torque Sling</span
-                                    >
-                                    <span
-                                      class="
-                                        item-details-category
-                                        proxima_regular
-                                      "
-                                      >TUMI I McLaren</span
-                                    >
-                                  </span>
-                                </a>
-                              </li>
-                              <li class="search-item">
-                                <a href="" title="">
-                                  <span class="search_image"
-                                    ><img
-                                      src="~assets/images/searchpd1.jpg"
-                                      alt=""
-                                  /></span>
-                                  <span class="item-details">
-                                    <span
-                                      class="item-details-name proxima_regular"
-                                      >Trace Expandable Organizer
-                                      Accessory</span
-                                    >
-                                    <span
-                                      class="
-                                        item-details-category
-                                        proxima_regular
-                                      "
-                                      >TUMI I McLaren</span
-                                    >
-                                  </span>
-                                </a>
-                              </li>
-                              <li class="search-item lats-child-search">
-                                <a href="" title="">
-                                  <span class="search_image"
-                                    ><img
-                                      src="~assets/images/searchpd1.jpg"
-                                      alt=""
-                                  /></span>
-                                  <span class="item-details">
-                                    <span
-                                      class="item-details-name proxima_regular"
-                                      >Nivolet Luggage Tag</span
-                                    >
-                                    <span
-                                      class="
-                                        item-details-category
-                                        proxima_regular
-                                      "
-                                      >TUMI I McLaren</span
-                                    >
-                                  </span>
-                                </a>
-                              </li>
-                            </ul>
-                            <div class="view-all-result-bottom">
-                              <a href="#" class="proxima_regular"
-                                ><span class="icon"
-                                  ><i class="sprite-search" alt="" title=""></i
-                                ></span>
-                                <span class="proxima_regular"
-                                  ><i
-                                    class="fa fa-search"
-                                    aria-hidden="true"
-                                  ></i>
-                                  View all results</span
-                                ></a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </span>
                 </a>
@@ -1655,7 +1431,8 @@ export default {
       scrollPosition: null,
       showMenu: false,
       close: false,
-      isActive: -1
+      isActive: -1,
+      showSearch: false,
     };
   },
   async mounted() {
@@ -1668,6 +1445,15 @@ export default {
       this.scrollPosition = window.scrollY;
     },
 
+      togglSshowSearch() {
+      this.showSearch = !this.showSearch;
+      if (this.showSearch) {
+        setTimeout(() => {
+          this.$refs.headerSearchBar.focus();
+        }, 0);
+      }
+    },
+
     toogleCart() {
       this.$store.commit("cartAjax/showHideCart");
     },
@@ -1677,15 +1463,15 @@ export default {
       } else {
         this.isActive = index;
       }
-    }
+    },
   },
 
   computed: {
-    ...mapState(["header"])
+    ...mapState(["header"]),
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.updateScroll);
-  }
+  },
 };
 </script>
 <style scoped>
