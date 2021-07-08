@@ -7682,6 +7682,7 @@ a.membership_card_join_btn {
   padding: 20px 0;
   margin: 0;
   font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .faq_page .faq-content {
@@ -7690,7 +7691,7 @@ a.membership_card_join_btn {
 .faq_page .faq-content .faqSection {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   margin-bottom: 50px;
   align-items: flex-start;
 }
@@ -7740,6 +7741,26 @@ a.membership_card_join_btn {
   font-size: 15px;
   letter-spacing: 0.04em;
   color: #222;
+  cursor: pointer;
+}
+.accordion .quest {
+  position: relative;
+  padding-left: 25px;
+}
+.accordion .quest:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "\e819";
+  font-family: tumi-icon-ft !important;
+  font-size: 10px;
+}
+.accordion-section.active .quest {
+  display: block;
+}
+.accordion-section.active .quest:before {
+  content: "\e81a";
+  font-family: tumi-icon-ft !important;
 }
 .accordion,
 .accordion .accordion-section {
@@ -8220,6 +8241,7 @@ a.membership_card_join_btn {
   z-index: 1;
   right: 0;
   justify-content: flex-end;
+  align-items: center;
 }
 .box-item.fixedcompare .product-item {
   display: flex;
@@ -8227,6 +8249,7 @@ a.membership_card_join_btn {
   align-items: baseline;
   width: 25%;
   background-color: #fff;
+  height: 230px;
 }
 .box-item.fixedcompare .product-item .imgbox {
   width: 40%;
@@ -8346,4 +8369,7 @@ a.membership_card_join_btn {
   font-size: 14px;
   font-weight: 600;
   color: #000;
+}
+.faq-filter {
+  display: none;
 }

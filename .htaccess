@@ -13,5 +13,4 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 Header set Referrer-Policy "same-origin"
 Header set Feature-Policy "geolocation 'self'; vibrate 'none'"
 Header always set Permissions-Policy "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()"
-Header set Content-Security-Policy "default-src 'self'; script-src 'self' *.mycdn.com 'unsafe-inline';"
 </IfModule>

@@ -187,6 +187,7 @@ export const mutations = {
     state.list.product_loader = true;
     state.list.page = pageNo;
     state.list.Product_count = "";
+    state.compareItem = []
     // state.list.sort = [
     //   { code: "default", dir: "desc", label: "default" },
     //   { code: "selling_price", dir: "asc", label: "Price (Low to High)" },

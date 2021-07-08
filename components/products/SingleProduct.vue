@@ -656,7 +656,7 @@
         </div>
       </div>
     </section>
-    <ModalPopUp />
+    <ModalPopUp v-if="showModalPopUp"/>
   </div>
 </template>
 <script>
@@ -682,6 +682,7 @@ export default {
   },
   data() {
     return {
+      showModalPopUp: false,
       fixedMobileCart: false,
       showStickycart: false,
       showPersonlization: false,

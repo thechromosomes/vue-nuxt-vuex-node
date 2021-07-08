@@ -9,7 +9,24 @@
 export default {
   data() {
     return {
-      cmsData: {}
+      cmsData: {},
+      seoData: "",
+    };
+  },
+
+  head() {
+    return {
+      title: this.seoData.meta_title,
+      meta: [
+        {
+          name: "description",
+          content: this.seoData.meta_description,
+        },
+        {
+          property: "keywords",
+          content: this.seoData.meta_keyword,
+        },
+      ],
     };
   },
 
@@ -17,35 +34,34 @@ export default {
     let pageData = this.$store.state.cmsPagesData[this.$route.params.cmsPage];
     if (pageData != undefined) {
       this.cmsData = pageData.content;
+      this.seoData = pageData;
     } else {
       this.$router.push("/404");
     }
   },
   methods: {
-    cmsToggle(event) {
-      alert("Hi");
-      console.log(event);
-      if (event.target.matches("accordion-section")) {
-        event.target.classList.add("active");
+    vanillaJs() {
+      var clickMe = document.querySelectorAll(".accordion-section");
+      if (clickMe) {
+        clickMe.forEach((event) => {
+          event.addEventListener("click", () => {
+            event.classList.toggle("active");
+          });
+        });
       }
-    }
+    },
   },
 
   mounted() {
-    // Get the .click-me element
-    var elements = document.getElementsByClassName("accordion-section");
-    // clickMe.addEventListener("click", this.cmsToggle);
-    for (var i = 0; i < elements.length; i++) {
-      elements[i].addEventListener("click", this.cmsToggle, false);
+    if (this.$route.params.cmsPage === "faq") {
+      this.vanillaJs();
     }
+  },
 
-    // This will run when the .click-me element is clicked
-    // if (clickMe) {
-    //   clickMe.addEventListener("click", function (event) {
-    //     alert("hi");
-    //     clickMe.classList.add('active');
-    //   });
-    // }
-  }
+  updated() {
+    if (this.$route.params.cmsPage === "faq") {
+      this.vanillaJs();
+    }
+  },
 };
 </script>

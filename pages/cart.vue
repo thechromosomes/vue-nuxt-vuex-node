@@ -205,27 +205,27 @@
                         TUMI LIVE CHAT</a
                       >
                       <p class="help-text">Monday to Friday 9 : 00 - 18 : 00</p>
-                     
                     </div>
                   </div>
 
-                  <div class="accordion-section ">
+                  <div class="accordion-section">
                     <a
-                      class="accordion-section-title "
+                      class="accordion-section-title"
                       style="cursor: pointer"
                       :class="{ open: returnPolice }"
-                      @click.prevent="() => returnPolice = !returnPolice"
+                      @click.prevent="() => (returnPolice = !returnPolice)"
                     >
                       Return Policy</a
                     >
-                    <div
-                      id="accordion-4"
-                      class="accordion-section-content"
-                      v-show="returnPolice"
-                    >
+                    <div id="accordion-4" v-show="returnPolice">
                       <div class="content">
                         <div class="ReturnPolicySpot cart-accordion-spot">
-                          <p>{{ $store.state.cartAjax.cart_product[0].shipping_returns }}</p>
+                          <p>
+                            {{
+                              $store.state.cartAjax.cart_product[0]
+                                .shipping_returns
+                            }}
+                          </p>
                           <p></p>
                         </div>
                       </div>
@@ -269,15 +269,18 @@
                           .category
                       }}
                       <span class="view-entire-collection"
-                        ><NuxtLink :to="`/product/${$store.state.cartAjax.cart_product[editCartIndex].url_key}`" class="pdpInernalLink">
+                        ><NuxtLink
+                          :to="`/product/${$store.state.cartAjax.cart_product[editCartIndex].url_key}`"
+                          class="pdpInernalLink"
+                        >
                           View the entire series</NuxtLink
                         ></span
                       >
                     </div>
-                    <div class="product-style">
+                    <!-- <div class="product-style">
                       <span class="label">Style: </span>
                       <span class="cart-quick-style">1358735107</span>
-                    </div>
+                    </div> -->
                   </div>
 
                   <div class="price-column">
@@ -311,7 +314,7 @@
                           disable:
                             addToCartValClassRender[editCartIndex] == 1 ||
                             $store.state.cartAjax.cart_product[editCartIndex]
-                              .qty == 1
+                              .qty == 1,
                         }"
                         @click.prevent="
                           addCartVal(
@@ -340,7 +343,7 @@
                             $store.state.cartAjax.cart_product[editCartIndex]
                               .qty ==
                               $store.state.cartAjax.cart_product[editCartIndex]
-                                .max_qty
+                                .max_qty,
                         }"
                         @click.prevent="
                           addCartVal(
@@ -370,7 +373,10 @@
                     ><span class="icon icon-x"></span
                   ></a>
                   <div class="view-details">
-                    <NuxtLink :to="`/product/${$store.state.cartAjax.cart_product[editCartIndex].url_key}`" >View details</NuxtLink>
+                    <NuxtLink
+                      :to="`/product/${$store.state.cartAjax.cart_product[editCartIndex].url_key}`"
+                      >View details</NuxtLink
+                    >
                   </div>
                 </div>
               </div>
@@ -392,7 +398,7 @@ export default {
       editCart: false,
       editCartIndex: "",
       addToCartValClassRender: [],
-      returnPolice: false
+      returnPolice: false,
     };
   },
 
@@ -413,13 +419,13 @@ export default {
           method: "post",
           url: `/product/remove-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form
+          params: form,
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
             data: response,
-            vm: this
+            vm: this,
           });
           if (response.success) {
             this.$gtm.push({
@@ -433,11 +439,11 @@ export default {
                       id: item.master_sku,
                       price: item.selling_price,
                       variant: item.fynd_size,
-                      quantity: item.qty
-                    }
-                  ]
-                }
-              }
+                      quantity: item.qty,
+                    },
+                  ],
+                },
+              },
             });
           }
         } else {
@@ -469,13 +475,13 @@ export default {
           method: "post",
           url: `/product/update-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form
+          params: form,
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
             data: response,
-            vm: this
+            vm: this,
           });
         } else {
           throw "no response from api";
@@ -552,13 +558,13 @@ export default {
           method: "post",
           url,
           token,
-          params: form
+          params: form,
         });
 
         if (response.success) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response
+            data: response,
           });
           this.$toast.open(response.message);
         } else {
@@ -567,32 +573,32 @@ export default {
       } catch (error) {
         console.log("error form the add coupon foo >>", error);
       }
-    }
+    },
   },
   watch: {
-    "$store.state.cartAjax.cart_page_message": function() {
+    "$store.state.cartAjax.cart_page_message": function () {
       if (
         this.$store.state.cartAjax.cart_page_message != "" &&
         this.$store.state.cartAjax.cart_page_message != null
       ) {
         this.$toast.open(this.$store.state.cartAjax.cart_page_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: ""
+          data: "",
         });
       }
     },
-    "$store.state.cartAjax.cart_page_erro_page": function() {
+    "$store.state.cartAjax.cart_page_erro_page": function () {
       if (
         this.$store.state.cartAjax.cart_page_error_message != "" &&
         this.$store.state.cartAjax.cart_page_error_message != null
       ) {
         this.$toast.error(this.$store.state.cartAjax.cart_page_error_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: ""
+          data: "",
         });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

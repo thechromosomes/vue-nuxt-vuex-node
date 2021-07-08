@@ -88,58 +88,20 @@
             </div>
           </div>
         </div>
-        <!--
         <div class="compare_data_info">
           <div class="data-1 data-1_table">
-            <table
-              class="table table-striped m-0"
-              v-if="compareData.length > 0"
-            >
+            <table class="table table-striped m-0" v-if="tableData.length > 0">
               <tbody>
-                <tr
-                  v-for="(comItem, comIndex) in compareData[0]
-                    .product_attributes"
-                  :key="comIndex"
-                >
+                <tr v-for="(comItem, i) in tableData[0]" :key="i">
                   <th scope="row">{{ comItem.label }}</th>
-                  <template v-for="mainItem in compareData">
-                    <td
-                      v-for="(tData, tIndex) in mainItem.product_attributes"
-                      :key="`${tIndex}td`"
-                    >
-                      <template v-if="tData.label == comItem.label">
-                        {{ tData.value }}
-                      </template>
-                      <template v-else>
-                        dummy {{comIndex}}
-                      </template>
-                    </td>
-                  </template>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div> -->
-<!-- 
-        <div class="compare_data_info">
-          <div class="data-1 data-1_table">
-            <table class="table table-striped m-0">
-              <tbody>
-                <tr v-for="(comItem, comIndex) in tableData" :key="comIndex">
-                  
-                  <th scope="row">{{ comItem[0].label }}</th>
-                  test {{comItem[0]}}
-                  <td
-                    v-for="(tData, tIndex) in comItem[0]"
-                    :key="`${tIndex}td`"
-                  >
-                    {{ tData.value }}
+                  <td v-for="(tData, tIndex) in tableData" :key="tIndex">
+                    {{ tData[i].value }}
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
   </div>
@@ -165,11 +127,17 @@ export default {
     },
 
     removeCompare(singleProd, index) {
+      if (this.compareData.length <= 1) {
+        this.$router.back();
+        this.$router.push("/");
+        return;
+      }
       this.$store.commit("toCompareItems", {
         singleProd,
       });
 
       this.compareData.splice(index, 1);
+      this.getProduct();
     },
 
     updateViaColor(product, colorIndex, index) {
@@ -207,11 +175,10 @@ export default {
         url: `/pimresponse.php`,
         params: form,
       });
-      if (response.response.success) {
+      if (response.response.success != 0) {
         this.compareData = response.result;
         this.tableData = response.product_attributes;
       } else {
-        this.$router.back();
         this.$router.push("/");
       }
     },
@@ -309,13 +276,6 @@ export default {
         this.$store.commit("cartAjax/removePageMessage", {
           data: "",
         });
-      }
-    },
-
-    compareData: function () {
-      if (this.compareData.length <= 1) {
-        this.$router.back();
-        this.$router.push("/");
       }
     },
   },
