@@ -70,7 +70,7 @@
                       </ul>
                     </div>
                   </div>
-                  <button @click="addToCart()" class="btn btn-v-4">
+                  <button @click="addToCart(item)" class="btn btn-v-4">
                     Add to cart
                   </button>
                 </div>
@@ -188,10 +188,10 @@ export default {
         var form = {};
         var urlHolder;
         var tokenholder;
-        // var product_options_json = JSON.stringify({
-        //   size: this.selectedSizeAttr.configrable_atribute_value,
-        //   color: product.color,
-        // });
+        var product_options_json = JSON.stringify({
+          size: Object.keys(product.variation)[0].configrable_atribute_value,
+          color: product.color,
+        });
         form.product_id = product.id_product;
         form.product_parent_id = product.id_product;
         form.product_options = product_options_json;
@@ -201,7 +201,7 @@ export default {
         form.sku = product.sku;
         form.master_sku = product.sku;
         form.price = product.price;
-        form.qty_ordered = this.addToCartVal;
+        form.qty_ordered = 1;
         form.final_price = product.selling_price;
         form.store = this.$store.state.cartAjax.store;
         if (
