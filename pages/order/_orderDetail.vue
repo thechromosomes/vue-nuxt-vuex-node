@@ -1,12 +1,14 @@
 <template>
   <div>
-    <div class="container acc-page">
+    <div class="account-page">
+    <div class="container-fluid acc-page ac-page-align">
       <div class="row">
-        <div class="span12">
+        <div class="span12 col-sm-12">
           <h1 class="title clearfix">My Account</h1>
         </div>
       </div>
       <div class="row new-ord same-table clearboth">
+        <div class="col-md-12 col-lg-3 col-12">
         <!-- side bar code -->
         <Sidebar />
         <div
@@ -163,8 +165,12 @@
             </div>
           </div>
         </div>
-        <div v-else style="margin-left: 25%">
+       
+      </div>
+        <div class="col-md-12 col-lg-3 col-12" v-if="myOrder.length==0">
+           <div  style="margin-left: 25%">
           <p>No product found please try adding new products</p>
+        </div>
         </div>
       </div>
     </div>
@@ -245,7 +251,7 @@
                     </div>
                   </template>
                   <!-- cod from End -->
-                  <div class="field col-md-4 col-12">
+                  <div class="field col-md-4 col-12" >
                     <button class="w-100 submit sp-black-btn">Submit</button>
                   </div>
                 </div>
@@ -255,6 +261,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 <script>

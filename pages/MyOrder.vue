@@ -14,7 +14,7 @@
           <div class="col-md-12 col-lg-9 col-12">
             <div class="table" v-if="myOrders.length > 0">
               <div class="table-responsive">
-                <table class="table table-bordered proxima_regular">
+                <table class="table table-bordered proxima_regular my-product-order">
                   <thead>
                     <tr>
                       <th scope="col">Order#</th>
@@ -38,7 +38,7 @@
                       <td class="align-center" data-label="Order Total">
                         {{ item.order_subtotal }}
                       </td>
-                      <td class="align-center" data-label="Action">
+                      <td class="align-center vue-link-cursor" data-label="Action">
                         <NuxtLink :to="`/order/${item.order_quote_id}`"
                           >View & Track</NuxtLink
                         >
