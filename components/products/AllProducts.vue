@@ -930,15 +930,6 @@ export default {
     "$route.query": function () {
       this.getProductList();
     },
-
-    // "$store.state.list.sortingData": {
-    //   deep: true,
-    //   handler: function () {
-    //     console.log('this.list.sortingData', this.list.sortingData)
-    //     this.sorting.code = this.list.sortingData.label;
-    //     this.sorting.dir = this.list.sortingData.dir;
-    //   },
-    // },
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.updatePage);
@@ -950,6 +941,7 @@ export default {
       this.servergtm();
     }
     this.$store.commit("firstgtmState");
+    this.$store.commit("emptyCompareItem");
 
     // fetch compare cookies
     let compareSku = $cookies.get(
@@ -966,8 +958,6 @@ export default {
       });
 
       if (response.response.success != 0) {
-        console.log("compareSku", response.result);
-
         for (let i = 0; i < response.result.length; i++) {
           this.$store.commit("toCompareItems", {
             singleProd: response.result[i],

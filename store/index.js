@@ -182,20 +182,15 @@ export const mutations = {
     }
   },
 
+  emptyCompareItem(state) {
+    state.compareItem = [];
+  },
+
   // prepare state for product parameters before call
   prepareState(state, { routeParam, pageNo }) {
     state.list.product_loader = true;
     state.list.page = pageNo;
     state.list.Product_count = "";
-    state.compareItem = []
-    // state.list.sort = [
-    //   { code: "default", dir: "desc", label: "default" },
-    //   { code: "selling_price", dir: "asc", label: "Price (Low to High)" },
-    //   { code: "selling_price", dir: "desc", label: "Price (High to Low)" },
-    //   { code: "product_position", dir: "asc", label: "Oldest to newest" },
-    //   { code: "product_position", dir: "desc", label: "Newest to oldest" },
-    //   { code: "discount", dir: "asc", label: "Discount" },
-    // ];
 
     state.list.sort = [
       { code: "default", dir: "desc", label: "default" },
