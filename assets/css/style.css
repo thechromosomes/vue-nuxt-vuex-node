@@ -8373,10 +8373,14 @@ a.membership_card_join_btn {
 .faq-filter {
   display: none;
 }
-
-
-
-.exterior-feature-item ul li{
+.exterior-feature-item ul li {
   list-style: square;
-      color: #777;
+  color: #777;
+}
+.my-product-order a {
+  text-decoration: underline;
+}
+.stickey-profile {
+  position: sticky;
+  top: 19%;
 }

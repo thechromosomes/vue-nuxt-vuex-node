@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="container acc-page">
+    <div class="container acc-page ">
       <div class="row">
         <div class="span12">
-          <h1 class="title clearfix">My Profile</h1>
+          <!-- <h1 class="title clearfix ">My Profile</h1> -->
         </div>
       </div>
       <div class="row new-ord same-table clearboth">

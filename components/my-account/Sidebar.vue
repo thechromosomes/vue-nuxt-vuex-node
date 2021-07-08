@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="stickey-profile">
     <div class="cus-address cus-ore customer_profile">
       <div class="accountMenu proxima-regular sidebar">
         <ul>
