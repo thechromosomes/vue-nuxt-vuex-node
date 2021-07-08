@@ -453,6 +453,7 @@
                 class="no_products text-center"
                 v-if="
                   list.Product_list.length == 0 &&
+                  list.product_loader == false &&
                   $store.state.pageLoader == false
                 "
               >

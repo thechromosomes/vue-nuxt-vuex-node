@@ -8347,12 +8347,12 @@ a.membership_card_join_btn {
   font-size: 12px;
   font-family: "proxima-nova-bold";
   text-transform: uppercase;
-  color: #858585;
+  color: #555;
   margin-bottom: 10px;
 }
 .interior-exterior .external_features:last-child {
   border-left: 1px solid #eee;
-  padding-left: 15px;
+  padding-left:30px;
 }
 
 .box-item .product-item_empty {
@@ -8372,4 +8372,11 @@ a.membership_card_join_btn {
 }
 .faq-filter {
   display: none;
+}
+
+
+
+.exterior-feature-item ul li{
+  list-style: square;
+      color: #777;
 }

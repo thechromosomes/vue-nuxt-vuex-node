@@ -403,8 +403,8 @@
                                 <div class="exterior-feature-item">
                                   <h5>{{ details.label }}</h5>
                                   <ul>
-                                    <li class="proxima_regular">
-                                      {{ details.value.split(",").join("\n") }}
+                                    <li class="proxima_regular" v-for="liItem, liIndex in details.value.split('<br>')" :key="liIndex">
+                                      {{liItem}}
                                     </li>
                                   </ul>
                                 </div>
