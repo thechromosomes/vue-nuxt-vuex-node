@@ -340,7 +340,7 @@
                     </ul>
                   </div>
                   <NuxtLink
-                    :to="`/product/${singleProd.url_key}`"
+                    :to="`/product/${singleProd.url}`"
                     class="proxima_bold"
                     @click.native="updateRecentView(singleProd, prodIndex)"
                   >
@@ -348,7 +348,7 @@
                   </NuxtLink>
                   <div class="pd-img-box">
                     <NuxtLink
-                      :to="`/product/${singleProd.url_key}`"
+                      :to="`/product/${singleProd.url}`"
                       class="proxima_bold"
                       @click.native="updateRecentView(singleProd, prodIndex)"
                     >
@@ -372,7 +372,7 @@
                           >
                             <img
                               :src="image.image"
-                              :to="`/product/${singleProd.url_key}`"
+                              :to="`/product/${singleProd.url}`"
                             />
                           </div>
                         </VueSlickCarousel>
@@ -411,7 +411,7 @@
                       </ul>
                     </div>
                     <NuxtLink
-                      :to="`/product/${singleProd.url_key}`"
+                      :to="`/product/${singleProd.url}`"
                       class="proxima_bold"
                       @click.native="updateRecentView(singleProd, prodIndex)"
                     >
@@ -437,7 +437,7 @@
                     </NuxtLink>
                     <div class="w-100 btn-box">
                       <NuxtLink
-                        :to="`/product/${singleProd.url_key}`"
+                        :to="`/product/${singleProd.url}`"
                         class="quick-view-link"
                         aria-label="Quick Buy"
                         >Quick Buy</NuxtLink
