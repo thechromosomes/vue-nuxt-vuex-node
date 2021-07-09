@@ -38,16 +38,16 @@
                   <span class="icon icon-x"></span>
                 </div>
                 <div class="imgbox">
-                  <a href="#">
+                   <NuxtLink  :to="`/product/${item.url_key}`">
                     <img :src="item.image" alt="img" class="w-100" />
-                  </a>
+                   </NuxtLink>
                 </div>
                 <div class="pro_detail">
-                  <a href="#">
+                  <NuxtLink  :to="`/product/${item.url_key}`">
                     <p class="p-name">
                       {{ item.name }}
                     </p>
-                  </a>
+                  </NuxtLink>
                   <p class="price">
                     ₹{{ item.selling_price | numberWithCommas }}
                   </p>
@@ -64,7 +64,7 @@
                           <span
                             style="cursor: pointer"
                             :style="getHexColor(color.color, index, item.color)"
-                            @click="updateViaColor(color, colorIndex, index)"
+                            @click="updateViaColor(color, index)"
                           ></span>
                         </li>
                       </ul>
@@ -116,6 +116,7 @@ export default {
       scrollPosition: null,
       compareData: [],
       tableData: [],
+      activeColor: [],
     };
   },
   async mounted() {
@@ -140,15 +141,21 @@ export default {
       this.getProduct();
     },
 
-    updateViaColor(product, colorIndex, index) {
+    updateViaColor(product, index) {
       try {
         let tempPost = { ...this.compareData[index] };
         tempPost.image = product.image;
+        tempPost.selling_price = product.selling_price;
         tempPost.price = product.price;
         tempPost.url_key = product.url_key;
         tempPost.color = product.color;
+        tempPost.sku = product.sku;
+        tempPost.fynd_size = product.fynd_size;
+        tempPost.fynd_uid = product.fynd_uid;
+        tempPost.product_parent_id = product.id_product;
+        tempPost.product_id = product.id_product;
 
-        compareData.splice(index, 1, tempPost);
+        this.compareData.splice(index, 1, tempPost);
       } catch (error) {
         console.log("error from update product color >>> ", error);
         this.$globalError(`error from update product color >>> ${error}`);
@@ -284,3 +291,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.border-color-dyn {
+  border: 2px solid #000 !important;
+}
+</style>

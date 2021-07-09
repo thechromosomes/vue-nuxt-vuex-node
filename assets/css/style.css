@@ -8387,3 +8387,18 @@ a.membership_card_join_btn {
 .header.sticky .icon-search-lg.text-red {
   display: none;
 }
+
+.weight-capcity {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.weight-capcity .feature-heding {
+  width: 100%;
+}
+
+.weight-capcity .w-cap {
+  padding-right: 0;
+  width: 33.3%;
+}

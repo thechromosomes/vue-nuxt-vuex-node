@@ -92,9 +92,6 @@
                         >
                       </li>
                       <li>
-                        <a href="" class="proxima_semi-bold">Personalization</a>
-                      </li>
-                      <li>
                         <Nuxt-link
                           to="/cms/virtual-store"
                           class="proxima_semi-bold"

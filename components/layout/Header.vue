@@ -776,6 +776,8 @@
                 <input
                   type="text"
                   name=""
+                  v-model="searchInput"
+                  @keyup="stSearch"
                   class="form-control tab-ico"
                   placeholder="Search"
                 />
@@ -1377,8 +1379,10 @@
                     >
                       <input
                         type="text"
-                         ref="headerSearchBar"
+                        ref="headerSearchBar"
                         name=""
+                        v-model="searchInput"
+                        @keyup="stSearch"
                         class="form-control"
                         placeholder="Search"
                       />
@@ -1445,7 +1449,16 @@ export default {
       this.scrollPosition = window.scrollY;
     },
 
-      togglSshowSearch() {
+     stSearch(e) {
+      var name = /^(?!\s*$).+/;
+      if (e.target.value.match(name)) {
+        this.$store.commit("st_search", e.target.value);
+      } else {
+        this.$store.commit("st_search", "");
+      }
+    },
+
+    togglSshowSearch() {
       this.showSearch = !this.showSearch;
       if (this.showSearch) {
         setTimeout(() => {
@@ -1468,6 +1481,19 @@ export default {
 
   computed: {
     ...mapState(["header"]),
+     searchInput: {
+      get() {
+        // to update search input on page refresh
+        if (this.$route.query.q != this.$store.state.list.search_input) {
+          return this.$route.query.q;
+        } else {
+          return this.$store.state.list.search_input;
+        }
+      },
+      set(value) {
+        return;
+      }
+    }
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.updateScroll);

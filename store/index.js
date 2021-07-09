@@ -51,6 +51,7 @@ export const state = () => ({
   bestSellerMan: [],
   bannerData: [],
   compareItem: [],
+  intialSearchPath: "",
 });
 
 export const actions = {
@@ -136,6 +137,11 @@ export const mutations = {
     state.header = data;
   },
 
+  // initial search Path
+  intialSearchPath(state, payload) {
+    state.intialSearchPath = payload;
+  },
+
   // to compare item
   toCompareItems(state, data) {
     let item = state.compareItem.findIndex(
@@ -215,7 +221,7 @@ export const mutations = {
           state.list.page_error = "No product found";
         }
 
-        state.list.breadcrumb = JSON.parse(data.result.breadcrumb);
+        // state.list.breadcrumb = JSON.parse(data.result.breadcrumb);
         state.list.description = data.result.description;
         state.list.meta_title = data.result.meta_title;
         state.list.meta_description = data.result.meta_description;

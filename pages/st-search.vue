@@ -361,7 +361,9 @@
                     <div class="pd-slider">
                       <div
                         class="pd-slider-itm"
-                        v-if="singleProd.gallery.length > 0"
+                        v-if="
+                          singleProd.gallery && singleProd.gallery.length > 0
+                        "
                       >
                         <VueSlickCarousel v-bind="authenticity">
                           <div
@@ -473,7 +475,7 @@
 </template>
 <script>
 import { mapState } from "vuex";
-import { color } from "../../utils/color";
+import { color } from "../utils/color";
 import VueSlickCarousel from "vue-slick-carousel";
 
 export default {
@@ -483,6 +485,7 @@ export default {
   data() {
     return {
       activeDropdown: null,
+      path: "",
       showFilter: true,
       carryMenu: false,
       sorting: { code: "default", dir: "desc" },
@@ -591,6 +594,7 @@ export default {
     },
     // get product lists
     async getProductList(page) {
+      this.$store.commit("updatePageLoader", { display: true });
       let pageNumber;
       page != undefined ? (pageNumber = page) : (pageNumber = 1);
       try {
@@ -607,6 +611,10 @@ export default {
         form.url_key = pass_url_key;
         form.page = page;
         form.count = count;
+
+        // extras for search functionality
+        form.collection = "5sTiabfXmtzbWWHssLdKiBikbhmkax";
+        form.query = this.$route.query.q;
         if (this.$route.query.sort) {
           form.sort_by = this.$route.query.sort;
         }
@@ -626,52 +634,58 @@ export default {
           form.noLoader = true;
         }
 
-        let response = await this.$store.dispatch("pimAjax", {
-          method: "post",
-          url: `/pimresponse.php`,
+        var authOptions = {
+          method: "get",
+          url: `https://search.kartmax.in/api/Jca1Ai4YpDiwtv5m7zouZEcGNWHuBPESSwgsNIwe/search-get/v1/plp-special`,
+          headers: {
+            "Content-Type": "application/json",
+          },
           params: form,
-        });
+        };
 
+        let tempresponse = await this.$axios(authOptions);
+        let response = tempresponse.data;
         if (response) {
           await this.$store.commit("updateState", {
             error: null,
             data: response,
           });
-          // google tag manager
-          this.gtm_product_impressions = [];
-          var appliedFilter = "none";
-          if (response.query.filter) {
-            appliedFilter = response.query.filter;
-          }
-          if (response.result.products && response.result.products.length > 0) {
-            for (let [index, i] of response.result.products.entries()) {
-              let name = i.name;
-              let id = i.sku;
-              let price = i.selling_price;
-              let category = i.category;
-              let list = "product List";
-              let position = index + 1;
-              this.gtm_product_impressions.push({
-                name,
-                id,
-                price,
-                category,
-                list,
-                position,
-                appliedFilter,
+
+        //   google tag manager
+            this.gtm_product_impressions = [];
+            var appliedFilter = "none";
+            if (response.query.filter) {
+              appliedFilter = response.query.filter;
+            }
+            if (response.result.products && response.result.products.length > 0) {
+              for (let [index, i] of response.result.products.entries()) {
+                let name = i.name;
+                let id = i.sku;
+                let price = i.selling_price;
+                let category = i.category;
+                let list = "product List";
+                let position = index + 1;
+                this.gtm_product_impressions.push({
+                  name,
+                  id,
+                  price,
+                  category,
+                  list,
+                  position,
+                  appliedFilter,
+                });
+              }
+              this.$gtm.push({
+                event: "impressionSent",
+                action: "Product Impression",
+                label: "Product List page",
+                category: response.result.products[0].category,
+                ecommerce: {
+                  currencyCode: "INR",
+                  impressions: this.gtm_product_impressions,
+                },
               });
             }
-            this.$gtm.push({
-              event: "impressionSent",
-              action: "Product Impression",
-              label: "Product List page",
-              category: response.result.products[0].category,
-              ecommerce: {
-                currencyCode: "INR",
-                impressions: this.gtm_product_impressions,
-              },
-            });
-          }
           if (process.browser && pageNumber == 1) {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }
@@ -687,6 +701,7 @@ export default {
           });
         }
       }
+      this.$store.commit("updatePageLoader", { display: false });
     },
 
     // toggle filter droopdown
@@ -934,13 +949,36 @@ export default {
     "$route.query": function () {
       this.getProductList();
     },
+
+    // go back when input empty
+    "$store.state.list.search_input": {
+      handler: function (after, before) {
+        if (after == "") {
+          if (this.path != "") {
+            this.$router.push(this.path);
+          }
+          if (this.path == "/st-search") {
+            this.$router.push("/");
+          }
+        }
+        if (before == "") {
+          this.path = this.$route.path;
+          this.$router.push(
+            `/st-search?q=${this.$store.state.list.search_input}`
+          );
+        }
+      },
+    },
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.updatePage);
+    this.$store.commit("st_search");
   },
   async mounted() {
     // add window event listner for lazy loading products
     window.addEventListener("scroll", this.updatePage);
+    this.path = this.$store.state.intialSearchPath;
+
     if (this.$store.state.list.firstgtm == true) {
       this.servergtm();
     }
