@@ -342,8 +342,10 @@
                           </h4>
                           <div
                             class="w-cap"
-                            v-for="(Itemdetails, indexDet) in singleProductList
-                              .single_prod_data.item_detials"
+                            v-for="(
+                              Itemdetails, indexDet, index
+                            ) in singleProductList.single_prod_data
+                              .item_detials"
                             :key="indexDet"
                           >
                             <p class="proxima_regular">
@@ -352,6 +354,24 @@
                             <p class="proxima_regular">
                               {{ Itemdetails }}
                             </p>
+                            <template
+                              v-if="
+                                singleProductList.single_prod_data
+                                  .extened_depth &&
+                                singleProductList.single_prod_data
+                                  .extened_depth != '' &&
+                                index == 0
+                              "
+                            >
+                              <p class="proxima_regular">expanded</p>
+                              <p class="proxima_regular">
+                                depth:
+                                {{
+                                  singleProductList.single_prod_data
+                                    .extened_depth
+                                }}
+                              </p>
+                            </template>
                           </div>
                           <div
                             class="w-cap"
@@ -378,8 +398,10 @@
                             </h4>
                             <div
                               class="w-cap"
-                              v-for="(lapItem, lapIndex, index) in singleProductList
-                                .single_prod_data.laptop_item_detials"
+                              v-for="(
+                                lapItem, lapIndex, index
+                              ) in singleProductList.single_prod_data
+                                .laptop_item_detials"
                               :key="index"
                             >
                               <p
@@ -1526,14 +1548,15 @@ export default {
     },
 
     renderDescription2() {
-      let { weight, material, color, warranty } =
+      let { weight, material, color, warranty, capacity } =
         this.singleProductList.single_prod_data;
 
       let obj = {
         weight,
         material,
         color,
-        warranty,
+        capacity,
+        warranty
       };
 
       let finaObj = Object.entries(obj).reduce(
