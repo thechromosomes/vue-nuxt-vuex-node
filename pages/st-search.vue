@@ -625,9 +625,11 @@ export default {
           if (typeof this.$route.query.filter == "string") {
             form.filter = this.$route.query.filter;
           } else {
-            form.filter = this.$route.query.filter.join();
+            form.filter = this.$route.query.filter.join('|');
           }
         }
+
+        // console.log(this.$route.query.filter.join())
 
         // to disable default loader gif
         if (pageNumber > 1) {
@@ -646,7 +648,7 @@ export default {
         let tempresponse = await this.$axios(authOptions);
         let response = tempresponse.data;
         if (response) {
-          await this.$store.commit("updateState", {
+          await this.$store.commit("updateSearchState", {
             error: null,
             data: response,
           });
@@ -695,7 +697,7 @@ export default {
       } catch (error) {
         this.$globalError(`error from all product page >>>> ${error}`);
         if (error.message === "Network Error") {
-          this.$store.commit("updateState", {
+          this.$store.commit("updateSearchState", {
             error:
               "Oops there seems to be some Network issue, please try again",
           });
@@ -768,7 +770,7 @@ export default {
 
     // render wish list class icon
     renderWishList(item) {
-      let ProductId = item.id_product;
+      let ProductId = item.id;
       let groupId = item.group_id;
       let wishList = this.$store.state.cartAjax.wishlist;
 
@@ -798,7 +800,7 @@ export default {
         )
           return this.$router.push("/login");
         let form = {
-          product_id: item.id_product,
+          product_id: item.id,
           customer_id: this.$store.state.cartAjax.customer_id,
           customer_session: this.$store.state.cartAjax.customer_session,
           group_id: item.group_id,

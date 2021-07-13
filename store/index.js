@@ -263,6 +263,55 @@ export const mutations = {
     }
   },
 
+  // update state for search page
+  updateSearchState(state, { error, data }) {
+    if (error == null) {
+      if (data.response.success === 1) {
+        if (data.result.products.length === 0) {
+          state.list.page_error = "No product found";
+        }
+
+        // state.list.breadcrumb = JSON.parse(data.result.breadcrumb);
+        state.list.description = data.result.description;
+        state.list.meta_title = data.result.meta_title;
+        state.list.meta_description = data.result.meta_description;
+        state.list.meta_keyword = data.result.meta_keyword;
+        // state.list.Product_list = data.result.products;
+        state.list.Product_list = state.list.Product_list.concat(
+          data.result.products
+        );
+
+        state.list.pageHead = data.result.name;
+        state.list.filters = data.result.filters;
+        if (data.query.filter) {
+          let array = data.query.filter.split("|");
+          state.list.applied_filters = array;
+        }
+        if (!data.query.filter) {
+          state.list.applied_filters = [];
+        }
+        if (data.query.sort_dir && data.query.sort_by) {
+          state.list.sortingData.code = data.query.sort_by;
+          state.list.sortingData.dir = data.query.sort_dir;
+        } else {
+          state.list.sortingData.code = "default";
+          state.list.sortingData.dir = "desc";
+        }
+        if (data.query) {
+          state.list.total_page = data.query.total_page;
+          state.list.page = data.query.page;
+        }
+        state.list.Product_count = data.result.count;
+        state.list.get_product_length = data.result.products.length;
+        state.list.product_loader = false;
+      } else {
+        state.list.page_error = data.response.error_message;
+        state.list.product_loader = false;
+      }
+    } else {
+      state.list.page_error = error;
+    }
+  },
   // prepare state for single product page
   prepareStateForSingleProd(state, { routeParam }) {
     state.singleProductList.product_loader = true;
