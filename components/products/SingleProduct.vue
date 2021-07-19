@@ -554,6 +554,16 @@
               </div>
             </div>
           </div>
+
+          <!-- 360 image -->
+          <div class="tm-title__h">
+										<div class="tm-title__line"></div>
+										<h3 class="tm-title proxima_regular">360 view</h3>
+										<div class="tm-title__line"></div>
+									</div>
+          <div>
+            <img class="productGif" src="@/assets/images/tumiPDP.gif">
+            </div>
         </div>
       </section>
     </div>
@@ -1678,4 +1688,17 @@ export default {
   color: red;
   margin-top: 10px;
 }
+
+/* 360 gif */
+.productGif{
+  width: 60%;
+  display: block;
+  margin: 0 auto
+}
+.design-inovoation .tm-title__h{ margin-top:30px; width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;}
+.design-inovoation .tm-title__h h3{ font-size:20px}
 </style>

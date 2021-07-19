@@ -594,7 +594,6 @@ export default {
     },
     // get product lists
     async getProductList(page) {
-      this.$store.commit("updatePageLoader", { display: true });
       let pageNumber;
       page != undefined ? (pageNumber = page) : (pageNumber = 1);
       try {
@@ -638,7 +637,7 @@ export default {
 
         var authOptions = {
           method: "get",
-          url: `https://search.kartmax.in/api/Jca1Ai4YpDiwtv5m7zouZEcGNWHuBPESSwgsNIwe/search-get/v1/plp-special`,
+          url: `https://ai.kartmax.in/api/Jca1Ai4YpDiwtv5m7zouZEcGNWHuBPESSwgsNIwe/search-get/v1/plp-special`,
           headers: {
             "Content-Type": "application/json",
           },
@@ -739,7 +738,7 @@ export default {
       if (loader_el) {
         var loader_position = loader_el.offsetTop;
       }
-      if (window.scrollY >= loader_position - 1000) {
+      if (window.scrollY >= loader_position - 2000) {
         await this.$store.commit("universalListMutate", {
           data: Number(this.list.page) + 1,
           changeState: "page",

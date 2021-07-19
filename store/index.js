@@ -298,9 +298,11 @@ export const mutations = {
           state.list.sortingData.dir = "desc";
         }
         if (data.query) {
-          state.list.total_page = data.query.total_page;
+          // state.list.total_page = data.query.total_page;
           state.list.page = data.query.page;
         }
+                state.list.total_page = data.result.count/data.query.count;
+
         state.list.Product_count = data.result.count;
         state.list.get_product_length = data.result.products.length;
         state.list.product_loader = false;
