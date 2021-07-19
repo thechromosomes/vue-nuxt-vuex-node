@@ -1,5 +1,8 @@
 import Vue from "vue";
 import SimpleVueValidation from "simple-vue-validator";
+import vueDebounce from 'vue-debounce'
+
+Vue.use(vueDebounce)
 
 Vue.use(SimpleVueValidation);
 

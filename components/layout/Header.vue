@@ -777,7 +777,7 @@
                   type="text"
                   name=""
                   v-model="searchInput"
-                  @keyup="stSearch"
+                   v-debounce:500ms="stSearch"
                   class="form-control tab-ico"
                   placeholder="Search"
                 />
@@ -1382,7 +1382,7 @@
                         ref="headerSearchBar"
                         name=""
                         v-model="searchInput"
-                        @keyup="stSearch"
+                       v-debounce:500ms="stSearch"
                         class="form-control"
                         placeholder="Search"
                       />
@@ -1449,7 +1449,7 @@ export default {
       this.scrollPosition = window.scrollY;
     },
 
-     stSearch(e) {
+     stSearch(val, e) {
       var name = /^(?!\s*$).+/;
       if (e.target.value.match(name)) {
         this.$store.commit("st_search", e.target.value);
