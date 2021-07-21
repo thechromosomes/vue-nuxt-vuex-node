@@ -8402,3 +8402,6 @@ a.membership_card_join_btn {
   padding-right: 0;
   width: 33.3%;
 }
+.tm-pdp-carousel .tm-pdp-recommend-box ul .slick-next {
+  right: -5px;
+}

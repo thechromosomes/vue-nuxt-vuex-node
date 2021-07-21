@@ -393,6 +393,8 @@ export const mutations = {
       tempPost.price = product.price;
       tempPost.url_key = product.url_key;
       tempPost.color = product.color;
+      tempPost.gallery = product.gallery;
+
 
       state.list.Product_list.splice(index, 1, tempPost);
     } catch (error) {

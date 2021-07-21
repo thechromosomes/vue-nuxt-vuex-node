@@ -652,6 +652,7 @@
       </div>
     </div>
     <!-- ----------------------------TUMI design innovation end ------------ -->
+    <client-only>
     <section class="alfa-sec alfa-on-pd">
       <div class="container">
         <div class="row">
@@ -704,6 +705,7 @@
         </div>
       </div>
     </section>
+    </client-only>u
     <ModalPopUp v-if="showModalPopUp" />
   </div>
 </template>
@@ -891,9 +893,9 @@ export default {
       recomndedSetting: {
         centerMode: false,
         centerPadding: "0px",
-        arrows: false,
+        arrows: true,
         slidesToShow: 3,
-        autoplay: true,
+        autoplay: false,
         slidesToScroll: 1,
         speed: 1500,
 

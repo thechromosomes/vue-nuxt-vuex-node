@@ -80,7 +80,7 @@
                           <NuxtLink
                             :to="`/product/${$store.state.compareItem[cIndex].url}`"
                             class="extra-links proxima_regular"
-                            >Quick Buy</NuxtLink
+                            >Shop Now</NuxtLink
                           >
                           <a
                             @click.prevent="
@@ -438,7 +438,7 @@
                         :to="`/product/${singleProd.url_key}`"
                         class="quick-view-link"
                         aria-label="Quick Buy"
-                        >Quick Buy</NuxtLink
+                        >Shop Now</NuxtLink
                       >
                     </div>
                   </div>
