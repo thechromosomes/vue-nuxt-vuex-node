@@ -560,19 +560,19 @@
             <h3 class="tm-title proxima_regular">360 view</h3>
             <div class="tm-title__line"></div>
           </div>
-          <div v-if="this.$route.query.gif === 250">
+          <div v-if="$route.query.gif == 250">
             <img
               class="productGif"
               src="@/assets/images/bag-image-fast-250.gif"
             />
           </div>
-          <div v-else-if="this.$route.query.gif === 500">
+          <div v-else-if="$route.query.gif == 500">
             <img
               class="productGif"
               src="@/assets/images/bag-image-fast-500.gif"
             />
           </div>
-          <div v-else-if="this.$route.query.gif === 1000">
+          <div v-else-if="$route.query.gif == 1000">
             <img
               class="productGif"
               src="@/assets/images/bag-image-fast-1000.gif"
