@@ -1,5 +1,5 @@
 RewriteRule index.html http://localhost:12000/ [P]
-RewriteRule (.*) http://localhost:15000/$1 [P]
+RewriteRule (.*) http://localhost:12000/$1 [P]
 RewriteEngine On
 
 
