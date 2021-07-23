@@ -112,6 +112,7 @@
                             <span class="spacer hide-mob">|</span>
                             <span class="link delete-link">
                               <a
+                          git status
                                 class="cta"
                                 @click.prevent="removeCartItem(product)"
                                 href="#"
@@ -123,7 +124,7 @@
                          data-product-id=""
                       v-show="product.fynd_qty == 0">
                       Product out of stock
-                           </div>
+                            </div>
                           </div>
                         </div>
                       </div>
