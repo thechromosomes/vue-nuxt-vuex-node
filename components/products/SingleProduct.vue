@@ -838,26 +838,13 @@ export default {
       },
 
       mobileSingleslider: {
-        focusOnSelect: true,
-        infinite: false,
-        speed: 500,
+        infinite: true,
         slidesToShow: 1,
-        slidesToScroll: 3,
-        autoscroll: true,
-        autoplay: true,
-        arrows: false,
-        centerMode: true,
+        slidesToScroll: 1,
         dots: true,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              centerMode: false
-            }
-          }
-        ]
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
       },
       settings2: {
         focusOnSelect: true,
