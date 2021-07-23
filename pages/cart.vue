@@ -112,12 +112,19 @@
                             <span class="spacer hide-mob">|</span>
                             <span class="link delete-link">
                               <a
+                          git status
                                 class="cta"
                                 @click.prevent="removeCartItem(product)"
                                 href="#"
                                 >Remove</a
                               >
                             </span>
+                            <div
+                          class="cart__meta-text pre-order-message error"
+                         data-product-id=""
+                      v-show="product.fynd_qty == 0">
+                      Product out of stock
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -134,8 +141,10 @@
                     </div>
                     <div class="col-3 span2 cart-item-totals hide-mob">
                       <p>₹{{ product.row_total | numberWithCommas }}</p>
+                        
                     </div>
                   </div>
+                
                 </div>
               </div>
               <div class="col-md-4 col-lg-4 col-12 p-0">

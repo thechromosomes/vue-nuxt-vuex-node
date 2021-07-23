@@ -79,6 +79,13 @@
                               <div class="product-qty">
                                 Quantity: {{ product.qty }}
                               </div>
+                              <div
+class="cart__meta-text pre-order-message error"
+data-product-id="5172417462405"
+v-show="product.fynd_qty == 0"
+>
+Product out of stock
+</div>
                               <!-- <div class="product-monogram"></div> -->
                             </div>
                             <!-- <a
@@ -90,6 +97,7 @@
                             ></a> -->
                             <div style="clear: both"></div>
                           </div>
+                          
                         </li>
                       </ul>
                     </div>

@@ -525,6 +525,7 @@
 /*================= media qurey for mobile ===================*/
 
 @media only screen and (max-width: 767px) {
+  
   /*------------mobilr icons color css------srat-----*/
   .hide-desk {
     display: block;
@@ -2906,6 +2907,10 @@ top: 14px;
   .box-item.fixedcompare {
     top: 47px;
   }
+  .filter-pd-listing li .checkbox-wrap .checkmark:after {
+    left: 5px;
+    top: 0px;
+}
 }
 
 /* ================ banner css================= */
