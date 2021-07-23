@@ -5,8 +5,8 @@
       <div class="herocrousal">
         <VueSlickCarousel v-bind="settings">
           <div v-for="(item, index) in bannerData" :key="index">
-            <img :src="item.desktop_image" alt="" class="hide-mob" />
-            <img :src="item.mobile_image" alt="" class="show-mob" />
+            <img :src="item.desktop_image" alt="" class="hide-mob w-100" />
+            <img :src="item.mobile_image" alt="" class="show-mob w-100" />
             <div v-html="item.description">
               <div></div>
             </div>
