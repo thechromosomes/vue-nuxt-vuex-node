@@ -75,9 +75,9 @@
                       <NuxtLink
                         v-if="
                           $store.state.cartAjax.customer_id != null &&
-                          $store.state.cartAjax.customer_id != '' &&
-                          $store.state.cartAjax.customer_session != '' &&
-                          $store.state.cartAjax.customer_session != null
+                            $store.state.cartAjax.customer_id != '' &&
+                            $store.state.cartAjax.customer_session != '' &&
+                            $store.state.cartAjax.customer_session != null
                         "
                         to="/Dashboard"
                         class="proxima_semi-bold"
@@ -689,7 +689,7 @@
               <NuxtLink
                 v-else-if="
                   item.menu_url_key == 'accessories' ||
-                  item.menu_url_key == 'luggage'
+                    item.menu_url_key == 'luggage'
                 "
                 :to="`/clp-cms/${item.menu_url_key}`"
                 class="desktop-item proxima_semi-bold"
@@ -713,7 +713,7 @@
                 <NuxtLink
                   v-else-if="
                     item.menu_url_key == 'accessories' ||
-                    item.menu_url_key == 'luggage'
+                      item.menu_url_key == 'luggage'
                   "
                   :to="`/clp-cms/${item.menu_url_key}`"
                   class="proxima_semi-bold"
@@ -742,7 +742,7 @@
                           :to="`/collections/${childItem.menu_url_key}/`"
                           v-if="
                             childItem.landing_page == '' ||
-                            childItem.landing_page == null
+                              childItem.landing_page == null
                           "
                           @click.native="() => (showMenu = false)"
                           >{{ childItem.name }}</Nuxt-link
@@ -752,7 +752,7 @@
                           :to="`/cms/${childItem.landing_page}`"
                           v-if="
                             childItem.landing_page != '' &&
-                            childItem.landing_page != null
+                              childItem.landing_page != null
                           "
                           >{{ childItem.name }}</Nuxt-link
                         >
@@ -777,7 +777,7 @@
                   type="text"
                   name=""
                   v-model="searchInput"
-                   v-debounce:500ms="stSearch"
+                  v-debounce:500ms="stSearch"
                   class="form-control tab-ico"
                   placeholder="Search"
                 />
@@ -790,9 +790,9 @@
                     <NuxtLink
                       v-if="
                         $store.state.cartAjax.customer_id != null &&
-                        $store.state.cartAjax.customer_id != '' &&
-                        $store.state.cartAjax.customer_session != '' &&
-                        $store.state.cartAjax.customer_session != null
+                          $store.state.cartAjax.customer_id != '' &&
+                          $store.state.cartAjax.customer_session != '' &&
+                          $store.state.cartAjax.customer_session != null
                       "
                       to="/Dashboard"
                       class="proxima_regular"
@@ -1350,9 +1350,9 @@
                 <NuxtLink
                   v-if="
                     $store.state.cartAjax.customer_id != null &&
-                    $store.state.cartAjax.customer_id != '' &&
-                    $store.state.cartAjax.customer_session != '' &&
-                    $store.state.cartAjax.customer_session != null
+                      $store.state.cartAjax.customer_id != '' &&
+                      $store.state.cartAjax.customer_session != '' &&
+                      $store.state.cartAjax.customer_session != null
                   "
                   to="/Dashboard"
                   class="proxima_semi-bold"
@@ -1382,7 +1382,7 @@
                         ref="headerSearchBar"
                         name=""
                         v-model="searchInput"
-                       v-debounce:500ms="stSearch"
+                        v-debounce:500ms="stSearch"
                         class="form-control"
                         placeholder="Search"
                       />
@@ -1436,7 +1436,7 @@ export default {
       showMenu: false,
       close: false,
       isActive: -1,
-      showSearch: false,
+      showSearch: false
     };
   },
   async mounted() {
@@ -1449,7 +1449,7 @@ export default {
       this.scrollPosition = window.scrollY;
     },
 
-     stSearch(val, e) {
+    stSearch(val, e) {
       var name = /^(?!\s*$).+/;
       if (e.target.value.match(name)) {
         this.$store.commit("st_search", e.target.value);
@@ -1476,12 +1476,12 @@ export default {
       } else {
         this.isActive = index;
       }
-    },
+    }
   },
 
   computed: {
     ...mapState(["header"]),
-     searchInput: {
+    searchInput: {
       get() {
         // to update search input on page refresh
         if (this.$route.query.q != this.$store.state.list.search_input) {
@@ -1497,7 +1497,7 @@ export default {
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.updateScroll);
-  },
+  }
 };
 </script>
 <style scoped>

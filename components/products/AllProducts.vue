@@ -364,17 +364,19 @@
                         class="pd-slider-itm"
                         v-if="singleProd.gallery.length > 0"
                       >
-                        <VueSlickCarousel v-bind="authenticity">
-                          <div
-                            v-for="(image, imageIndex) in singleProd.gallery"
-                            :key="imageIndex"
-                          >
-                            <img
-                              :src="image.image"
-                              :to="`/product/${singleProd.url_key}`"
-                            />
-                          </div>
-                        </VueSlickCarousel>
+                        <client-only>
+                          <VueSlickCarousel v-bind="authenticity">
+                            <div
+                              v-for="(image, imageIndex) in singleProd.gallery"
+                              :key="imageIndex"
+                            >
+                              <img
+                                :src="image.image"
+                                :to="`/product/${singleProd.url_key}`"
+                              />
+                            </div>
+                          </VueSlickCarousel>
+                        </client-only>
                       </div>
                     </div>
                   </div>

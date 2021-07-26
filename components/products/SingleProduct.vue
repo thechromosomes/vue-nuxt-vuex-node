@@ -92,24 +92,26 @@
                         singleProductList.single_prod_data.gallery.length > 0
                     "
                   >
-                    <VueSlickCarousel v-bind="mobileSingleslider">
-                      <div
-                        v-for="(itemSingle, indexSingle) in singleProductList
-                          .single_prod_data.gallery"
-                        :key="indexSingle"
-                      >
-                        <div class="one-item-crosal-mob">
-                          <div class="slider-for-mob">
-                            <div>
-                              <img
-                                :src="itemSingle.image"
-                                :alt="itemSingle.image"
-                              />
+                    <client-only>
+                      <VueSlickCarousel v-bind="mobileSingleslider">
+                        <div
+                          v-for="(itemSingle, indexSingle) in singleProductList
+                            .single_prod_data.gallery"
+                          :key="indexSingle"
+                        >
+                          <div class="one-item-crosal-mob">
+                            <div class="slider-for-mob">
+                              <div>
+                                <img
+                                  :src="itemSingle.image"
+                                  :alt="itemSingle.image"
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </VueSlickCarousel>
+                      </VueSlickCarousel>
+                    </client-only>
                   </div>
                 </div>
 
@@ -600,28 +602,30 @@
             class="tm-pdp-recommend"
             v-if="recent_products && recent_products.length"
           >
-            <VueSlickCarousel v-bind="recomndedSetting">
-              <li
-                v-for="(recItem, recIndex) in recent_products"
-                :key="recIndex"
-              >
-                <Nuxt-link
-                  :to="recItem.url_key"
-                  @click.native="gtm_product_clickr(recItem, recIndex)"
+            <client-only>
+              <VueSlickCarousel v-bind="recomndedSetting">
+                <li
+                  v-for="(recItem, recIndex) in recent_products"
+                  :key="recIndex"
                 >
-                  <div class="recomnded-wrap">
-                    <div class="re-com-item">
-                      <img :src="recItem.image" :alt="recItem.image" />
-                      <h3 class="proxima_bold">{{ recItem.name }}</h3>
-                      <p class="proxima_regular">{{ recItem.collection }}</p>
-                      <small class="proxima_regular"
-                        >₹{{ recItem.selling_price }}</small
-                      >
+                  <Nuxt-link
+                    :to="recItem.url_key"
+                    @click.native="gtm_product_clickr(recItem, recIndex)"
+                  >
+                    <div class="recomnded-wrap">
+                      <div class="re-com-item">
+                        <img :src="recItem.image" :alt="recItem.image" />
+                        <h3 class="proxima_bold">{{ recItem.name }}</h3>
+                        <p class="proxima_regular">{{ recItem.collection }}</p>
+                        <small class="proxima_regular"
+                          >₹{{ recItem.selling_price }}</small
+                        >
+                      </div>
                     </div>
-                  </div>
-                </Nuxt-link>
-              </li>
-            </VueSlickCarousel>
+                  </Nuxt-link>
+                </li>
+              </VueSlickCarousel>
+            </client-only>
           </ul>
         </div>
         <div class="tm-pdp-recommend-box">
@@ -641,29 +645,31 @@
                 singleProductList.single_prod_data.recommended.length > 0
             "
           >
-            <VueSlickCarousel v-bind="recomndedSetting">
-              <li
-                v-for="(recItem, recIndex) in singleProductList.single_prod_data
-                  .recommended"
-                :key="recIndex"
-              >
-                <Nuxt-link
-                  :to="recItem.url_key"
-                  @click.native="gtm_product_clickr(recItem, recIndex)"
+            <client-only>
+              <VueSlickCarousel v-bind="recomndedSetting">
+                <li
+                  v-for="(recItem, recIndex) in singleProductList
+                    .single_prod_data.recommended"
+                  :key="recIndex"
                 >
-                  <div class="recomnded-wrap">
-                    <div class="re-com-item">
-                      <img :src="recItem.image" :alt="recItem.image" />
-                      <h3 class="proxima_bold">{{ recItem.name }}</h3>
-                      <p class="proxima_regular">{{ recItem.collection }}</p>
-                      <small class="proxima_regular"
-                        >₹{{ recItem.selling_price }}</small
-                      >
+                  <Nuxt-link
+                    :to="recItem.url_key"
+                    @click.native="gtm_product_clickr(recItem, recIndex)"
+                  >
+                    <div class="recomnded-wrap">
+                      <div class="re-com-item">
+                        <img :src="recItem.image" :alt="recItem.image" />
+                        <h3 class="proxima_bold">{{ recItem.name }}</h3>
+                        <p class="proxima_regular">{{ recItem.collection }}</p>
+                        <small class="proxima_regular"
+                          >₹{{ recItem.selling_price }}</small
+                        >
+                      </div>
                     </div>
-                  </div>
-                </Nuxt-link>
-              </li>
-            </VueSlickCarousel>
+                  </Nuxt-link>
+                </li>
+              </VueSlickCarousel>
+            </client-only>
           </ul>
         </div>
       </div>
@@ -844,7 +850,7 @@ export default {
         dots: true,
         arrows: false,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 2000
       },
       settings2: {
         focusOnSelect: true,

@@ -142,19 +142,21 @@
       <section class="recycled-ollection">
         <h4 class="proxima_bold">Recycled Collection</h4>
         <div class="container" v-if="accessories.length > 0">
-          <VueSlickCarousel v-bind="slides">
-            <div
-              class="recy-item"
-              v-for="(item, index) in accessories"
-              :key="index"
-            >
-              <nuxt-link :to="`/product/${item.url_key}`">
-                <img :src="item.image" />
-                <p class="td-p td-p-small proxima_light">{{ item.color }}</p>
-                <h5 class="td-h4 proxima_light">{{ item.name }}</h5>
-              </nuxt-link>
-            </div>
-          </VueSlickCarousel>
+          <client-only>
+            <VueSlickCarousel v-bind="slides">
+              <div
+                class="recy-item"
+                v-for="(item, index) in accessories"
+                :key="index"
+              >
+                <nuxt-link :to="`/product/${item.url_key}`">
+                  <img :src="item.image" />
+                  <p class="td-p td-p-small proxima_light">{{ item.color }}</p>
+                  <h5 class="td-h4 proxima_light">{{ item.name }}</h5>
+                </nuxt-link>
+              </div>
+            </VueSlickCarousel>
+          </client-only>
         </div>
         <a
           href="/collections/accessories-wallet---card-cases"
@@ -224,63 +226,65 @@
         <div class="container-fluid">
           <h4 class="proxima_bold">Material Innovation</h4>
           <div class="material_invo_item">
-            <VueSlickCarousel v-bind="slides">
-              <div class="invo-item">
-                <img src="~/assets/images/mat-1.jpg" class="w-100" />
-                <h5 class="proxima_bold">Recycled Plastic</h5>
-                <p class="proxima_regular">
-                  980,531 plastic bottles have been diverted from landfill and
-                  into TUMI bags. We use post-consumer recycled PET fabric as
-                  the interior lining, zipper tape, webbing, and binding.
-                </p>
-              </div>
-              <div class="invo-item">
-                <img src="~/assets/images/mat-2.jpg" class="w-100" />
-                <h5 class="proxima_bold">Eliminating PVC Materials</h5>
-                <p class="proxima_regular">
-                  Innovative design has helped us to eliminate the majority of
-                  PVC used in our products.
-                </p>
-              </div>
-              <div class="invo-item">
-                <img src="~/assets/images/mat-3.jpg" class="w-100" />
-                <h5 class="proxima_bold">Water-based Poly Fabric</h5>
-                <p class="proxima_regular">
-                  We use a water-based polyurethane coating process for the
-                  fabrics in our bags instead of using a solvent-based coating
-                  process, resulting in less contaminants in the water supply.
-                </p>
-              </div>
-              <div class="invo-item">
-                <img src="~/assets/images/mat-4.jpg" class="w-100" />
-                <h5 class="proxima_bold">Recycled Zinc</h5>
-                <p class="proxima_regular">
-                  We’re cutting the amount of virgin zinc in hardware on our
-                  bags by 50% and replacing it with recycled zinc. This means
-                  less environmental damage from mining, less depletion of
-                  limited zinc deposits, less energy to extract and alloy the
-                  zinc and less zinc wasted in landfill.
-                </p>
-              </div>
-              <div class="invo-item">
-                <img src="~/assets/images/cms-1.jpg" class="w-100" />
-                <h5 class="proxima_bold">Post-industrial Nylon</h5>
-                <p class="proxima_regular">
-                  We have introduced a post-industrial recycled nylon into
-                  several of our collections, and we’re always looking to expand
-                  our use of recycled materials.
-                </p>
-              </div>
-              <div class="invo-item">
-                <img src="~/assets/images/cms-2.jpg" class="w-100" />
-                <h5 class="proxima_bold">Recycled Paper</h5>
-                <p class="proxima_regular">
-                  Our hangtags are printed on recycled paper and we use
-                  soy-based ink which contains less VOCs and uses less
-                  petroleum.
-                </p>
-              </div>
-            </VueSlickCarousel>
+            <client-only>
+              <VueSlickCarousel v-bind="slides">
+                <div class="invo-item">
+                  <img src="~/assets/images/mat-1.jpg" class="w-100" />
+                  <h5 class="proxima_bold">Recycled Plastic</h5>
+                  <p class="proxima_regular">
+                    980,531 plastic bottles have been diverted from landfill and
+                    into TUMI bags. We use post-consumer recycled PET fabric as
+                    the interior lining, zipper tape, webbing, and binding.
+                  </p>
+                </div>
+                <div class="invo-item">
+                  <img src="~/assets/images/mat-2.jpg" class="w-100" />
+                  <h5 class="proxima_bold">Eliminating PVC Materials</h5>
+                  <p class="proxima_regular">
+                    Innovative design has helped us to eliminate the majority of
+                    PVC used in our products.
+                  </p>
+                </div>
+                <div class="invo-item">
+                  <img src="~/assets/images/mat-3.jpg" class="w-100" />
+                  <h5 class="proxima_bold">Water-based Poly Fabric</h5>
+                  <p class="proxima_regular">
+                    We use a water-based polyurethane coating process for the
+                    fabrics in our bags instead of using a solvent-based coating
+                    process, resulting in less contaminants in the water supply.
+                  </p>
+                </div>
+                <div class="invo-item">
+                  <img src="~/assets/images/mat-4.jpg" class="w-100" />
+                  <h5 class="proxima_bold">Recycled Zinc</h5>
+                  <p class="proxima_regular">
+                    We’re cutting the amount of virgin zinc in hardware on our
+                    bags by 50% and replacing it with recycled zinc. This means
+                    less environmental damage from mining, less depletion of
+                    limited zinc deposits, less energy to extract and alloy the
+                    zinc and less zinc wasted in landfill.
+                  </p>
+                </div>
+                <div class="invo-item">
+                  <img src="~/assets/images/cms-1.jpg" class="w-100" />
+                  <h5 class="proxima_bold">Post-industrial Nylon</h5>
+                  <p class="proxima_regular">
+                    We have introduced a post-industrial recycled nylon into
+                    several of our collections, and we’re always looking to
+                    expand our use of recycled materials.
+                  </p>
+                </div>
+                <div class="invo-item">
+                  <img src="~/assets/images/cms-2.jpg" class="w-100" />
+                  <h5 class="proxima_bold">Recycled Paper</h5>
+                  <p class="proxima_regular">
+                    Our hangtags are printed on recycled paper and we use
+                    soy-based ink which contains less VOCs and uses less
+                    petroleum.
+                  </p>
+                </div>
+              </VueSlickCarousel>
+            </client-only>
           </div>
         </div>
       </div>

@@ -1,20 +1,22 @@
 <template>
   <div>
-     <client-only>
-    <section class="hero-area" v-if="bannerData.length > 0">
-      <div class="herocrousal">
-        <VueSlickCarousel v-bind="settings">
-          <div v-for="(item, index) in bannerData" :key="index">
-            <img :src="item.desktop_image" alt="" class="hide-mob w-100" />
-            <img :src="item.mobile_image" alt="" class="show-mob w-100" />
-            <div v-html="item.description">
-              <div></div>
-            </div>
-          </div>
-        </VueSlickCarousel>
-      </div>
-    </section>
-     </client-only>
+    <client-only>
+      <section class="hero-area" v-if="bannerData.length > 0">
+        <div class="herocrousal">
+          <client-only>
+            <VueSlickCarousel v-bind="settings">
+              <div v-for="(item, index) in bannerData" :key="index">
+                <img :src="item.desktop_image" alt="" class="hide-mob w-100" />
+                <img :src="item.mobile_image" alt="" class="show-mob w-100" />
+                <div v-html="item.description">
+                  <div></div>
+                </div>
+              </div>
+            </VueSlickCarousel>
+          </client-only>
+        </div>
+      </section>
+    </client-only>
     <!-- ============================ SHOP BY CATEGORY =============== -->
     <div v-if="Object.keys(homePageData).length != 0">
       <span v-html="homePageData.content"></span>
@@ -23,21 +25,23 @@
     <section class="explore-sec">
       <h4 class="text-center proxima_regular">EXPLORE #TUMIHK</h4>
       <div class="explore">
-        <VueSlickCarousel v-bind="instaSettings">
-          <div
-            v-for="(instaItems, instaIndex) in 10"
-            :key="instaIndex"
-            class="blog-cover"
-          >
-            <img src="~/assets/images/explore-2.jpg" alt="explore-1" />
-            <ul class="blog-icon">
-              <li><a href="#" class="proxima_regular">jamie.xia</a></li>
-              <li>
-                <a href="#"><img src="~/assets/images/instagram.png" /></a>
-              </li>
-            </ul>
-          </div>
-        </VueSlickCarousel>
+        <client-only>
+          <VueSlickCarousel v-bind="instaSettings">
+            <div
+              v-for="(instaItems, instaIndex) in 10"
+              :key="instaIndex"
+              class="blog-cover"
+            >
+              <img src="~/assets/images/explore-2.jpg" alt="explore-1" />
+              <ul class="blog-icon">
+                <li><a href="#" class="proxima_regular">jamie.xia</a></li>
+                <li>
+                  <a href="#"><img src="~/assets/images/instagram.png"/></a>
+                </li>
+              </ul>
+            </div>
+          </VueSlickCarousel>
+        </client-only>
       </div>
     </section>
     <div class="full-page-border"></div>
@@ -49,18 +53,20 @@
       <div class="container">
         <h2 class="proxima_regular">RECOMMENDATIONS FOR YOU</h2>
         <div class="recomnded-wrap">
-          <VueSlickCarousel v-bind="recomndedSetting">
-            <div
-              class="re-com-item"
-              v-for="(recItem, recIndex) in 10"
-              :key="recIndex"
-            >
-              <img src="~assets/images/recomded.png" />
-              <h3 class="proxima_bold">Norman back pack</h3>
-              <p class="proxima_regular">All bro Brands</p>
-              <small class="proxima_regular">@ abc</small>
-            </div>
-          </VueSlickCarousel>
+          <client-only>
+            <VueSlickCarousel v-bind="recomndedSetting">
+              <div
+                class="re-com-item"
+                v-for="(recItem, recIndex) in 10"
+                :key="recIndex"
+              >
+                <img src="~assets/images/recomded.png" />
+                <h3 class="proxima_bold">Norman back pack</h3>
+                <p class="proxima_regular">All bro Brands</p>
+                <small class="proxima_regular">@ abc</small>
+              </div>
+            </VueSlickCarousel>
+          </client-only>
         </div>
       </div>
     </section>
@@ -73,7 +79,7 @@ import { mapState } from "vuex";
 
 export default {
   components: {
-    VueSlickCarousel,
+    VueSlickCarousel
   },
   data() {
     return {
@@ -84,7 +90,7 @@ export default {
         centerMode: false,
         autoplay: false,
         autoplaySpeed: 2000,
-        dots: true,
+        dots: true
       },
       instaSettings: {
         focusOnSelect: true,
@@ -103,8 +109,8 @@ export default {
               slidesToShow: 3,
               slidesToScroll: 1,
               centerPadding: "150px",
-              centerMode: false,
-            },
+              centerMode: false
+            }
           },
           {
             breakpoint: 600,
@@ -113,8 +119,8 @@ export default {
               slidesToScroll: 2,
               initialSlide: 2,
               centerMode: false,
-              centerPadding: "100px",
-            },
+              centerPadding: "100px"
+            }
           },
           {
             breakpoint: 480,
@@ -122,10 +128,10 @@ export default {
               slidesToShow: 2,
               slidesToScroll: 2,
               centerMode: false,
-              centerPadding: "0px",
-            },
-          },
-        ],
+              centerPadding: "0px"
+            }
+          }
+        ]
       },
       recomndedSetting: {
         centerMode: true,
@@ -143,8 +149,8 @@ export default {
               arrows: true,
               centerMode: true,
               centerPadding: "40px",
-              slidesToShow: 3,
-            },
+              slidesToShow: 3
+            }
           },
           {
             breakpoint: 480,
@@ -152,10 +158,10 @@ export default {
               arrows: false,
               centerMode: true,
               centerPadding: "20px",
-              slidesToShow: 2,
-            },
-          },
-        ],
+              slidesToShow: 2
+            }
+          }
+        ]
       },
       videoSetting: {
         focusOnSelect: true,
@@ -166,8 +172,8 @@ export default {
         autoscroll: true,
         autoplay: false,
         arrows: true,
-        centerMode: true,
-      },
+        centerMode: true
+      }
     };
   },
 
@@ -217,7 +223,7 @@ export default {
     },
     url() {
       return this.$store.state.BASE_URL + this.$route.fullPath;
-    },
-  },
+    }
+  }
 };
 </script>
