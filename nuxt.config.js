@@ -2,14 +2,14 @@ export default {
   server: {
     port: 12000,
     // configure local area network
-    host: "0",
+    // host: "0",
   },
   head: {
     title: "Tumi",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "Tumi " },
+      { hid: "description", name: "description", content: "Tumi" },
       {
         hid: "og:Tumi",
         property: "og:Tumi",

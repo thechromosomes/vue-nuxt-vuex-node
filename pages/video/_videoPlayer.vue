@@ -31,33 +31,35 @@
             <div class="video-verticaly-slide">
               <small class="proxima_semi-bold">EXPLORE MORE</small>
               <div>
-                <VueSlickCarousel v-bind="videosSetiing">
-                  <div>
-                    <img src="~/assets/images/recyle-4.jpg" />
-                    <h5 class="proxima_bold">Lumin Utility Pouch</h5>
-                    <p class="proxima_light">TUMI I MCLAREN</p>
-                  </div>
-                  <div>
-                    <img src="~/assets/images/recyle-4.jpg" />
-                    <h5 class="proxima_bold">Lumin Utility Pouch</h5>
-                    <p class="proxima_light">TUMI I MCLAREN</p>
-                  </div>
-                  <div>
-                    <img src="~/assets/images/recyle-4.jpg" />
-                    <h5 class="proxima_bold">Lumin Utility Pouch</h5>
-                    <p class="proxima_light">TUMI I MCLAREN</p>
-                  </div>
-                  <div>
-                    <img src="~/assets/images/recyle-4.jpg" />
-                    <h5 class="proxima_bold">Lumin Utility Pouch</h5>
-                    <p class="proxima_light">TUMI I MCLAREN</p>
-                  </div>
-                  <div>
-                    <img src="~/assets/images/recyle-4.jpg" />
-                    <h5 class="proxima_semi-bold">Lumin Utility Pouch</h5>
-                    <p class="proxima_light">TUMI I MCLAREN</p>
-                  </div>
-                </VueSlickCarousel>
+                <client-only>
+                  <VueSlickCarousel v-bind="videosSetiing">
+                    <div>
+                      <img src="~/assets/images/recyle-4.jpg" />
+                      <h5 class="proxima_bold">Lumin Utility Pouch</h5>
+                      <p class="proxima_light">TUMI I MCLAREN</p>
+                    </div>
+                    <div>
+                      <img src="~/assets/images/recyle-4.jpg" />
+                      <h5 class="proxima_bold">Lumin Utility Pouch</h5>
+                      <p class="proxima_light">TUMI I MCLAREN</p>
+                    </div>
+                    <div>
+                      <img src="~/assets/images/recyle-4.jpg" />
+                      <h5 class="proxima_bold">Lumin Utility Pouch</h5>
+                      <p class="proxima_light">TUMI I MCLAREN</p>
+                    </div>
+                    <div>
+                      <img src="~/assets/images/recyle-4.jpg" />
+                      <h5 class="proxima_bold">Lumin Utility Pouch</h5>
+                      <p class="proxima_light">TUMI I MCLAREN</p>
+                    </div>
+                    <div>
+                      <img src="~/assets/images/recyle-4.jpg" />
+                      <h5 class="proxima_semi-bold">Lumin Utility Pouch</h5>
+                      <p class="proxima_light">TUMI I MCLAREN</p>
+                    </div>
+                  </VueSlickCarousel>
+                </client-only>
               </div>
             </div>
           </div>
