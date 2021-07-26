@@ -2,7 +2,7 @@ export default {
   server: {
     port: 12000,
     // configure local area network
-    host: "0",
+    // host: "0",
   },
   head: {
     title: "Tumi",

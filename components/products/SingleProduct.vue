@@ -722,7 +722,7 @@
           </div>
         </div>
       </section> </client-only
-    >u
+    >
     <ModalPopUp v-if="showModalPopUp" />
   </div>
 </template>
