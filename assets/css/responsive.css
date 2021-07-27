@@ -1433,17 +1433,17 @@ width: 10%;
         transition: all .8s ease;
     } */
   .watch-mobile .playicon.tm-icon__play {
-    width: 45px;
+    width: 80px;top: 37%;
   }
   .watch-mobile .tm-icon__play {
-    top: 28%;
+    
   }
   .watch-mobile .slick-slide > div {
     padding: 10px;
     border: 2.2px solid #6f6f6f;
   }
   .proxima_regular.performce-txt {
-    font-size: 16px;
+    font-size: 13px;
     text-transform: uppercase;
     padding-top: 8px;
     display: block;
