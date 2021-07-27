@@ -14,6 +14,11 @@
     } */
 }
 
+@media only screen and (max-width: 1294px) {
+
+  .header.sticky.fixed .header-search input{ margin-right: 0px;}
+  .header.sticky.fixed .header-search{ margin-left: 0px;}
+}
 /*================= media qurey 1278px ===================*/
 
 @media only screen and (max-width: 1278px) {
@@ -274,9 +279,7 @@
     width: 100%;
     padding: 0 30px;
   }
-  .filter-product {
-    width: 25%;
-  }
+  
   .product-div-col {
     width: 47%;
     margin: 0px 10px 20px 10px;
@@ -357,6 +360,8 @@
   }
   /* -------------- end ---------- */
 }
+
+
 /*================= media qurey 1190px ===================*/
 
 /* --------------------------clp page css ------------start-------- */
