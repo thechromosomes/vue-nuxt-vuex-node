@@ -575,8 +575,9 @@
           <div class="text-center">
             <iframe
               src="https://tmpim.tumi.in/360/139434-1041/"
-              height="800"
-              width="800"
+              height="600"
+              width="600"
+              style="border: 0"
               title="gif image"
             ></iframe>
           </div>
