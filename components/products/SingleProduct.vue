@@ -1647,11 +1647,10 @@ export default {
         this.$store.state.cartAjax.cart_page_message != "" &&
         this.$store.state.cartAjax.cart_page_message != null
       ) {
-        // this.$toast.open(this.$store.state.cartAjax.cart_page_message);
-        // this.$store.commit("cartAjax/removePageMessage", {
-        //   data: ""
-        // });
         this.$store.commit("cartAjax/showHideCart");
+        this.$store.commit("cartAjax/removePageMessage", {
+          data: "",
+        });
       }
     },
     "$store.state.cartAjax.cart_page_erro_page": function () {
