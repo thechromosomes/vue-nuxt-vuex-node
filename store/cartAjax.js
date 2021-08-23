@@ -33,7 +33,7 @@ export const actions = {
     commit("updatePageLoader", { display: true }, { root: true });
     var authOptions = {
       method: data.method,
-      url: rootState.token.cartApi + data.url,
+      url: rootState.cartApi + data.url,
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + data.token,

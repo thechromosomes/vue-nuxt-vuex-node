@@ -59,7 +59,6 @@
                 </li>
               </ul>
               <div class="login-cart-div">
-                <client-only>
                   <ul>
                     <li
                       class="
@@ -121,7 +120,6 @@
                       </a>
                     </li>
                   </ul>
-                </client-only>
 
                 <div class="login-rages-overly">
                   <div
@@ -786,7 +784,6 @@
             <div class="show-mob">
               <ul class="other-nav-links">
                 <li>
-                  <client-only>
                     <NuxtLink
                       v-if="
                         $store.state.cartAjax.customer_id != null &&
@@ -801,7 +798,6 @@
                     <nuxt-link class="proxima_regular" v-else to="/login"
                       >Login/Register</nuxt-link
                     >
-                  </client-only>
 
                   <div
                     class="right-login-menu navbar-side login-process"
@@ -1346,7 +1342,6 @@
               id="navbarSideButton"
               type="button"
             >
-              <client-only>
                 <NuxtLink
                   v-if="
                     $store.state.cartAjax.customer_id != null &&
@@ -1361,7 +1356,6 @@
                 <nuxt-link class="proxima_semi-bold" v-else to="/login"
                   >Login/Register</nuxt-link
                 >
-              </client-only>
             </li>
             <li>
               <span
@@ -1369,7 +1363,6 @@
                 @click="togglSshowSearch()"
               ></span>
             </li>
-            <client-only>
               <li class="mobile-search-fun">
                 <a class="text-red">
                   <span class="icon text-red" aria-hidden="true">
@@ -1415,7 +1408,6 @@
                   ></a
                 >
               </li>
-            </client-only>
           </ul>
         </div>
       </div>

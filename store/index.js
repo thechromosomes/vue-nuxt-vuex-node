@@ -1,4 +1,6 @@
 export const state = () => ({
+  pimApi: "https://tmpim.tumi.in/pim/",
+  cartApi: "https://tmcart.tumi.in/api/v1",
   list: {
     firstgtm: true,
     search_input: "",
@@ -62,7 +64,7 @@ export const actions = {
     let request = data.params;
     var authOptions = {
       method: data.method,
-      url: context.state.token.pimApi + data.url,
+      url: context.state.pimApi + data.url,
       headers: {
         "Content-Type": "application/json",
       },
@@ -108,7 +110,7 @@ export const actions = {
     try {
       var authOptions1 = {
         method: form.method,
-        url: context.state.token.pimApi + form.url,
+        url: context.state.pimApi + form.url,
         headers: {
           "Content-Type": "application/json",
         },
@@ -301,7 +303,7 @@ export const mutations = {
           // state.list.total_page = data.query.total_page;
           state.list.page = data.query.page;
         }
-                state.list.total_page = data.result.count/data.query.count;
+        state.list.total_page = data.result.count / data.query.count;
 
         state.list.Product_count = data.result.count;
         state.list.get_product_length = data.result.products.length;
@@ -394,8 +396,6 @@ export const mutations = {
       tempPost.url_key = product.url_key;
       tempPost.color = product.color;
       tempPost.gallery = product.gallery;
-
-
       state.list.Product_list.splice(index, 1, tempPost);
     } catch (error) {
       console.log("error from update product color >>> ", error);

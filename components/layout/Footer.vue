@@ -134,7 +134,8 @@
                   </div>
                 </div>
                 <div
-                  class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12
+                  class="
+                    col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12
                     pd-remove
                     order-4
                     show-mob
@@ -374,6 +375,10 @@ export default {
     email: function (value) {
       return Validator.value(value).required().email();
     },
+  },
+
+  mounted() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   },
 
   methods: {

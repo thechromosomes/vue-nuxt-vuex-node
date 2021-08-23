@@ -34,14 +34,14 @@ export default {
   ],
 
   plugins: [
-    { src: "@/plugins/globalErrorHandler" },
-    { src: "@/plugins/tokenAndCms.js" },
-    { src: "@plugins/fetchCookies", mode: "client" },
-    "@/plugins/axios",
-    "@/plugins/vue-cookies",
-    { src: "@plugins/thirdPartyModules", ssr: true },
-    { src: "@plugins/toast", mode: "client" },
-    { src: "@/plugins/googleMaps", mode: "client" },
+    { src: "@/plugins/globalErrorHandler", ssr: true, defer: true },
+    { src: "@/plugins/tokenAndCms.js", ssr: true, defer: true },
+    { src: "@plugins/fetchCookies", mode: "client", defer: true },
+    { src: "@/plugins/axios", ssr: true, defer: true },
+    { src: "@/plugins/vue-cookies", ssr: true, defer: true },
+    { src: "@plugins/thirdPartyModules", ssr: true, defer: true },
+    { src: "@plugins/toast", mode: "client", defer: true },
+    { src: "@/plugins/googleMaps", mode: "client", defer: true },
   ],
 
   // Auto import components
@@ -116,9 +116,6 @@ export default {
           if (error) {
             let finalError = await error;
             console.log("final error", finalError);
-            res.redirect("/404");
-          } else {
-            res.redirect("/404");
           }
         });
       },
