@@ -27,13 +27,13 @@
                     <input
                       type="text"
                       id="address_first_name_new"
-                      class="address_form form-control"
+                      class="address_form form-control proxima_regular"
                       v-model="user.firstName"
                       autocomplete="off"
                     />
                     <!-- an error display tags -->
                     <span v-if="validation.hasError('user.firstName')">
-                      <p class="input-error">
+                      <p class="input-error proxima_regular">
                         {{ validation.firstError("user.firstName") }}
                       </p>
                     </span>
@@ -45,14 +45,14 @@
                     <input
                       type="text"
                       id="address_last_name_new"
-                      class="address_form form-control"
+                      class="address_form form-control proxima_regular"
                       size="40"
                       v-model="user.lastName"
                       autocomplete="off"
                     />
                     <!-- an error display tags -->
                     <span v-if="validation.hasError('user.lastName')">
-                      <p class="input-error">
+                      <p class="input-error proxima_regular">
                         {{ validation.firstError("user.lastName") }}
                       </p>
                     </span>
@@ -66,14 +66,14 @@
                     <input
                       type="text"
                       id="address_address1_new"
-                      class="address_form form-control"
+                      class="address_form form-control proxima_regular"
                       v-model="user.address"
                       size="40"
                       autocomplete="off"
                     />
                     <!-- an error display tags -->
                     <span v-if="validation.hasError('user.address')">
-                      <p class="input-error">
+                      <p class="input-error proxima_regular">
                         {{ validation.firstError("user.address") }}
                       </p>
                     </span>
@@ -85,7 +85,7 @@
                     <input
                       type="text"
                       id="address_address2_new"
-                      class="address_form form-control"
+                      class="address_form form-control proxima_regular"
                       v-model="user.address2"
                       size="40"
                       autocomplete="off"
@@ -100,26 +100,26 @@
                     <input
                       type="text"
                       id="address_zip_new"
-                      class="address_form form-control"
+                      class="address_form form-control proxima_regular"
                       size="40"
                       v-model="user.pinCode"
                       autocomplete="off"
                     />
                     <!-- an error display tags -->
                     <span v-if="validation.hasError('user.pinCode')">
-                      <p class="input-error">
+                      <p class="input-error proxima_regular">
                         {{ validation.firstError("user.pinCode") }}
                       </p>
                     </span>
                     <!-- error or success message -->
                     <template>
                       <div v-if="pin_code_error !== ''">
-                        <p class="input-error">
+                        <p class="input-error proxima_regular">
                           {{ pin_code_error }}
                         </p>
                       </div>
                       <div v-else>
-                        <p class="input-success">
+                        <p class="input-success proxima_regular">
                           {{ pin_code_success }}
                         </p>
                       </div>
@@ -132,14 +132,14 @@
                     <input
                       type="text"
                       id="address_city_new"
-                      class="address_form form-control"
+                      class="address_form form-control proxima_regular"
                       v-model="user.city"
                       size="40"
                       autocomplete="off"
                     />
                     <!-- an error display tags -->
                     <span v-if="validation.hasError('user.city')">
-                      <p class="input-error">
+                      <p class="input-error proxima_regular">
                         {{ validation.firstError("user.city") }}
                       </p>
                     </span>
@@ -168,14 +168,14 @@
                       placeholder=""
                       :value="user.state"
                       disabled
-                      class="address_form form-control"
+                      class="address_form form-control proxima_regular"
                       size="40"
                       type="text"
                       autocomplete="off"
                     />
                     <!-- an error display tags -->
                     <span v-if="validation.hasError('user.state')">
-                      <p class="input-error">
+                      <p class="input-error proxima_regular">
                         {{ validation.firstError("user.state") }}
                       </p>
                     </span>
@@ -189,22 +189,64 @@
                     <input
                       type="text"
                       id="address_phone_new"
-                      class="address_form form-control"
+                      class="address_form form-control proxima_regular"
                       size="40"
                       v-model="user.mobileNo"
                       autocomplete="off"
                     />
                     <!-- an error display tags -->
                     <span v-if="validation.hasError('user.mobileNo')">
-                      <p class="input-error">
+                      <p class="input-error proxima_regular">
                         {{ validation.firstError("user.mobileNo") }}
                       </p>
                     </span>
                   </div>
-                  <div class="col-md-6 col-12">
+                  <!-- <div class="row">
+                  <div
+                                  class="field__input-wrapper shipping-user-pd col-md-6 col-12"
+                                >
+                                  <input
+                                    placeholder="christine@gmail.com"
+                                    autocapitalize="off"
+                                    autocomplete="off"
+                                    class="field__input"
+                                    type="email"
+                                    v-model="user.email"
+                                  />
+                                  
+                                  <span
+                                    v-if="validation.hasError('user.email')"
+                                  >
+                                    <p class="input-error">
+                                      {{ validation.firstError("user.email") }}
+                                    </p>
+                                  </span>
+                                </div>
+                                </div> -->
+                                <div class="col-md-6 col-12">
+                    <label for="address_phone_new" class="proxima_regular"
+                      >Gmail</label
+                    >
+                    <input
+                                    placeholder="christine@gmail.com"
+                                    autocapitalize="off"
+                                    autocomplete="off"
+                                    class="address_form form-control proxima_regular"
+                                    type="email"
+                                    v-model="user.email"
+                                  />
+                    <!-- an error display tags -->
+                    <span v-if="validation.hasError('user.email')">
+                      <p class="input-error proxima_regular">
+                                      {{ validation.firstError("user.email") }}
+                                    </p>
+                    </span>
+                  </div>
+                                
+                  <div class="col-md-12 col-12">
                     <div class="default-address">
                       <input
-                        class="form-check-input"
+                        class="form-check-input proxima_regular"
                         type="checkbox"
                         id="new-address"
                         v-model="user.defaultAddress"
@@ -228,7 +270,7 @@
                     <div class="address-type-box">
                       <div class="p-2">
                         <input
-                          class="form-check-input"
+                          class="form-check-input proxima_regular"
                           type="radio"
                           value="home"
                           v-model="user.address_type"
@@ -240,7 +282,7 @@
                       </div>
                       <div class="p-2">
                         <input
-                          class="form-check-input"
+                          class="form-check-input proxima_regular"
                           type="radio"
                           value="office"
                           v-model="user.address_type"
@@ -327,6 +369,9 @@ export default {
         .minLength(6)
         .maxLength(6);
     },
+      "user.email": function (value) {
+      return Validator.value(value).required().email();
+    },
     "user.mobileNo": function(value) {
       return Validator.value(value)
         .required()
@@ -375,7 +420,8 @@ export default {
           address2,
           address_type,
           address_id,
-          defaultAddress
+          defaultAddress,
+          email
         } = this.user;
         if (
           state &&
@@ -385,6 +431,7 @@ export default {
           pinCode &&
           mobileNo &&
           city &&
+          email &&
           validation
         ) {
           if (
@@ -409,6 +456,8 @@ export default {
           form.phone = mobileNo;
           form.address_type = address_type;
           form.address_id = address_id;
+          form.email= email;
+
           form.default = Number(defaultAddress);
 
           let url;

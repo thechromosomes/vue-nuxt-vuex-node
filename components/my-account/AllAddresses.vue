@@ -1,7 +1,7 @@
 <template>
   <client-only>
     <div class="ship-adress">
-      <h2 class="proxima_bold">Shipping Address</h2>
+      <h2 class="proxima_bold">Please add new address</h2>
       <template v-if="$store.state.cartAjax.address.length">
         <div
           class="ship-adress-area"
@@ -30,11 +30,11 @@
         </div>
       </template>
       <template v-else >
-        <div style="margin-bottom:10px;">
-          <h4 class="proxima_regular">Ahh! No address added yet. please try adding new address</h4>
+        <div style="margin-bottom:10px; ">
+          <h4 class="proxima_regular" style="font-size:17px; padding-top:15px"> No address added yet. please try adding new address</h4>
         </div>
       </template>
-      <button @click="$parent.showAddressform()" class="black-button proxima_regular" style="display:inline-block; width:auto">+ Add new address</button>
+      <button @click="$parent.showAddressform()" class="black-button proxima_regular" style="display:inline-block; width:auto">+ Add address</button>
     </div>
   </client-only>
 </template>

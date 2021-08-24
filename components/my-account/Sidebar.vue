@@ -9,7 +9,7 @@
                 $route.path == '/Dashboard' ? 'active-account-sidebar' : '',
               ]"
               to="/Dashboard"
-              >Account Dashboard</nuxt-link
+              >View Personal Information</nuxt-link
             >
           </li>
           <!-- <li>
@@ -36,7 +36,7 @@
                 $route.path == '/myorder' ? 'active-account-sidebar' : '',
               ]"
               to="/myorder"
-              >My Orders</nuxt-link
+              >View Order Information</nuxt-link
             >
           </li>
           <!-- <li>

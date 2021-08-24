@@ -31,7 +31,7 @@
                       <input
                         type="text"
                         id="address_first_name_new"
-                        class="address_form form-control"
+                        class="address_form form-control proxima_regular"
                         autocomplete="off"
                       />
                     </div>
@@ -40,7 +40,7 @@
                       <input
                         type="text"
                         id="address_last_name_new"
-                        class="address_form form-control"
+                        class="address_form form-control proxima_regular"
                         size="40"
                         autocomplete="off"
                       />
@@ -52,7 +52,7 @@
                       <input
                         type="text"
                         for="address_company_new"
-                        class="address_form form-control"
+                        class="address_form form-control proxima_regular"
                         value=""
                         size="40"
                         id="ispbxii_5"
@@ -64,7 +64,7 @@
                       <input
                         type="text"
                         id="address_address1_new"
-                        class="address_form form-control"
+                        class="address_form form-control proxima_regular"
                         size="40"
                         autocomplete="off"
                       />
@@ -74,7 +74,7 @@
                       <input
                         type="text"
                         id="address_address2_new"
-                        class="address_form form-control"
+                        class="address_form form-control proxima_regular"
                         size="40"
                         autocomplete="off"
                       />
@@ -86,7 +86,7 @@
                       <input
                         type="text"
                         id="address_city_new"
-                        class="address_form form-control"
+                        class="address_form form-control proxima_regular"
                         value=""
                         size="40"
                         autocomplete="off"
@@ -115,7 +115,7 @@
                       <input
                         type="text"
                         id="address_zip_new"
-                        class="address_form form-control"
+                        class="address_form form-control proxima_regular"
                         size="40"
                         autocomplete="off"
                       />
@@ -127,7 +127,7 @@
                       <input
                         type="text"
                         id="address_phone_new"
-                        class="address_form form-control"
+                        class="address_form form-control proxima_regular"
                         size="40"
                         autocomplete="off"
                       />
@@ -135,7 +135,7 @@
                     <div class="col-md-6 col-12">
                       <div class="default-address">
                         <input
-                          class="form-check-input"
+                          class="form-check-input proxima_regular"
                           type="checkbox"
                           id="new-address"
                         />

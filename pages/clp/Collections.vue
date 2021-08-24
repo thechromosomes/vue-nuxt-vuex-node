@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="clp-collection-pge">
     <!--============================= clp page code ===========  two start here =============== -->
     <section class="clp-page-two-banner">
       <img src="~assets/images/clp-page-two-banner.jpg" />
       <div class="baneer-content">
-        <h2 class="proxima_bold">
+        <h2 class="proxima_bold" style="color:#fff">
           Spring 2021 Collection <span >Breakdown</span>
         </h2>
-        <p class="proxima_regular">
+        <p class="proxima_regular" style="color:#fff">
           From lightweight commute-friendly backpacks to luxurious leather
           carry-ons, our collections span a wide range of your needs. Get to
           know them here.
@@ -134,7 +134,7 @@
       </div>
     </section>
     <section class="clp-travel boardroom-section" id="scroll-gifts-for-him">
-      <img src="~assets/images/linux.jpg" />
+      <img src="~assets/images/lin-8.jpg" />
 
       <div class="travel-div-bg">
         <h2 class="proxima_bold">Luxe List</h2>

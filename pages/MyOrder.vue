@@ -49,9 +49,8 @@
               </div>
             </div>
             <div v-else>
-              <h3 class="order-page">
-                No order forund please head to product page and get awesome
-                product!
+              <h3 class="order-page " >
+               You have no orders!
               </h3>
             </div>
           </div>
