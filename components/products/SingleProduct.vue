@@ -572,7 +572,7 @@
           <div v-else>
             <img class="productGif" src="@/assets/images/tumiPDP.gif" />
           </div> -->
-          <div class="text-center">
+          <div class="text-center digree-rotaction">
             <iframe
               src="https://tmpim.tumi.in/360/139434-1041/"
               height="600"

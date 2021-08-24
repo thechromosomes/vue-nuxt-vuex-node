@@ -18,7 +18,7 @@
             >
               <div class="customer-head">
                 <h2 class="customer-name proxima_bold">
-                  hi, {{ customer.full_name }}!
+                   {{ customer.full_name }}!
                 </h2>
                 <p class="proxima_regular">
                   You can review and edit your account settings and orders here

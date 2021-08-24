@@ -4,7 +4,7 @@
       <div class="login-box">
         <div class="container">
           <div class="systemForm">
-            <h1 class="title proxima_bold">Hi there!</h1>
+            <h1 class="title proxima_bold" >Please enter your {{showOtp ? `OTP sent to your mobile number` : `mobile number`}}</h1>
             <div class="inputWrapper">
               <label for="newnumber" class="label proxima_regular">Mobile Number*</label>
               <input
@@ -12,10 +12,10 @@
                 v-model.number="mobileNumber"
                 ref="mobile_number"
                 name="newnumber"
-                class="text number input-box"
+                class="text number input-box proxima_regular"
                 autocomplete="off"
               />
-              <span class="input-error text-red" v-if="pageError != ''">
+              <span class="input-error text-red proxima_regular" v-if="pageError != ''">
                 {{ pageError }}</span
               >
             </div>
@@ -26,27 +26,27 @@
                 v-model="otpNumber"
                 name="otp"
                 id="otp"
-                class="text  input-box"
+                class="text  input-box proxima_regular"
                 maxlength="4"
                 autocomplete="off"
               />
-              <span class="input-error" v-if="otpPageError != ''">
+              <span class="input-error proxima_regular" v-if="otpPageError != ''">
                 {{ otpPageError }}</span
               >
               <div class="resend-otp" v-if="showOtp">
                 <span
                   style="cursor: pointer"
                   v-if="showOtp && this.resend_otp_time == 0"
-                  @click="registeruser()"
+                  @click="registeruser()" class="proxima_regular"
                   >Resend OTP</span
                 >
-                <span v-else> 00:{{ resend_otp_time }} </span>
+               <span v-else> 00:{{ resend_otp_time.toString().padStart(2,0) }} </span>
               </div>
             </div>
 
             <div class="action_bottom btnWrapper" v-if="!showOtp && sendButton">
               <input
-                class="btn"
+                class="btn proxima_regular "
                 type="submit"
                 value="Send OTP"
                 @click.prevent="registeruser()"
@@ -54,7 +54,7 @@
             </div>
             <div class="action_bottom btnWrapper" v-else-if="showOtp">
               <input
-                class="btn"
+                class="btn proxima_regular"
                 type="submit"
                 value="Continue"
                 @click.prevent="registeruserOtp()"
@@ -273,8 +273,10 @@ export default {
 
 .login-box .systemForm .title {
     text-align: center;
-    font-size: 35px;
-    font-weight: 700;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 30px;
+    padding-bottom: 36px;
 }
 
 .login-box .systemForm .inputWrapper {
