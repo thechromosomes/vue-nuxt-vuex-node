@@ -40,7 +40,7 @@
                   @click="registeruser()"
                   >Resend OTP</span
                 >
-                <span v-else> 00:{{ resend_otp_time }} </span>
+                <span v-else> 00:{{ resend_otp_time.toString().padStart(2,0) }} </span>
               </div>
             </div>
 

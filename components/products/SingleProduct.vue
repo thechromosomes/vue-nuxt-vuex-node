@@ -132,12 +132,13 @@
                   >
                 </div>
                 <h3 class="proxima_regular price-heading">
-                  ₹
+                  MRP ₹
                   {{
                     singleProductList.single_prod_data.selling_price
                       | numberWithCommas
                   }}
                 </h3>
+                  <span class="hurry proxima_regular">Price inclusive of all taxes</span>
                 <div class="stock-status">
                   <span class="in-stok proxima_bold">
                     <span
@@ -616,7 +617,7 @@
                         <h3 class="proxima_bold">{{ recItem.name }}</h3>
                         <p class="proxima_regular">{{ recItem.collection }}</p>
                         <small class="proxima_regular"
-                          >₹{{ recItem.selling_price }}</small
+                          >MRP ₹{{ recItem.selling_price }}</small
                         >
                       </div>
                     </div>
@@ -660,7 +661,7 @@
                         <h3 class="proxima_bold">{{ recItem.name }}</h3>
                         <p class="proxima_regular">{{ recItem.collection }}</p>
                         <small class="proxima_regular"
-                          >₹{{ recItem.selling_price }}</small
+                          >MRP ₹{{ recItem.selling_price }}</small
                         >
                       </div>
                     </div>

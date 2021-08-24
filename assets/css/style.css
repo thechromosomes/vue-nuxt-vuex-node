@@ -6370,7 +6370,7 @@ img.yearBlockImage {
   padding: 0;
   position: absolute;
   display: block;
-  background-image: url(../images/tmi-difrance-mob.jpg);
+  /* background-image: url(../images/tmi-difrance-mob.jpg); */
 }
 .tumi-difference-page-wraper .techBlockContainer {
   height: 994px;

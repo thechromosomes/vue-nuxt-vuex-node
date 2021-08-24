@@ -5,7 +5,6 @@
         <div class="row">
           <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-sm-12">
             <div class="video-box">
-              <!-- <img src="~/assets/images/video-page-poster.jpg" class="video-poster"> -->
               <div
                 class="video-container embed-responsive embed-responsive-16by9"
               >
@@ -107,7 +106,7 @@
 import VueSlickCarousel from "vue-slick-carousel";
 export default {
   components: {
-    VueSlickCarousel
+    VueSlickCarousel,
   },
   data() {
     return {
@@ -131,8 +130,8 @@ export default {
               verticalSwiping: false,
               slidesToShow: 4,
               slidesToScroll: 1,
-              arrows: false
-            }
+              arrows: false,
+            },
           },
           {
             breakpoint: 1024,
@@ -141,8 +140,8 @@ export default {
               verticalSwiping: false,
               slidesToShow: 4,
               slidesToScroll: 1,
-              arrows: false
-            }
+              arrows: false,
+            },
           },
           {
             breakpoint: 600,
@@ -151,8 +150,8 @@ export default {
               verticalSwiping: false,
               slidesToShow: 2,
               slidesToScroll: 1,
-              arrows: false
-            }
+              arrows: false,
+            },
           },
           {
             breakpoint: 480,
@@ -161,14 +160,11 @@ export default {
               verticalSwiping: false,
               slidesToShow: 2,
               slidesToScroll: 1,
-              arrows: false
-            }
-          }
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
-        ]
-      }
+              arrows: false,
+            },
+          },
+        ],
+      },
     };
   },
   async fetch() {
@@ -185,16 +181,13 @@ export default {
   mounted() {
     // // Get the .click-me element
     var clickMe = document.querySelectorAll(".videoUrl");
-    // console.log(clickMe);
-    // This will run when the .click-me element is clicked
     if (clickMe) {
-      clickMe.forEach(event => {
-        event.addEventListener("click", e => {
+      clickMe.forEach((event) => {
+        event.addEventListener("click", (e) => {
           this.videoURL = e.target.getAttribute("data-value");
-          // console.log("id", this.videoURL);
         });
       });
     }
-  }
+  },
 };
 </script>
