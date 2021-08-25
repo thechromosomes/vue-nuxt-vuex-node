@@ -103,7 +103,7 @@
                             <div class="slider-for-mob">
                               <div>
                                 <img
-                                  :src="itemSingle.image"
+                                  v-lazy="itemSingle.image"
                                   :alt="itemSingle.image"
                                 />
                               </div>

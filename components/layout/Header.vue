@@ -59,68 +59,62 @@
                 </li>
               </ul>
               <div class="login-cart-div">
-                  <ul>
-                    <li
-                      class="
-                        login-li
-                        navbar-toggler
-                        pull-xs-right
-                        log-and-ragester
-                        header-log-ragister
+                <ul>
+                  <li
+                    class="
+                      login-li
+                      navbar-toggler
+                      pull-xs-right
+                      log-and-ragester
+                      header-log-ragister
+                    "
+                    id="navbarSideButton"
+                    type="button"
+                  >
+                    <NuxtLink
+                      v-if="
+                        $store.state.cartAjax.customer_id != null &&
+                        $store.state.cartAjax.customer_id != '' &&
+                        $store.state.cartAjax.customer_session != '' &&
+                        $store.state.cartAjax.customer_session != null
                       "
-                      id="navbarSideButton"
-                      type="button"
+                      to="/Dashboard"
+                      class="proxima_semi-bold"
+                      >Account</NuxtLink
                     >
-                      <NuxtLink
+                    <nuxt-link class="proxima_semi-bold" v-else to="/login"
+                      >Login/Register</nuxt-link
+                    >
+                  </li>
+                  <li class="wish-list-icon">
+                    <NuxtLink to="/wishlist">
+                      <img src="~/assets/images/heart.1b640f1.png" alt="logo" />
+                      <span
+                        class="count"
                         v-if="
-                          $store.state.cartAjax.customer_id != null &&
-                            $store.state.cartAjax.customer_id != '' &&
-                            $store.state.cartAjax.customer_session != '' &&
-                            $store.state.cartAjax.customer_session != null
+                          Object.keys($store.state.cartAjax.wishlist).length !=
+                          0
                         "
-                        to="/Dashboard"
-                        class="proxima_semi-bold"
-                        >Account</NuxtLink
-                      >
-                      <nuxt-link class="proxima_semi-bold" v-else to="/login"
-                        >Login/Register</nuxt-link
-                      >
-                    </li>
-                    <li class="wish-list-icon">
-                      <NuxtLink to="/wishlist">
-                        <img
-                          src="~/assets/images/heart.1b640f1.png"
-                          alt="logo"
-                        />
-                        <span
-                          class="count"
-                          v-if="
-                            Object.keys($store.state.cartAjax.wishlist)
-                              .length != 0
-                          "
-                          >{{
-                            $store.state.cartAjax.wishlist.product.split(",")
-                              .length
-                          }}
-                        </span>
-                        <span v-else class="count"> 0 </span>
-                      </NuxtLink>
-                    </li>
-                    <li>
-                      <a
-                        @click.prevent="toogleCart()"
-                        class="text-red cart-icon"
-                      >
-                        <span class="carticon-add" aria-hidden="true">
-                          <img src="~assets/images/cart.png" />
-                          <span class="text-red count-cart">{{
-                            $store.state.cartAjax.cart_product.length
-                          }}</span>
-                        </span>
-                      </a>
-                    </li>
-                  </ul>
-                  </div>
+                        >{{
+                          $store.state.cartAjax.wishlist.product.split(",")
+                            .length
+                        }}
+                      </span>
+                      <span v-else class="count"> 0 </span>
+                    </NuxtLink>
+                  </li>
+                  <li>
+                    <a @click.prevent="toogleCart()" class="text-red cart-icon">
+                      <span class="carticon-add" aria-hidden="true">
+                        <img src="~assets/images/cart.png" />
+                        <span class="text-red count-cart">{{
+                          $store.state.cartAjax.cart_product.length
+                        }}</span>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="col-sm-12 text-center">
@@ -164,7 +158,7 @@
               <NuxtLink
                 v-else-if="
                   item.menu_url_key == 'accessories' ||
-                    item.menu_url_key == 'luggage'
+                  item.menu_url_key == 'luggage'
                 "
                 :to="`/clp-cms/${item.menu_url_key}`"
                 class="desktop-item proxima_semi-bold"
@@ -188,7 +182,7 @@
                 <NuxtLink
                   v-else-if="
                     item.menu_url_key == 'accessories' ||
-                      item.menu_url_key == 'luggage'
+                    item.menu_url_key == 'luggage'
                   "
                   :to="`/clp-cms/${item.menu_url_key}`"
                   class="proxima_semi-bold"
@@ -217,7 +211,7 @@
                           :to="`/collections/${childItem.menu_url_key}/`"
                           v-if="
                             childItem.landing_page == '' ||
-                              childItem.landing_page == null
+                            childItem.landing_page == null
                           "
                           @click.native="() => (showMenu = false)"
                           >{{ childItem.name }}</Nuxt-link
@@ -227,7 +221,7 @@
                           :to="`/cms/${childItem.landing_page}`"
                           v-if="
                             childItem.landing_page != '' &&
-                              childItem.landing_page != null
+                            childItem.landing_page != null
                           "
                           >{{ childItem.name }}</Nuxt-link
                         >
@@ -261,24 +255,22 @@
             <div class="show-mob">
               <ul class="other-nav-links">
                 <li>
-                    <NuxtLink
-                      v-if="
-                        $store.state.cartAjax.customer_id != null &&
-                          $store.state.cartAjax.customer_id != '' &&
-                          $store.state.cartAjax.customer_session != '' &&
-                          $store.state.cartAjax.customer_session != null
-                      "
-                      to="/Dashboard"
-                      class="proxima_regular"
-                      >Account</NuxtLink
-                    >
-                    <nuxt-link class="proxima_regular" v-else to="/login"
-                      >Login/Register</nuxt-link
-                    >
+                  <NuxtLink
+                    v-if="
+                      $store.state.cartAjax.customer_id != null &&
+                      $store.state.cartAjax.customer_id != '' &&
+                      $store.state.cartAjax.customer_session != '' &&
+                      $store.state.cartAjax.customer_session != null
+                    "
+                    to="/Dashboard"
+                    class="proxima_regular"
+                    >Account</NuxtLink
+                  >
+                  <nuxt-link class="proxima_regular" v-else to="/login"
+                    >Login/Register</nuxt-link
+                  >
 
-                 
                   <!-- -----------------ragestration process------------start  -->
-                  
                 </li>
                 <li>
                   <a href="" class="proxima_regular">TUMI Exclusives Club</a>
@@ -309,20 +301,20 @@
               id="navbarSideButton"
               type="button"
             >
-                <NuxtLink
-                  v-if="
-                    $store.state.cartAjax.customer_id != null &&
-                      $store.state.cartAjax.customer_id != '' &&
-                      $store.state.cartAjax.customer_session != '' &&
-                      $store.state.cartAjax.customer_session != null
-                  "
-                  to="/Dashboard"
-                  class="proxima_semi-bold"
-                  >Account</NuxtLink
-                >
-                <nuxt-link class="proxima_semi-bold" v-else to="/login"
-                  >Login/Register</nuxt-link
-                >
+              <NuxtLink
+                v-if="
+                  $store.state.cartAjax.customer_id != null &&
+                  $store.state.cartAjax.customer_id != '' &&
+                  $store.state.cartAjax.customer_session != '' &&
+                  $store.state.cartAjax.customer_session != null
+                "
+                to="/Dashboard"
+                class="proxima_semi-bold"
+                >Account</NuxtLink
+              >
+              <nuxt-link class="proxima_semi-bold" v-else to="/login"
+                >Login/Register</nuxt-link
+              >
             </li>
             <li>
               <span
@@ -330,51 +322,46 @@
                 @click="togglSshowSearch()"
               ></span>
             </li>
-              <li class="mobile-search-fun">
-                <a class="text-red">
-                  <span class="icon text-red" aria-hidden="true">
-                    <div
-                      class="header-search mob-search-down"
-                      v-if="showSearch"
-                    >
-                      <input
-                        type="text"
-                        ref="headerSearchBar"
-                        name=""
-                        v-model="searchInput"
-                        v-debounce:500ms="stSearch"
-                        class="form-control"
-                        placeholder="Search"
-                      />
-                    </div>
-                  </span>
-                </a>
-              </li>
-              <li class="wish-list-icon">
-                <NuxtLink to="/wishlist">
-                  <img src="~assets/images/heart.1b640f1.png" alt="logo" />
-                  <span
-                    class="count"
-                    v-if="
-                      Object.keys($store.state.cartAjax.wishlist).length != 0
-                    "
-                    >{{
-                      $store.state.cartAjax.wishlist.product.split(",").length
-                    }}
-                  </span>
-                  <span v-else class="count"> 0 </span>
-                </NuxtLink>
-              </li>
-              <li>
-                <a @click.prevent="toogleCart()" class="text-red cart-icon"
-                  ><span aria-hidden="true" class="carticon-add"
-                    ><img src="~assets/images/cart.png" />
-                    <span class="text-red count-cart">{{
-                      $store.state.cartAjax.cart_product.length
-                    }}</span></span
-                  ></a
-                >
-              </li>
+            <li class="mobile-search-fun">
+              <a class="text-red">
+                <span class="icon text-red" aria-hidden="true">
+                  <div class="header-search mob-search-down" v-if="showSearch">
+                    <input
+                      type="text"
+                      ref="headerSearchBar"
+                      name=""
+                      v-model="searchInput"
+                      v-debounce:500ms="stSearch"
+                      class="form-control"
+                      placeholder="Search"
+                    />
+                  </div>
+                </span>
+              </a>
+            </li>
+            <li class="wish-list-icon">
+              <NuxtLink to="/wishlist">
+                <img src="~assets/images/heart.1b640f1.png" alt="logo" />
+                <span
+                  class="count"
+                  v-if="Object.keys($store.state.cartAjax.wishlist).length != 0"
+                  >{{
+                    $store.state.cartAjax.wishlist.product.split(",").length
+                  }}
+                </span>
+                <span v-else class="count"> 0 </span>
+              </NuxtLink>
+            </li>
+            <li>
+              <a @click.prevent="toogleCart()" class="text-red cart-icon"
+                ><span aria-hidden="true" class="carticon-add"
+                  ><img src="~assets/images/cart.png" />
+                  <span class="text-red count-cart">{{
+                    $store.state.cartAjax.cart_product.length
+                  }}</span></span
+                ></a
+              >
+            </li>
           </ul>
         </div>
       </div>
@@ -395,7 +382,7 @@ export default {
       showMenu: false,
       close: false,
       isActive: -1,
-      showSearch: false
+      showSearch: false,
     };
   },
   async mounted() {
@@ -435,7 +422,7 @@ export default {
       } else {
         this.isActive = index;
       }
-    }
+    },
   },
 
   computed: {
@@ -451,12 +438,12 @@ export default {
       },
       set(value) {
         return;
-      }
-    }
+      },
+    },
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.updateScroll);
-  }
+  },
 };
 </script>
 <style scoped>

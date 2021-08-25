@@ -1,7 +1,13 @@
 import Vue from "vue";
 import SimpleVueValidation from "simple-vue-validator";
 import vueDebounce from 'vue-debounce'
+import VueLazyload from "vue-lazyload";
 
+Vue.use(VueLazyload, {
+  preLoad: 0,
+  loading: '/prdLoader.gif',
+  attempt: 1,
+});
 Vue.use(vueDebounce)
 
 Vue.use(SimpleVueValidation);
