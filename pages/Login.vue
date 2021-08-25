@@ -110,7 +110,7 @@ export default {
       captchaToken: "",
       resend_otp_time: 0,
       sendButton: false,
-      timeout: null,
+      timeout: null
     };
   },
 
@@ -124,14 +124,14 @@ export default {
           }
           let form = {
             phone: this.mobileNumber,
-            captcha: this.captchaToken,
+            captcha: this.captchaToken
           };
 
           this.resend_otp_time = 60;
           let response = await this.$store.dispatch("cartAjax/actCartAjax", {
             method: "post",
             url: `/customer/send-otp`,
-            params: form,
+            params: form
           });
           this.countDownTimer();
           if (response.success) {
@@ -178,24 +178,24 @@ export default {
           let response = await this.$store.dispatch("cartAjax/actCartAjax", {
             method: "post",
             url: `/customer/validate-otp`,
-            params: form,
+            params: form
           });
           if (response.success) {
             this.$store.commit("cartAjax/registerUser", {
               payload: response,
-              vm: this,
+              vm: this
             });
 
             this.$gtm.push({
               event: "Login",
               category: "Login",
-              action: "Login Success",
+              action: "Login Success"
             });
             this.$gtm.push({
               event: "Login_status",
               category: "Login_status",
               action: "Login Success",
-              Mobile_no: this.mobileNumber,
+              Mobile_no: this.mobileNumber
             });
           } else {
             this.otpPageError = response.message;
@@ -237,7 +237,7 @@ export default {
       if (this.resend_otp_time == 2) {
         that.$refs.invisibleRecaptcha.execute();
       }
-    },
+    }
   },
 
   beforeMount() {
@@ -250,7 +250,7 @@ export default {
     }
   },
   watch: {
-    mobileNumber: function () {
+    mobileNumber: function() {
       if (/^(\+\d{1,3}[- ]?)?\d{10}$/.test(this.mobileNumber)) {
         this.$refs.invisibleRecaptcha.execute();
         this.timeout = setTimeout(() => {
@@ -260,11 +260,11 @@ export default {
         this.showOtp = false;
         this.pageError = "";
       }
-    },
+    }
   },
   beforeDestroy() {
     clearTimeout(this.timeout);
-  },
+  }
 };
 </script>
 
@@ -327,5 +327,15 @@ export default {
 
 .error {
   color: red;
+}
+
+/* ===============767=================== */
+@media only screen and (max-width: 767px) {
+  .login-box .systemForm .title {
+    font-size: 20px;
+  }
+  .login-box {
+    padding: 30px 0px;
+  }
 }
 </style>

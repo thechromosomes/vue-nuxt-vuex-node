@@ -35,7 +35,7 @@
               </div>
               <h3>
                 <strong class="proxima_regular">Item Code:</strong>
-                {{ item.group_id }}
+                <span class="item-num-span">{{ item.group_id }}</span>
               </h3>
               <h4 class="proxima_regular">
                 <strong class="proxima_regular">Color:</strong> {{ item.color }}
@@ -64,7 +64,7 @@
                 <a
                   @click.prevent="addToCart(item, mainIndex)"
                   class="button proxima_regular"
-                  >MOVE TO BAG</a
+                  >Move to bag</a
                 >
                 <a @click.prevent>
                   <span class="price price_icon">₹</span
@@ -88,7 +88,7 @@ export default {
       selectedSizeAttr: {},
       sizeAlert: false,
       selectedSize: [],
-      sizeAlertIndes: "",
+      sizeAlertIndes: ""
     };
   },
   async created() {
@@ -108,7 +108,7 @@ export default {
         let response = await this.$store.dispatch("pimAjax", {
           method: "post",
           url: `/pimresponse.php`,
-          params: form,
+          params: form
         });
         this.gtm_product_impressions = [];
         if (response.response.success) {
@@ -127,7 +127,7 @@ export default {
               price,
               category,
               list,
-              position,
+              position
             });
           }
 
@@ -137,8 +137,8 @@ export default {
             label: "Wishlist page",
             ecommerce: {
               currencyCode: "INR",
-              impressions: this.gtm_product_impressions,
-            },
+              impressions: this.gtm_product_impressions
+            }
           });
         } else {
           throw "No data found";
@@ -157,18 +157,18 @@ export default {
           product_id: item.id_product,
           customer_id: this.$store.state.cartAjax.customer_id,
           customer_session: this.$store.state.cartAjax.customer_session,
-          group_id: item.group_id,
+          group_id: item.group_id
         };
         var response = await this.$store.dispatch("cartAjax/actCartAjax", {
           method: "post",
           url: `/wishlist/remove-wishlist`,
           token: this.$store.state.cartAjax.customer_token,
-          params: form,
+          params: form
         });
 
         if (response.success) {
           this.$store.commit("cartAjax/updateWishList", {
-            payload: response.data,
+            payload: response.data
           });
 
           this.$gtm.push({
@@ -183,11 +183,11 @@ export default {
                     name: item.name,
                     id: item.sku,
                     price: item.selling_price,
-                    category: item.sub_category,
-                  },
-                ],
-              },
-            },
+                    category: item.sub_category
+                  }
+                ]
+              }
+            }
           });
         } else {
           this.$toast.error(response.message);
@@ -215,7 +215,7 @@ export default {
           var form = {};
           var product_options_json = JSON.stringify({
             size: this.selectedSize[sizeIndex],
-            color: item.color,
+            color: item.color
           });
           form.product_id =
             item.variation[this.selectedSize[sizeIndex]].id_product;
@@ -256,12 +256,12 @@ export default {
             method: "post",
             url: `/product/add-product`,
             token: this.$store.state.cartAjax.customer_token,
-            params: form,
+            params: form
           });
           if (response) {
             await this.$store.commit("cartAjax/updateCartDetail", {
               error: null,
-              data: response,
+              data: response
             });
             if (response.success) this.reomoveFromCart(item, sizeIndex);
             // google tag manager
@@ -282,11 +282,11 @@ export default {
                         variant:
                           item.variation[this.selectedSize[sizeIndex]]
                             .configrable_atribute_value,
-                        quantity: "1",
-                      },
-                    ],
-                  },
-                },
+                        quantity: "1"
+                      }
+                    ]
+                  }
+                }
               });
             }
           } else {
@@ -300,13 +300,13 @@ export default {
           if (error.message === "Network Error") {
             this.$store.commit("updateSingleProdState", {
               error:
-                "Oops there seems to be some Network issue, please try again",
+                "Oops there seems to be some Network issue, please try again"
             });
           }
         }
       }
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>

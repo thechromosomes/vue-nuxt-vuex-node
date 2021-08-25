@@ -8519,3 +8519,7 @@ a.membership_card_join_btn {
   background-color: #c41e3a !important;
   font-family: "proxima-nova-regular";
 }
+.video-verticaly-slide .slick-prev:before,
+.video-verticaly-slide .slick-next:before {
+  color: #fff !important;
+}

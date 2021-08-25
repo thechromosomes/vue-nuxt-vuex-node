@@ -25,7 +25,7 @@ export const state = () => ({
   showLogIn: false,
   discount_code: "",
   gtm_product: [],
-  showHideCart: false,
+  showHideCart: false
 });
 
 export const actions = {
@@ -36,14 +36,14 @@ export const actions = {
       url: rootState.cartApi + data.url,
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + data.token,
+        Authorization: "Bearer " + data.token
       },
-      data: data.params,
+      data: data.params
     };
 
     return new Promise((resolve, reject) => {
       this.$axios(authOptions)
-        .then((response) => {
+        .then(response => {
           resolve(response.data);
 
           if (response.data.success == false) {
@@ -55,14 +55,14 @@ export const actions = {
           }
           commit("updatePageLoader", { display: false }, { root: true });
         })
-        .catch((error) => {
+        .catch(error => {
           console.log("this is from cart actions", error);
           this.$globalError(`this is from cart actions >>> ${error}`);
           reject(error);
           commit("updatePageLoader", { display: false }, { root: true });
         });
     });
-  },
+  }
 };
 
 export const mutations = {
@@ -128,7 +128,7 @@ export const mutations = {
               price,
               variant,
               category,
-              quantity,
+              quantity
             });
           }
         }
@@ -187,7 +187,7 @@ export const mutations = {
           cart_session,
           address,
           cart_token,
-          token,
+          token
         } = payload.data;
 
         if (customer.id && customer_session && token) {
@@ -421,5 +421,5 @@ export const mutations = {
       state.customer_session = payload.data.customer_session;
       state.customer_token = payload.data.token;
     }
-  },
+  }
 };

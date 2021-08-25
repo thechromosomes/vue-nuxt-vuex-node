@@ -162,7 +162,9 @@ export const color = {
     " background-image: linear-gradient( to right,     #c19a6b  50%,    #c19a6b  50% );",
   black_white:
     " background-image: linear-gradient( to right, #000  50%,    #fff  50% );",
-  // ====================== new color add ======================//
+
+  // ====================== new color add 25-8-21 ======================//
+
   Black_Smooth:
     " background-image: linear-gradient( to right, #414a4c  50%,    #414a4c  50% );",
   Blackberry:

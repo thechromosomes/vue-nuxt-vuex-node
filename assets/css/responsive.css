@@ -532,6 +532,18 @@
 /*================= media qurey for mobile ===================*/
 
 @media only screen and (max-width: 767px) {
+  .cart-page #tm-panel-mini-cart .tm-footer {
+    margin-top: 13px;
+  }
+  .cart-page #tm-panel-mini-cart .tm-content .cart-products .cart-product {
+    border-bottom: 0px;
+  }
+  .cart-page #tm-panel-mini-cart .tm-footer {
+    border-top: 1px solid #cccccc8a;
+  }
+  .cart-page #tm-panel-mini-cart .tm-header .title {
+    border-bottom: 1px solid #cccccc73;
+  }
   /*------------mobilr icons color css------srat-----*/
   .hide-desk {
     display: block;
