@@ -162,107 +162,112 @@ export const color = {
     " background-image: linear-gradient( to right,     #c19a6b  50%,    #c19a6b  50% );",
   black_white:
     " background-image: linear-gradient( to right, #000  50%,    #fff  50% );",
+<<<<<<< HEAD
 
   // ====================== new color add 25-8-21 ======================//
 
   Black_Smooth:
+=======
+  // ====================== new color add ======================//
+  black_gmooth:
+>>>>>>> b4f7d4a9a3de25874b5e433c8a7056529c41f502
     " background-image: linear-gradient( to right, #414a4c  50%,    #414a4c  50% );",
-  Blackberry:
+  blackberry:
     " background-image: linear-gradient( to right, #43182f  50%,    #43182f  50% );",
-  Black_Gold:
+  "black/gold":
     "background-image: linear-gradient( to right, #000  50%,    #FBC403  50% );",
-  Carbon:
+  carbon:
     "background-image: linear-gradient( to right, #625D5D  50%,    #625D5D  50% );",
-  Dark_Brown:
+  dark_brown:
     "background-image: linear-gradient( to right, #654321  50%,    #654321  50% );",
-  Anthracite:
+  anthracite:
     "background-image: linear-gradient( to right, #383E42  50%,    #383E42  50% );",
-  Anthracite_Black:
+  anthracite_black:
     "background-image: linear-gradient( to right, #383E42  50%,    #000  50% );",
-  Atlantic:
+  atlantic:
     "background-image: linear-gradient( to right, #155370  50%,   #155370  50% );",
-  Cherry:
+  cherry:
     "background-image: linear-gradient( to right, #D2042D  50%,   #D2042D  50% );",
-  Sunrise:
+  sunrise:
     "background-image: linear-gradient( to right, #F7CD5D  50%,   #F7CD5D  50% );",
-  Blush:
+  blush:
     "background-image: linear-gradient( to right, #DE5D83  50%,   #DE5D83  50% );",
-  Black_Pink:
+  black_pink:
     "background-image: linear-gradient( to right, #ffa6fc  50%, #ffa6fc  50% );",
-  Black_Stripe:
+  black_stripe:
     "background-image: linear-gradient( to right, #000  50%, #008cdd  50% );",
-  Grey_Stripe:
+  grey_stripe:
     "background-image: linear-gradient( to right, #008cdd  50%, #008cdd  50% );",
-  Black_Bright_Lime:
+  black_bright_lime:
     "background-image: linear-gradient( to right, #008cdd  50%,    #32CD32  50% );",
-  Bright_Lime:
+  bright_lime:
     "background-image: linear-gradient( to right, #008cdd   50%,  #008cdd   50% );",
-  Yellow:
+  yellow:
     "background-image: linear-gradient( to right, #FFFF00   50%,  #FFFF00   50% );",
-  Orange:
+  orange:
     "background-image: linear-gradient( to right, #FFA500   50%,  #FFA500   50% );",
-  Reflective_Brt_Lime:
+  reflective_brt_lime:
     "background-image: linear-gradient( to right, #A8C068.   50%,    #A8C068   50% );",
-  Black_Silver:
+  black_Silver:
     "background-image: linear-gradient( to right, #D3D3D3   50%,  #D3D3D3   50% );",
-  Floral_Tapestry:
+  floral_tapestry:
     "background-image: linear-gradient( to right, #c59191   50%,  #c59191   50% );",
-  Black_Chrome:
+  black_chrome:
     "background-image: linear-gradient( to right, #202124   50%,  #202124   50% );",
-  Silver:
+  silver:
     "background-image: linear-gradient( to right, #C0C0C0   50%,  #C0C0C0   50% );",
-  Midnight:
+  midnight:
     "background-image: linear-gradient( to right, #191970   50%,  #191970   50% );",
-  Raspberry:
+  raspberry:
     "background-image: linear-gradient( to right,  #E30B5C   50%,   #E30B5C   50% );",
-  Mink_Silver:
+  mink_silver:
     "background-image: linear-gradient( to right,   #a8b3b1   50%,    #a8b3b1   50% );",
-  Plum:
+  plum:
     "background-image: linear-gradient( to right,   #673147   50%,    #673147  50% );",
-  Mink:
+  mink:
     "background-image: linear-gradient( to right,   #8a7561   50%,    #8a7561  50% );",
-  Graphic_Congo_Print:
+  graphic_congo_print:
     "background-image: linear-gradient( to right,   #4E2F2F   50%,    #4E2F2F  50% );",
-  Algae:
+  algae:
     "background-image: linear-gradient( to right,    #54ac68   50%,  #54ac68  50% );",
-  Blue_Burnished:
+  blue_burnished:
     "background-image: linear-gradient( to right,    #a17a74   50%, #a17a74  50% );",
-  Whiskey_Burnished:
+  whiskey_burnished:
     "background-image: linear-gradient( to right,    #d29062   50%,  #d29062  50% );",
-  Ultramarine:
+  ultramarine:
     "background-image: linear-gradient( to right,    #4166f5   50%,  #4166f5  50% );",
-  D_Jute:
+  d_jute:
     "background-image: linear-gradient( to right,    #ad9773   50%,  #ad9773  50% );",
-  E_Orchid:
+  e_orchid:
     "background-image: linear-gradient( to right,    #e6a8d7   50%, #e6a8d7  50% );",
-  I_Jute:
+  i_jute:
     "background-image: linear-gradient( to right,    #c0957b   50%,  #c0957b  50% );",
-  L_Navy:
+  L_navy:
     "background-image: linear-gradient( to right,    #000080   50%, #000080  50% );",
-  Orchid:
+  orchid:
     "background-image: linear-gradient( to right,    #DA70D6   50%,  #DA70D6  50% );",
-  Pewter:
+  pewter:
     "background-image: linear-gradient( to right,    #E9EAEC   50%,  #E9EAEC  50% );",
-  Ember:
+  ember:
     "background-image: linear-gradient( to right,  #f05e1b   50%,  #f05e1b  50% );",
-  Metallic:
+  metallic:
     "background-image: linear-gradient( to right,  #aaa9ad   50%,  #aaa9ad  50% );",
-  Black_Contrast:
+  black_contrast:
     "background-image: linear-gradient( to right,  #141414    50%,  #141414   50% );",
-  Dark_Brown_Smooth:
+  dark_brown_smooth:
     "background-image: linear-gradient( to right,  #B7825F    50%,  #B7825F    50% );",
-  Ocean_Blue:
+  ocean_blue:
     "background-image: linear-gradient( to right,  #009dc4    50%,  #009dc4    50% );",
-  Brown_Pebbled:
+  brown_pebbled:
     "background-image: linear-gradient( to right,  #bdb19f     50%,  #bdb19f     50% );",
-  Russet_Ombre:
+  russet_ombre:
     "background-image: linear-gradient( to right,  #80461b     50%,  #80461b     50% );",
-  Navy_Camo_Black:
+  navy_camo_black:
     "background-image: linear-gradient( to right,   #766D31     50%,   #766D31     50% );",
-  Anthracite_Brown:
+  anthracite_brown:
     "background-image: linear-gradient( to right,   #45464c     50%,   #45464c     50% );",
-  Navy_Camouflage:
+  navy_camouflage:
     "background-image: linear-gradient( to right,   #284B87     50%,   #284B87     50% );",
-  Russet:
+  russet:
     "background-image: linear-gradient( to right,   #80461B     50%,   #80461B     50% );"
 };

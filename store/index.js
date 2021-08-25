@@ -1,3 +1,6 @@
+import Vue from "vue";
+
+
 export const state = () => ({
   pimApi: "https://tmpim.tumi.in/pim/",
   cartApi: "https://tmcart.tumi.in/api/v1",
@@ -392,10 +395,10 @@ export const mutations = {
     try {
       let tempPost = { ...state.list.Product_list[index] };
       tempPost.image = product.image;
+      tempPost.gallery = product.gallery;
       tempPost.price = product.price;
       tempPost.url_key = product.url_key;
       tempPost.color = product.color;
-      tempPost.gallery = product.gallery;
       state.list.Product_list.splice(index, 1, tempPost);
     } catch (error) {
       console.log("error from update product color >>> ", error);

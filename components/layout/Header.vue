@@ -62,6 +62,7 @@
                 <ul>
                   <li
                     class="
+<<<<<<< HEAD
                         login-li
                         navbar-toggler
                         pull-xs-right
@@ -85,6 +86,31 @@
                     <nuxt-link class="proxima_semi-bold" v-else to="/login"
                       >Login/Register</nuxt-link
                     >
+=======
+                      login-li
+                      navbar-toggler
+                      pull-xs-right
+                      log-and-ragester
+                      header-log-ragister
+                    "
+                    id="navbarSideButton"
+                    type="button"
+                  >
+                    <NuxtLink
+                      v-if="
+                        $store.state.cartAjax.customer_id != null &&
+                        $store.state.cartAjax.customer_id != '' &&
+                        $store.state.cartAjax.customer_session != '' &&
+                        $store.state.cartAjax.customer_session != null
+                      "
+                      to="/Dashboard"
+                      class="proxima_semi-bold"
+                      >Account</NuxtLink
+                    >
+                    <nuxt-link class="proxima_semi-bold" v-else to="/login"
+                      >Login/Register</nuxt-link
+                    >
+>>>>>>> b4f7d4a9a3de25874b5e433c8a7056529c41f502
                   </li>
                   <li class="wish-list-icon">
                     <NuxtLink to="/wishlist">
@@ -93,7 +119,11 @@
                         class="count"
                         v-if="
                           Object.keys($store.state.cartAjax.wishlist).length !=
+<<<<<<< HEAD
                             0
+=======
+                          0
+>>>>>>> b4f7d4a9a3de25874b5e433c8a7056529c41f502
                         "
                         >{{
                           $store.state.cartAjax.wishlist.product.split(",")
@@ -158,7 +188,7 @@
               <NuxtLink
                 v-else-if="
                   item.menu_url_key == 'accessories' ||
-                    item.menu_url_key == 'luggage'
+                  item.menu_url_key == 'luggage'
                 "
                 :to="`/clp-cms/${item.menu_url_key}`"
                 class="desktop-item proxima_semi-bold"
@@ -182,7 +212,7 @@
                 <NuxtLink
                   v-else-if="
                     item.menu_url_key == 'accessories' ||
-                      item.menu_url_key == 'luggage'
+                    item.menu_url_key == 'luggage'
                   "
                   :to="`/clp-cms/${item.menu_url_key}`"
                   class="proxima_semi-bold"
@@ -211,7 +241,7 @@
                           :to="`/collections/${childItem.menu_url_key}/`"
                           v-if="
                             childItem.landing_page == '' ||
-                              childItem.landing_page == null
+                            childItem.landing_page == null
                           "
                           @click.native="() => (showMenu = false)"
                           >{{ childItem.name }}</Nuxt-link
@@ -221,7 +251,7 @@
                           :to="`/cms/${childItem.landing_page}`"
                           v-if="
                             childItem.landing_page != '' &&
-                              childItem.landing_page != null
+                            childItem.landing_page != null
                           "
                           >{{ childItem.name }}</Nuxt-link
                         >
@@ -258,9 +288,15 @@
                   <NuxtLink
                     v-if="
                       $store.state.cartAjax.customer_id != null &&
+<<<<<<< HEAD
                         $store.state.cartAjax.customer_id != '' &&
                         $store.state.cartAjax.customer_session != '' &&
                         $store.state.cartAjax.customer_session != null
+=======
+                      $store.state.cartAjax.customer_id != '' &&
+                      $store.state.cartAjax.customer_session != '' &&
+                      $store.state.cartAjax.customer_session != null
+>>>>>>> b4f7d4a9a3de25874b5e433c8a7056529c41f502
                     "
                     to="/Dashboard"
                     class="proxima_regular"
@@ -304,9 +340,15 @@
               <NuxtLink
                 v-if="
                   $store.state.cartAjax.customer_id != null &&
+<<<<<<< HEAD
                     $store.state.cartAjax.customer_id != '' &&
                     $store.state.cartAjax.customer_session != '' &&
                     $store.state.cartAjax.customer_session != null
+=======
+                  $store.state.cartAjax.customer_id != '' &&
+                  $store.state.cartAjax.customer_session != '' &&
+                  $store.state.cartAjax.customer_session != null
+>>>>>>> b4f7d4a9a3de25874b5e433c8a7056529c41f502
                 "
                 to="/Dashboard"
                 class="proxima_semi-bold"
@@ -382,7 +424,7 @@ export default {
       showMenu: false,
       close: false,
       isActive: -1,
-      showSearch: false
+      showSearch: false,
     };
   },
   async mounted() {
@@ -422,7 +464,7 @@ export default {
       } else {
         this.isActive = index;
       }
-    }
+    },
   },
 
   computed: {
@@ -438,12 +480,12 @@ export default {
       },
       set(value) {
         return;
-      }
-    }
+      },
+    },
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.updateScroll);
-  }
+  },
 };
 </script>
 <style scoped>
