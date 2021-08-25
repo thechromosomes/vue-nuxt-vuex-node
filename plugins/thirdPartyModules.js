@@ -8,7 +8,6 @@ Vue.use(SimpleVueValidation);
 
 Vue.filter("numberWithCommas", (num) => {
   if (num) {
-    // return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     var x = num;
     x = x.toString();
     var lastThree = x.substring(x.length - 3);

@@ -50,7 +50,7 @@
             </div>
             <div v-else>
               <h3 class="order-page " >
-               You have no orders
+               You have no orders!
               </h3>
             </div>
           </div>
