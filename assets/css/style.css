@@ -2244,7 +2244,8 @@ label.cvform-lbl-checkbox:before {
 
 .innovative-inner {
   display: flex;
-  align-items: center; height: 100%;
+  align-items: center;
+  height: 100%;
 }
 
 .inovative-content h5 {
@@ -2262,7 +2263,8 @@ label.cvform-lbl-checkbox:before {
 }
 
 .inove-large-img {
-  width: 60%; height: 100%;
+  width: 60%;
+  height: 100%;
 }
 
 .inove-large-img.order-2 {
@@ -2275,7 +2277,8 @@ label.cvform-lbl-checkbox:before {
 
 .inove-large-img img {
   width: 100%;
-  object-fit: cover; height: 100%;
+  object-fit: cover;
+  height: 100%;
 }
 
 .full-page-border {
@@ -2285,7 +2288,8 @@ label.cvform-lbl-checkbox:before {
 }
 
 .inovative-content .button-link {
-  font-weight: 700; cursor: pointer;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .inovate-right-img {
@@ -2322,6 +2326,9 @@ label.cvform-lbl-checkbox:before {
 .videos-sec .video-play-list {
   display: flex;
   text-align: center;
+}
+.videos-sec .video-play-list .pos-relative > a {
+  display: block;
 }
 /*
 .video-play-list {
@@ -2364,7 +2371,8 @@ label.cvform-lbl-checkbox:before {
   height: 84px;
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%); cursor: pointer;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
   left: 50%;
 }
 
@@ -2390,7 +2398,8 @@ label.cvform-lbl-checkbox:before {
 }
 
 .video-play-list li .button-link {
-  margin-top: 17px;  cursor: pointer;
+  margin-top: 17px;
+  cursor: pointer;
 }
 /*----------------mobile watch the world ============*/
 
@@ -3300,10 +3309,13 @@ label.cvform-lbl-checkbox:before {
 /* ==================== right side product css ============== */
 
 .product-row {
-  width: 100%;display: flex;
+  width: 100%;
+  display: flex;
   justify-content: space-between;
 }
-.filter-overly-div{ width: 20%;}
+.filter-overly-div {
+  width: 20%;
+}
 .product-div-col {
   width: 32%;
   /* float: left; */
@@ -3319,7 +3331,6 @@ label.cvform-lbl-checkbox:before {
   /* float: left; */
   display: flex;
   flex-wrap: wrap;
-  
 }
 
 .pduct-right-div.full-screen-items {
@@ -4262,7 +4273,8 @@ label.cvform-lbl-checkbox:before {
 .abc-div > span {
   text-transform: uppercase;
   font-size: 10px;
-  letter-spacing: 0.04em; cursor: pointer;
+  letter-spacing: 0.04em;
+  cursor: pointer;
 }
 
 .abc-div > span i {
@@ -4832,7 +4844,8 @@ label.cvform-lbl-checkbox:before {
 .recomnded-wrap .re-com-item h3 {
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden; cursor: pointer;
+  overflow: hidden;
+  cursor: pointer;
 }
 .re-com-item p {
   font-size: 12px;
@@ -5374,16 +5387,24 @@ label.cvform-lbl-checkbox:before {
   width: 25px;
   border-radius: 50%;
 }
-.clp-collection-pge .slick-prev:hover, .clp-collection-pge .slick-prev:focus, .clp-collection-pge .slick-next:hover, .clp-collection-pge .slick-next:focus{ background: #000; background-color: #000;}
+.clp-collection-pge .slick-prev:hover,
+.clp-collection-pge .slick-prev:focus,
+.clp-collection-pge .slick-next:hover,
+.clp-collection-pge .slick-next:focus {
+  background: #000;
+  background-color: #000;
+}
 .clp-page-two-pd-slider .slick-prev:before {
   content: "\e944";
   font-family: "icomoon" !important;
-  font-size: 15px; color: #fff!important;
+  font-size: 15px;
+  color: #fff !important;
 }
 .clp-page-two-pd-slider .slick-next:before {
   content: "\e945";
   font-family: "icomoon" !important;
-  font-size: 15px; color: #fff!important;
+  font-size: 15px;
+  color: #fff !important;
 }
 .clp-page-two-pd-slider .slick-next {
   right: 2%;
@@ -7756,7 +7777,8 @@ a.membership_card_join_btn {
 .accordion .accordion-section .accordion-section-title {
   width: 100%;
   padding: 8px 10px 7px 0;
-  display: inline-block;transition: all linear 0.15s;
+  display: inline-block;
+  transition: all linear 0.15s;
   font-size: 15px;
   letter-spacing: 0.04em;
   color: #222;
@@ -8147,13 +8169,16 @@ a.membership_card_join_btn {
   border-right: 1px solid #ebebeb;
   text-align: center;
 }
-.product_compare .box-item .product-item:last-child{ padding-right: 0px;}
+.product_compare .box-item .product-item:last-child {
+  padding-right: 0px;
+}
 .product_compare .compare_data {
   display: flex;
-  justify-content: flex-end; transition: all .7s ease-in-out;
-  -webkit-transition: all .7s ease-in-out;
-  -moz-transition: all .7s ease-in-out;
-  -o-transition: all .7s ease-in-out;
+  justify-content: flex-end;
+  transition: all 0.7s ease-in-out;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
 }
 
 .product_compare .compare_data .container {
@@ -8264,10 +8289,12 @@ a.membership_card_join_btn {
   z-index: 1;
   right: 0;
   justify-content: flex-end;
-  align-items: center; transition: all .7s ease-in-out;
-  -webkit-transition: all .7s ease-in-out;
-  -moz-transition: all .7s ease-in-out;
-  -o-transition: all .7s ease-in-out;background-color: rgba(0,0,0,.4);
+  align-items: center;
+  transition: all 0.7s ease-in-out;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .box-item.fixedcompare .product-item {
   display: flex;
@@ -8275,39 +8302,51 @@ a.membership_card_join_btn {
   align-items: flex-start;
   width: 25%;
   background-color: #fff;
-  height: 83px;transition: all .7s ease-in-out;
-  -webkit-transition: all .7s ease-in-out;
-  -moz-transition: all .7s ease-in-out;
-  -o-transition: all .7s ease-in-out;
+  height: 83px;
+  transition: all 0.7s ease-in-out;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
 }
-.box-item.fixedcompare .product-item{padding: 8px 8px 8px;}
+.box-item.fixedcompare .product-item {
+  padding: 8px 8px 8px;
+}
 .box-item.fixedcompare .product-item .p-name {
- 
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap; padding-right: 5px;
+  white-space: nowrap;
+  padding-right: 5px;
 }
 .box-item.fixedcompare .product-item .imgbox {
   width: 14%;
 }
-.box-item.fixedcompare .product-item span{ font-size: 8px;}
+.box-item.fixedcompare .product-item span {
+  font-size: 8px;
+}
 .box-item.fixedcompare .product-item .closeicon {
   padding: 3px 7px;
   padding-top: 0;
   line-height: 18px;
 }
-.box-item.fixedcompare .product-item span{ line-height: 0px; padding-top: 0px;}
+.box-item.fixedcompare .product-item span {
+  line-height: 0px;
+  padding-top: 0px;
+}
 .box-item.fixedcompare .product-item .btn.btn-v-4 {
- 
   padding: 2px 9px;
-  margin-top: 5px; font-size: 11px; font-weight: normal;
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: normal;
 }
 .box-item.fixedcompare .product-item .pro_detail {
   width: 80%;
   text-align: left;
   padding-left: 13px;
 }
-.box-item.fixedcompare .product-item .price{margin-top: 3px; font-size: 12px;}
+.box-item.fixedcompare .product-item .price {
+  margin-top: 3px;
+  font-size: 12px;
+}
 .box-item.fixedcompare .product-item .product-style {
   display: none;
 }
@@ -8409,9 +8448,12 @@ a.membership_card_join_btn {
 .box-item .product-item_empty {
   border: 1px dashed #ccc;
   padding: 37px 5%;
-  margin-bottom: 22px; height: 100%; 
+  margin-bottom: 22px;
+  height: 100%;
 }
-.box-item.fixedcompare .product-item_empty{display: flex;}
+.box-item.fixedcompare .product-item_empty {
+  display: flex;
+}
 .box-item.fixedcompare .product-item_empty {
   padding: 10px 5%;
   margin: 0;
@@ -8456,12 +8498,24 @@ a.membership_card_join_btn {
 .tm-pdp-carousel .tm-pdp-recommend-box ul .slick-next {
   right: -5px;
 }
-.cart__meta-text.pre-order-message.error{ font-size: 12px; color: red;padding-bottom: 5px; display: block;}
-.btn-box.mt-2.sumbitbtn{ position: relative; bottom: unset;}
-.profile-data p span{ font-size: 14px;}
-.profile-data p{ text-transform: capitalize!important;}
-/* toast notification */
-.v-toast__item--success{
-  background-color: #C41E3A !important;font-family: "proxima-nova-regular";
+.cart__meta-text.pre-order-message.error {
+  font-size: 12px;
+  color: red;
+  padding-bottom: 5px;
+  display: block;
 }
-
+.btn-box.mt-2.sumbitbtn {
+  position: relative;
+  bottom: unset;
+}
+.profile-data p span {
+  font-size: 14px;
+}
+.profile-data p {
+  text-transform: capitalize !important;
+}
+/* toast notification */
+.v-toast__item--success {
+  background-color: #c41e3a !important;
+  font-family: "proxima-nova-regular";
+}

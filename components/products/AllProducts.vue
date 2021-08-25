@@ -222,11 +222,11 @@
                       >
                         <h5 class="proxima_regular">
                           {{ filter.filter_lable }}
-                          <span class="delete-select-filter">(1)</span>
+                          <!-- <span class="delete-select-filter">(1)</span> -->
                         </h5>
-                        <a href class="clear-filter delete-select-filter"
+                        <!-- <a href class="clear-filter delete-select-filter"
                           >emptyssssssssss</a
-                        >
+                        > -->
                       </div>
                       <ul
                         class="filter-pd-listing"
