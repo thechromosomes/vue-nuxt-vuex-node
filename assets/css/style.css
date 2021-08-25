@@ -2185,7 +2185,7 @@ label.cvform-lbl-checkbox:before {
 
 .white-text-box .learn-more {
   margin: 0 auto;
-  padding: 4px 44px 9px 44px;
+  padding: 9px 44px 9px 44px;
   font-size: 12px;
   line-height: 15px;
   letter-spacing: 0.1em;
@@ -2245,6 +2245,7 @@ label.cvform-lbl-checkbox:before {
 .innovative-inner {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .inovative-content h5 {
@@ -2263,6 +2264,7 @@ label.cvform-lbl-checkbox:before {
 
 .inove-large-img {
   width: 60%;
+  height: 100%;
 }
 
 .inove-large-img.order-2 {
@@ -2276,6 +2278,7 @@ label.cvform-lbl-checkbox:before {
 .inove-large-img img {
   width: 100%;
   object-fit: cover;
+  height: 100%;
 }
 
 .full-page-border {
@@ -2323,6 +2326,9 @@ label.cvform-lbl-checkbox:before {
 .videos-sec .video-play-list {
   display: flex;
   text-align: center;
+}
+.videos-sec .video-play-list .pos-relative > a {
+  display: block;
 }
 /*
 .video-play-list {
@@ -4268,6 +4274,7 @@ label.cvform-lbl-checkbox:before {
   text-transform: uppercase;
   font-size: 10px;
   letter-spacing: 0.04em;
+  cursor: pointer;
 }
 
 .abc-div > span i {
@@ -5020,7 +5027,7 @@ label.cvform-lbl-checkbox:before {
   width: 40px;
   background: #000;
   color: #fff;
-  line-height: 35px;
+  line-height: 40px;
   font-size: 22px;
   vertical-align: middle;
   cursor: pointer;
@@ -6870,8 +6877,8 @@ img.yearBlockImage {
   font-weight: 100;
 }
 .luggage-page .proCategory ul div a.TCLink_3 {
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 17px;
+  font-weight: 600;
   cursor: pointer;
   color: #222;
   text-decoration: none;
@@ -8152,15 +8159,18 @@ a.membership_card_join_btn {
   width: 100%;
   display: flex;
   justify-self: flex-start;
-  align-items: baseline;
+  align-items: top;
   border: 1px solid #ebebeb;
 }
 .product_compare .box-item .product-item {
   position: relative;
   width: 33.33%;
-  padding: 30px 20px 24px;
+  padding: 0px 20px 24px;
   border-right: 1px solid #ebebeb;
   text-align: center;
+}
+.product_compare .box-item .product-item:last-child {
+  padding-right: 0px;
 }
 .product_compare .compare_data {
   display: flex;
@@ -8439,8 +8449,11 @@ a.membership_card_join_btn {
   border: 1px dashed #ccc;
   padding: 37px 5%;
   margin-bottom: 22px;
+  height: 100%;
 }
-
+.box-item.fixedcompare .product-item_empty {
+  display: flex;
+}
 .box-item.fixedcompare .product-item_empty {
   padding: 10px 5%;
   margin: 0;

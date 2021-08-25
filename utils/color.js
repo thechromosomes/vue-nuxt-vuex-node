@@ -162,4 +162,105 @@ export const color = {
     " background-image: linear-gradient( to right,     #c19a6b  50%,    #c19a6b  50% );",
   black_white:
     " background-image: linear-gradient( to right, #000  50%,    #fff  50% );",
+  // ====================== new color add ======================//
+  black_gmooth:
+    " background-image: linear-gradient( to right, #414a4c  50%,    #414a4c  50% );",
+  blackberry:
+    " background-image: linear-gradient( to right, #43182f  50%,    #43182f  50% );",
+  "black/gold":
+    "background-image: linear-gradient( to right, #000  50%,    #FBC403  50% );",
+  carbon:
+    "background-image: linear-gradient( to right, #625D5D  50%,    #625D5D  50% );",
+  dark_brown:
+    "background-image: linear-gradient( to right, #654321  50%,    #654321  50% );",
+  anthracite:
+    "background-image: linear-gradient( to right, #383E42  50%,    #383E42  50% );",
+  anthracite_black:
+    "background-image: linear-gradient( to right, #383E42  50%,    #000  50% );",
+  atlantic:
+    "background-image: linear-gradient( to right, #155370  50%,   #155370  50% );",
+  cherry:
+    "background-image: linear-gradient( to right, #D2042D  50%,   #D2042D  50% );",
+  sunrise:
+    "background-image: linear-gradient( to right, #F7CD5D  50%,   #F7CD5D  50% );",
+  blush:
+    "background-image: linear-gradient( to right, #DE5D83  50%,   #DE5D83  50% );",
+  black_pink:
+    "background-image: linear-gradient( to right, #ffa6fc  50%, #ffa6fc  50% );",
+  black_stripe:
+    "background-image: linear-gradient( to right, #000  50%, #008cdd  50% );",
+  grey_stripe:
+    "background-image: linear-gradient( to right, #008cdd  50%, #008cdd  50% );",
+  black_bright_lime:
+    "background-image: linear-gradient( to right, #008cdd  50%,    #32CD32  50% );",
+  bright_lime:
+    "background-image: linear-gradient( to right, #008cdd   50%,  #008cdd   50% );",
+  yellow:
+    "background-image: linear-gradient( to right, #FFFF00   50%,  #FFFF00   50% );",
+  orange:
+    "background-image: linear-gradient( to right, #FFA500   50%,  #FFA500   50% );",
+  reflective_brt_lime:
+    "background-image: linear-gradient( to right, #A8C068.   50%,    #A8C068   50% );",
+  black_Silver:
+    "background-image: linear-gradient( to right, #D3D3D3   50%,  #D3D3D3   50% );",
+  floral_tapestry:
+    "background-image: linear-gradient( to right, #c59191   50%,  #c59191   50% );",
+  black_chrome:
+    "background-image: linear-gradient( to right, #202124   50%,  #202124   50% );",
+  silver:
+    "background-image: linear-gradient( to right, #C0C0C0   50%,  #C0C0C0   50% );",
+  midnight:
+    "background-image: linear-gradient( to right, #191970   50%,  #191970   50% );",
+  raspberry:
+    "background-image: linear-gradient( to right,  #E30B5C   50%,   #E30B5C   50% );",
+  mink_silver:
+    "background-image: linear-gradient( to right,   #a8b3b1   50%,    #a8b3b1   50% );",
+  plum:
+    "background-image: linear-gradient( to right,   #673147   50%,    #673147  50% );",
+  mink:
+    "background-image: linear-gradient( to right,   #8a7561   50%,    #8a7561  50% );",
+  graphic_congo_print:
+    "background-image: linear-gradient( to right,   #4E2F2F   50%,    #4E2F2F  50% );",
+  algae:
+    "background-image: linear-gradient( to right,    #54ac68   50%,  #54ac68  50% );",
+  blue_burnished:
+    "background-image: linear-gradient( to right,    #a17a74   50%, #a17a74  50% );",
+  whiskey_burnished:
+    "background-image: linear-gradient( to right,    #d29062   50%,  #d29062  50% );",
+  ultramarine:
+    "background-image: linear-gradient( to right,    #4166f5   50%,  #4166f5  50% );",
+  d_jute:
+    "background-image: linear-gradient( to right,    #ad9773   50%,  #ad9773  50% );",
+  e_orchid:
+    "background-image: linear-gradient( to right,    #e6a8d7   50%, #e6a8d7  50% );",
+  i_jute:
+    "background-image: linear-gradient( to right,    #c0957b   50%,  #c0957b  50% );",
+  L_navy:
+    "background-image: linear-gradient( to right,    #000080   50%, #000080  50% );",
+  orchid:
+    "background-image: linear-gradient( to right,    #DA70D6   50%,  #DA70D6  50% );",
+  pewter:
+    "background-image: linear-gradient( to right,    #E9EAEC   50%,  #E9EAEC  50% );",
+  ember:
+    "background-image: linear-gradient( to right,  #f05e1b   50%,  #f05e1b  50% );",
+  metallic:
+    "background-image: linear-gradient( to right,  #aaa9ad   50%,  #aaa9ad  50% );",
+  black_contrast:
+    "background-image: linear-gradient( to right,  #141414    50%,  #141414   50% );",
+  dark_brown_smooth:
+    "background-image: linear-gradient( to right,  #B7825F    50%,  #B7825F    50% );",
+  ocean_blue:
+    "background-image: linear-gradient( to right,  #009dc4    50%,  #009dc4    50% );",
+  brown_pebbled:
+    "background-image: linear-gradient( to right,  #bdb19f     50%,  #bdb19f     50% );",
+  russet_ombre:
+    "background-image: linear-gradient( to right,  #80461b     50%,  #80461b     50% );",
+  navy_camo_black:
+    "background-image: linear-gradient( to right,   #766D31     50%,   #766D31     50% );",
+  anthracite_brown:
+    "background-image: linear-gradient( to right,   #45464c     50%,   #45464c     50% );",
+  navy_camouflage:
+    "background-image: linear-gradient( to right,   #284B87     50%,   #284B87     50% );",
+  russet:
+    "background-image: linear-gradient( to right,   #80461B     50%,   #80461B     50% );"
 };

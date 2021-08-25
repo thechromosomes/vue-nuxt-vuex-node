@@ -427,6 +427,7 @@
                       <small class="proxima_regular">{{
                         singleProd.collection
                       }}</small>
+
                       <span
                         class="proxima_regular"
                         v-if="

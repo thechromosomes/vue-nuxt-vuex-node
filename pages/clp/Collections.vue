@@ -5,7 +5,7 @@
       <img src="~assets/images/clp-page-two-banner.jpg" />
       <div class="baneer-content">
         <h2 class="proxima_bold" style="color:#fff">
-          Spring 2021 Collection <span >Breakdown</span>
+          Spring 2021 Collection <span>Breakdown</span>
         </h2>
         <p class="proxima_regular" style="color:#fff">
           From lightweight commute-friendly backpacks to luxurious leather
@@ -144,7 +144,7 @@
         </p>
       </div>
     </section>
-  <section class="clp-page-two-pd-slider">
+    <section class="clp-page-two-pd-slider">
       <div class="container">
         <div class="clp-slider-wraper" v-if="luggage2.length > 0">
           <VueSlickCarousel v-bind="slides">
@@ -199,7 +199,7 @@
 import VueSlickCarousel from "vue-slick-carousel";
 export default {
   components: {
-    VueSlickCarousel,
+    VueSlickCarousel
   },
   data() {
     return {
@@ -225,8 +225,8 @@ export default {
               slidesToShow: 3,
               slidesToScroll: 1,
               centerPadding: "150px",
-              centerMode: false,
-            },
+              centerMode: false
+            }
           },
           {
             breakpoint: 600,
@@ -236,8 +236,8 @@ export default {
               initialSlide: 2,
               centerMode: false,
               centerPadding: "100px",
-              arrows: false,
-            },
+              arrows: false
+            }
           },
           {
             breakpoint: 480,
@@ -246,10 +246,10 @@ export default {
               slidesToScroll: 2,
               centerMode: false,
               centerPadding: "0px",
-              arrows: false,
-            },
-          },
-        ],
+              arrows: false
+            }
+          }
+        ]
       },
 
       dekshtopSlide: {
@@ -260,7 +260,7 @@ export default {
         responsive: [
           {
             breakpoint: 9999,
-            settings: "unslick",
+            settings: "unslick"
           },
           {
             breakpoint: 767,
@@ -270,11 +270,11 @@ export default {
               infinite: false,
               dots: false,
               arrows: false,
-              autoplay: false,
-            },
-          },
-        ],
-      },
+              autoplay: false
+            }
+          }
+        ]
+      }
     };
   },
 
@@ -293,7 +293,7 @@ export default {
         let response = await this.$store.dispatch("pimAjax", {
           method: "post",
           url: `/pimresponse.php`,
-          params: form,
+          params: form
         });
 
         if (response) {
@@ -305,12 +305,11 @@ export default {
         this.$globalError(`error from all product page >>>> ${error}`);
         if (error.message === "Network Error") {
           this.$store.commit("updateState", {
-            error:
-              "Oops there seems to be some Network issue, please try again",
+            error: "Oops there seems to be some Network issue, please try again"
           });
         }
       }
-    },
+    }
   },
   created() {
     this.getProductList("luggage-carry-on-luggage", "luggage");
@@ -318,7 +317,7 @@ export default {
     this.getProductList("bags-duffels", "duffels");
     this.getProductList("accessories-wallet---card-cases", "accessories");
     this.getProductList("luggage-checked-luggage", "luggage2");
-  },
+  }
 };
 </script>
 <style scoped>
@@ -349,7 +348,7 @@ html {
   font-weight: 700;
   color: black;
 }
-.clp-page-two-banner .baneer-content P {
+.clp-page-two-banner .baneer-content p {
   font-size: 20px;
   line-height: 40px;
   margin: 10px 0 25px 0;

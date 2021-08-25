@@ -134,11 +134,11 @@
                     </div>
                     <div class="col-md-6 col-12">
                       <div class="default-address">
-                        <input
-                          class="form-check-input proxima_regular"
-                          type="checkbox"
-                          id="new-address"
-                        />
+                                                        <input
+                                                          class="form-check-input proxima_regular"
+                                                          type="checkbox"
+                                                          id="new-address"
+                                                        />
                         <label class="form-check-label proxima_regular" for="new-address"
                           >Set as Default Address?</label
                         >
