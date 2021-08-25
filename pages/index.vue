@@ -33,21 +33,23 @@
       <section class="explore-sec">
         <h4 class="text-center proxima_regular">EXPLORE #TUMIHK</h4>
         <div class="explore">
-          <VueSlickCarousel v-bind="instaSettings">
-            <div
-              v-for="(instaItems, instaIndex) in 10"
-              :key="instaIndex"
-              class="blog-cover"
-            >
-              <img src="~/assets/images/explore-2.jpg" alt="explore-1" />
-              <ul class="blog-icon">
-                <li><a href="#" class="proxima_regular">jamie.xia</a></li>
-                <li>
-                  <a href="#"><img src="~/assets/images/instagram.png" /></a>
-                </li>
-              </ul>
-            </div>
-          </VueSlickCarousel>
+          <client-only>
+            <VueSlickCarousel v-bind="instaSettings">
+              <div
+                v-for="(instaItems, instaIndex) in 10"
+                :key="instaIndex"
+                class="blog-cover"
+              >
+                <img src="~/assets/images/explore-2.jpg" alt="explore-1" />
+                <ul class="blog-icon">
+                  <li><a href="#" class="proxima_regular">jamie.xia</a></li>
+                  <li>
+                    <a href="#"><img src="~/assets/images/instagram.png" /></a>
+                  </li>
+                </ul>
+              </div>
+            </VueSlickCarousel>
+          </client-only>
         </div>
       </section>
     </LazyHydrate>
