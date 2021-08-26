@@ -1830,7 +1830,7 @@ label.cvform-lbl-checkbox:before {
 
 .header-search {
   position: relative;
-  margin-left: 35px;
+  margin-left: 30px;
 }
 
 .header-search:before {
@@ -2144,7 +2144,7 @@ label.cvform-lbl-checkbox:before {
 }
 
 .hero-area .slick-dots li button:before {
-  font-size: 10px;
+  font-size: 35px;
 }
 
 .slick-dots li.slick-active button:before {
@@ -6878,10 +6878,14 @@ img.yearBlockImage {
 }
 .luggage-page .proCategory ul div a.TCLink_3 {
   font-size: 17px;
-  font-weight: 600;
+  font-weight: normal;
   cursor: pointer;
-  color: #222;
+  color: #000;
   text-decoration: none;
+  border: 2px solid #000000;
+  padding: 4px 25px;
+  margin-top: 5px;
+  display: inline-block;
 }
 .luggage-page .breadcrumb li.active {
   color: #fff;
@@ -8501,7 +8505,7 @@ a.membership_card_join_btn {
 .cart__meta-text.pre-order-message.error {
   font-size: 12px;
   color: red;
-  padding-bottom: 5px;
+
   display: block;
 }
 .btn-box.mt-2.sumbitbtn {
@@ -8522,4 +8526,8 @@ a.membership_card_join_btn {
 .video-verticaly-slide .slick-prev:before,
 .video-verticaly-slide .slick-next:before {
   color: #fff !important;
+}
+.wish-list-wraper .heading-with-close-btn img {
+  width: 20px;
+  height: 20px;
 }
