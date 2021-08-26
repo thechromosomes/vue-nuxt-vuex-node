@@ -6878,10 +6878,14 @@ img.yearBlockImage {
 }
 .luggage-page .proCategory ul div a.TCLink_3 {
   font-size: 17px;
-  font-weight: 600;
+  font-weight: normal;
   cursor: pointer;
-  color: #222;
+  color: #000;
   text-decoration: none;
+  border: 2px solid #000000;
+  padding: 4px 25px;
+  margin-top: 5px;
+  display: inline-block;
 }
 .luggage-page .breadcrumb li.active {
   color: #fff;
