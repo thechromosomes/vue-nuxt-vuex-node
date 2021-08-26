@@ -138,7 +138,9 @@
                       | numberWithCommas
                   }}
                 </h3>
-                  <span class="hurry proxima_regular">Price inclusive of all taxes</span>
+                <span class="hurry proxima_regular"
+                  >Price inclusive of all taxes</span
+                >
                 <div class="stock-status">
                   <span class="in-stok proxima_bold">
                     <span
@@ -547,41 +549,24 @@
           </div>
 
           <!-- 360 image -->
-          <div class="tm-title__h">
-            <div class="tm-title__line"></div>
-            <h3 class="tm-title proxima_regular">360 view</h3>
-            <div class="tm-title__line"></div>
-          </div>
-          <!-- <div v-if="$route.query.gif == 250">
-            <img
-              class="productGif"
-              src="@/assets/images/bag-image-fast-250.gif"
-            />
-          </div>
-          <div v-else-if="$route.query.gif == 500">
-            <img
-              class="productGif"
-              src="@/assets/images/bag-image-fast-500.gif"
-            />
-          </div>
-          <div v-else-if="$route.query.gif == 1000">
-            <img
-              class="productGif"
-              src="@/assets/images/bag-image-fast-1000.gif"
-            />
-          </div>
-          <div v-else>
-            <img class="productGif" src="@/assets/images/tumiPDP.gif" />
-          </div> -->
-          <div class="text-center digree-rotaction">
-            <iframe
-              src="https://tmpim.tumi.in/360/139434-1041/"
-              height="600"
-              width="600"
-              style="border: 0"
-              title="gif image"
-            ></iframe>
-          </div>
+          <template
+            v-if="singleProductList.single_prod_data.degree_view == `yes`"
+          >
+            <div class="tm-title__h">
+              <div class="tm-title__line"></div>
+              <h3 class="tm-title proxima_regular">360 view</h3>
+              <div class="tm-title__line"></div>
+            </div>
+            <div class="text-center digree-rotaction">
+              <iframe
+                :src="`https://tmpim.tumi.in/360/${singleProductList.single_prod_data.sku}/`"
+                height="600"
+                width="600"
+                style="border: 0"
+                title="gif image"
+              ></iframe>
+            </div>
+          </template>
         </div>
       </section>
     </div>
