@@ -10,7 +10,7 @@
               v-if="$store.state.cartAjax.cart_product.length > 0"
             >
               <div class="">
-                <header class="tm-header">
+                <div class="tm-header">
                   <h3 class="title">
                     <span>{{ $store.state.cartAjax.cart_product.length }}</span>
                     Item in cart
@@ -23,7 +23,7 @@
                     aria-label="close"
                     ><span class="icon icon-x"></span
                   ></a>
-                </header>
+                </div>
                 <div class="tm-content">
                   <div class="scroll">
                     <div class="scroll-inner">
@@ -49,8 +49,9 @@
                                   class="badge-added"
                                   v-if="
                                     index ==
-                                    $store.state.cartAjax.cart_product.length -
-                                      1
+                                      $store.state.cartAjax.cart_product
+                                        .length -
+                                        1
                                   "
                                   >just added</span
                                 >
@@ -80,12 +81,12 @@
                                 Quantity: {{ product.qty }}
                               </div>
                               <div
-class="cart__meta-text pre-order-message error"
-data-product-id="5172417462405"
-v-show="product.fynd_qty == 0"
->
-Product out of stock
-</div>
+                                class="cart__meta-text pre-order-message error"
+                                data-product-id="5172417462405"
+                                v-show="product.fynd_qty == 0"
+                              >
+                                Product out of stock
+                              </div>
                               <!-- <div class="product-monogram"></div> -->
                             </div>
                             <!-- <a
@@ -97,7 +98,6 @@ Product out of stock
                             ></a> -->
                             <div style="clear: both"></div>
                           </div>
-                          
                         </li>
                       </ul>
                     </div>
@@ -151,7 +151,7 @@ export default {
   data() {
     return {
       addToCartVal: 0,
-      applied_coupon: "",
+      applied_coupon: ""
     };
   },
 
@@ -177,12 +177,12 @@ export default {
           method: "post",
           url: `/product/remove-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form,
+          params: form
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response,
+            data: response
           });
           if (response.success) {
             this.$gtm.push({
@@ -196,11 +196,11 @@ export default {
                       id: item.master_sku,
                       price: item.selling_price,
                       variant: item.fynd_size,
-                      quantity: item.qty,
-                    },
-                  ],
-                },
-              },
+                      quantity: item.qty
+                    }
+                  ]
+                }
+              }
             });
           }
         } else {
@@ -225,12 +225,12 @@ export default {
           method: "post",
           url: `/product/update-product`,
           token: this.$store.state.cartAjax.cart_token,
-          params: form,
+          params: form
         });
         if (response) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response,
+            data: response
           });
         } else {
           throw "no response from api";
@@ -295,13 +295,13 @@ export default {
           method: "post",
           url,
           token: this.$store.state.cartAjax.cart_token,
-          params: form,
+          params: form
         });
 
         if (response.success) {
           this.$store.commit("cartAjax/updateCartDetail", {
             error: null,
-            data: response,
+            data: response
           });
           this.$toast.open(response.message);
         } else {
@@ -310,33 +310,33 @@ export default {
       } catch (error) {
         console.log("error form the add coupon foo >>", error);
       }
-    },
+    }
   },
 
   watch: {
-    "$store.state.cartAjax.cart_page_message": function () {
+    "$store.state.cartAjax.cart_page_message": function() {
       if (
         this.$store.state.cartAjax.cart_page_message != "" &&
         this.$store.state.cartAjax.cart_page_message != null
       ) {
         this.$toast.open(this.$store.state.cartAjax.cart_page_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: "",
+          data: ""
         });
       }
     },
-    "$store.state.cartAjax.cart_page_erro_page": function () {
+    "$store.state.cartAjax.cart_page_erro_page": function() {
       if (
         this.$store.state.cartAjax.cart_page_error_message != "" &&
         this.$store.state.cartAjax.cart_page_error_message != null
       ) {
         this.$toast.error(this.$store.state.cartAjax.cart_page_error_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: "",
+          data: ""
         });
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -382,7 +382,7 @@ export default {
   height: 100%;
 }
 .cart-page .tm-panel-container .tm-wrapper {
-  padding: 20px 30px 30px;
+  padding: 20px 0px 30px;
 }
 
 .cart-page #tm-panel-mini-cart .tm-header {
@@ -393,7 +393,7 @@ export default {
 .cart-page #tm-panel-mini-cart .tm-header .title {
   text-align: center;
   margin-bottom: 0;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 1px solid #cccccc61;
   font-size: 18px;
   padding-bottom: 10px;
   /* margin-bottom: 15px; */
@@ -413,7 +413,7 @@ export default {
   width: 18px;
   height: 18px;
   top: -10px;
-  right: -20px;
+  right: 5%;
 }
 .cart-page #tm-panel-mini-cart .tm-header .close .icon-x {
   vertical-align: top;
@@ -426,7 +426,7 @@ export default {
   height: auto;
   min-height: 0px;
   max-height: 600px;
-  width: 320px !important;
+  width: 100% !important;
 }
 .scroll-inner {
   position: relative;
@@ -436,11 +436,14 @@ export default {
   min-height: 17px;
   max-height: 600px;
 }
-
+.scroll-inner .cart-products .cart-product .cart-item {
+  border-bottom: 1px solid rgba(204, 204, 204, 0.38039);
+  padding: 15px;
+}
 .cart-page #tm-panel-mini-cart .tm-content .cart-products {
   margin: 0;
   padding: 0;
-  max-width: 300px;
+  max-width: 100%;
 }
 .cart-page #tm-panel-mini-cart .tm-content .cart-products .cart-product {
   list-style: none;
@@ -456,7 +459,7 @@ export default {
   .product-image {
   width: 100px;
   box-sizing: content-box;
-  padding: 10px 30px 0 0;
+  padding: 0px 30px 0 0;
 }
 .cart-page
   #tm-panel-mini-cart
@@ -494,7 +497,7 @@ export default {
   .product-details {
   max-width: 170px;
   text-transform: none;
-  padding-top: 8px;
+  padding-top: 0;
 }
 .cart-page
   #tm-panel-mini-cart
@@ -521,7 +524,7 @@ export default {
   .cart-item
   .product-details
   .product-name {
-  padding: 5px 7px 3px 0;
+  padding: 0px 7px 3px 0;
   display: inline-block;
   word-break: break-all;
 }
@@ -655,10 +658,10 @@ export default {
   /* display: none; */
 }
 .cart-page #tm-panel-mini-cart .tm-footer {
-  border-top: 2px solid #ccc;
+  border-top: 1px solid #cccccc61;
   text-align: center;
-  padding: 29px 0 5px;
-  padding-top: 14px;
+  padding: 15px;
+  padding-bottom: 35px;
 }
 .cart-page #tm-panel-mini-cart .tm-footer .cart-meta {
   padding-bottom: 14px;
@@ -714,6 +717,10 @@ export default {
 .cart-page .tm-button.tm-white-button:hover {
   color: #c41e3a;
 }
-@media only screen and (max-width: 767px) {
+
+@media only screen and (max-width: 360px) {
+  .cart-page #tm-panel-mini-cart .tm-footer {
+    padding-left: 30px;
+  }
 }
 </style>
