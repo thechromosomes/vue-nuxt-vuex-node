@@ -271,19 +271,19 @@
                         <ul>
                           <li
                             v-show="
-                              singleProductList.single_prod_data.style_code
-                            "
-                          >
-                            Style code:
-                            {{ singleProductList.single_prod_data.style_code }}
-                          </li>
-                          <li
-                            v-show="
                               singleProductList.single_prod_data.item_code
                             "
                           >
-                            Item Code:
+                            Item code:
                             {{ singleProductList.single_prod_data.item_code }}
+                          </li>
+                          <li
+                            v-show="
+                              singleProductList.single_prod_data.uk_item_code
+                            "
+                          >
+                            Item Code UK:
+                            {{ singleProductList.single_prod_data.uk_item_code }}
                           </li>
                           <li
                             v-for="(desc, descKey) in renderDescription"
@@ -468,7 +468,7 @@
 
                           <div class="link-ctnr">
                             <a
-                              href="https://www.tumi-hk.com/How_do_we_measure_HK_EN.pdf"
+                              href="https://tmbackend.tumi.in/size_guide.pdf"
                               target="_Blank"
                             >
                               How do we measure ?</a
