@@ -229,7 +229,13 @@
                     </ul>
                   </div>
                   <div class="row image-row hide-mob">
-                    <img src="~assets/images/mega-menu-img1.jpg" />
+                    <img
+                      v-show="
+                        item.image != null &&
+                        item.image != ''
+                      "
+                      :src="item.image"
+                    />
                     <a
                       href="#"
                       class="mega-image-link color-hover proxima_semi-bold"

@@ -274,18 +274,16 @@
                               singleProductList.single_prod_data.style_code
                             "
                           >
-                            Style:
+                            Style code:
                             {{ singleProductList.single_prod_data.style_code }}
                           </li>
                           <li
                             v-show="
-                              singleProductList.single_prod_data.uk_item_code
+                              singleProductList.single_prod_data.item_code
                             "
                           >
-                            Style UK:
-                            {{
-                              singleProductList.single_prod_data.uk_item_code
-                            }}
+                            Item Code:
+                            {{ singleProductList.single_prod_data.item_code }}
                           </li>
                           <li
                             v-for="(desc, descKey) in renderDescription"
