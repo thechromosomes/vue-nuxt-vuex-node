@@ -10,7 +10,7 @@
                 class="breadcrumb clearfix"
                 v-if="
                   singleProductList.breadcrumb &&
-                  singleProductList.breadcrumb.length > 0
+                    singleProductList.breadcrumb.length > 0
                 "
               >
                 <span
@@ -20,7 +20,7 @@
                   <Nuxt-link
                     v-if="
                       indexBrd != 0 &&
-                      indexBrd != singleProductList.breadcrumb.length - 1
+                        indexBrd != singleProductList.breadcrumb.length - 1
                     "
                     :to="`/collections/${itemBrd.url_key}`"
                     >{{ itemBrd.name }}
@@ -56,7 +56,7 @@
                         :class="[
                           mainThumbImage == thumbItem.image
                             ? 'active-thumbnail'
-                            : '',
+                            : ''
                         ]"
                         v-for="(thumbItem, thumbIndex) in singleProductList
                           .single_prod_data.gallery"
@@ -89,7 +89,7 @@
                   <div
                     v-if="
                       singleProductList.single_prod_data.gallery &&
-                      singleProductList.single_prod_data.gallery.length > 0
+                        singleProductList.single_prod_data.gallery.length > 0
                     "
                   >
                     <client-only>
@@ -170,7 +170,7 @@
                           :class="[
                             $route.params.productDetail == color.url_key
                               ? 'active colo-select-bg'
-                              : '',
+                              : ''
                           ]"
                           v-for="(color, index) in singleProductList
                             .single_prod_data.color_variation"
@@ -246,7 +246,7 @@
                 <span id="stick-cart-temp"></span>
                 <div
                   :class="{
-                    addtocartsticky: fixedMobileCart && showStickycart,
+                    addtocartsticky: fixedMobileCart && showStickycart
                   }"
                 >
                   <a
@@ -333,9 +333,9 @@
                           </h4>
                           <div
                             class="w-cap"
-                            v-for="(
-                              Itemdetails, indexDet, index
-                            ) in singleProductList.single_prod_data
+                            v-for="(Itemdetails,
+                            indexDet,
+                            index) in singleProductList.single_prod_data
                               .item_detials"
                             :key="indexDet"
                           >
@@ -349,9 +349,9 @@
                               v-if="
                                 singleProductList.single_prod_data
                                   .extened_depth &&
-                                singleProductList.single_prod_data
-                                  .extened_depth != '' &&
-                                index == 0
+                                  singleProductList.single_prod_data
+                                    .extened_depth != '' &&
+                                  index == 0
                               "
                             >
                               <p class="proxima_regular">expanded</p>
@@ -378,10 +378,10 @@
                             v-if="
                               singleProductList.single_prod_data
                                 .laptop_item_detials &&
-                              Object.keys(
-                                singleProductList.single_prod_data
-                                  .laptop_item_detials
-                              ).length > 0
+                                Object.keys(
+                                  singleProductList.single_prod_data
+                                    .laptop_item_detials
+                                ).length > 0
                             "
                           >
                             <h4 class="proxima_bold feature-heding">
@@ -389,9 +389,9 @@
                             </h4>
                             <div
                               class="w-cap"
-                              v-for="(
-                                lapItem, lapIndex, index
-                              ) in singleProductList.single_prod_data
+                              v-for="(lapItem,
+                              lapIndex,
+                              index) in singleProductList.single_prod_data
                                 .laptop_item_detials"
                               :key="index"
                             >
@@ -415,7 +415,7 @@
                               <template
                                 v-if="
                                   details.code != 'external_features' &&
-                                  details.code != 'internal_features'
+                                    details.code != 'internal_features'
                                 "
                               >
                                 <h4 class="proxima_bold feature-heding">
@@ -439,13 +439,13 @@
                               :class="{
                                 external_features:
                                   details.code === 'external_features' ||
-                                  details.code === 'internal_features',
+                                  details.code === 'internal_features'
                               }"
                             >
                               <template
                                 v-if="
                                   details.code === 'external_features' ||
-                                  details.code === 'internal_features'
+                                    details.code === 'internal_features'
                                 "
                               >
                                 <div class="exterior-feature-item">
@@ -453,9 +453,8 @@
                                   <ul>
                                     <li
                                       class="proxima_regular"
-                                      v-for="(
-                                        liItem, liIndex
-                                      ) in details.value.split('<br>')"
+                                      v-for="(liItem,
+                                      liIndex) in details.value.split('<br>')"
                                       :key="liIndex"
                                     >
                                       {{ liItem }}
@@ -546,6 +545,23 @@
             </div>
           </div>
 
+          <div
+            class="aircraft-item-show"
+            v-if="
+              singleProductList.single_prod_data.life_style &&
+                singleProductList.single_prod_data.life_style.length > 0
+            "
+          >
+            <div
+              class="air-craft-item-one"
+              v-for="(item, Index) in singleProductList.single_prod_data
+                .life_style"
+              :key="Index"
+            >
+              <img :src="item.image" />
+            </div>
+          </div>
+
           <!-- 360 image -->
           <template
             v-if="singleProductList.single_prod_data.degree_view == `yes`"
@@ -557,7 +573,9 @@
             </div>
             <div class="text-center digree-rotaction">
               <iframe
-                :src="`https://tmpim.tumi.in/360/${singleProductList.single_prod_data.sku}/`"
+                :src="
+                  `https://tmpim.tumi.in/360/${singleProductList.single_prod_data.sku}/`
+                "
                 height="600"
                 width="600"
                 style="border: 0"
@@ -623,8 +641,8 @@
             class="tm-pdp-recommend"
             v-if="
               Object.keys(singleProductList.single_prod_data).length > 0 &&
-              singleProductList.single_prod_data.recommended &&
-              singleProductList.single_prod_data.recommended.length > 0
+                singleProductList.single_prod_data.recommended &&
+                singleProductList.single_prod_data.recommended.length > 0
             "
           >
             <client-only>
@@ -731,7 +749,7 @@ export default {
     Peresonalization,
     ExploreComparison,
     ModalPopUp,
-    "inner-image-zoom": InnerImageZoom,
+    "inner-image-zoom": InnerImageZoom
   },
   data() {
     return {
@@ -764,25 +782,25 @@ export default {
             breakpoint: 1024,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 1,
-            },
+              slidesToScroll: 1
+            }
           },
           {
             breakpoint: 600,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
-              initialSlide: 2,
-            },
+              initialSlide: 2
+            }
           },
           {
             breakpoint: 480,
             settings: {
               slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-        ],
+              slidesToScroll: 1
+            }
+          }
+        ]
       },
       settings: {
         focusOnSelect: true,
@@ -800,8 +818,8 @@ export default {
             breakpoint: 1024,
             settings: {
               slidesToShow: 4,
-              slidesToScroll: 4,
-            },
+              slidesToScroll: 4
+            }
           },
           {
             breakpoint: 600,
@@ -809,18 +827,18 @@ export default {
               slidesToShow: 2,
               slidesToScroll: 2,
               initialSlide: 2,
-              arrows: false,
-            },
+              arrows: false
+            }
           },
           {
             breakpoint: 480,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 2,
-              arrows: false,
-            },
-          },
-        ],
+              arrows: false
+            }
+          }
+        ]
       },
 
       mobileSingleslider: {
@@ -830,7 +848,7 @@ export default {
         dots: true,
         arrows: false,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 2000
       },
       settings2: {
         focusOnSelect: true,
@@ -848,8 +866,8 @@ export default {
             breakpoint: 1024,
             settings: {
               slidesToShow: 4,
-              slidesToScroll: 4,
-            },
+              slidesToScroll: 4
+            }
           },
           {
             breakpoint: 600,
@@ -857,18 +875,18 @@ export default {
               slidesToShow: 2,
               slidesToScroll: 2,
               initialSlide: 2,
-              arrows: false,
-            },
+              arrows: false
+            }
           },
           {
             breakpoint: 480,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 2,
-              arrows: false,
-            },
-          },
-        ],
+              arrows: false
+            }
+          }
+        ]
       },
 
       PreviewSettings: {
@@ -878,7 +896,7 @@ export default {
         arrows: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        adaptiveHeight: true,
+        adaptiveHeight: true
       },
       recomndedSetting: {
         centerMode: false,
@@ -895,10 +913,10 @@ export default {
             breakpoint: 768,
             settings: {
               arrows: false,
-              slidesToShow: 2,
-            },
-          },
-        ],
+              slidesToShow: 2
+            }
+          }
+        ]
       },
 
       value1: 3.5,
@@ -914,7 +932,7 @@ export default {
       deliveryStatusType: "success",
       recent_products: [],
       showRecent: false,
-      mainThumbImage: "",
+      mainThumbImage: ""
     };
   },
 
@@ -925,34 +943,34 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: this.singleProductList.single_prod_data.meta_description,
+          content: this.singleProductList.single_prod_data.meta_description
         },
         {
           hid: "keyword",
           name: "keyword",
-          content: this.singleProductList.single_prod_data.meta_keyword,
+          content: this.singleProductList.single_prod_data.meta_keyword
         },
         {
           hid: "og:title",
           content: this.title,
-          property: "og:title",
+          property: "og:title"
         },
         {
           hid: "og:description",
           content: this.description,
-          property: "og:description",
+          property: "og:description"
         },
         {
           hid: "og:url",
           content: this.url,
-          property: "og:url",
+          property: "og:url"
         },
         {
           hid: "og:image",
           content: this.image,
-          property: "og:image",
-        },
-      ],
+          property: "og:image"
+        }
+      ]
     };
   },
 
@@ -977,7 +995,7 @@ export default {
           click: {
             actionField: {
               action: "click",
-              list: "Recent Product List",
+              list: "Recent Product List"
             },
             products: [
               {
@@ -985,11 +1003,11 @@ export default {
                 id: singleProd.sku,
                 price: singleProd.price,
                 category: "Recent product",
-                position: prodIndex,
-              },
-            ],
-          },
-        },
+                position: prodIndex
+              }
+            ]
+          }
+        }
       });
     },
 
@@ -1026,11 +1044,10 @@ export default {
           var tokenholder;
           var product_options_json = JSON.stringify({
             size: this.selectedSizeAttr.configrable_atribute_value,
-            color: this.singleProductList.single_prod_data.color,
+            color: this.singleProductList.single_prod_data.color
           });
           form.product_id = this.selectedSizeAttr.id_product;
-          form.product_parent_id =
-            this.singleProductList.single_prod_data.id_product;
+          form.product_parent_id = this.singleProductList.single_prod_data.id_product;
           form.product_options = product_options_json;
           form.fynd_size = this.singleProductList.single_prod_data.fynd_size;
           form.fynd_uid = this.singleProductList.single_prod_data.fynd_uid;
@@ -1039,8 +1056,7 @@ export default {
           form.master_sku = this.singleProductList.single_prod_data.sku;
           form.price = this.singleProductList.single_prod_data.price;
           form.qty_ordered = this.addToCartVal;
-          form.final_price =
-            this.singleProductList.single_prod_data.selling_price;
+          form.final_price = this.singleProductList.single_prod_data.selling_price;
           form.store = this.$store.state.cartAjax.store;
           if (
             this.$store.state.cartAjax.cart_id != null &&
@@ -1073,13 +1089,13 @@ export default {
             method: "post",
             url: urlHolder,
             params: form,
-            token: tokenholder,
+            token: tokenholder
           });
           if (response) {
             this.$store.commit("cartAjax/updateCartDetail", {
               error: null,
               vm: this,
-              data: response,
+              data: response
             });
 
             // google tag manager
@@ -1095,17 +1111,17 @@ export default {
                       {
                         name: this.singleProductList.single_prod_data.name,
                         id: this.singleProductList.single_prod_data.sku,
-                        price:
-                          this.singleProductList.single_prod_data.selling_price,
-                        category:
-                          this.singleProductList.single_prod_data.category,
-                        variant:
-                          this.selectedSizeAttr.configrable_atribute_value,
-                        quantity: "1",
-                      },
-                    ],
-                  },
-                },
+                        price: this.singleProductList.single_prod_data
+                          .selling_price,
+                        category: this.singleProductList.single_prod_data
+                          .category,
+                        variant: this.selectedSizeAttr
+                          .configrable_atribute_value,
+                        quantity: "1"
+                      }
+                    ]
+                  }
+                }
               });
             }
           } else {
@@ -1117,7 +1133,7 @@ export default {
           if (error.message === "Network Error") {
             this.$store.commit("updateSingleProdState", {
               error:
-                "Oops there seems to be some Network issue, please try again",
+                "Oops there seems to be some Network issue, please try again"
             });
           }
         }
@@ -1137,27 +1153,20 @@ export default {
           var tokenholder;
           var product_options_json = JSON.stringify({
             size: this.selectedComboSize.configrable_atribute_value,
-            color:
-              this.singleProductList.single_prod_data.combo_product_data.color,
+            color: this.singleProductList.single_prod_data.combo_product_data
+              .color
           });
           form.product_id = this.selectedComboSize.id_product;
-          form.product_parent_id =
-            this.singleProductList.single_prod_data.combo_product_data.id_product;
+          form.product_parent_id = this.singleProductList.single_prod_data.combo_product_data.id_product;
           form.product_options = product_options_json;
-          form.fynd_size =
-            this.singleProductList.single_prod_data.combo_product_data.fynd_size;
-          form.fynd_uid =
-            this.singleProductList.single_prod_data.combo_product_data.fynd_uid;
-          form.name =
-            this.singleProductList.single_prod_data.combo_product_data.name;
+          form.fynd_size = this.singleProductList.single_prod_data.combo_product_data.fynd_size;
+          form.fynd_uid = this.singleProductList.single_prod_data.combo_product_data.fynd_uid;
+          form.name = this.singleProductList.single_prod_data.combo_product_data.name;
           form.sku = this.selectedComboSize.sku;
-          form.master_sku =
-            this.singleProductList.single_prod_data.combo_product_data.sku;
-          form.price =
-            this.singleProductList.single_prod_data.combo_product_data.price;
+          form.master_sku = this.singleProductList.single_prod_data.combo_product_data.sku;
+          form.price = this.singleProductList.single_prod_data.combo_product_data.price;
           form.qty_ordered = this.addToCartVal;
-          form.final_price =
-            this.singleProductList.single_prod_data.combo_product_data.selling_price;
+          form.final_price = this.singleProductList.single_prod_data.combo_product_data.selling_price;
           form.store = this.$store.state.cartAjax.store;
           if (
             this.$store.state.cartAjax.cart_id != null &&
@@ -1190,13 +1199,13 @@ export default {
             method: "post",
             url: urlHolder,
             params: form,
-            token: tokenholder,
+            token: tokenholder
           });
           if (response) {
             this.$store.commit("cartAjax/updateCartDetail", {
               error: null,
               vm: this,
-              data: response,
+              data: response
             });
 
             // google tag manager
@@ -1213,17 +1222,17 @@ export default {
                       {
                         name: this.singleProductList.single_prod_data.name,
                         id: this.singleProductList.single_prod_data.sku,
-                        price:
-                          this.singleProductList.single_prod_data.selling_price,
-                        category:
-                          this.singleProductList.single_prod_data.category,
-                        variant:
-                          this.selectedComboSize.configrable_atribute_value,
-                        quantity: "1",
-                      },
-                    ],
-                  },
-                },
+                        price: this.singleProductList.single_prod_data
+                          .selling_price,
+                        category: this.singleProductList.single_prod_data
+                          .category,
+                        variant: this.selectedComboSize
+                          .configrable_atribute_value,
+                        quantity: "1"
+                      }
+                    ]
+                  }
+                }
               });
             }
           } else {
@@ -1235,7 +1244,7 @@ export default {
           if (error.message === "Network Error") {
             this.$store.commit("updateSingleProdState", {
               error:
-                "Oops there seems to be some Network issue, please try again",
+                "Oops there seems to be some Network issue, please try again"
             });
           }
         }
@@ -1280,13 +1289,13 @@ export default {
       let form = {
         pincode: this.pinCode,
         fynd_uid: this.singleProductList.single_prod_data.fynd_uid,
-        fynd_size: this.selectedSizeAttr.configrable_atribute_value,
+        fynd_size: this.selectedSizeAttr.configrable_atribute_value
       };
       try {
         let response = await this.$store.dispatch("cartAjax/actCartAjax", {
           method: "post",
           url: `/customer/serviceable`,
-          params: form,
+          params: form
         });
 
         if (response) {
@@ -1312,7 +1321,7 @@ export default {
       try {
         this.showFotter = false;
         await this.$store.commit("prepareStateForSingleProd", {
-          routeParam: this.$route.params.productDetail,
+          routeParam: this.$route.params.productDetail
         });
         let { service, store, url_key } = this.$store.state.singleProductList;
         var form = {};
@@ -1326,13 +1335,13 @@ export default {
         let response = await this.$store.dispatch("pimAjax", {
           method: "post",
           url: `/pimresponse.php`,
-          params: form,
+          params: form
         });
 
         if (response) {
           this.$store.commit("updateSingleProdState", {
             error: null,
-            data: response,
+            data: response
           });
           if (response.response.success) {
             this.showFotter = true;
@@ -1346,14 +1355,13 @@ export default {
                     {
                       name: this.singleProductList.single_prod_data.name,
                       id: this.singleProductList.single_prod_data.sku,
-                      price:
-                        this.singleProductList.single_prod_data.selling_price,
-                      category:
-                        this.singleProductList.single_prod_data.category,
-                    },
-                  ],
-                },
-              },
+                      price: this.singleProductList.single_prod_data
+                        .selling_price,
+                      category: this.singleProductList.single_prod_data.category
+                    }
+                  ]
+                }
+              }
             });
           }
         } else {
@@ -1363,8 +1371,7 @@ export default {
         this.$globalError(`error from getProductDetail >>>> ${error}`);
         if (error.message === "Network Error") {
           this.$store.commit("updateSingleProdState", {
-            error:
-              "Oops there seems to be some Network issue, please try again",
+            error: "Oops there seems to be some Network issue, please try again"
           });
         }
       }
@@ -1407,7 +1414,7 @@ export default {
           product_id: this.singleProductList.single_prod_data.id_product,
           customer_id: this.$store.state.cartAjax.customer_id,
           customer_session: this.$store.state.cartAjax.customer_session,
-          group_id: this.singleProductList.single_prod_data.group_id,
+          group_id: this.singleProductList.single_prod_data.group_id
         };
 
         if (data === "add") {
@@ -1415,21 +1422,21 @@ export default {
             method: "post",
             url: `/wishlist/add-wishlist`,
             token: this.$store.state.cartAjax.customer_token,
-            params: form,
+            params: form
           });
         } else {
           var response = await this.$store.dispatch("cartAjax/actCartAjax", {
             method: "post",
             url: `/wishlist/remove-wishlist`,
             token: this.$store.state.cartAjax.customer_token,
-            params: form,
+            params: form
           });
         }
 
         if (response.success) {
           this.$toast.open(response.message);
           this.$store.commit("cartAjax/updateWishList", {
-            payload: response.data,
+            payload: response.data
           });
           this.$gtm.push({
             event: [data == "add" ? "addToWishlist" : "removeFromWishlist"],
@@ -1442,14 +1449,14 @@ export default {
                   {
                     name: this.singleProductList.single_prod_data.name,
                     id: this.singleProductList.single_prod_data.sku,
-                    price:
-                      this.singleProductList.single_prod_data.selling_price,
+                    price: this.singleProductList.single_prod_data
+                      .selling_price,
                     category: this.singleProductList.single_prod_data.category,
-                    position: 1,
-                  },
-                ],
-              },
-            },
+                    position: 1
+                  }
+                ]
+              }
+            }
           });
         } else {
           throw "no response from api";
@@ -1468,15 +1475,15 @@ export default {
         .dispatch("pimAjax", {
           method: "post",
           url: `/pimresponse.php`,
-          params: form,
+          params: form
         })
-        .then((response) => {
+        .then(response => {
           this.recent_products = response.result;
         })
-        .catch((e) => {
+        .catch(e => {
           console.log("error form the recent view page >>> ", e);
         });
-    },
+    }
   },
 
   async fetch() {
@@ -1499,8 +1506,7 @@ export default {
       this.singleProductList.single_prod_data.gallery &&
       this.singleProductList.single_prod_data.gallery.length > 0
     )
-      this.mainThumbImage =
-        this.singleProductList.single_prod_data.gallery[0].image;
+      this.mainThumbImage = this.singleProductList.single_prod_data.gallery[0].image;
   },
 
   mounted() {
@@ -1522,11 +1528,11 @@ export default {
                 name: this.singleProductList.single_prod_data.name,
                 id: this.singleProductList.single_prod_data.sku,
                 price: this.singleProductList.single_prod_data.selling_price,
-                category: this.singleProductList.single_prod_data.category,
-              },
-            ],
-          },
-        },
+                category: this.singleProductList.single_prod_data.category
+              }
+            ]
+          }
+        }
       });
     }
   },
@@ -1539,7 +1545,7 @@ export default {
       let { description } = this.singleProductList.single_prod_data;
 
       let obj = {
-        description,
+        description
       };
 
       let finaObj = Object.entries(obj).reduce(
@@ -1550,15 +1556,20 @@ export default {
     },
 
     renderDescription2() {
-      let { weight, material, color, warranty, capacity } =
-        this.singleProductList.single_prod_data;
+      let {
+        weight,
+        material,
+        color,
+        warranty,
+        capacity
+      } = this.singleProductList.single_prod_data;
 
       let obj = {
         weight,
         material,
         color,
         capacity,
-        warranty,
+        warranty
       };
 
       let finaObj = Object.entries(obj).reduce(
@@ -1574,7 +1585,7 @@ export default {
       },
       set(value) {
         return;
-      },
+      }
     },
 
     // render wish list class icon
@@ -1586,10 +1597,10 @@ export default {
       if (wishList && Object.keys(wishList).length != 0) {
         const groupResult = wishList.group
           .split(",")
-          .filter((word) => word == groupId);
+          .filter(word => word == groupId);
         const productResult = wishList.product
           .split(",")
-          .filter((word) => word == ProductId);
+          .filter(word => word == ProductId);
 
         if (
           groupResult &&
@@ -1622,33 +1633,33 @@ export default {
     },
     image() {
       return this.singleProductList.single_prod_data.image;
-    },
+    }
   },
 
   watch: {
-    "$store.state.cartAjax.cart_page_message": function () {
+    "$store.state.cartAjax.cart_page_message": function() {
       if (
         this.$store.state.cartAjax.cart_page_message != "" &&
         this.$store.state.cartAjax.cart_page_message != null
       ) {
         this.$store.commit("cartAjax/showHideCart");
         this.$store.commit("cartAjax/removePageMessage", {
-          data: "",
+          data: ""
         });
       }
     },
-    "$store.state.cartAjax.cart_page_erro_page": function () {
+    "$store.state.cartAjax.cart_page_erro_page": function() {
       if (
         this.$store.state.cartAjax.cart_page_error_message != "" &&
         this.$store.state.cartAjax.cart_page_error_message != null
       ) {
         this.$toast.error(this.$store.state.cartAjax.cart_page_error_message);
         this.$store.commit("cartAjax/removePageMessage", {
-          data: "",
+          data: ""
         });
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
