@@ -38,12 +38,12 @@
                   <span class="icon icon-x"></span>
                 </div>
                 <div class="imgbox">
-                   <NuxtLink  :to="`/product/${item.url_key}`">
+                  <NuxtLink :to="`/product/${item.url_key}`">
                     <img :src="item.image" alt="img" class="w-100" />
-                   </NuxtLink>
+                  </NuxtLink>
                 </div>
                 <div class="pro_detail">
-                  <NuxtLink  :to="`/product/${item.url_key}`">
+                  <NuxtLink :to="`/product/${item.url_key}`">
                     <p class="p-name">
                       {{ item.name }}
                     </p>
@@ -90,12 +90,14 @@
         </div>
         <div class="compare_data_info">
           <div class="data-1 data-1_table">
+            test {{ renderTabledata }}
             <table class="table table-striped m-0" v-if="tableData.length > 0">
               <tbody>
-                <tr v-for="(comItem, i) in tableData[0]" :key="i">
+                <tr v-for="(comItem, i) in tableData[renderTabledata]" :key="i">
                   <th scope="row">{{ comItem.label }}</th>
                   <td v-for="(tData, tIndex) in tableData" :key="tIndex">
-                    {{ tData[i].value }}
+                    <span v-if="tData[i] && tData[i].code == comItem.code" v-html="tData[i].value"></span>
+                    <span v-else>-</span>
                   </td>
                 </tr>
               </tbody>
@@ -288,6 +290,12 @@ export default {
   },
   created() {
     this.getProduct();
+  },
+  computed: {
+    renderTabledata() {
+      const lengths = this.tableData.map((a) => a.length);
+      return lengths.indexOf(Math.max(...lengths));
+    },
   },
 };
 </script>

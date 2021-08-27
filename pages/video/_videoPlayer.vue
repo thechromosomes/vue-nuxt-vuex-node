@@ -172,7 +172,6 @@ export default {
     if (pageData != undefined) {
       this.videoCmsData = pageData.content;
       this.videoURL = this.$route.params.videoPlayer;
-      console.log(" this.videoURL", this.videoURL);
     } else {
       this.$router.push("/404");
     }

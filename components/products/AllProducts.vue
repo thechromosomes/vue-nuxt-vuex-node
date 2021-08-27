@@ -223,7 +223,7 @@
                           <span class="delete-select-filter">(1)</span>
                         </h5>
                         <a href class="clear-filter delete-select-filter"
-                          >emptyssssssssss</a
+                          ></a
                         >
                       </div>
                       <ul
@@ -998,4 +998,5 @@ export default {
   text-align: center;
   width: 100%;
 }
+
 </style>
