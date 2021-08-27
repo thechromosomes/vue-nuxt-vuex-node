@@ -1047,6 +1047,11 @@ export default {
       },
     };
   },
+  head() {
+    return {
+      script: [{ src: "https://checkout.razorpay.com/v1/checkout.js" }],
+    };
+  },
 
   // form validatiors
   validators: {

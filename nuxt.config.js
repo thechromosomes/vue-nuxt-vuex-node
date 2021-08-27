@@ -22,7 +22,7 @@ export default {
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    script: [{ src: "https://checkout.razorpay.com/v1/checkout.js" }],
+    script: [{ src: "./gumlet.js", async: true }],
   },
 
   css: [
