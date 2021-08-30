@@ -283,7 +283,9 @@
                             "
                           >
                             Item Code UK:
-                            {{ singleProductList.single_prod_data.uk_item_code }}
+                            {{
+                              singleProductList.single_prod_data.uk_item_code
+                            }}
                           </li>
                           <li
                             v-for="(desc, descKey) in renderDescription"
@@ -583,6 +585,35 @@
               ></iframe>
             </div>
           </template>
+          <!-- =========================== EXPANDABLE DESIGN=========== -->
+          <div
+            class="expendable-design-div"
+            v-if="
+              singleProductList.single_prod_data.unique_selling &&
+                singleProductList.single_prod_data.unique_selling.length > 0
+            "
+          >
+            <ul class="expendable-list">
+              <li
+                v-for="(item, Index) in singleProductList.single_prod_data
+                  .unique_selling"
+                :key="Index"
+              >
+                <div class="ecpendable-list-item-wrap">
+                  <div class="expendable-img">
+                    <img :src="item.image" />
+                  </div>
+                  <div class="expendable-content">
+                    <h3 class="proxima_regular">{{ item.subtitle }}</h3>
+                    <h4 class="proxima_regular">{{ item.title }}</h4>
+                    <p class="proxima_regular">
+                      {{ item.description }}
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </div>
