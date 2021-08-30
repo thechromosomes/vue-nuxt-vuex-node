@@ -90,7 +90,6 @@
         </div>
         <div class="compare_data_info">
           <div class="data-1 data-1_table">
-            test {{ renderTabledata }}
             <table class="table table-striped m-0" v-if="tableData.length > 0">
               <tbody>
                 <tr v-for="(comItem, i) in tableData[renderTabledata]" :key="i">
