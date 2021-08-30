@@ -8559,7 +8559,7 @@ a.membership_card_join_btn {
 }
 .expendable-list li .ecpendable-list-item-wrap {
   display: flex;
-  align-items: top;
+  align-items: center;
 }
 .expendable-content h3 {
   font-size: 18px;
