@@ -92,10 +92,10 @@
           <div class="data-1 data-1_table">
             <table class="table table-striped m-0" v-if="tableData.length > 0">
               <tbody>
-                <tr v-for="(comItem, i) in tableData[renderTabledata]" :key="i">
-                  <th scope="row">{{ comItem.label }}</th>
+                <tr v-for="(comItem, i) in compareHeader" :key="i">
+                  <th scope="row">{{ comItem.replaceAll(/_/g, " ") }}</th>
                   <td v-for="(tData, tIndex) in tableData" :key="tIndex">
-                    <span v-if="tData[i] && tData[i].code == comItem.code" v-html="tData[i].value"></span>
+                    <span v-if="tData.findIndex(x => x.code === comItem) >= 0" v-html="tData[tData.findIndex(x => x.code === comItem)].value"></span>
                     <span v-else>-</span>
                   </td>
                 </tr>
@@ -116,6 +116,7 @@ export default {
     return {
       scrollPosition: null,
       compareData: [],
+      compareHeader: [],
       tableData: [],
       activeColor: [],
     };
@@ -185,9 +186,21 @@ export default {
       });
       if (response.response.success != 0) {
         this.compareData = response.result;
+        this.compareHeader = response.compare_headers;
         this.tableData = response.product_attributes;
       } else {
         this.$router.push("/");
+      }
+    },
+
+    renderTabledata(comItem, tIndex) {
+      if (comItem != undefined) {
+      console.log("comItem", this.tableData.map((x) => {
+        return x.findIndex(y => {
+         console.log("tsting", y)
+        })
+      }));
+        return this.tableData.findIndex((x) => (x[tIndex].code === comItem));
       }
     },
 
@@ -289,12 +302,6 @@ export default {
   },
   created() {
     this.getProduct();
-  },
-  computed: {
-    renderTabledata() {
-      const lengths = this.tableData.map((a) => a.length);
-      return lengths.indexOf(Math.max(...lengths));
-    },
   },
 };
 </script>
