@@ -222,9 +222,7 @@
                           {{ filter.filter_lable }}
                           <span class="delete-select-filter">(1)</span>
                         </h5>
-                        <a href class="clear-filter delete-select-filter"
-                          ></a
-                        >
+                        <a href class="clear-filter delete-select-filter"></a>
                       </div>
                       <ul
                         class="filter-pd-listing"
@@ -998,5 +996,4 @@ export default {
   text-align: center;
   width: 100%;
 }
-
 </style>
